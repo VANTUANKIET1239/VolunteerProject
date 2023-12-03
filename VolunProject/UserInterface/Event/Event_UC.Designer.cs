@@ -1,6 +1,6 @@
-﻿namespace VolunProject.UserInterface.RegisterUser
+﻿namespace VolunProject.UserInterface.Event
 {
-    partial class Register_UC
+    partial class Event_UC
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Register_UC
+            // Event_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Register_UC";
-            this.Size = new System.Drawing.Size(995, 595);
+            this.Name = "Event_UC";
+            this.Size = new System.Drawing.Size(822, 534);
             this.ResumeLayout(false);
 
         }
