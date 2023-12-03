@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BLL\EventBLL.cs" />
+    <Compile Include="Data\DAL\EventDAL.cs" />
     <Compile Include="Data\EntityADO.NET\Account.cs">
       <DependentUpon>VolunteerModel.tt</DependentUpon>
     </Compile>
@@ -220,8 +222,6 @@
     <None Include="Resources\icons8-list-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\BLL\" />
-    <Folder Include="Data\DAL\" />
     <Folder Include="Data\DTO\" />
     <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
@@ -239,6 +239,7 @@
       <DependentUpon>VolunteerModel.edmx</DependentUpon>
       <LastGenOutput>VolunteerModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

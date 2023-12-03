@@ -51,5 +51,20 @@ namespace VolunProject
         {
             sidebarTimer.Start();
         }
+
+        private void infoButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
