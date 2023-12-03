@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginForm
@@ -44,5 +45,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
