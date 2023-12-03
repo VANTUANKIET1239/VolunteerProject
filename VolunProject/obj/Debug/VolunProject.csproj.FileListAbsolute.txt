@@ -1,0 +1,17 @@
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\VolunProject.exe.config
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\VolunProject.exe
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\VolunProject.pdb
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\AutoMapper.dll
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\EntityFramework.dll
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\AutoMapper.xml
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\bin\Debug\EntityFramework.xml
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.Properties.Resources.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.csproj.CopyComplete
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.exe
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.pdb
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.LoginForm.LoginForm.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.Main.resources
