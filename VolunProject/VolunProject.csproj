@@ -131,6 +131,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInterface\Login\Login_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Login\Login_UC.Designer.cs">
+      <DependentUpon>Login_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\RegisterUser\Register_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\RegisterUser\Register_UC.Designer.cs">
+      <DependentUpon>Register_UC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +159,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserInterface\Login\Login_UC.resx">
+      <DependentUpon>Login_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Data\EntityADO.NET\VolunteerModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>VolunteerModel.Designer.cs</LastGenOutput>
@@ -199,9 +214,7 @@
     <Folder Include="UserInterface\Event\" />
     <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
-    <Folder Include="UserInterface\Login\" />
     <Folder Include="UserInterface\Redeem\" />
-    <Folder Include="UserInterface\RegisterUser\" />
     <Folder Include="UserInterface\UserInformation\" />
   </ItemGroup>
   <ItemGroup>
