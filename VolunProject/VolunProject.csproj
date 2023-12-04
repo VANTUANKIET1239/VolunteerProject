@@ -57,8 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\BLL\EventBLL.cs" />
-    <Compile Include="Data\DAL\EventDAL.cs" />
     <Compile Include="Data\EntityADO.NET\Account.cs">
       <DependentUpon>VolunteerModel.tt</DependentUpon>
     </Compile>
@@ -156,6 +154,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +221,8 @@
     <None Include="Resources\icons8-list-50.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\BLL\" />
+    <Folder Include="Data\DAL\" />
     <Folder Include="Data\DTO\" />
     <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
@@ -239,6 +240,7 @@
       <DependentUpon>VolunteerModel.edmx</DependentUpon>
       <LastGenOutput>VolunteerModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\WIN_20220727_22_37_21_Pro.jpg" />
     <None Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
