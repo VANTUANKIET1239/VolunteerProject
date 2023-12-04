@@ -12,6 +12,7 @@ namespace VolunProject.UserInterface.Login
 {
     public partial class Login_UC : UserControl
     {
+        public static event EventHandler SignUpEvent;
         public Login_UC()
         {
             InitializeComponent();
@@ -20,6 +21,11 @@ namespace VolunProject.UserInterface.Login
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void signupButton_Click(object sender, EventArgs e)
+        {
+            SignUpEvent(this, new EventArgs());
         }
     }
 }

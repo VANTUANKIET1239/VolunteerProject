@@ -66,5 +66,10 @@ namespace VolunProject
         {
 
         }
+
+        private void rewardsButton_Click(object sender, EventArgs e)
+        {
+            LoginForm.LoginForm.OpenChildForm()
+        }
     }
 }
