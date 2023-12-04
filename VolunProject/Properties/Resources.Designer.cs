@@ -63,16 +63,6 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
-            get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_event_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-event-50", resourceCulture);
@@ -146,6 +136,16 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_user_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WIN_20220727_22_37_21_Pro {
+            get {
+                object obj = ResourceManager.GetObject("WIN_20220727_22_37_21_Pro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

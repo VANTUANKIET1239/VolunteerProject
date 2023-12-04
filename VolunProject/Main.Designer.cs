@@ -41,10 +41,13 @@
             this.eventButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarContainer
@@ -183,6 +186,7 @@
             this.eventButton.Text = "                  Sự kiện";
             this.eventButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButton.UseVisualStyleBackColor = true;
+            this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
             // 
             // homeButton
             // 
@@ -209,12 +213,30 @@
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.MainPanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(274, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1453, 877);
+            this.panel4.TabIndex = 1;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1453, 877);
+            this.MainPanel.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1749, 879);
+            this.ClientSize = new System.Drawing.Size(1727, 877);
             this.ControlBox = false;
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.sidebarContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
@@ -225,6 +247,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -243,6 +266,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }
 
