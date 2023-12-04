@@ -35,7 +35,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::VolunProject.Properties.Resources._7bda1c7d233fe592c0fc7ea63f20ebc2;
+            this.pictureBox1.BackgroundImage = global::VolunProject.Properties.Resources.logo_starbucks;
             this.pictureBox1.Location = new System.Drawing.Point(79, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(307, 338);
@@ -53,6 +53,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RedeemControl
             // 

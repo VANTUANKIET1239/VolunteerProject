@@ -13,9 +13,14 @@ namespace VolunProject.UserInterface.Redeem
     public partial class RedeemControl : UserControl
     {
         public RedeemControl(string name)
-        {
-            button1.Text = name;
+        {              
             InitializeComponent();
+            button1.Text = name;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

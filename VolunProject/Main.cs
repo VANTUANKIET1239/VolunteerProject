@@ -13,6 +13,7 @@ namespace VolunProject
     public partial class Main : Form
     {
         bool sidebarExpand = false;
+        private UserControl activeForm;
         public Main()
         {
             InitializeComponent();
@@ -41,6 +42,16 @@ namespace VolunProject
                 }
             }
         }
+        public void OpenChildForm(UserControl a, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Hide();
+            activeForm = a;
+            //ActivateButton(btnSender);
+            this.MainPanel.Controls.Add(a);
+            this.MainPanel.Tag = a;
+            //lblTitle.Text = (btnSender as Button).Text;
+        }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -67,9 +78,14 @@ namespace VolunProject
 
         }
 
+        private void eventButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.Event_UC(), sender);
+        }
+
         private void rewardsButton_Click(object sender, EventArgs e)
         {
-            LoginForm.LoginForm.OpenChildForm()
+            LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
         }
     }
 }

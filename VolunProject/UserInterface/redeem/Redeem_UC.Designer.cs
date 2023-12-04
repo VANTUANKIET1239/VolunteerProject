@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.listRedeemFlowlayoutpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel1.SuspendLayout();
@@ -59,8 +59,18 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1748, 243);
+            this.panel1.Size = new System.Drawing.Size(1879, 243);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(779, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 150);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -74,23 +84,14 @@
             this.label2.Text = "Store";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::VolunProject.Properties.Resources.logo_social;
-            this.pictureBox1.Location = new System.Drawing.Point(779, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 150);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // listRedeemFlowlayoutpanel
             // 
             this.listRedeemFlowlayoutpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listRedeemFlowlayoutpanel.Location = new System.Drawing.Point(0, 250);
+            this.listRedeemFlowlayoutpanel.Location = new System.Drawing.Point(0, 277);
             this.listRedeemFlowlayoutpanel.Name = "listRedeemFlowlayoutpanel";
-            this.listRedeemFlowlayoutpanel.Size = new System.Drawing.Size(1749, 629);
+            this.listRedeemFlowlayoutpanel.Size = new System.Drawing.Size(1186, 600);
             this.listRedeemFlowlayoutpanel.TabIndex = 2;
+            this.listRedeemFlowlayoutpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.listRedeemFlowlayoutpanel_Paint);
             // 
             // fileSystemWatcher1
             // 
@@ -104,7 +105,7 @@
             this.Controls.Add(this.listRedeemFlowlayoutpanel);
             this.Controls.Add(this.panel1);
             this.Name = "Redeem_UC";
-            this.Size = new System.Drawing.Size(1749, 879);
+            this.Size = new System.Drawing.Size(1186, 877);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

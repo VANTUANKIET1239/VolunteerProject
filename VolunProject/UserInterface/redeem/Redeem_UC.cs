@@ -15,6 +15,7 @@ namespace VolunProject.UserInterface.Redeem
         public Redeem_UC()
         {
             InitializeComponent();
+            createRedeem();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,10 +25,9 @@ namespace VolunProject.UserInterface.Redeem
 
         public void createRedeem()
         {
-            List<string> strings = new List<string>() { "ưqdqd", "qưdwqdwq", "qưdwqdq", "qưdqwdwqd" };
-            listRedeemFlowlayoutpanel.WrapContents = false;
+            List<string> strings = new List<string>() { "ưqdqd", "qưdwqdwq", "qưdwqdq", "qưdqwdwqd" , "ưqdqd", "qưdwqdwq", "qưdwqdq", "qưdqwdwqd" };
             listRedeemFlowlayoutpanel.AutoScroll = true;
-            listRedeemFlowlayoutpanel.FlowDirection = FlowDirection.TopDown;
+            listRedeemFlowlayoutpanel.FlowDirection = FlowDirection.LeftToRight;
             foreach (var item in strings)
             {
                 RedeemControl redeemControl = new RedeemControl(item);
@@ -35,6 +35,16 @@ namespace VolunProject.UserInterface.Redeem
             }
         }
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listRedeemFlowlayoutpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -16,7 +16,7 @@ namespace VolunProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm.LoginForm());
+            Application.Run(new Main());
         }
     }
 }
