@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.BLL;
 
 namespace VolunProject
 {
@@ -50,6 +51,11 @@ namespace VolunProject
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            var kiet = EventBLL.AddNewKetCa();
         }
     }
 }

@@ -15,3 +15,6 @@ C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.exe
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.pdb
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.LoginForm.LoginForm.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.Main.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.Event_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Login.Login_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.RegisterUser.Register_UC.resources
