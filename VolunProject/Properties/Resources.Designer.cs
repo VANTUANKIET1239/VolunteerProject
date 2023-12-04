@@ -63,6 +63,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _7bda1c7d233fe592c0fc7ea63f20ebc2 {
+            get {
+                object obj = ResourceManager.GetObject("7bda1c7d233fe592c0fc7ea63f20ebc2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_event_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-event-50", resourceCulture);
@@ -136,6 +146,36 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_user_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_social {
+            get {
+                object obj = ResourceManager.GetObject("logo-social", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_starbucks {
+            get {
+                object obj = ResourceManager.GetObject("logo-starbucks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_julie_aagaard_2097111 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-julie-aagaard-2097111", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -145,6 +145,18 @@
     <Compile Include="UserInterface\Login\Login_UC.Designer.cs">
       <DependentUpon>Login_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\Redeem\RedeemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\RedeemControl.Designer.cs">
+      <DependentUpon>RedeemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\Redeem_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\Redeem_UC.Designer.cs">
+      <DependentUpon>Redeem_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\RegisterUser\Register_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +168,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,6 +185,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Login\Login_UC.resx">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Redeem\RedeemControl.resx">
+      <DependentUpon>RedeemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Redeem\Redeem_UC.resx">
+      <DependentUpon>Redeem_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\RegisterUser\Register_UC.resx">
       <DependentUpon>Register_UC.cs</DependentUpon>
@@ -225,7 +244,6 @@
     <Folder Include="Data\DTO\" />
     <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
-    <Folder Include="UserInterface\Redeem\" />
     <Folder Include="UserInterface\UserInformation\" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +257,11 @@
       <DependentUpon>VolunteerModel.edmx</DependentUpon>
       <LastGenOutput>VolunteerModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\7bda1c7d233fe592c0fc7ea63f20ebc2.jpg" />
+    <None Include="Resources\logo-social.png" />
+    <None Include="Resources\logo-starbucks.jpg" />
+    <None Include="Resources\pexels-julie-aagaard-2097111.jpg" />
+    <None Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

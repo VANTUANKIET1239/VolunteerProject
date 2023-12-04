@@ -35,16 +35,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.infoButton = new System.Windows.Forms.Button();
+            this.historyButton = new System.Windows.Forms.Button();
+            this.rewardsButton = new System.Windows.Forms.Button();
+            this.eventButton = new System.Windows.Forms.Button();
+            this.homeButton = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarContainer
@@ -79,6 +82,7 @@
             this.label1.Size = new System.Drawing.Size(54, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Menu";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -99,119 +103,143 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.infoButton);
+            this.panel3.Controls.Add(this.historyButton);
+            this.panel3.Controls.Add(this.rewardsButton);
+            this.panel3.Controls.Add(this.eventButton);
+            this.panel3.Controls.Add(this.homeButton);
             this.panel3.Location = new System.Drawing.Point(3, 109);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(271, 770);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button5
+            // infoButton
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 188);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(271, 47);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "                  Thông tin";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.infoButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.infoButton.FlatAppearance.BorderSize = 0;
+            this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infoButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.infoButton.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            this.infoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.infoButton.Location = new System.Drawing.Point(0, 188);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.infoButton.Size = new System.Drawing.Size(271, 47);
+            this.infoButton.TabIndex = 4;
+            this.infoButton.Text = "                  Thông tin";
+            this.infoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
             // 
-            // button4
+            // historyButton
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Image = global::VolunProject.Properties.Resources.icons8_list_50;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 141);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(271, 47);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "                  Lịch sử";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.historyButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.historyButton.FlatAppearance.BorderSize = 0;
+            this.historyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historyButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historyButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.historyButton.Image = global::VolunProject.Properties.Resources.icons8_list_50;
+            this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.historyButton.Location = new System.Drawing.Point(0, 141);
+            this.historyButton.Name = "historyButton";
+            this.historyButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.historyButton.Size = new System.Drawing.Size(271, 47);
+            this.historyButton.TabIndex = 3;
+            this.historyButton.Text = "                  Lịch sử";
+            this.historyButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.historyButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // rewardsButton
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Image = global::VolunProject.Properties.Resources.icons8_gift_50;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 94);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(271, 47);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "                  Đổi thưởng";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.rewardsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rewardsButton.FlatAppearance.BorderSize = 0;
+            this.rewardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rewardsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rewardsButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rewardsButton.Image = global::VolunProject.Properties.Resources.icons8_gift_50;
+            this.rewardsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rewardsButton.Location = new System.Drawing.Point(0, 94);
+            this.rewardsButton.Name = "rewardsButton";
+            this.rewardsButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.rewardsButton.Size = new System.Drawing.Size(271, 47);
+            this.rewardsButton.TabIndex = 2;
+            this.rewardsButton.Text = "                  Đổi thưởng";
+            this.rewardsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rewardsButton.UseVisualStyleBackColor = true;
+            this.rewardsButton.Click += new System.EventHandler(this.rewardsButton_Click);
             // 
-            // button1
+            // eventButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Image = global::VolunProject.Properties.Resources.icons8_event_50;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 47);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(271, 47);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "                  Sự kiện";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.eventButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.eventButton.FlatAppearance.BorderSize = 0;
+            this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eventButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_50;
+            this.eventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.eventButton.Location = new System.Drawing.Point(0, 47);
+            this.eventButton.Name = "eventButton";
+            this.eventButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.eventButton.Size = new System.Drawing.Size(271, 47);
+            this.eventButton.TabIndex = 1;
+            this.eventButton.Text = "                  Sự kiện";
+            this.eventButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.eventButton.UseVisualStyleBackColor = true;
+            this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
             // 
-            // button2
+            // homeButton
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Image = global::VolunProject.Properties.Resources.icons8_home_30;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(271, 47);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "                Home";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.homeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeButton.FlatAppearance.BorderSize = 0;
+            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.homeButton.Image = global::VolunProject.Properties.Resources.icons8_home_30;
+            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeButton.Location = new System.Drawing.Point(0, 0);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.homeButton.Size = new System.Drawing.Size(271, 47);
+            this.homeButton.TabIndex = 1;
+            this.homeButton.Text = "                Home";
+            this.homeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
             // sidebarTimer
             // 
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.MainPanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(274, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1186, 877);
+            this.panel4.TabIndex = 1;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1186, 877);
+            this.MainPanel.TabIndex = 0;
+            // 
+            // Main
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1749, 879);
+            this.ClientSize = new System.Drawing.Size(1460, 877);
             this.ControlBox = false;
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.sidebarContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
@@ -223,6 +251,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -233,14 +262,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button eventButton;
+        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Button infoButton;
+        private System.Windows.Forms.Button historyButton;
+        private System.Windows.Forms.Button rewardsButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }
 
