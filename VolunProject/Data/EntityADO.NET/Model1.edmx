@@ -31,6 +31,9 @@
           <Property Name="Status" Type="nchar" MaxLength="1" />
           <Property Name="CategoryId" Type="nchar" MaxLength="100" />
           <Property Name="state" Type="bit" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+          <Property Name="purpose" Type="nvarchar" MaxLength="500" />
+          <Property Name="time" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="EventCategory">
           <Key>
@@ -395,6 +398,9 @@
           <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
           <Property Name="CategoryId" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="state" Type="Boolean" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="purpose" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="EventCategory" Relationship="Self.FK__Event__CategoryI__4D94879B" FromRole="Event" ToRole="EventCategory" />
           <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Event__5165187F" FromRole="Event" ToRole="Registration" />
         </EntityType>
@@ -780,6 +786,9 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="purpose" ColumnName="purpose" />
+                <ScalarProperty Name="time" ColumnName="time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
