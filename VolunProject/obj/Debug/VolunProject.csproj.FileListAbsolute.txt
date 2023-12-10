@@ -36,3 +36,10 @@ C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\bin\Debug\EntityFramew
 C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.csproj.CopyComplete
 C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.RedeemControl.resources
 C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.Redeem_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.Event_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Login.Login_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.RedeemControl.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.Redeem_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.RegisterUser.Register_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.EventControl.EventControl.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UIComponentTools.TextBoxRound.resources
