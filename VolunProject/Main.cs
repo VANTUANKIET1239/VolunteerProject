@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using VolunProject.Data.BLL;
 
 namespace VolunProject
 {
@@ -85,7 +86,8 @@ namespace VolunProject
 
         private void rewardsButton_Click(object sender, EventArgs e)
         {
-            LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
+            OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
+           // LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
         }
     }
 }

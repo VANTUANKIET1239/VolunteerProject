@@ -29,6 +29,9 @@ namespace VolunProject.Data.EntityADO.NET
         public string Status { get; set; }
         public string CategoryId { get; set; }
         public Nullable<bool> state { get; set; }
+        public string description { get; set; }
+        public string purpose { get; set; }
+        public string time { get; set; }
     
         public virtual EventCategory EventCategory { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }
