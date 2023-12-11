@@ -13,10 +13,10 @@ namespace VolunProject.Data.EntityADO.NET
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class VolunteersDBEntities : DbContext
+    public partial class VolunteerDBEntities : DbContext
     {
-        public VolunteersDBEntities()
-            : base("name=VolunteersDBEntities")
+        public VolunteerDBEntities()
+            : base("name=VolunteerDBEntities")
         {
         }
     
