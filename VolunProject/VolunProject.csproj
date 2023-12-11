@@ -181,6 +181,12 @@
     <Compile Include="UserInterface\RegisterUser\Register_UC.Designer.cs">
       <DependentUpon>Register_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\UserInformation\UserInformation_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\UserInformation\UserInformation_UC.Designer.cs">
+      <DependentUpon>UserInformation_UC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\RegisterUser\Register_UC.resx">
       <DependentUpon>Register_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\UserInformation\UserInformation_UC.resx">
+      <DependentUpon>UserInformation_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\EntityADO.NET\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -270,7 +279,6 @@
   <ItemGroup>
     <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
-    <Folder Include="UserInterface\UserInformation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\7bda1c7d233fe592c0fc7ea63f20ebc2.jpg" />
