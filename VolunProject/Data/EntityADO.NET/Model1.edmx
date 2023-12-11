@@ -11,11 +11,11 @@
           </Key>
           <Property Name="AccountID" Type="nchar" MaxLength="100" Nullable="false" />
           <Property Name="AccountName" Type="varchar" MaxLength="50" />
-          <Property Name="UserImage" Type="nvarchar(max)" />
           <Property Name="Password" Type="nvarchar" MaxLength="500" />
           <Property Name="RoleName" Type="varchar" MaxLength="20" />
           <Property Name="CreateDate" Type="date" />
           <Property Name="state" Type="bit" />
+          <Property Name="ImageUS" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -34,6 +34,7 @@
           <Property Name="description" Type="nvarchar" MaxLength="500" />
           <Property Name="purpose" Type="nvarchar" MaxLength="500" />
           <Property Name="time" Type="varchar" MaxLength="50" />
+          <Property Name="EventImage" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="EventCategory">
           <Key>
@@ -377,11 +378,11 @@
           </Key>
           <Property Name="AccountID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CreateDate" Type="DateTime" Precision="0" />
           <Property Name="state" Type="Boolean" />
+          <Property Name="ImageUS" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteer_Account" FromRole="Account" ToRole="Volunteer" />
         </EntityType>
         <EntityType Name="Event">
@@ -401,6 +402,7 @@
           <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="purpose" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EventImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="EventCategory" Relationship="Self.FK__Event__CategoryI__4D94879B" FromRole="Event" ToRole="EventCategory" />
           <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Event__5165187F" FromRole="Event" ToRole="Registration" />
         </EntityType>
@@ -693,7 +695,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="VolunteersDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="VolunteerDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="Events" EntityType="Self.Event" />
           <EntitySet Name="EventCategories" EntityType="Self.EventCategory" />
@@ -759,17 +761,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="VolunteersDBModelStoreContainer" CdmEntityContainer="VolunteersDBEntities">
+        <EntityContainerMapping StorageEntityContainer="VolunteersDBModelStoreContainer" CdmEntityContainer="VolunteerDBEntities">
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="VolunteersDBModel.Account">
               <MappingFragment StoreEntitySet="Account">
                 <ScalarProperty Name="AccountID" ColumnName="AccountID" />
                 <ScalarProperty Name="AccountName" ColumnName="AccountName" />
-                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="ImageUS" ColumnName="ImageUS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -789,6 +791,7 @@
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="purpose" ColumnName="purpose" />
                 <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="EventImage" ColumnName="EventImage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

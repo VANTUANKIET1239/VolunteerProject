@@ -89,5 +89,15 @@ namespace VolunProject
             OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
            // LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
         }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddEvent_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.AddNewEvent.AddNewEvent(), sender);
+        }
     }
 }

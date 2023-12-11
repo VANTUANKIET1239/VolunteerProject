@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.UserInterface.Login;
+using VolunProject.UserInterface.RegisterUser;
 
 
 namespace VolunProject.LoginForm
@@ -26,7 +27,22 @@ namespace VolunProject.LoginForm
         public void sub()
         {
             Login_UC.SignUpEvent += button2_Click_1;
+            Login_UC.LoginEvent += Login_UC_LoginEvent;
+            Register_UC.registerEvent += Register_UC_registerEvent;
 
+        }
+
+        private void Register_UC_registerEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
+        }
+
+        private void Login_UC_LoginEvent(object sender, EventArgs e)
+        {
+            this.Hide();
+            Main main = new Main();
+            main.Closed += (s, args) => this.Close();
+            main.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
