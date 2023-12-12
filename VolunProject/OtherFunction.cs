@@ -25,5 +25,41 @@ namespace VolunProject
                 }
                 return null;
             }
+        public static class SessionManager
+        {
+            private static Dictionary<string, object> sessionValues = new Dictionary<string, object>();
+
+            public static void SetSessionValue(string key, object value)
+            {
+                if (sessionValues.ContainsKey(key))
+                {
+                    sessionValues[key] = value;
+                }
+                else
+                {
+                    sessionValues.Add(key, value);
+                }
+            }
+
+            public static T GetSessionValue<T>(string key)
+            {
+                if (sessionValues.ContainsKey(key) && sessionValues[key] is T)
+                {
+                    return (T)sessionValues[key];
+                }
+
+                return default(T);
+            }
+
+            public static bool ContainsKey(string key)
+            {
+                return sessionValues.ContainsKey(key);
+            }
+        }
+        public class Gender
+        {
+            public bool genderValue { get; set; }
+            public string genderDisplay { get; set; }
+        }
     }
 }

@@ -18,10 +18,12 @@ namespace VolunProject.LoginForm
         private static UserControl activeForm;
         private object panelDesktopPane;
         private object lblTitle;
+        private Main main;
 
         public LoginForm()
         {
             InitializeComponent();
+            main = new Main();
             sub();
         }
         public void sub()
@@ -29,7 +31,15 @@ namespace VolunProject.LoginForm
             Login_UC.SignUpEvent += button2_Click_1;
             Login_UC.LoginEvent += Login_UC_LoginEvent;
             Register_UC.registerEvent += Register_UC_registerEvent;
+            Main.signOutEvent += Main_signOutEvent;
 
+        }
+
+        private void Main_signOutEvent(object sender, EventArgs e)
+        {
+            this.Show();
+            main.Hide();
+            
         }
 
         private void Register_UC_registerEvent(object sender, EventArgs e)
@@ -40,9 +50,9 @@ namespace VolunProject.LoginForm
         private void Login_UC_LoginEvent(object sender, EventArgs e)
         {
             this.Hide();
-            Main main = new Main();
             main.Closed += (s, args) => this.Close();
             main.Show();
+            //main.OpenChildForm(new UserInterface.UserInformation.UserInformation_UC(),sender);
         }
 
         private void button1_Click(object sender, EventArgs e)

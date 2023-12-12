@@ -11,16 +11,19 @@ using System.Windows.Forms;
 
 namespace VolunProject
 {
+
     public partial class Main : Form
     {
+        public static event EventHandler signOutEvent;
         bool sidebarExpand = false;
         private UserControl activeForm;
         public Main()
         {
             InitializeComponent();
+
         }
 
-      
+        
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
@@ -66,7 +69,7 @@ namespace VolunProject
 
         private void infoButton_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new UserInterface.UserInformation.UserInformation_UC(), sender);
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -88,6 +91,21 @@ namespace VolunProject
         {
             OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
            // LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddEvent_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.AddNewEvent.AddNewEvent(), sender);
+        }
+
+        private void signOutButoon_Click(object sender, EventArgs e)
+        {
+            signOutEvent(this, new EventArgs());
         }
     }
 }

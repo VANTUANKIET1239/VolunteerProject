@@ -58,9 +58,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BLL\AccountBLL.cs" />
+    <Compile Include="Data\BLL\CategoryBLL.cs" />
+    <Compile Include="Data\BLL\CityBLL.cs" />
+    <Compile Include="Data\BLL\DistrictBLL.cs" />
+    <Compile Include="Data\BLL\VolunteerBLL.cs" />
+    <Compile Include="Data\BLL\WardBLL.cs" />
     <Compile Include="Data\DAL\AccountDAL.cs" />
+    <Compile Include="Data\DAL\CategoryDAL.cs" />
+    <Compile Include="Data\DAL\CityDAL.cs" />
+    <Compile Include="Data\DAL\DistrictDAL.cs" />
+    <Compile Include="Data\DAL\VolunteerDAL.cs" />
+    <Compile Include="Data\DAL\WardDAL.cs" />
+    <Compile Include="Data\DTO\CategoryDTO.cs" />
+    <Compile Include="Data\DTO\CityDTO.cs" />
+    <Compile Include="Data\DTO\DistrictDTO.cs" />
     <Compile Include="Data\DTO\VolunteerDTO.cs" />
     <Compile Include="Data\DTO\AccountDTO.cs" />
+    <Compile Include="Data\DTO\WardDTO.cs" />
     <Compile Include="Data\EntityADO.NET\Account.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -103,9 +117,6 @@
     <Compile Include="Data\EntityADO.NET\Reward.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\EntityADO.NET\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\EntityADO.NET\SysIndex.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -144,6 +155,12 @@
     </Compile>
     <Compile Include="UserInterface\EventDetail\EventDetail_UC.Designer.cs">
       <DependentUpon>EventDetail_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Event\AddNewEvent\AddNewEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\AddNewEvent\AddNewEvent.Designer.cs">
+      <DependentUpon>AddNewEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\Event\EventControl\EventControl.cs">
       <SubType>UserControl</SubType>
@@ -209,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\EventDetail\EventDetail_UC.resx">
       <DependentUpon>EventDetail_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\AddNewEvent\AddNewEvent.resx">
+      <DependentUpon>AddNewEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Event\EventControl\EventControl.resx">
       <DependentUpon>EventControl.cs</DependentUpon>
@@ -294,6 +314,12 @@
     <None Include="Resources\pexels-julie-aagaard-20971111.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-calendar-50.png" />
+    <None Include="Resources\icons8-clock-50.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\icons8-add-event-48.png" />
+    <None Include="Resources\icons8-upload-100.png" />
+    <None Include="Resources\imagedd.jpg" />
     <Content Include="Data\EntityADO.NET\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

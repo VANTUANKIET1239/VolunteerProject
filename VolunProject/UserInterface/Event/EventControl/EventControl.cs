@@ -16,7 +16,7 @@ namespace VolunProject.UserInterface.Event.EventControl
         {
             InitializeComponent();
             // Customize the appearance of the card control
-            Size = new System.Drawing.Size(1100, 100);
+         //   Size = new System.Drawing.Size(1100, 100);
             BackColor = System.Drawing.Color.LightGray;
             Margin = new Padding(15);
             // Add a label to display the card text
@@ -26,8 +26,17 @@ namespace VolunProject.UserInterface.Event.EventControl
             label.TextAlign = ContentAlignment.MiddleCenter;
 
             // Add the label to the card control
-            Controls.Add(label);
+          //  Controls.Add(label);
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace VolunProject.UserInterface.Event
             EventflowLayoutPanel.Dock = DockStyle.Fill;
             EventflowLayoutPanel.WrapContents = false;
             EventflowLayoutPanel.AutoScroll = true;
-            EventflowLayoutPanel.MaximumSize = new System.Drawing.Size(1186, 732);
+            EventflowLayoutPanel.MaximumSize = new System.Drawing.Size(1700, 722);
             EventflowLayoutPanel.FlowDirection = FlowDirection.TopDown;
 
             // Create and add cards to the flowLayoutPanel
