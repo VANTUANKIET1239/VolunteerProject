@@ -70,6 +70,7 @@
     <Compile Include="Data\DTO\CategoryDTO.cs" />
     <Compile Include="Data\DTO\CityDTO.cs" />
     <Compile Include="Data\DTO\DistrictDTO.cs" />
+    <Compile Include="Data\DTO\EventDTO.cs" />
     <Compile Include="Data\DTO\VolunteerDTO.cs" />
     <Compile Include="Data\DTO\AccountDTO.cs" />
     <Compile Include="Data\DTO\WardDTO.cs" />
