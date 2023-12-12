@@ -61,11 +61,13 @@
     <Compile Include="Data\BLL\CategoryBLL.cs" />
     <Compile Include="Data\BLL\CityBLL.cs" />
     <Compile Include="Data\BLL\DistrictBLL.cs" />
+    <Compile Include="Data\BLL\VolunteerBLL.cs" />
     <Compile Include="Data\BLL\WardBLL.cs" />
     <Compile Include="Data\DAL\AccountDAL.cs" />
     <Compile Include="Data\DAL\CategoryDAL.cs" />
     <Compile Include="Data\DAL\CityDAL.cs" />
     <Compile Include="Data\DAL\DistrictDAL.cs" />
+    <Compile Include="Data\DAL\VolunteerDAL.cs" />
     <Compile Include="Data\DAL\WardDAL.cs" />
     <Compile Include="Data\DTO\CategoryDTO.cs" />
     <Compile Include="Data\DTO\CityDTO.cs" />
@@ -114,9 +116,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\Reward.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EntityADO.NET\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\SysIndex.cs">
@@ -200,6 +199,12 @@
     <Compile Include="UserInterface\RegisterUser\Register_UC.Designer.cs">
       <DependentUpon>Register_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\UserInformation\UserInformation_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\UserInformation\UserInformation_UC.Designer.cs">
+      <DependentUpon>UserInformation_UC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\RegisterUser\Register_UC.resx">
       <DependentUpon>Register_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\UserInformation\UserInformation_UC.resx">
+      <DependentUpon>UserInformation_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\EntityADO.NET\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -292,7 +300,6 @@
   <ItemGroup>
     <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
-    <Folder Include="UserInterface\UserInformation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\7bda1c7d233fe592c0fc7ea63f20ebc2.jpg" />
@@ -308,6 +315,12 @@
     <None Include="Resources\pexels-julie-aagaard-20971111.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-calendar-50.png" />
+    <None Include="Resources\icons8-clock-50.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\icons8-add-event-48.png" />
+    <None Include="Resources\icons8-upload-100.png" />
+    <None Include="Resources\imagedd.jpg" />
     <Content Include="Data\EntityADO.NET\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -318,12 +331,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\icons8-calendar-50.png" />
-    <None Include="Resources\icons8-clock-50.png" />
-    <None Include="Resources\download.jpg" />
-    <None Include="Resources\icons8-add-event-48.png" />
-    <None Include="Resources\icons8-upload-100.png" />
-    <None Include="Resources\imagedd.jpg" />
     <Content Include="Resources\user-default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

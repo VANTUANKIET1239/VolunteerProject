@@ -34,7 +34,6 @@ namespace VolunProject.Data.EntityADO.NET
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewList> ReviewLists { get; set; }
         public DbSet<Reward> Rewards { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<SysIndex> SysIndexes { get; set; }
         public DbSet<TinhThanhPho> TinhThanhPhoes { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }

@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.BLL;
 using VolunProject.Data.DAL;
 
 namespace VolunProject.UserInterface.Login
@@ -38,7 +39,7 @@ namespace VolunProject.UserInterface.Login
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (AccountDAL.LogIn(userLogin.Text, userPassword.Text))
+            if (AccountBLL.LogIn(userLogin.Text, userPassword.Text))
             {
                 LoginEvent(this, new EventArgs());
             }

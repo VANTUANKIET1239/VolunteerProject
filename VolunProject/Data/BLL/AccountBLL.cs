@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,10 @@ namespace VolunProject.Data.BLL
         public static bool checkAccountName(string accountName)
         {
             return AccountDAL.checkAccountName(accountName);
+        }
+        public static bool LogIn(string userName, string passWord)
+        {
+            return AccountDAL.LogIn(userName,passWord);
         }
     }
 }

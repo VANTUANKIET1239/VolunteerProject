@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace VolunProject.Data.DAL
 {
     public  class AccountDAL
     {
-        public AccountDAL() { 
+        public AccountDAL() {
         }
 
         public static bool checkAccountName(string accountName)
@@ -21,8 +22,7 @@ namespace VolunProject.Data.DAL
             return false;
         }
         public  static bool SignUp(AccountDTO accountDTO)
-        {
-           
+        {         
             if (accountDTO != null)
             {
                 VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
@@ -34,9 +34,8 @@ namespace VolunProject.Data.DAL
                 account.Password = accountDTO.Password;
                 account.CreateDate = DateTime.Now;
                 account.state = true;
-                account.ImageUS = OtherFunction.PathImage2Byte("C:\\Users\\LENOVO\\Desktop\\Git\\VolunteerProject\\VolunProject\\Resources\\user-default.png");
+                account.ImageUS = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\user-default.png");
                 account.RoleName = "VOLUNTEER";
-
 
                 volunteerDBEntities.Accounts.Add(account);
                 if (volunteerDBEntities.SaveChanges() > 0)
@@ -52,25 +51,28 @@ namespace VolunProject.Data.DAL
                     volunteer.Account = accountUser;
                     volunteer.state = true;
                     volunteer.Description = "";
+                    volunteer.PrestigeScore = 0;
                     volunteerDBEntities.Volunteers.Add(volunteer);
 
                     volunteerDBEntities.Volunteers.Include(x => x.Account);
                     return volunteerDBEntities.SaveChanges() > 0;
-                }
-                            
+                }                        
             }
             return false;
         }
 
         public static bool LogIn(string userName, string passWord)
-        {
-            
+        {         
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             var currentUser =  volunteerDBEntities.Accounts.Where(x => x.AccountName == userName.Trim()).FirstOrDefault();
             if (currentUser != null)
             {
                 if (currentUser.Password == passWord)
                 {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<Account, AccountDTO>());
+                    var mapper = new Mapper(config);
+                    AccountDTO dto = mapper.Map<AccountDTO>(currentUser);
+                    OtherFunction.SessionManager.SetSessionValue("curUser", dto);
                     return true;
                 }
             }

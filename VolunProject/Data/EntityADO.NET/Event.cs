@@ -33,6 +33,7 @@ namespace VolunProject.Data.EntityADO.NET
         public string purpose { get; set; }
         public string time { get; set; }
         public byte[] EventImage { get; set; }
+        public string DetailAddress { get; set; }
     
         public virtual EventCategory EventCategory { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }

@@ -59,14 +59,11 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
                 openFileDialog.Title = "Select an Image File";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                   
+                {                
                     string selectedFileName = openFileDialog.FileName;
 
-                   
                     EventImageBox.Image = Image.FromFile(selectedFileName);
                     EventImageBox.SizeMode = PictureBoxSizeMode.Zoom;
-
 
                     string filePath = selectedFileName;
                    

@@ -59,6 +59,7 @@ namespace VolunProject.UserInterface.RegisterUser
                 if (AccountBLL.SignUp(accountDTO))
                 {
                     registerEvent(this, new EventArgs());
+                    MessageBox.Show("Đăng kí tài khoản thành công !","Thông báo");
                 }
             }
         }
