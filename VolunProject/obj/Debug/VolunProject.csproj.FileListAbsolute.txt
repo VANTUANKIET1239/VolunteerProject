@@ -43,3 +43,5 @@ C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.User
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.RegisterUser.Register_UC.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.EventControl.EventControl.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UIComponentTools.TextBoxRound.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.EventDetail.EventDetail_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.AddNewEvent.AddNewEvent.resources
