@@ -24,5 +24,9 @@ namespace VolunProject.Data.BLL
         {
             return AccountDAL.LogIn(userName,passWord);
         }
+        public static bool changePassword(string accountName, string password)
+        {
+            return AccountDAL.changePassword(accountName,password);
+        }
     }
 }

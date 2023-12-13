@@ -61,19 +61,25 @@
     <Compile Include="Data\BLL\CategoryBLL.cs" />
     <Compile Include="Data\BLL\CityBLL.cs" />
     <Compile Include="Data\BLL\DistrictBLL.cs" />
+    <Compile Include="Data\BLL\RewardBLL.cs" />
     <Compile Include="Data\BLL\VolunteerBLL.cs" />
+    <Compile Include="Data\BLL\VolunteerRewardBLL.cs" />
     <Compile Include="Data\BLL\WardBLL.cs" />
     <Compile Include="Data\DAL\AccountDAL.cs" />
     <Compile Include="Data\DAL\CategoryDAL.cs" />
     <Compile Include="Data\DAL\CityDAL.cs" />
     <Compile Include="Data\DAL\DistrictDAL.cs" />
+    <Compile Include="Data\DAL\RewardDAL.cs" />
     <Compile Include="Data\DAL\VolunteerDAL.cs" />
+    <Compile Include="Data\DAL\VolunteerRewardDAL.cs" />
     <Compile Include="Data\DAL\WardDAL.cs" />
     <Compile Include="Data\DTO\CategoryDTO.cs" />
     <Compile Include="Data\DTO\CityDTO.cs" />
     <Compile Include="Data\DTO\DistrictDTO.cs" />
+    <Compile Include="Data\DTO\RewardDTO.cs" />
     <Compile Include="Data\DTO\VolunteerDTO.cs" />
     <Compile Include="Data\DTO\AccountDTO.cs" />
+    <Compile Include="Data\DTO\VolunteerRewardDTO.cs" />
     <Compile Include="Data\DTO\WardDTO.cs" />
     <Compile Include="Data\EntityADO.NET\Account.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -105,6 +111,9 @@
     <Compile Include="Data\EntityADO.NET\QuocGia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\EntityADO.NET\Ranking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\EntityADO.NET\Registration.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -124,6 +133,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\Volunteer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\VolunteerLikeEvent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\VolunteerReward.cs">
@@ -179,6 +191,12 @@
     </Compile>
     <Compile Include="UserInterface\Login\Login_UC.Designer.cs">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\CreateReward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\CreateReward.Designer.cs">
+      <DependentUpon>CreateReward.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\Redeem\RedeemControl.cs">
       <SubType>UserControl</SubType>
@@ -238,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Login\Login_UC.resx">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Redeem\CreateReward.resx">
+      <DependentUpon>CreateReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Redeem\RedeemControl.resx">
       <DependentUpon>RedeemControl.cs</DependentUpon>

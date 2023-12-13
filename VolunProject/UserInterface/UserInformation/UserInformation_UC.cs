@@ -22,6 +22,7 @@ namespace VolunProject.UserInterface.UserInformation
     public partial class UserInformation_UC : UserControl
     {
         private bool gender;
+
         public UserInformation_UC()
         {
             InitializeComponent();
@@ -125,14 +126,6 @@ namespace VolunProject.UserInterface.UserInformation
 
         }
 
-        private byte[] ImageToByteArray(Image image)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                image.Save(ms, ImageFormat.Png); 
-                return ms.ToArray();
-            }
-        }
         private void saveButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn lưu thông tin ?", "Thông báo", MessageBoxButtons.OKCancel);
@@ -140,7 +133,8 @@ namespace VolunProject.UserInterface.UserInformation
             {
                 var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
                 VolunteerDTO vol = new VolunteerDTO();
-                byte[] img = ImageToByteArray(userImg.Image);
+                //byte[] img = OtherFunction.ImageToByteArray(userImg.Image);
+                byte[] img = OtherFunction.ImageToByteArray(userImg.Image);
                 vol.Name = userNameTB.Text;
                 vol.Email = emailTB.Text;
                 vol.PhoneNumber = phoneTB.Text;
@@ -163,6 +157,59 @@ namespace VolunProject.UserInterface.UserInformation
         {
             ComboBox cb = sender as ComboBox;
             gender = cb.SelectedIndex > 0 ? false : true;
+        }
+
+        private void changePassword_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn đổi mật khẩu ?", "Thông báo", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+                if (curPasswordTB.Text == "")
+                {
+                    lb1.Text = "Vui lòng nhập mật khẩu hiện tại";
+                    lb1.Visible = true;
+                }
+                else if (newPasswordTB.Text == "")
+                {
+                    lb1.Text = "Vui lòng nhập mật khẩu mới";
+                    lb1.Visible = true;
+                }
+                else if (confirmPasswordTB.Text == "")
+                {
+                    lb1.Text = "Vui lòng xác nhận mật khẩu";
+                    lb1.Visible = true;
+                }
+                else if (curPasswordTB.Text != curUser.Password)
+                {
+                    lb1.Text = "Mật khẩu không đúng";
+                    lb1.Visible = true;
+                }
+                else if (newPasswordTB.Text != confirmPasswordTB.Text)
+                {
+                    lb1.Text = "Mật khẩu xác nhận không trùng khớp";
+                    lb1.Visible = true;
+                }
+                else if (newPasswordTB.Text == curUser.Password)
+                {
+                    lb1.Text = "Mật khẩu mới trùng với mật khẩu cũ";
+                    lb1.Visible = true;
+                }
+                else
+                {
+                    AccountBLL.changePassword(curUser.AccountName, newPasswordTB.Text);
+                    lb1.Visible = false;
+                    curPasswordTB.Text = "";
+                    newPasswordTB.Text = "";
+                    confirmPasswordTB.Text = "";
+                    MessageBox.Show("Đổi mật khẩu thành công !","Thông báo",MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void lb1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

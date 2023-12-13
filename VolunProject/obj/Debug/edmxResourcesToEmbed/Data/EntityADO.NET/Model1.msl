@@ -6,11 +6,11 @@
         <MappingFragment StoreEntitySet="Account">
           <ScalarProperty Name="AccountID" ColumnName="AccountID" />
           <ScalarProperty Name="AccountName" ColumnName="AccountName" />
-          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="ImageUS" ColumnName="ImageUS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -27,6 +27,11 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="purpose" ColumnName="purpose" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="EventImage" ColumnName="EventImage" />
+          <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -54,6 +59,17 @@
         <MappingFragment StoreEntitySet="QuocGia">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="tenQuocGia" ColumnName="tenQuocGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rankings">
+      <EntityTypeMapping TypeName="VolunteersDBModel.Ranking">
+        <MappingFragment StoreEntitySet="Ranking">
+          <ScalarProperty Name="RankId" ColumnName="RankId" />
+          <ScalarProperty Name="RankName" ColumnName="RankName" />
+          <ScalarProperty Name="RankImage" ColumnName="RankImage" />
+          <ScalarProperty Name="PointRequire" ColumnName="PointRequire" />
+          <ScalarProperty Name="state" ColumnName="state" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -97,21 +113,10 @@
       <EntityTypeMapping TypeName="VolunteersDBModel.Reward">
         <MappingFragment StoreEntitySet="Reward">
           <ScalarProperty Name="RewardID" ColumnName="RewardID" />
-          <ScalarProperty Name="RewardImage" ColumnName="RewardImage" />
           <ScalarProperty Name="RewardName" ColumnName="RewardName" />
           <ScalarProperty Name="RedeemPoint" ColumnName="RedeemPoint" />
           <ScalarProperty Name="state" ColumnName="state" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="VolunteersDBModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="RewardImg" ColumnName="RewardImg" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -151,6 +156,18 @@
           <ScalarProperty Name="PrestigeScore" ColumnName="PrestigeScore" />
           <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
           <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="AddressDetail" ColumnName="AddressDetail" />
+          <ScalarProperty Name="RankId" ColumnName="RankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VolunteerLikeEvents">
+      <EntityTypeMapping TypeName="VolunteersDBModel.VolunteerLikeEvent">
+        <MappingFragment StoreEntitySet="VolunteerLikeEvent">
+          <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="LikeDate" ColumnName="LikeDate" />
+          <ScalarProperty Name="LikeState" ColumnName="LikeState" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

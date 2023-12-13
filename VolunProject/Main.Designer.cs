@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.signOutButoon = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
             this.historyButton = new System.Windows.Forms.Button();
             this.rewardsButton = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.signOutButoon = new System.Windows.Forms.Button();
+            this.createReward = new System.Windows.Forms.Button();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +105,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.createReward);
             this.panel3.Controls.Add(this.signOutButoon);
             this.panel3.Controls.Add(this.infoButton);
             this.panel3.Controls.Add(this.historyButton);
@@ -115,6 +117,25 @@
             this.panel3.Size = new System.Drawing.Size(271, 770);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // signOutButoon
+            // 
+            this.signOutButoon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.signOutButoon.FlatAppearance.BorderSize = 0;
+            this.signOutButoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signOutButoon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signOutButoon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.signOutButoon.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
+            this.signOutButoon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.signOutButoon.Location = new System.Drawing.Point(0, 235);
+            this.signOutButoon.Name = "signOutButoon";
+            this.signOutButoon.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.signOutButoon.Size = new System.Drawing.Size(271, 47);
+            this.signOutButoon.TabIndex = 5;
+            this.signOutButoon.Text = "                  Đăng xuất";
+            this.signOutButoon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.signOutButoon.UseVisualStyleBackColor = true;
+            this.signOutButoon.Click += new System.EventHandler(this.signOutButoon_Click);
             // 
             // infoButton
             // 
@@ -233,24 +254,24 @@
             this.MainPanel.Size = new System.Drawing.Size(1473, 879);
             this.MainPanel.TabIndex = 0;
             // 
-            // signOutButoon
+            // createReward
             // 
-            this.signOutButoon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.signOutButoon.FlatAppearance.BorderSize = 0;
-            this.signOutButoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signOutButoon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signOutButoon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.signOutButoon.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
-            this.signOutButoon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.signOutButoon.Location = new System.Drawing.Point(0, 235);
-            this.signOutButoon.Name = "signOutButoon";
-            this.signOutButoon.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.signOutButoon.Size = new System.Drawing.Size(271, 47);
-            this.signOutButoon.TabIndex = 5;
-            this.signOutButoon.Text = "                  Đăng xuất";
-            this.signOutButoon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.signOutButoon.UseVisualStyleBackColor = true;
-            this.signOutButoon.Click += new System.EventHandler(this.signOutButoon_Click);
+            this.createReward.Dock = System.Windows.Forms.DockStyle.Top;
+            this.createReward.FlatAppearance.BorderSize = 0;
+            this.createReward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createReward.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createReward.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.createReward.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
+            this.createReward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReward.Location = new System.Drawing.Point(0, 282);
+            this.createReward.Name = "createReward";
+            this.createReward.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.createReward.Size = new System.Drawing.Size(271, 47);
+            this.createReward.TabIndex = 6;
+            this.createReward.Text = "                  Tạo quà";
+            this.createReward.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReward.UseVisualStyleBackColor = true;
+            this.createReward.Click += new System.EventHandler(this.createReward_Click);
             // 
             // Main
             // 
@@ -291,6 +312,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button signOutButoon;
+        private System.Windows.Forms.Button createReward;
     }
 }
 

@@ -77,6 +77,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.userNameTB = new System.Windows.Forms.TextBox();
+            this.lb1 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.panel11.SuspendLayout();
@@ -93,12 +95,14 @@
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.userImg);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.saveButton);
@@ -129,7 +133,7 @@
             // userImg
             // 
             this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.userImg.Location = new System.Drawing.Point(287, 67);
+            this.userImg.Location = new System.Drawing.Point(265, 34);
             this.userImg.Name = "userImg";
             this.userImg.Size = new System.Drawing.Size(179, 180);
             this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +147,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(288, 253);
+            this.button1.Location = new System.Drawing.Point(266, 220);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(178, 33);
             this.button1.TabIndex = 5;
@@ -155,7 +159,7 @@
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
             this.saveButton.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.White;
-            this.saveButton.Location = new System.Drawing.Point(1014, 709);
+            this.saveButton.Location = new System.Drawing.Point(992, 676);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(178, 33);
             this.saveButton.TabIndex = 5;
@@ -174,13 +178,14 @@
             this.changePassword.TabIndex = 5;
             this.changePassword.Text = "Đổi mật khẩu";
             this.changePassword.UseVisualStyleBackColor = false;
+            this.changePassword.Click += new System.EventHandler(this.changePassword_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label7.Location = new System.Drawing.Point(688, 737);
+            this.label7.Location = new System.Drawing.Point(698, 699);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 32);
             this.label7.TabIndex = 4;
@@ -201,7 +206,7 @@
             // 
             this.panel11.Controls.Add(this.label11);
             this.panel11.Controls.Add(this.textBox1);
-            this.panel11.Location = new System.Drawing.Point(757, 520);
+            this.panel11.Location = new System.Drawing.Point(735, 487);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(435, 39);
             this.panel11.TabIndex = 2;
@@ -319,7 +324,7 @@
             // 
             this.panel3.Controls.Add(this.accountNameLB);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(472, 108);
+            this.panel3.Location = new System.Drawing.Point(450, 75);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(335, 47);
             this.panel3.TabIndex = 2;
@@ -349,7 +354,7 @@
             // 
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.phoneTB);
-            this.panel5.Location = new System.Drawing.Point(287, 430);
+            this.panel5.Location = new System.Drawing.Point(265, 397);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(905, 39);
             this.panel5.TabIndex = 2;
@@ -377,7 +382,7 @@
             // 
             this.panel10.Controls.Add(this.wardCB);
             this.panel10.Controls.Add(this.label10);
-            this.panel10.Location = new System.Drawing.Point(287, 520);
+            this.panel10.Location = new System.Drawing.Point(265, 487);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(454, 39);
             this.panel10.TabIndex = 2;
@@ -407,7 +412,7 @@
             // 
             this.panel9.Controls.Add(this.districtCB);
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Location = new System.Drawing.Point(757, 475);
+            this.panel9.Location = new System.Drawing.Point(735, 442);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(296, 39);
             this.panel9.TabIndex = 2;
@@ -437,7 +442,7 @@
             // 
             this.panel8.Controls.Add(this.cityCB);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(287, 475);
+            this.panel8.Location = new System.Drawing.Point(265, 442);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(454, 39);
             this.panel8.TabIndex = 2;
@@ -467,7 +472,7 @@
             // 
             this.panel6.Controls.Add(this.genderCB);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(287, 340);
+            this.panel6.Location = new System.Drawing.Point(265, 307);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(300, 39);
             this.panel6.TabIndex = 2;
@@ -498,7 +503,7 @@
             // 
             this.panel4.Controls.Add(this.label);
             this.panel4.Controls.Add(this.descriptionTB);
-            this.panel4.Location = new System.Drawing.Point(287, 565);
+            this.panel4.Location = new System.Drawing.Point(265, 532);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(905, 138);
             this.panel4.TabIndex = 2;
@@ -527,7 +532,7 @@
             // 
             this.panel12.Controls.Add(this.scoresLB);
             this.panel12.Controls.Add(this.label12);
-            this.panel12.Location = new System.Drawing.Point(472, 161);
+            this.panel12.Location = new System.Drawing.Point(450, 128);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(284, 45);
             this.panel12.TabIndex = 2;
@@ -556,7 +561,7 @@
             // 
             this.panel15.Controls.Add(this.label15);
             this.panel15.Controls.Add(this.emailTB);
-            this.panel15.Location = new System.Drawing.Point(287, 385);
+            this.panel15.Location = new System.Drawing.Point(265, 352);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(905, 39);
             this.panel15.TabIndex = 2;
@@ -584,7 +589,7 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.userNameTB);
-            this.panel2.Location = new System.Drawing.Point(287, 292);
+            this.panel2.Location = new System.Drawing.Point(265, 259);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(905, 39);
             this.panel2.TabIndex = 2;
@@ -608,6 +613,27 @@
             this.userNameTB.Size = new System.Drawing.Size(727, 32);
             this.userNameTB.TabIndex = 1;
             // 
+            // lb1
+            // 
+            this.lb1.AutoSize = true;
+            this.lb1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.ForeColor = System.Drawing.Color.Red;
+            this.lb1.Location = new System.Drawing.Point(3, 0);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(80, 22);
+            this.lb1.TabIndex = 7;
+            this.lb1.Text = "label16";
+            this.lb1.Visible = false;
+            this.lb1.Click += new System.EventHandler(this.lb1_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.lb1);
+            this.panel16.Location = new System.Drawing.Point(510, 744);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(634, 26);
+            this.panel16.TabIndex = 7;
+            // 
             // UserInformation_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,7 +641,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.panel1);
             this.Name = "UserInformation_UC";
-            this.Size = new System.Drawing.Size(1473, 895);
+            this.Size = new System.Drawing.Size(1473, 871);
             this.Load += new System.EventHandler(this.UserInformation_UC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -648,6 +674,8 @@
             this.panel15.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -703,5 +731,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label accountNameLB;
         private System.Windows.Forms.Label scoresLB;
+        private System.Windows.Forms.Label lb1;
+        private System.Windows.Forms.Panel panel16;
     }
 }

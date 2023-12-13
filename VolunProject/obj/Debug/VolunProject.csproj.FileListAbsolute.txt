@@ -85,3 +85,5 @@ D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.csproj.CopyComplete
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.exe
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.pdb
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.UserInformation.UserInformation_UC.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.AddNewEvent.AddNewEvent.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.CreateReward.resources

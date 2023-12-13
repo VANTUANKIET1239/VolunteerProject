@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace VolunProject.Data.DAL
 {
@@ -52,6 +53,7 @@ namespace VolunProject.Data.DAL
                     volunteer.state = true;
                     volunteer.Description = "";
                     volunteer.PrestigeScore = 0;
+                    volunteer.RewardPoint = 0;
                     volunteerDBEntities.Volunteers.Add(volunteer);
 
                     volunteerDBEntities.Volunteers.Include(x => x.Account);
@@ -77,6 +79,13 @@ namespace VolunProject.Data.DAL
                 }
             }
             return false;
+        }
+        public static bool changePassword(string accountName, string password)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var currentUser = volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName.Trim()).FirstOrDefault();
+            currentUser.Password = password;
+            return volunteerDBEntities.SaveChanges() > 0;
         }
     }
 }

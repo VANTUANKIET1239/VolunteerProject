@@ -107,5 +107,10 @@ namespace VolunProject
         {
             signOutEvent(this, new EventArgs());
         }
+
+        private void createReward_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Redeem.CreateReward(), sender);
+        }
     }
 }
