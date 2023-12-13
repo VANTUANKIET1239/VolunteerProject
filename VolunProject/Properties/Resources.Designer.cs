@@ -143,6 +143,26 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_love_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-love-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_love_401 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-love-401", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menu_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menu-16", resourceCulture);
@@ -186,6 +206,26 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_user_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_volunteer_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-volunteer-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_volunteering_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-volunteering-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

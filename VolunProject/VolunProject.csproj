@@ -61,12 +61,14 @@
     <Compile Include="Data\BLL\CategoryBLL.cs" />
     <Compile Include="Data\BLL\CityBLL.cs" />
     <Compile Include="Data\BLL\DistrictBLL.cs" />
+    <Compile Include="Data\BLL\EventBLL.cs" />
     <Compile Include="Data\BLL\VolunteerBLL.cs" />
     <Compile Include="Data\BLL\WardBLL.cs" />
     <Compile Include="Data\DAL\AccountDAL.cs" />
     <Compile Include="Data\DAL\CategoryDAL.cs" />
     <Compile Include="Data\DAL\CityDAL.cs" />
     <Compile Include="Data\DAL\DistrictDAL.cs" />
+    <Compile Include="Data\DAL\EventDAL.cs" />
     <Compile Include="Data\DAL\VolunteerDAL.cs" />
     <Compile Include="Data\DAL\WardDAL.cs" />
     <Compile Include="Data\DTO\CategoryDTO.cs" />
@@ -331,6 +333,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-volunteering-64.png" />
+    <None Include="Resources\icons8-love-40.png" />
+    <None Include="Resources\icons8-love-401.png" />
+    <None Include="Resources\icons8-volunteer-64.png" />
     <Content Include="Resources\user-default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

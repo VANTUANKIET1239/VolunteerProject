@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.EventImageBox = new System.Windows.Forms.PictureBox();
+            this.Like = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventImageBox)).BeginInit();
@@ -46,7 +47,7 @@
             // 
             this.eventTitle.AutoSize = true;
             this.eventTitle.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventTitle.Location = new System.Drawing.Point(252, 22);
+            this.eventTitle.Location = new System.Drawing.Point(311, 22);
             this.eventTitle.Name = "eventTitle";
             this.eventTitle.Size = new System.Drawing.Size(166, 24);
             this.eventTitle.TabIndex = 0;
@@ -136,10 +137,24 @@
             this.EventImageBox.TabIndex = 6;
             this.EventImageBox.TabStop = false;
             // 
+            // Like
+            // 
+            this.Like.FlatAppearance.BorderSize = 0;
+            this.Like.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Like.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Like.Image = global::VolunProject.Properties.Resources.icons8_love_401;
+            this.Like.Location = new System.Drawing.Point(260, 19);
+            this.Like.Name = "Like";
+            this.Like.Size = new System.Drawing.Size(45, 35);
+            this.Like.TabIndex = 27;
+            this.Like.Text = "12";
+            this.Like.UseVisualStyleBackColor = true;
+            // 
             // EventControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Like);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TimeLB);
             this.Controls.Add(this.DateTimeLB);
@@ -170,5 +185,6 @@
         private System.Windows.Forms.Label DateTimeLB;
         private System.Windows.Forms.Label TimeLB;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Like;
     }
 }
