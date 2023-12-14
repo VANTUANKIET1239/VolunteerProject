@@ -46,7 +46,7 @@
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginButton.Location = new System.Drawing.Point(356, 806);
+            this.loginButton.Location = new System.Drawing.Point(364, 806);
             this.loginButton.Margin = new System.Windows.Forms.Padding(6);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(410, 79);
@@ -93,7 +93,7 @@
             this.signupButton.FlatAppearance.BorderSize = 0;
             this.signupButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signupButton.Location = new System.Drawing.Point(842, 806);
+            this.signupButton.Location = new System.Drawing.Point(838, 806);
             this.signupButton.Margin = new System.Windows.Forms.Padding(6);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(410, 79);
@@ -130,7 +130,7 @@
             this.errorMessage.ForeColor = System.Drawing.Color.Red;
             this.errorMessage.Location = new System.Drawing.Point(93, 416);
             this.errorMessage.Name = "errorMessage";
-            this.errorMessage.Size = new System.Drawing.Size(185, 57);
+            this.errorMessage.Size = new System.Drawing.Size(139, 43);
             this.errorMessage.TabIndex = 10;
             this.errorMessage.Text = "label2";
             this.errorMessage.Visible = false;
