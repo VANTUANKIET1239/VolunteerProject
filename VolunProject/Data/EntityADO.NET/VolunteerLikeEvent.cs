@@ -12,19 +12,14 @@ namespace VolunProject.Data.EntityADO.NET
     using System;
     using System.Collections.Generic;
     
-    public partial class Reward
+    public partial class VolunteerLikeEvent
     {
-        public Reward()
-        {
-            this.VolunteerRewards = new HashSet<VolunteerReward>();
-        }
+        public string VolunteerID { get; set; }
+        public string EventID { get; set; }
+        public Nullable<System.DateTime> LikeDate { get; set; }
+        public Nullable<bool> LikeState { get; set; }
     
-        public string RewardID { get; set; }
-        public string RewardName { get; set; }
-        public Nullable<int> RedeemPoint { get; set; }
-        public Nullable<bool> state { get; set; }
-        public byte[] RewardImg { get; set; }
-    
-        public virtual ICollection<VolunteerReward> VolunteerRewards { get; set; }
+        public virtual Event Event { get; set; }
+        public virtual Volunteer Volunteer { get; set; }
     }
 }

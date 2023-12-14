@@ -27,10 +27,7 @@ namespace VolunProject.Data.DAL
             Account account = volunteerDBEntities.Accounts.Where(x => x.AccountID == curUser.AccountID).FirstOrDefault();
             Volunteer curVol = volunteerDBEntities.Volunteers.Where(x => x.AccountID == curUser.AccountID).FirstOrDefault();
             account.ImageUS = img;
-            //var config = new MapperConfiguration(cfg => cfg.CreateMap<VolunteerDTO, Volunteer>());
-            //var mapper = new Mapper(config);
-            //curVol = mapper.Map<Volunteer>(volunteerDTO);
-            
+
             curVol.Name = volunteerDTO.Name;
             curVol.Email = volunteerDTO.Email;
             curVol.PhoneNumber = volunteerDTO.PhoneNumber;

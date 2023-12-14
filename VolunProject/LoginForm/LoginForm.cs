@@ -31,15 +31,21 @@ namespace VolunProject.LoginForm
             Login_UC.SignUpEvent += button2_Click_1;
             Login_UC.LoginEvent += Login_UC_LoginEvent;
             Register_UC.registerEvent += Register_UC_registerEvent;
+            Register_UC.backEvent += Register_UC_backEvent;
             Main.signOutEvent += Main_signOutEvent;
 
+        }
+
+        private void Register_UC_backEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
         }
 
         private void Main_signOutEvent(object sender, EventArgs e)
         {
             this.Show();
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
             main.Hide();
-            
         }
 
         private void Register_UC_registerEvent(object sender, EventArgs e)

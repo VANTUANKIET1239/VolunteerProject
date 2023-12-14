@@ -16,6 +16,7 @@ namespace VolunProject.UserInterface.RegisterUser
     public partial class Register_UC : UserControl
     {
         public static event EventHandler registerEvent;
+        public static event EventHandler backEvent;
         public Register_UC()
         {
             InitializeComponent();
@@ -62,6 +63,11 @@ namespace VolunProject.UserInterface.RegisterUser
                     MessageBox.Show("Đăng kí tài khoản thành công !","Thông báo");
                 }
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            backEvent(this, new EventArgs());
         }
     }
 }

@@ -12,19 +12,12 @@ namespace VolunProject.Data.EntityADO.NET
     using System;
     using System.Collections.Generic;
     
-    public partial class Reward
+    public partial class sysdiagram
     {
-        public Reward()
-        {
-            this.VolunteerRewards = new HashSet<VolunteerReward>();
-        }
-    
-        public string RewardID { get; set; }
-        public string RewardName { get; set; }
-        public Nullable<int> RedeemPoint { get; set; }
-        public Nullable<bool> state { get; set; }
-        public byte[] RewardImg { get; set; }
-    
-        public virtual ICollection<VolunteerReward> VolunteerRewards { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -46,3 +46,4 @@ C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UICo
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.EventDetail.EventDetail_UC.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.AddNewEvent.AddNewEvent.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.UserInformation.UserInformation_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.CreateReward.resources
