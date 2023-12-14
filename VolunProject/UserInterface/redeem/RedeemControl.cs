@@ -57,6 +57,8 @@ namespace VolunProject.UserInterface.Redeem
                     RewardBLL.updateState(curReward.RewardID);
                     VolunteerRewardBLL.AddVolunteerReward(volunteerRewardDTO, curVol.VolunteerID, point);
                     MessageBox.Show("Đổi quà thành công", "Thông báo", MessageBoxButtons.OK);
+                    btn.Enabled = false;
+                    btn.Text = "Đã đổi quà";
                 }
             }
         }

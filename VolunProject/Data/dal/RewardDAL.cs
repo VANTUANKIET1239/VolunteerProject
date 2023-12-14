@@ -16,7 +16,7 @@ namespace VolunProject.Data.DAL
             if (rewardDTO != null)
             {
                 VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-                int allrewardCount = volunteerDBEntities.Rewards.Where(x => x.state == true).Count();
+                int allrewardCount = volunteerDBEntities.Rewards.Count();
                 string newRewardID = "REW" + (allrewardCount + 1).ToString("0000000");
                 Reward reward = new Reward();
                 reward.RewardID = newRewardID;
