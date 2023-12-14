@@ -27,7 +27,7 @@ namespace VolunProject.Data.DAL
             if (accountDTO != null)
             {
                 VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-                int allUserCount = volunteerDBEntities.Accounts.Where(x => x.state == true).Count();
+                int allUserCount = volunteerDBEntities.Accounts.Count();
                 string newAccountID = "ACC" + (allUserCount + 1).ToString("0000000");
                 Account account = new Account();
                 account.AccountID = newAccountID;
@@ -42,7 +42,7 @@ namespace VolunProject.Data.DAL
                 if (volunteerDBEntities.SaveChanges() > 0)
                 {
                     var accountUser = volunteerDBEntities.Accounts.Where(x => x.AccountID == newAccountID).FirstOrDefault();
-                    int allVolunteerCount = volunteerDBEntities.Volunteers.Where(x => x.state == true).Count();
+                    int allVolunteerCount = volunteerDBEntities.Volunteers.Count();
                     Volunteer volunteer = new Volunteer();
                     volunteer.VolunteerID = "VOL" + (allVolunteerCount + 1).ToString("0000000");
                     volunteer.AccountID = newAccountID;
@@ -87,6 +87,12 @@ namespace VolunProject.Data.DAL
             var currentUser = volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName.Trim()).FirstOrDefault();
             currentUser.Password = password;
             return volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static Account GetAccountByID(string accountID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var account = volunteerDBEntities.Accounts.Where(x => x.AccountID == accountID).FirstOrDefault();
+            return account;
         }
     }
 }

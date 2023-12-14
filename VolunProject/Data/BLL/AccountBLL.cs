@@ -28,5 +28,9 @@ namespace VolunProject.Data.BLL
         {
             return AccountDAL.changePassword(accountName,password);
         }
+        public static Account GetAccountByID(string accountID)
+        {
+            return AccountDAL.GetAccountByID(accountID);
+        }
     }
 }

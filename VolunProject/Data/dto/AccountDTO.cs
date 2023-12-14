@@ -16,5 +16,6 @@ namespace VolunProject.Data.DTO
         public string RoleName { get; set; }
         public DateTime CreateDate { get; set; }
         public bool state { get; set; }
+        public string OrganizationID { get; set; }
     }
 }

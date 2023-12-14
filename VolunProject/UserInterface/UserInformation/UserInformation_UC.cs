@@ -80,6 +80,7 @@ namespace VolunProject.UserInterface.UserInformation
             userNameTB.Text = curVol.Name;
             accountNameLB.Text = curUser.AccountName;
             descriptionTB.Text = curVol.Description;
+            addressTB.Text = curVol.AddressDetail;
             Image image;
             using (MemoryStream ms = new MemoryStream(curUser.ImageUS))
             {
@@ -143,10 +144,11 @@ namespace VolunProject.UserInterface.UserInformation
                 vol.CityId = (int)cityCB.SelectedValue;
                 vol.WardId = (int)wardCB.SelectedValue;
                 vol.DistrictId = (int)districtCB.SelectedValue;
+                vol.AddressDetail = addressTB.Text;
                 vol.BirthDate = DateTime.Now;
-                if (VolunteerBLL.UpdateVolunteer(vol, img))
+                if(VolunteerBLL.UpdateVolunteer(vol, img))
                 {
-                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Lưu thông tin thành công", "Thông báo", MessageBoxButtons.OK);
                 }
             }
         }

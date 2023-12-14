@@ -33,7 +33,24 @@ namespace VolunProject.LoginForm
             Register_UC.registerEvent += Register_UC_registerEvent;
             Register_UC.backEvent += Register_UC_backEvent;
             Main.signOutEvent += Main_signOutEvent;
+            Login_UC.AdminLoginEvent += Login_UC_AdminLoginEvent;
+            AdminRegister_UC.BackEvent += AdminRegister_UC_BackEvent;
+            AdminRegister_UC.LoginEvent += AdminRegister_UC_LoginEvent;
+        }
 
+        private void AdminRegister_UC_LoginEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
+        }
+
+        private void AdminRegister_UC_BackEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
+        }
+
+        private void Login_UC_AdminLoginEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.RegisterUser.AdminRegister_UC(), sender);
         }
 
         private void Register_UC_backEvent(object sender, EventArgs e)

@@ -37,23 +37,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorMessage = new System.Windows.Forms.Label();
             this.registerAdminButton = new System.Windows.Forms.Button();
+            this.login = new System.Windows.Forms.Button();
+            this.signup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginButton.Location = new System.Drawing.Point(169, 388);
+            this.loginButton.Location = new System.Drawing.Point(0, 0);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(205, 41);
-            this.loginButton.TabIndex = 3;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 12;
             // 
             // userPassword
             // 
@@ -86,24 +81,17 @@
             // 
             // signupButton
             // 
-            this.signupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.signupButton.FlatAppearance.BorderSize = 0;
-            this.signupButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signupButton.Location = new System.Drawing.Point(474, 388);
+            this.signupButton.Location = new System.Drawing.Point(0, 0);
             this.signupButton.Name = "signupButton";
-            this.signupButton.Size = new System.Drawing.Size(205, 41);
-            this.signupButton.TabIndex = 4;
-            this.signupButton.Text = "Sign-up";
-            this.signupButton.UseVisualStyleBackColor = false;
-            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
+            this.signupButton.Size = new System.Drawing.Size(75, 23);
+            this.signupButton.TabIndex = 11;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::VolunProject.Properties.Resources.icons8_gift_50;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Location = new System.Drawing.Point(0, 319);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(43, 37);
             this.pictureBox2.TabIndex = 9;
@@ -115,7 +103,7 @@
             this.pictureBox1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_user_50;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(0, 260);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 37);
             this.pictureBox1.TabIndex = 9;
@@ -142,11 +130,39 @@
             this.registerAdminButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.registerAdminButton.Location = new System.Drawing.Point(169, 448);
             this.registerAdminButton.Name = "registerAdminButton";
-            this.registerAdminButton.Size = new System.Drawing.Size(510, 43);
+            this.registerAdminButton.Size = new System.Drawing.Size(493, 43);
             this.registerAdminButton.TabIndex = 3;
             this.registerAdminButton.Text = "Đăng ký dưới quyền ban tổ chức";
             this.registerAdminButton.UseVisualStyleBackColor = false;
-            this.registerAdminButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.registerAdminButton.Click += new System.EventHandler(this.registerAdminButton_Click);
+            // 
+            // login
+            // 
+            this.login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
+            this.login.FlatAppearance.BorderSize = 0;
+            this.login.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.login.Location = new System.Drawing.Point(169, 390);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(138, 43);
+            this.login.TabIndex = 3;
+            this.login.Text = "Login";
+            this.login.UseVisualStyleBackColor = false;
+            this.login.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // signup
+            // 
+            this.signup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
+            this.signup.FlatAppearance.BorderSize = 0;
+            this.signup.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.signup.Location = new System.Drawing.Point(338, 390);
+            this.signup.Name = "signup";
+            this.signup.Size = new System.Drawing.Size(138, 43);
+            this.signup.TabIndex = 3;
+            this.signup.Text = "Signup";
+            this.signup.UseVisualStyleBackColor = false;
+            this.signup.Click += new System.EventHandler(this.signup_Click);
             // 
             // Login_UC
             // 
@@ -156,6 +172,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.signupButton);
+            this.Controls.Add(this.signup);
+            this.Controls.Add(this.login);
             this.Controls.Add(this.registerAdminButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.userPassword);
@@ -180,5 +198,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label errorMessage;
         private System.Windows.Forms.Button registerAdminButton;
+        private System.Windows.Forms.Button login;
+        private System.Windows.Forms.Button signup;
     }
 }

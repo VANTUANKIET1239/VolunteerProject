@@ -41,6 +41,7 @@ namespace VolunProject.Data.DAL
             curVol.PrestigeScore = volunteerDTO.PrestigeScore;
             curVol.RewardPoint = volunteerDTO.RewardPoint;
             curVol.state = volunteerDTO.state;
+            curVol.AddressDetail = volunteerDTO.AddressDetail;
             return volunteerDBEntities.SaveChanges()>0;
         }
     }
