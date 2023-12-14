@@ -144,7 +144,10 @@ namespace VolunProject.UserInterface.UserInformation
                 vol.WardId = (int)wardCB.SelectedValue;
                 vol.DistrictId = (int)districtCB.SelectedValue;
                 vol.BirthDate = DateTime.Now;
-                VolunteerBLL.UpdateVolunteer(vol, img);
+                if (VolunteerBLL.UpdateVolunteer(vol, img))
+                {
+                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
+                }
             }
         }
 

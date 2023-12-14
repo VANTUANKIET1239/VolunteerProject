@@ -36,6 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorMessage = new System.Windows.Forms.Label();
+            this.registerAdminButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,10 +47,9 @@
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginButton.Location = new System.Drawing.Point(356, 806);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(6);
+            this.loginButton.Location = new System.Drawing.Point(169, 388);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(410, 79);
+            this.loginButton.Size = new System.Drawing.Size(205, 41);
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -58,10 +58,9 @@
             // userPassword
             // 
             this.userPassword.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userPassword.Location = new System.Drawing.Point(83, 614);
-            this.userPassword.Margin = new System.Windows.Forms.Padding(6);
+            this.userPassword.Location = new System.Drawing.Point(42, 319);
             this.userPassword.Name = "userPassword";
-            this.userPassword.Size = new System.Drawing.Size(1589, 71);
+            this.userPassword.Size = new System.Drawing.Size(796, 39);
             this.userPassword.TabIndex = 2;
             this.userPassword.UseSystemPasswordChar = true;
             this.userPassword.TextChanged += new System.EventHandler(this.userPassword_TextChanged);
@@ -69,10 +68,9 @@
             // userLogin
             // 
             this.userLogin.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLogin.Location = new System.Drawing.Point(83, 500);
-            this.userLogin.Margin = new System.Windows.Forms.Padding(6);
+            this.userLogin.Location = new System.Drawing.Point(42, 260);
             this.userLogin.Name = "userLogin";
-            this.userLogin.Size = new System.Drawing.Size(1589, 71);
+            this.userLogin.Size = new System.Drawing.Size(796, 39);
             this.userLogin.TabIndex = 1;
             // 
             // label1
@@ -80,10 +78,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label1.Location = new System.Drawing.Point(575, 235);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(288, 122);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(575, 125);
+            this.label1.Size = new System.Drawing.Size(288, 62);
             this.label1.TabIndex = 5;
             this.label1.Text = "Đăng nhập";
             // 
@@ -93,10 +90,9 @@
             this.signupButton.FlatAppearance.BorderSize = 0;
             this.signupButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signupButton.Location = new System.Drawing.Point(842, 806);
-            this.signupButton.Margin = new System.Windows.Forms.Padding(6);
+            this.signupButton.Location = new System.Drawing.Point(474, 388);
             this.signupButton.Name = "signupButton";
-            this.signupButton.Size = new System.Drawing.Size(410, 79);
+            this.signupButton.Size = new System.Drawing.Size(205, 41);
             this.signupButton.TabIndex = 4;
             this.signupButton.Text = "Sign-up";
             this.signupButton.UseVisualStyleBackColor = false;
@@ -106,9 +102,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::VolunProject.Properties.Resources.icons8_gift_50;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 614);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 319);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 71);
+            this.pictureBox2.Size = new System.Drawing.Size(43, 37);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
@@ -117,9 +114,10 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_user_50;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 500);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 260);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 37);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -128,28 +126,43 @@
             this.errorMessage.AutoSize = true;
             this.errorMessage.Font = new System.Drawing.Font("Consolas", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorMessage.ForeColor = System.Drawing.Color.Red;
-            this.errorMessage.Location = new System.Drawing.Point(93, 416);
+            this.errorMessage.Location = new System.Drawing.Point(46, 216);
+            this.errorMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorMessage.Name = "errorMessage";
-            this.errorMessage.Size = new System.Drawing.Size(185, 57);
+            this.errorMessage.Size = new System.Drawing.Size(70, 22);
             this.errorMessage.TabIndex = 10;
             this.errorMessage.Text = "label2";
             this.errorMessage.Visible = false;
             // 
+            // registerAdminButton
+            // 
+            this.registerAdminButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
+            this.registerAdminButton.FlatAppearance.BorderSize = 0;
+            this.registerAdminButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerAdminButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.registerAdminButton.Location = new System.Drawing.Point(169, 448);
+            this.registerAdminButton.Name = "registerAdminButton";
+            this.registerAdminButton.Size = new System.Drawing.Size(510, 43);
+            this.registerAdminButton.TabIndex = 3;
+            this.registerAdminButton.Text = "Đăng ký dưới quyền ban tổ chức";
+            this.registerAdminButton.UseVisualStyleBackColor = false;
+            this.registerAdminButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
             // Login_UC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.errorMessage);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.signupButton);
+            this.Controls.Add(this.registerAdminButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.userPassword);
             this.Controls.Add(this.userLogin);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Login_UC";
-            this.Size = new System.Drawing.Size(1672, 1363);
+            this.Size = new System.Drawing.Size(836, 709);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -166,5 +179,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label errorMessage;
+        private System.Windows.Forms.Button registerAdminButton;
     }
 }
