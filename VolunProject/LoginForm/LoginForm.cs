@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.DAL;
+using VolunProject.UserInterface.ForgetPassword;
 using VolunProject.UserInterface.Login;
 using VolunProject.UserInterface.RegisterUser;
 
@@ -36,6 +38,24 @@ namespace VolunProject.LoginForm
             Login_UC.AdminLoginEvent += Login_UC_AdminLoginEvent;
             AdminRegister_UC.BackEvent += AdminRegister_UC_BackEvent;
             AdminRegister_UC.LoginEvent += AdminRegister_UC_LoginEvent;
+            Login_UC.ForgetPasswordEvent += Login_UC_ForgetPasswordEvent;
+            ConfirmEmail_UC.BackEvent += ConfirmEmail_UC_BackEvent;
+            ConfirmEmail_UC.GetPasswordEvent += ConfirmEmail_UC_GetPasswordEvent;
+        }
+
+        private void ConfirmEmail_UC_GetPasswordEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.ForgetPassword.ConfirmCode_UC(), sender);
+        }
+
+        private void ConfirmEmail_UC_BackEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
+        }
+
+        private void Login_UC_ForgetPasswordEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(this.panel1, new UserInterface.ForgetPassword.ConfirmEmail_UC(), sender);
         }
 
         private void AdminRegister_UC_LoginEvent(object sender, EventArgs e)

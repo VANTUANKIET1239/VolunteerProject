@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.createReward = new System.Windows.Forms.Button();
             this.signOutButoon = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
             this.historyButton = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.createReward = new System.Windows.Forms.Button();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,6 +118,25 @@
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // createReward
+            // 
+            this.createReward.Dock = System.Windows.Forms.DockStyle.Top;
+            this.createReward.FlatAppearance.BorderSize = 0;
+            this.createReward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createReward.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createReward.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.createReward.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
+            this.createReward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReward.Location = new System.Drawing.Point(0, 282);
+            this.createReward.Name = "createReward";
+            this.createReward.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.createReward.Size = new System.Drawing.Size(271, 47);
+            this.createReward.TabIndex = 6;
+            this.createReward.Text = "                  Tạo quà";
+            this.createReward.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReward.UseVisualStyleBackColor = true;
+            this.createReward.Click += new System.EventHandler(this.createReward_Click);
+            // 
             // signOutButoon
             // 
             this.signOutButoon.Dock = System.Windows.Forms.DockStyle.Top;
@@ -173,6 +192,7 @@
             this.historyButton.Text = "                  Lịch sử";
             this.historyButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.historyButton.UseVisualStyleBackColor = true;
+            this.historyButton.Click += new System.EventHandler(this.historyButton_Click);
             // 
             // rewardsButton
             // 
@@ -253,25 +273,6 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1473, 879);
             this.MainPanel.TabIndex = 0;
-            // 
-            // createReward
-            // 
-            this.createReward.Dock = System.Windows.Forms.DockStyle.Top;
-            this.createReward.FlatAppearance.BorderSize = 0;
-            this.createReward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createReward.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createReward.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.createReward.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
-            this.createReward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.createReward.Location = new System.Drawing.Point(0, 282);
-            this.createReward.Name = "createReward";
-            this.createReward.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.createReward.Size = new System.Drawing.Size(271, 47);
-            this.createReward.TabIndex = 6;
-            this.createReward.Text = "                  Tạo quà";
-            this.createReward.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.createReward.UseVisualStyleBackColor = true;
-            this.createReward.Click += new System.EventHandler(this.createReward_Click);
             // 
             // Main
             // 

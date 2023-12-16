@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.UserInterface.Redeem;
 //using VolunProject.Data.BLL;
 
 namespace VolunProject
@@ -20,10 +21,18 @@ namespace VolunProject
         public Main()
         {
             InitializeComponent();
-
+            sub();
         }
 
-        
+        private void sub()
+        {
+            RedeemControl.loadEvent += RedeemControl_loadEvent;
+        }
+
+        private void RedeemControl_loadEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
+        }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
@@ -90,7 +99,6 @@ namespace VolunProject
         private void rewardsButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
-           // LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -111,6 +119,11 @@ namespace VolunProject
         private void createReward_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Redeem.CreateReward(), sender);
+        }
+
+        private void historyButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.History.History_UC(), sender);
         }
     }
 }

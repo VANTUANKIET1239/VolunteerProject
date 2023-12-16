@@ -62,6 +62,7 @@
     <Compile Include="Data\BLL\CityBLL.cs" />
     <Compile Include="Data\BLL\DistrictBLL.cs" />
     <Compile Include="Data\BLL\OrganizationBLL.cs" />
+    <Compile Include="Data\BLL\RankingBLL.cs" />
     <Compile Include="Data\BLL\RewardBLL.cs" />
     <Compile Include="Data\BLL\VolunteerBLL.cs" />
     <Compile Include="Data\BLL\VolunteerRewardBLL.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Data\DAL\CityDAL.cs" />
     <Compile Include="Data\DAL\DistrictDAL.cs" />
     <Compile Include="Data\DAL\OrganizationDAL.cs" />
+    <Compile Include="Data\DAL\RankingDAL.cs" />
     <Compile Include="Data\DAL\RewardDAL.cs" />
     <Compile Include="Data\DAL\VolunteerDAL.cs" />
     <Compile Include="Data\DAL\VolunteerRewardDAL.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Data\DTO\CityDTO.cs" />
     <Compile Include="Data\DTO\DistrictDTO.cs" />
     <Compile Include="Data\DTO\OrganizationDTO.cs" />
+    <Compile Include="Data\DTO\RankingDTO.cs" />
     <Compile Include="Data\DTO\RewardDTO.cs" />
     <Compile Include="Data\DTO\VolunteerDTO.cs" />
     <Compile Include="Data\DTO\AccountDTO.cs" />
@@ -192,11 +195,29 @@
     <Compile Include="UserInterface\Event\Event_UC.Designer.cs">
       <DependentUpon>Event_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmCode_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmCode_UC.Designer.cs">
+      <DependentUpon>ConfirmCode_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmEmail_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmEmail_UC.Designer.cs">
+      <DependentUpon>ConfirmEmail_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\History\History_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserInterface\History\History_UC.Designer.cs">
       <DependentUpon>History_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\History\RewardHistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\History\RewardHistoryControl.Designer.cs">
+      <DependentUpon>RewardHistoryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\Login\Login_UC.cs">
       <SubType>UserControl</SubType>
@@ -272,8 +293,17 @@
     <EmbeddedResource Include="UserInterface\Event\Event_UC.resx">
       <DependentUpon>Event_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\ForgetPassword\ConfirmCode_UC.resx">
+      <DependentUpon>ConfirmCode_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\ForgetPassword\ConfirmEmail_UC.resx">
+      <DependentUpon>ConfirmEmail_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\History\History_UC.resx">
       <DependentUpon>History_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\History\RewardHistoryControl.resx">
+      <DependentUpon>RewardHistoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Login\Login_UC.resx">
       <DependentUpon>Login_UC.cs</DependentUpon>
@@ -374,6 +404,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\bronze-medal.png" />
+    <Content Include="Resources\diamond-medal.png" />
+    <Content Include="Resources\gold-medal.png" />
+    <Content Include="Resources\icons8-check-48 %281%29.png" />
+    <Content Include="Resources\icons8-check-48.png" />
+    <Content Include="Resources\silver-medal.png" />
     <Content Include="Resources\user-default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
