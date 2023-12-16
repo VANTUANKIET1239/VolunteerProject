@@ -22,12 +22,17 @@ namespace VolunProject.Data.DAL
             if (volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).Any()) return true;
             return false;
         }
+        public static Account Account_ByLoginName(string accountName)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).FirstOrDefault();
+        }
         public  static bool SignUp(AccountDTO accountDTO)
         {         
             if (accountDTO != null)
             {
                 VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-                int allUserCount = volunteerDBEntities.Accounts.Where(x => x.state == true).Count();
+                int allUserCount = volunteerDBEntities.Accounts.Count();
                 string newAccountID = "ACC" + (allUserCount + 1).ToString("0000000");
                 Account account = new Account();
                 account.AccountID = newAccountID;
@@ -42,7 +47,7 @@ namespace VolunProject.Data.DAL
                 if (volunteerDBEntities.SaveChanges() > 0)
                 {
                     var accountUser = volunteerDBEntities.Accounts.Where(x => x.AccountID == newAccountID).FirstOrDefault();
-                    int allVolunteerCount = volunteerDBEntities.Volunteers.Where(x => x.state == true).Count();
+                    int allVolunteerCount = volunteerDBEntities.Volunteers.Count();
                     Volunteer volunteer = new Volunteer();
                     volunteer.VolunteerID = "VOL" + (allVolunteerCount + 1).ToString("0000000");
                     volunteer.AccountID = newAccountID;
@@ -52,6 +57,7 @@ namespace VolunProject.Data.DAL
                     volunteer.Account = accountUser;
                     volunteer.state = true;
                     volunteer.Description = "";
+                    volunteer.AddressDetail = "";
                     volunteer.PrestigeScore = 0;
                     volunteer.RewardPoint = 0;
                     volunteerDBEntities.Volunteers.Add(volunteer);
@@ -86,6 +92,12 @@ namespace VolunProject.Data.DAL
             var currentUser = volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName.Trim()).FirstOrDefault();
             currentUser.Password = password;
             return volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static Account GetAccountByID(string accountID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var account = volunteerDBEntities.Accounts.Where(x => x.AccountID == accountID).FirstOrDefault();
+            return account;
         }
     }
 }

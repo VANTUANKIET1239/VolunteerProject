@@ -17,6 +17,8 @@ namespace VolunProject.UserInterface.Login
     {
         public static event EventHandler SignUpEvent;
         public static event EventHandler LoginEvent;
+        public static event EventHandler AdminLoginEvent;
+        public static event EventHandler LoginToOrganizationMainEvent;
         public Login_UC()
         {
             InitializeComponent();
@@ -41,7 +43,16 @@ namespace VolunProject.UserInterface.Login
         {
             if (AccountBLL.LogIn(userLogin.Text, userPassword.Text))
             {
-                LoginEvent(this, new EventArgs());
+                var account = AccountBLL.Account_ByLoginName(userLogin.Text);
+                if (account.RoleName == "ORGANIZATION")
+                {
+                    LoginToOrganizationMainEvent(this, new EventArgs());
+                }
+                else
+                {
+                    LoginEvent(this, new EventArgs());
+                }
+               
             }
             else
             {
@@ -52,7 +63,14 @@ namespace VolunProject.UserInterface.Login
             }
         }
 
+        private void signup_Click(object sender, EventArgs e)
+        {
+            SignUpEvent(this, new EventArgs());
+        }
 
-        
+        private void registerAdminButton_Click(object sender, EventArgs e)
+        {
+            AdminLoginEvent(this, new EventArgs());
+        }
     }
 }

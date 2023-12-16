@@ -19,5 +19,10 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.XaPhuongs.Where(x => x.quanHuyenId == districtId).ToList();
         }
+        public static XaPhuong Ward_ById(int wardId)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.XaPhuongs.Where(x => x.ID == wardId).FirstOrDefault();
+        }
     }
 }

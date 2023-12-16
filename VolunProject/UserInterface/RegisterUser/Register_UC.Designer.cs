@@ -135,7 +135,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
             this.button1.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(245, 522);
+            this.button1.Location = new System.Drawing.Point(225, 522);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 58);
             this.button1.TabIndex = 5;
@@ -160,9 +160,9 @@
             // 
             this.backButton.BackColor = System.Drawing.Color.White;
             this.backButton.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(526, 522);
+            this.backButton.Location = new System.Drawing.Point(527, 522);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(165, 58);
+            this.backButton.Size = new System.Drawing.Size(183, 58);
             this.backButton.TabIndex = 6;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = false;

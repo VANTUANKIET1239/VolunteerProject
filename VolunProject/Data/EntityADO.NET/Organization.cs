@@ -12,12 +12,18 @@ namespace VolunProject.Data.EntityADO.NET
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Organization
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Organization()
+        {
+            this.Accounts = new HashSet<Account>();
+        }
+    
+        public string OrganizationID { get; set; }
+        public string OrganizationName { get; set; }
+        public Nullable<bool> state { get; set; }
+        public string COCK { get; set; }
+    
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

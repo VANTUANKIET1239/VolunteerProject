@@ -47,3 +47,12 @@ C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.User
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.AddNewEvent.AddNewEvent.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.UserInformation.UserInformation_UC.resources
 C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.CreateReward.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.History.History_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.RegisterUser.AdminRegister_UC.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.OrganizationForm.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.OrganizationEvent.OrganizationEvent.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.EventRegistrationForm.RegistrationForm.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.EventHistoryControl.EventHistoryControl.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.EventHistory.EventHistory.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.OrganizationRegisterFormControl.OrganizationRegisterFormControl.resources
+C:\Users\PC\Desktop\Propro\VolunProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.OrganizationRegisterList.OrganizationRegisterList.resources

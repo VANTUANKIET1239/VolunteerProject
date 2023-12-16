@@ -19,8 +19,8 @@ namespace VolunProject.Data.EntityADO.NET
             this.Registrations = new HashSet<Registration>();
             this.Reviews = new HashSet<Review>();
             this.ReviewLists = new HashSet<ReviewList>();
-            this.VolunteerRewards = new HashSet<VolunteerReward>();
             this.VolunteerLikeEvents = new HashSet<VolunteerLikeEvent>();
+            this.VolunteerRewards = new HashSet<VolunteerReward>();
         }
     
         public string VolunteerID { get; set; }
@@ -45,7 +45,7 @@ namespace VolunProject.Data.EntityADO.NET
         public virtual ICollection<Registration> Registrations { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<ReviewList> ReviewLists { get; set; }
-        public virtual ICollection<VolunteerReward> VolunteerRewards { get; set; }
         public virtual ICollection<VolunteerLikeEvent> VolunteerLikeEvents { get; set; }
+        public virtual ICollection<VolunteerReward> VolunteerRewards { get; set; }
     }
 }

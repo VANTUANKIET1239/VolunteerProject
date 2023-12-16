@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.titleLB = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.WardCB = new System.Windows.Forms.ComboBox();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.PurposeTB = new System.Windows.Forms.TextBox();
@@ -52,6 +50,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.UploadBTN = new System.Windows.Forms.Button();
             this.EventImageBox = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.EventTypeCB = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.timeTXT = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.EventImageBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,16 +67,11 @@
             this.titleLB.TabIndex = 0;
             this.titleLB.Text = "Thêm sự kiện";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // WardCB
             // 
             this.WardCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WardCB.FormattingEnabled = true;
-            this.WardCB.Location = new System.Drawing.Point(372, 443);
+            this.WardCB.Location = new System.Drawing.Point(372, 455);
             this.WardCB.Name = "WardCB";
             this.WardCB.Size = new System.Drawing.Size(298, 28);
             this.WardCB.TabIndex = 4;
@@ -90,18 +87,18 @@
             // 
             // PurposeTB
             // 
-            this.PurposeTB.Location = new System.Drawing.Point(777, 111);
+            this.PurposeTB.Location = new System.Drawing.Point(777, 208);
             this.PurposeTB.Multiline = true;
             this.PurposeTB.Name = "PurposeTB";
-            this.PurposeTB.Size = new System.Drawing.Size(490, 228);
+            this.PurposeTB.Size = new System.Drawing.Size(490, 207);
             this.PurposeTB.TabIndex = 9;
             // 
             // DescriptionTB
             // 
-            this.DescriptionTB.Location = new System.Drawing.Point(777, 393);
+            this.DescriptionTB.Location = new System.Drawing.Point(777, 445);
             this.DescriptionTB.Multiline = true;
             this.DescriptionTB.Name = "DescriptionTB";
-            this.DescriptionTB.Size = new System.Drawing.Size(490, 378);
+            this.DescriptionTB.Size = new System.Drawing.Size(490, 326);
             this.DescriptionTB.TabIndex = 10;
             // 
             // AddEventBTN
@@ -113,12 +110,13 @@
             this.AddEventBTN.TabIndex = 13;
             this.AddEventBTN.Text = "Thêm sự kiện";
             this.AddEventBTN.UseVisualStyleBackColor = true;
+            this.AddEventBTN.Click += new System.EventHandler(this.AddEventBTN_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(784, 84);
+            this.label1.Location = new System.Drawing.Point(777, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 14;
@@ -128,7 +126,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(784, 366);
+            this.label2.Location = new System.Drawing.Point(784, 418);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 15;
@@ -166,7 +164,7 @@
             // 
             this.DistrictCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DistrictCB.FormattingEnabled = true;
-            this.DistrictCB.Location = new System.Drawing.Point(372, 381);
+            this.DistrictCB.Location = new System.Drawing.Point(372, 393);
             this.DistrictCB.Name = "DistrictCB";
             this.DistrictCB.Size = new System.Drawing.Size(298, 28);
             this.DistrictCB.TabIndex = 19;
@@ -176,7 +174,7 @@
             // 
             this.CityCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityCB.FormattingEnabled = true;
-            this.CityCB.Location = new System.Drawing.Point(372, 321);
+            this.CityCB.Location = new System.Drawing.Point(372, 333);
             this.CityCB.Name = "CityCB";
             this.CityCB.Size = new System.Drawing.Size(298, 28);
             this.CityCB.TabIndex = 20;
@@ -204,7 +202,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(191, 321);
+            this.label6.Location = new System.Drawing.Point(191, 333);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 24);
             this.label6.TabIndex = 23;
@@ -214,7 +212,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(191, 385);
+            this.label7.Location = new System.Drawing.Point(191, 397);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 24);
             this.label7.TabIndex = 24;
@@ -224,7 +222,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(191, 447);
+            this.label8.Location = new System.Drawing.Point(191, 459);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 24);
             this.label8.TabIndex = 25;
@@ -233,17 +231,16 @@
             // DetailAddressTB
             // 
             this.DetailAddressTB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailAddressTB.Location = new System.Drawing.Point(372, 236);
-            this.DetailAddressTB.Multiline = true;
+            this.DetailAddressTB.Location = new System.Drawing.Point(303, 227);
             this.DetailAddressTB.Name = "DetailAddressTB";
-            this.DetailAddressTB.Size = new System.Drawing.Size(298, 64);
+            this.DetailAddressTB.Size = new System.Drawing.Size(367, 26);
             this.DetailAddressTB.TabIndex = 26;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(191, 257);
+            this.label9.Location = new System.Drawing.Point(191, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 24);
             this.label9.TabIndex = 27;
@@ -270,10 +267,51 @@
             this.EventImageBox.TabIndex = 11;
             this.EventImageBox.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(191, 278);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 24);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Loại";
+            // 
+            // EventTypeCB
+            // 
+            this.EventTypeCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventTypeCB.FormattingEnabled = true;
+            this.EventTypeCB.Location = new System.Drawing.Point(372, 278);
+            this.EventTypeCB.Name = "EventTypeCB";
+            this.EventTypeCB.Size = new System.Drawing.Size(298, 28);
+            this.EventTypeCB.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(773, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(118, 24);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Thời gian";
+            // 
+            // timeTXT
+            // 
+            this.timeTXT.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeTXT.Location = new System.Drawing.Point(901, 120);
+            this.timeTXT.Name = "timeTXT";
+            this.timeTXT.Size = new System.Drawing.Size(366, 26);
+            this.timeTXT.TabIndex = 30;
+            // 
             // AddNewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.timeTXT);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.EventTypeCB);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.DetailAddressTB);
             this.Controls.Add(this.label8);
@@ -308,7 +346,6 @@
         #endregion
 
         private System.Windows.Forms.Label titleLB;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox WardCB;
         private System.Windows.Forms.DateTimePicker EndDate;
         private System.Windows.Forms.TextBox PurposeTB;
@@ -330,5 +367,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox DetailAddressTB;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox EventTypeCB;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox timeTXT;
     }
 }

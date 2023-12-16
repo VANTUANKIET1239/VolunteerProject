@@ -19,5 +19,12 @@ namespace VolunProject.Data.BLL
             List<CityDTO> dto = mapper.Map<List<CityDTO>>(CityDAL.City_List());
             return dto;
         }
+        public static CityDTO City_ById(int cityId)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<TinhThanhPho, CityDTO>());
+            var mapper = new Mapper(config);
+            CityDTO dto = mapper.Map<CityDTO>(CityDAL.City_ById(cityId));
+            return dto;
+        }
     }
 }

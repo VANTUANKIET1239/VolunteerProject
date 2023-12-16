@@ -22,5 +22,7 @@ namespace VolunProject.Data.DAL
         public int PrestigeScore { get; set; }
         public int RewardPoint { get; set; }
         public bool state { get; set; }
+        public string AddressDetail { get; set; }
+        public string RankId { get; set; }
     }
 }

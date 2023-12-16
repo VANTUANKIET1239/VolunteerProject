@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.UserInterface.Event.EventControl;
+using VolunProject.UserInterface.EventDetail;
 //using VolunProject.Data.BLL;
 
 namespace VolunProject
@@ -20,10 +22,25 @@ namespace VolunProject
         public Main()
         {
             InitializeComponent();
-
+            sub();
+        }
+        private void sub()
+        {
+            EventControl.DetailEvent += EventControl_DetailEvent;
+            EventDetail_UC.BackToEvents += EventDetail_UC_BackToEvents;
         }
 
-        
+        private void EventDetail_UC_BackToEvents(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.Event_UC(), sender);
+        }
+
+        private void EventControl_DetailEvent(object sender, EventArgs e)
+        {
+            var eventControll = sender as EventControl;
+            OpenChildForm(new UserInterface.EventDetail.EventDetail_UC(eventControll.EventModel), sender);
+        }
+
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
@@ -111,6 +128,36 @@ namespace VolunProject
         private void createReward_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Redeem.CreateReward(), sender);
+        }
+
+        private void MainPanel_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sidebarContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void historyButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

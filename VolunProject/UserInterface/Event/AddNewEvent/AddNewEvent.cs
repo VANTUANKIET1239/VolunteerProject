@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.Data.BLL;
+using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.Event.AddNewEvent
 {
@@ -23,9 +24,13 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
             var citylist = CityBLL.City_List();
             CityCB.DisplayMember = "tenTinhThanhPho";
             CityCB.ValueMember = "ID";
-
             CityCB.DataSource = citylist;
-           
+
+            var cateList = CategoryBLL.EventCategory_List();
+            EventTypeCB.DisplayMember = "CategoryName";
+            EventTypeCB.ValueMember = "CategoryID";
+            EventTypeCB.DataSource = cateList;
+
         }
 
         private void CityCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +73,27 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
                     string filePath = selectedFileName;
                    
                 }
+            }
+        }
+
+        private void AddEventBTN_Click(object sender, EventArgs e)
+        {
+            EventDTO eventDTO = new EventDTO();
+            eventDTO.EventName = EventNameTB.Text;
+            eventDTO.DetailAddress = DetailAddressTB.Text;
+            eventDTO.CategoryId = (string)EventTypeCB.SelectedValue;
+            eventDTO.CityId = (int)CityCB.SelectedValue;
+            eventDTO.DistrictId = (int)DistrictCB.SelectedValue;
+            eventDTO.WardId = (int)WardCB.SelectedValue;
+            eventDTO.StartDate = StartDate.Value;
+            eventDTO.EndDate = EndDate.Value;
+            eventDTO.EventImage = OtherFunction.ImageToByteArray(EventImageBox.Image);
+            eventDTO.purpose = PurposeTB.Text;
+            eventDTO.description = DescriptionTB.Text;
+            eventDTO.time = timeTXT.Text;
+            if (EventBLL.Event_Add(eventDTO))
+            {
+                MessageBox.Show("Thêm sự kiện thành công", "Thông báo", MessageBoxButtons.OK);
             }
         }
     }

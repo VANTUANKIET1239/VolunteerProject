@@ -21,6 +21,22 @@ namespace VolunProject.Data.DTO
         public string description { get; set; }
         public string purpose { get; set; }
         public string time { get; set; }
+
+        public string DetailAddress { get; set; }
         public byte[] EventImage { get; set; }
+
+        public int RegisterCount { get; set; }
+
+        public int LikeCount { get; set; }
+
+        public string cityName { get; set; }
+
+        public string districtName { get; set; }
+
+        public string wardName { get; set; }
+
+        public string OrganizationName { get; set; }
+
+        public string OrganizationID { get; set; }
     }
 }

@@ -28,5 +28,16 @@ namespace VolunProject.Data.BLL
         {
             return AccountDAL.changePassword(accountName,password);
         }
+        public static Account GetAccountByID(string accountID)
+        {
+            return AccountDAL.GetAccountByID(accountID);
+        }
+        public static AccountDTO Account_ByLoginName(string accountName)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Account, AccountDTO>());
+            var mapper = new Mapper(config);
+            AccountDTO dto = mapper.Map<AccountDTO>(AccountDAL.Account_ByLoginName(accountName));
+            return dto;
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.eventTitle = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.addressLB = new System.Windows.Forms.Label();
             this.JoinEventBtn = new System.Windows.Forms.Button();
             this.DetailEventBtn = new System.Windows.Forms.Button();
             this.DateTimeLB = new System.Windows.Forms.Label();
@@ -53,15 +53,15 @@
             this.eventTitle.TabIndex = 0;
             this.eventTitle.Text = "Sự kiện gì đó";
             // 
-            // label2
+            // addressLB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(531, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "634/2323/23 Mã Lò, Bình trị đông A , quận bình tân, TP HCM";
+            this.addressLB.AutoSize = true;
+            this.addressLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLB.Location = new System.Drawing.Point(252, 59);
+            this.addressLB.Name = "addressLB";
+            this.addressLB.Size = new System.Drawing.Size(531, 19);
+            this.addressLB.TabIndex = 2;
+            this.addressLB.Text = "634/2323/23 Mã Lò, Bình trị đông A , quận bình tân, TP HCM";
             // 
             // JoinEventBtn
             // 
@@ -84,6 +84,7 @@
             this.DetailEventBtn.TabIndex = 5;
             this.DetailEventBtn.Text = "Chi tiết";
             this.DetailEventBtn.UseVisualStyleBackColor = false;
+            this.DetailEventBtn.Click += new System.EventHandler(this.DetailEventBtn_Click);
             // 
             // DateTimeLB
             // 
@@ -129,11 +130,12 @@
             // 
             // EventImageBox
             // 
-            this.EventImageBox.BackgroundImage = global::VolunProject.Properties.Resources.download;
-            this.EventImageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EventImageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.EventImageBox.Image = global::VolunProject.Properties.Resources.download;
             this.EventImageBox.Location = new System.Drawing.Point(19, 22);
             this.EventImageBox.Name = "EventImageBox";
             this.EventImageBox.Size = new System.Drawing.Size(195, 154);
+            this.EventImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.EventImageBox.TabIndex = 6;
             this.EventImageBox.TabStop = false;
             // 
@@ -162,7 +164,7 @@
             this.Controls.Add(this.EventImageBox);
             this.Controls.Add(this.DetailEventBtn);
             this.Controls.Add(this.JoinEventBtn);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.addressLB);
             this.Controls.Add(this.eventTitle);
             this.Name = "EventControl";
             this.Size = new System.Drawing.Size(1400, 196);
@@ -177,7 +179,7 @@
         #endregion
 
         private System.Windows.Forms.Label eventTitle;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label addressLB;
         private System.Windows.Forms.Button JoinEventBtn;
         private System.Windows.Forms.Button DetailEventBtn;
         private System.Windows.Forms.PictureBox EventImageBox;

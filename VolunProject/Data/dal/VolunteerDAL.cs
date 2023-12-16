@@ -35,12 +35,13 @@ namespace VolunProject.Data.DAL
             curVol.CityId = volunteerDTO.CityId;
             curVol.WardId = volunteerDTO.WardId;
             curVol.BirthDate = volunteerDTO.BirthDate;
-            
+            curVol.AddressDetail = volunteerDTO.AddressDetail;
             curVol.Gender = volunteerDTO.Gender;
             curVol.Description = volunteerDTO.Description;
             curVol.PrestigeScore = volunteerDTO.PrestigeScore;
             curVol.RewardPoint = volunteerDTO.RewardPoint;
             curVol.state = volunteerDTO.state;
+            curVol.AddressDetail = volunteerDTO.AddressDetail;
             return volunteerDBEntities.SaveChanges()>0;
         }
     }

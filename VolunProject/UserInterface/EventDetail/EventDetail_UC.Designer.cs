@@ -35,17 +35,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.purposeTXT = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DescriptionTXT = new System.Windows.Forms.TextBox();
             this.VolunteerCountLB = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Like = new System.Windows.Forms.Button();
             this.LikeBTN = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ParticipateBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Like = new System.Windows.Forms.Button();
-            this.purposeTXT = new System.Windows.Forms.TextBox();
-            this.DescriptionTXT = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -125,6 +126,16 @@
             this.panel1.Size = new System.Drawing.Size(884, 225);
             this.panel1.TabIndex = 20;
             // 
+            // purposeTXT
+            // 
+            this.purposeTXT.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purposeTXT.Location = new System.Drawing.Point(20, 15);
+            this.purposeTXT.Multiline = true;
+            this.purposeTXT.Name = "purposeTXT";
+            this.purposeTXT.ReadOnly = true;
+            this.purposeTXT.Size = new System.Drawing.Size(837, 194);
+            this.purposeTXT.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.NavajoWhite;
@@ -133,6 +144,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(884, 225);
             this.panel2.TabIndex = 21;
+            // 
+            // DescriptionTXT
+            // 
+            this.DescriptionTXT.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionTXT.Location = new System.Drawing.Point(20, 17);
+            this.DescriptionTXT.Multiline = true;
+            this.DescriptionTXT.Name = "DescriptionTXT";
+            this.DescriptionTXT.ReadOnly = true;
+            this.DescriptionTXT.Size = new System.Drawing.Size(837, 194);
+            this.DescriptionTXT.TabIndex = 1;
             // 
             // VolunteerCountLB
             // 
@@ -144,6 +165,35 @@
             this.VolunteerCountLB.Size = new System.Drawing.Size(30, 22);
             this.VolunteerCountLB.TabIndex = 23;
             this.VolunteerCountLB.Text = "60";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::VolunProject.Properties.Resources.icons8_back_50;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(22, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 27);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "  Trở về";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Like
+            // 
+            this.Like.FlatAppearance.BorderSize = 0;
+            this.Like.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Like.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Like.Image = global::VolunProject.Properties.Resources.icons8_love_401;
+            this.Like.Location = new System.Drawing.Point(419, 44);
+            this.Like.Name = "Like";
+            this.Like.Size = new System.Drawing.Size(45, 35);
+            this.Like.TabIndex = 26;
+            this.Like.Text = "12";
+            this.Like.UseVisualStyleBackColor = true;
             // 
             // LikeBTN
             // 
@@ -158,6 +208,7 @@
             this.LikeBTN.TabIndex = 24;
             this.LikeBTN.Text = "Yêu thích";
             this.LikeBTN.UseVisualStyleBackColor = false;
+            this.LikeBTN.Click += new System.EventHandler(this.LikeBTN_Click);
             // 
             // pictureBox4
             // 
@@ -200,49 +251,23 @@
             this.ParticipateBTN.TabIndex = 1;
             this.ParticipateBTN.Text = "Tham gia";
             this.ParticipateBTN.UseVisualStyleBackColor = false;
+            this.ParticipateBTN.Click += new System.EventHandler(this.ParticipateBTN_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::VolunProject.Properties.Resources.logo_starbucks;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 47);
+            this.pictureBox1.Image = global::VolunProject.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 65);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(335, 233);
+            this.pictureBox1.Size = new System.Drawing.Size(317, 215);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // Like
-            // 
-            this.Like.FlatAppearance.BorderSize = 0;
-            this.Like.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Like.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Like.Image = global::VolunProject.Properties.Resources.icons8_love_401;
-            this.Like.Location = new System.Drawing.Point(419, 44);
-            this.Like.Name = "Like";
-            this.Like.Size = new System.Drawing.Size(45, 35);
-            this.Like.TabIndex = 26;
-            this.Like.Text = "12";
-            this.Like.UseVisualStyleBackColor = true;
-            // 
-            // purposeTXT
-            // 
-            this.purposeTXT.Location = new System.Drawing.Point(20, 15);
-            this.purposeTXT.Multiline = true;
-            this.purposeTXT.Name = "purposeTXT";
-            this.purposeTXT.Size = new System.Drawing.Size(837, 194);
-            this.purposeTXT.TabIndex = 0;
-            // 
-            // DescriptionTXT
-            // 
-            this.DescriptionTXT.Location = new System.Drawing.Point(20, 17);
-            this.DescriptionTXT.Multiline = true;
-            this.DescriptionTXT.Name = "DescriptionTXT";
-            this.DescriptionTXT.Size = new System.Drawing.Size(837, 194);
-            this.DescriptionTXT.TabIndex = 1;
             // 
             // EventDetail_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Like);
             this.Controls.Add(this.LikeBTN);
             this.Controls.Add(this.VolunteerCountLB);
@@ -294,5 +319,6 @@
         private System.Windows.Forms.Button Like;
         private System.Windows.Forms.TextBox purposeTXT;
         private System.Windows.Forms.TextBox DescriptionTXT;
+        private System.Windows.Forms.Button button1;
     }
 }

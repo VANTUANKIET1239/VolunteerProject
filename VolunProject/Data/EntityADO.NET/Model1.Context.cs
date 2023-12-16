@@ -28,6 +28,7 @@ namespace VolunProject.Data.EntityADO.NET
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<EventCategory> EventCategories { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
         public DbSet<QuanHuyen> QuanHuyens { get; set; }
         public DbSet<QuocGia> QuocGias { get; set; }
         public DbSet<Ranking> Rankings { get; set; }
@@ -35,7 +36,6 @@ namespace VolunProject.Data.EntityADO.NET
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewList> ReviewLists { get; set; }
         public DbSet<Reward> Rewards { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<SysIndex> SysIndexes { get; set; }
         public DbSet<TinhThanhPho> TinhThanhPhoes { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
