@@ -12,18 +12,12 @@ namespace VolunProject.Data.EntityADO.NET
     using System;
     using System.Collections.Generic;
     
-    public partial class Registration
+    public partial class VolunteerLikeEvent
     {
-        public string RegistrationID { get; set; }
         public string VolunteerID { get; set; }
         public string EventID { get; set; }
-        public Nullable<System.DateTime> RegistrationDate { get; set; }
-        public Nullable<bool> CheckIn { get; set; }
-        public Nullable<bool> CheckOut { get; set; }
-        public Nullable<System.DateTime> CheckInDate { get; set; }
-        public Nullable<System.DateTime> CheckOutDate { get; set; }
-        public Nullable<bool> state { get; set; }
-        public string status { get; set; }
+        public Nullable<System.DateTime> LikeDate { get; set; }
+        public Nullable<bool> LikeState { get; set; }
     
         public virtual Event Event { get; set; }
         public virtual Volunteer Volunteer { get; set; }

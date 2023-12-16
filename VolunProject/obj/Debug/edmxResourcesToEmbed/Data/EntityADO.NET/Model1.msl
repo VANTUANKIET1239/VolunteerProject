@@ -11,6 +11,7 @@
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="state" ColumnName="state" />
           <ScalarProperty Name="ImageUS" ColumnName="ImageUS" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -42,6 +43,16 @@
           <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
           <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="VolunteersDBModel.Organization">
+        <MappingFragment StoreEntitySet="Organization">
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="COCK" ColumnName="COCK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -85,6 +96,7 @@
           <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
           <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
           <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

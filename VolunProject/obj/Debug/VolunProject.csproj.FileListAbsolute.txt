@@ -87,3 +87,8 @@ D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.pdb
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.UserInformation.UserInformation_UC.resources
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.AddNewEvent.AddNewEvent.resources
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Redeem.CreateReward.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.History.History_UC.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.RegisterUser.AdminRegister_UC.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.History.RewardHistoryControl.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.ForgetPassword.ConfirmEmail_UC.resources
+D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.ForgetPassword.ConfirmCode_UC.resources

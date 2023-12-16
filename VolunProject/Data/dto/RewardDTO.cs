@@ -13,5 +13,6 @@ namespace VolunProject.Data.DTO
         public int RedeemPoint { get; set; }
         public bool? state { get; set; }
         public byte[] RewardImg { get; set; }
+        public System.DateTime? RedeemDate { get; set; }
     }
 }
