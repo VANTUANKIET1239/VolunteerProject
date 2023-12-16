@@ -27,5 +27,9 @@ namespace VolunProject.Data.BLL
             OtherFunction.SessionManager.SetSessionValue("curUser", dto);
             return result;
         }
+        public static bool checkEmail(string email)
+        {
+            return VolunteerDAL.checkEmail(email);
+        }
     }
 }

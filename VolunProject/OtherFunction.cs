@@ -27,6 +27,18 @@ namespace VolunProject
             <p>Cảm ơn bạn rất nhiều!</p>";
             return htmlBody;
         }
+        public static string templateLayMK(string password)
+
+        {
+            string htmlBody = $@"<h2>Mật khẩu của bạn</h2>
+            <p>Xin chào,</p>
+            <p>Cảm ơn bạn đã sử dụng dịch vụ. Dưới đây là mật khẩu của bạn:</p>
+            <hr/>
+            <h3> {password}</h3>
+            <hr/>
+            <p>Cảm ơn bạn rất nhiều!</p>";
+            return htmlBody;
+        }
         public static void SendEmail(string to, string subject, string body)
         {
             var smtpClient = new SmtpClient("smtp.gmail.com", 587);
@@ -85,6 +97,13 @@ namespace VolunProject
                 }
 
                 return default(T);
+            }
+            public static void RemoveSession(string key)
+            {
+                if (sessionValues.ContainsKey(key))
+                {
+                    sessionValues.Remove(key);
+                }
             }
 
             public static bool ContainsKey(string key)

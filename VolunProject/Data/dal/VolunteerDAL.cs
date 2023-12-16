@@ -44,5 +44,10 @@ namespace VolunProject.Data.DAL
             curVol.AddressDetail = volunteerDTO.AddressDetail;
             return volunteerDBEntities.SaveChanges()>0;
         }
+        public static bool checkEmail(string email)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Volunteers.Any(x => x.Email == email);
+        }
     }
 }

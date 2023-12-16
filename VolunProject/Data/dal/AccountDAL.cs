@@ -27,7 +27,7 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).FirstOrDefault();
         }
-        public  static bool SignUp(AccountDTO accountDTO)
+        public  static bool SignUp(AccountDTO accountDTO, string email)
         {         
             if (accountDTO != null)
             {
@@ -51,7 +51,7 @@ namespace VolunProject.Data.DAL
                     Volunteer volunteer = new Volunteer();
                     volunteer.VolunteerID = "VOL" + (allVolunteerCount + 1).ToString("0000000");
                     volunteer.AccountID = newAccountID;
-                    volunteer.Email = "";
+                    volunteer.Email = email;
                     volunteer.PhoneNumber = "";
                     volunteer.Name = "";
                     volunteer.Account = accountUser;
@@ -98,6 +98,11 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             var account = volunteerDBEntities.Accounts.Where(x => x.AccountID == accountID).FirstOrDefault();
             return account;
+        }
+        public static string GetPassword(string accountName)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).FirstOrDefault().Password;
         }
     }
 }

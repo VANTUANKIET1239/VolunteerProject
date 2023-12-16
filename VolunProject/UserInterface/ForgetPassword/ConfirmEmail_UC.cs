@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.BLL;
 
 namespace VolunProject.UserInterface.ForgetPassword
 {
@@ -26,7 +27,28 @@ namespace VolunProject.UserInterface.ForgetPassword
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GetPasswordEvent(this, new EventArgs());
+            string account = accountTB.Text.ToString();
+            string email = emailTB.Text.ToString();
+            if (AccountBLL.checkAccountName(account) == false)
+            {
+                error.Text = "Tên đăng nhập không chính xác";
+                error.Visible = true;
+            }
+            else if (VolunteerBLL.checkEmail(email) == false)
+            {
+                error.Text = "Email không chính xác";
+                error.Visible = true;
+            }
+            else
+            {
+                Random random = new Random();
+                string pin = random.Next(10000).ToString("0000");
+                OtherFunction.SessionManager.SetSessionValue("PIN", pin);
+                OtherFunction.SessionManager.SetSessionValue("CurEmail", email);
+                OtherFunction.SessionManager.SetSessionValue("CurAccount", account);
+                OtherFunction.SendEmail(email, "Mã xác thực", OtherFunction.guiMailLayMK(pin));
+                GetPasswordEvent(this, new EventArgs());
+            }
         }
     }
 }

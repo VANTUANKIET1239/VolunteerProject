@@ -12,9 +12,9 @@ namespace VolunProject.Data.BLL
 {
     public class AccountBLL
     {
-        public static bool SignUp(AccountDTO accountDTO)
+        public static bool SignUp(AccountDTO accountDTO, string email)
         {
-            return AccountDAL.SignUp(accountDTO);
+            return AccountDAL.SignUp(accountDTO, email);
         }
         public static bool checkAccountName(string accountName)
         {
@@ -38,6 +38,10 @@ namespace VolunProject.Data.BLL
             var mapper = new Mapper(config);
             AccountDTO dto = mapper.Map<AccountDTO>(AccountDAL.Account_ByLoginName(accountName));
             return dto;
+        }
+        public static string GetPassword(string accountName)
+        {
+            return AccountDAL.GetPassword(accountName);
         }
     }
 }
