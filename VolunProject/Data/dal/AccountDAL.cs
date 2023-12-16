@@ -22,6 +22,11 @@ namespace VolunProject.Data.DAL
             if (volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).Any()) return true;
             return false;
         }
+        public static Account Account_ByLoginName(string accountName)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).FirstOrDefault();
+        }
         public  static bool SignUp(AccountDTO accountDTO)
         {         
             if (accountDTO != null)

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.BLL;
+using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.Event
 {
@@ -22,7 +24,8 @@ namespace VolunProject.UserInterface.Event
         {
             // Assuming you have a list of data representing your cards
             // For demonstration purposes, I'm using a simple string array
-            string[] cardData = { "Card 1", "Card 2", "Card 3", "Card 4", "Card 5", "Card 6", "Card 7", "Card 1", "Card 2", "Card 3", "Card 4", "Card 5", "Card 6", "Card 7" };
+            //var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            var events = EventBLL.Event_List();
 
             // Set up a FlowLayoutPanel to host the cards
             FlowLayoutPanel EventflowLayoutPanel = new FlowLayoutPanel();
@@ -33,14 +36,13 @@ namespace VolunProject.UserInterface.Event
             EventflowLayoutPanel.FlowDirection = FlowDirection.TopDown;
 
             // Create and add cards to the flowLayoutPanel
-            foreach (string cardText in cardData)
+            foreach (EventDTO cardText in events)
             {
                 EventControl.EventControl cardControl = new EventControl.EventControl(cardText);
                 EventflowLayoutPanel.Controls.Add(cardControl);
             }
             panel1.Controls.Add(EventflowLayoutPanel);
         }
-        
 
         private void Event_UC_Load(object sender, EventArgs e)
         {

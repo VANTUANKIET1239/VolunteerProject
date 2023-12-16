@@ -19,5 +19,10 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.QuanHuyens.Where(x => x.tinhThanhPhoId == cityId).ToList();
         }
+        public static QuanHuyen District_ById(int districtId)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.QuanHuyens.Where(x => x.ID == districtId).FirstOrDefault();
+        }
     }
 }

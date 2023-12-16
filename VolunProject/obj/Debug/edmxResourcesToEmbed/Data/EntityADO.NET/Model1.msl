@@ -33,6 +33,7 @@
           <ScalarProperty Name="time" ColumnName="time" />
           <ScalarProperty Name="EventImage" ColumnName="EventImage" />
           <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+          <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

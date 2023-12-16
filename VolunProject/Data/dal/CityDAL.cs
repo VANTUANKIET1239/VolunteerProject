@@ -17,5 +17,10 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.TinhThanhPhoes.ToList();
         }
+        public static TinhThanhPho City_ById(int cityId)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.TinhThanhPhoes.Where(x => x.ID == cityId).FirstOrDefault();
+        }
     }
 }

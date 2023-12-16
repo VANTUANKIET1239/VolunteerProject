@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.Data.DAL;
 using VolunProject.UserInterface.ForgetPassword;
+using VolunProject.Data.EntityADO.NET;
 using VolunProject.UserInterface.Login;
 using VolunProject.UserInterface.RegisterUser;
 
@@ -21,6 +22,7 @@ namespace VolunProject.LoginForm
         private object panelDesktopPane;
         private object lblTitle;
         private Main main;
+        private OrganizationForm OrganizationForm;
 
         public LoginForm()
         {
@@ -57,7 +59,14 @@ namespace VolunProject.LoginForm
         {
             OpenChildForm(this.panel1, new UserInterface.ForgetPassword.ConfirmEmail_UC(), sender);
         }
+        private void Login_UC_LoginToOrganizationMainEvent(object sender, EventArgs e)
+        {
 
+            this.Hide();
+            OrganizationForm = new OrganizationForm();
+            OrganizationForm.Closed += (s, args) => this.Close();
+            OrganizationForm.Show();
+        }
         private void AdminRegister_UC_LoginEvent(object sender, EventArgs e)
         {
             OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
@@ -98,34 +107,9 @@ namespace VolunProject.LoginForm
             //main.OpenChildForm(new UserInterface.UserInformation.UserInformation_UC(),sender);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
         public static void OpenChildForm(Panel panel,UserControl a, object btnSender)
         {
@@ -150,9 +134,5 @@ namespace VolunProject.LoginForm
 
 
 
-        /*        private void ActivateButton(object btnSender)
-                {
-                    throw new NotImplementedException();
-                }*/
     }
 }

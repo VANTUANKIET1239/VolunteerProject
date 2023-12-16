@@ -26,5 +26,12 @@ namespace VolunProject.Data.BLL
             List<DistrictDTO> dto = mapper.Map<List<DistrictDTO>>(DistrictDAL.District_ByCityId(cityId));
             return dto;
         }
+        public static DistrictDTO District_ById(int districtId)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<QuanHuyen, DistrictDTO>());
+            var mapper = new Mapper(config);
+            DistrictDTO dto = mapper.Map<DistrictDTO>(DistrictDAL.District_ById(districtId));
+            return dto;
+        }
     }
 }

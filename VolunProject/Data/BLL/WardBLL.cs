@@ -26,5 +26,12 @@ namespace VolunProject.Data.BLL
             List<WardDTO> dto = mapper.Map<List<WardDTO>>(WardDAL.Ward_ByDistrictId(districtId));
             return dto;
         }
+        public static WardDTO Ward_ById(int wardId)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<XaPhuong, WardDTO>());
+            var mapper = new Mapper(config);
+            WardDTO dto = mapper.Map<WardDTO>(WardDAL.Ward_ById(wardId));
+            return dto;
+        }
     }
 }
