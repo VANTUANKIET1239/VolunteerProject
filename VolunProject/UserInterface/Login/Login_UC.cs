@@ -18,6 +18,7 @@ namespace VolunProject.UserInterface.Login
         public static event EventHandler SignUpEvent;
         public static event EventHandler LoginEvent;
         public static event EventHandler AdminLoginEvent;
+        public static event EventHandler ForgetPasswordEvent;
         public static event EventHandler LoginToOrganizationMainEvent;
         public Login_UC()
         {
@@ -71,6 +72,11 @@ namespace VolunProject.UserInterface.Login
         private void registerAdminButton_Click(object sender, EventArgs e)
         {
             AdminLoginEvent(this, new EventArgs());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ForgetPasswordEvent(this, new EventArgs());
         }
     }
 }

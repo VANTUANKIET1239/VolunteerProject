@@ -12,12 +12,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace VolunProject.UserInterface.Redeem
 {
     public partial class RedeemControl : UserControl
     {
         RewardDTO curReward = new RewardDTO();
+        public static event EventHandler loadEvent;
         public RedeemControl(RewardDTO rewardDTO, bool? state)
         {              
             InitializeComponent();
@@ -27,7 +30,14 @@ namespace VolunProject.UserInterface.Redeem
             if (state == false)
             {
                 redeemButton.Enabled = false;
-                redeemButton.Text = "Đã đổi quà";
+                redeemButton.Text = "";
+                Image image1;
+                byte[] check = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\icons8-check-48 (1).png");
+                using (MemoryStream ms1 = new MemoryStream(check))
+                {
+                    image1 = Image.FromStream(ms1);
+                    redeemButton.Image = image1;
+                }
             }
             Image image;
             using (MemoryStream ms = new MemoryStream(rewardDTO.RewardImg))
@@ -57,8 +67,7 @@ namespace VolunProject.UserInterface.Redeem
                     RewardBLL.updateState(curReward.RewardID);
                     VolunteerRewardBLL.AddVolunteerReward(volunteerRewardDTO, curVol.VolunteerID, point);
                     MessageBox.Show("Đổi quà thành công", "Thông báo", MessageBoxButtons.OK);
-                    btn.Enabled = false;
-                    btn.Text = "Đã đổi quà";
+                    loadEvent(this, new EventArgs());
                 }
             }
         }

@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using VolunProject.Data.DTO;
@@ -13,6 +15,28 @@ namespace VolunProject
 {
     public class OtherFunction
     {
+        public static string guiMailLayMK(string randomnumber)
+
+        {
+            string htmlBody = $@"<h2>Xác nhận Email đổi mật khẩu</h2>
+            <p>Xin chào,</p>
+            <p>Cảm ơn bạn đã sử dụng dịch vụ. Dưới đây là mã xác nhận đổi mật khẩu:</p>
+            <hr/>
+            <h3>{randomnumber}</h3>
+            <hr/>
+            <p>Cảm ơn bạn rất nhiều!</p>";
+            return htmlBody;
+        }
+        public static void SendEmail(string to, string subject, string body)
+        {
+            var smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential("kietvan.31201024409@st.ueh.edu.vn", "0906889483");
+            var mailMessage = new MailMessage("kietvan.31201024409@st.ueh.edu.vn", to, subject, body);
+            mailMessage.IsBodyHtml = true;
+            smtpClient.Send(mailMessage);
+        }
         public static byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream ms = new MemoryStream())

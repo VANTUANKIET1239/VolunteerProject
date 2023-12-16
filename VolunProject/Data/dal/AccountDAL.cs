@@ -40,7 +40,7 @@ namespace VolunProject.Data.DAL
                 account.Password = accountDTO.Password;
                 account.CreateDate = DateTime.Now;
                 account.state = true;
-                account.ImageUS = OtherFunction.PathImage2Byte("C:\\Users\\PC\\Desktop\\Propro\\VolunProject\\VolunProject\\Resources\\user-default.png");
+                account.ImageUS = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\user-default.png");
                 account.RoleName = "VOLUNTEER";
 
                 volunteerDBEntities.Accounts.Add(account);
@@ -61,8 +61,8 @@ namespace VolunProject.Data.DAL
                     volunteer.PrestigeScore = 0;
                     volunteer.RewardPoint = 0;
                     volunteerDBEntities.Volunteers.Add(volunteer);
+                    volunteer.RankId = "BRONZE";
 
-                    volunteerDBEntities.Volunteers.Include(x => x.Account);
                     return volunteerDBEntities.SaveChanges() > 0;
                 }                        
             }

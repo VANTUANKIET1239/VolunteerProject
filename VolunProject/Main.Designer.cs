@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.createReward = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
@@ -45,6 +46,10 @@
             this.rewardsButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.createReward = new System.Windows.Forms.Button();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,7 +115,6 @@
             this.panel3.Size = new System.Drawing.Size(271, 770);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
             // sidebarTimer
             // 
             this.sidebarTimer.Interval = 10;
@@ -163,6 +167,26 @@
             this.createReward.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createReward.UseVisualStyleBackColor = true;
             this.createReward.Click += new System.EventHandler(this.createReward_Click);
+            // 
+            // createReward
+            // 
+            this.createReward.Dock = System.Windows.Forms.DockStyle.Top;
+            this.createReward.FlatAppearance.BorderSize = 0;
+            this.createReward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createReward.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createReward.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.createReward.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
+            this.createReward.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReward.Location = new System.Drawing.Point(0, 282);
+            this.createReward.Name = "createReward";
+            this.createReward.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.createReward.Size = new System.Drawing.Size(271, 47);
+            this.createReward.TabIndex = 6;
+            this.createReward.Text = "                  Tạo quà";
+            this.createReward.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReward.UseVisualStyleBackColor = true;
+            this.createReward.Click += new System.EventHandler(this.createReward_Click);
+            // 
             // 
             // signOutButoon
             // 
@@ -278,6 +302,28 @@
             this.homeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.MainPanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(274, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1473, 879);
+            this.panel4.TabIndex = 1;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1473, 879);
+            this.MainPanel.TabIndex = 0;
+            // 
             // 
             // Main
             // 

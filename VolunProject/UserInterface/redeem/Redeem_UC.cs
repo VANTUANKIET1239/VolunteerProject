@@ -65,7 +65,6 @@ namespace VolunProject.UserInterface.Redeem
             var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
             var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
             lb1.Text = curVol.RewardPoint.ToString();
-            
         }
     }
 }
