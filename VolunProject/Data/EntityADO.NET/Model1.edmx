@@ -37,6 +37,7 @@
           <Property Name="time" Type="varchar" MaxLength="50" />
           <Property Name="EventImage" Type="varbinary(max)" />
           <Property Name="DetailAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrganizationID" Type="nchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="EventCategory">
           <Key>
@@ -52,7 +53,7 @@
             <PropertyRef Name="OrganizationID" />
           </Key>
           <Property Name="OrganizationID" Type="nchar" MaxLength="100" Nullable="false" />
-          <Property Name="OrganizationName" Type="nchar" MaxLength="100" />
+          <Property Name="OrganizationName" Type="nvarchar" MaxLength="100" />
           <Property Name="state" Type="bit" />
           <Property Name="COCK" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -192,7 +193,7 @@
           <Property Name="tenXaPhuong" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="quanHuyenId" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Event__CategoryI__300424B4">
+        <Association Name="FK__Event__CategoryI__571DF1D5">
           <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="0..1" />
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
@@ -204,7 +205,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Registrat__Event__31EC6D26">
+        <Association Name="FK__Registrat__Event__59063A47">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -216,7 +217,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Registrat__Volun__32E0915F">
+        <Association Name="FK__Registrat__Volun__59FA5E80">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
           <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -228,7 +229,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ReviewLis__Revie__34C8D9D1">
+        <Association Name="FK__ReviewLis__Revie__5BE2A6F2">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
           <End Role="ReviewList" Type="Self.ReviewList" Multiplicity="*" />
           <ReferentialConstraint>
@@ -240,7 +241,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Event__38996AB5">
+        <Association Name="FK__Volunteer__Event__5FB337D6">
           <End Role="Event" Type="Self.Event" Multiplicity="1" />
           <End Role="VolunteerLikeEvent" Type="Self.VolunteerLikeEvent" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,7 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Rewar__3A81B327">
+        <Association Name="FK__Volunteer__Rewar__619B8048">
           <End Role="Reward" Type="Self.Reward" Multiplicity="1" />
           <End Role="VolunteerReward" Type="Self.VolunteerReward" Multiplicity="*" />
           <ReferentialConstraint>
@@ -264,7 +265,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Volun__398D8EEE">
+        <Association Name="FK__Volunteer__Volun__60A75C0F">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
           <End Role="VolunteerLikeEvent" Type="Self.VolunteerLikeEvent" Multiplicity="*" />
           <ReferentialConstraint>
@@ -276,7 +277,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Volun__3B75D760">
+        <Association Name="FK__Volunteer__Volun__628FA481">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
           <End Role="VolunteerReward" Type="Self.VolunteerReward" Multiplicity="*" />
           <ReferentialConstraint>
@@ -396,35 +397,35 @@
           <EntitySet Name="VolunteerLikeEvent" EntityType="Self.VolunteerLikeEvent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VolunteerReward" EntityType="Self.VolunteerReward" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XaPhuong" EntityType="Self.XaPhuong" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Event__CategoryI__300424B4" Association="Self.FK__Event__CategoryI__300424B4">
+          <AssociationSet Name="FK__Event__CategoryI__571DF1D5" Association="Self.FK__Event__CategoryI__571DF1D5">
             <End Role="EventCategory" EntitySet="EventCategory" />
             <End Role="Event" EntitySet="Event" />
           </AssociationSet>
-          <AssociationSet Name="FK__Registrat__Event__31EC6D26" Association="Self.FK__Registrat__Event__31EC6D26">
+          <AssociationSet Name="FK__Registrat__Event__59063A47" Association="Self.FK__Registrat__Event__59063A47">
             <End Role="Event" EntitySet="Event" />
             <End Role="Registration" EntitySet="Registration" />
           </AssociationSet>
-          <AssociationSet Name="FK__Registrat__Volun__32E0915F" Association="Self.FK__Registrat__Volun__32E0915F">
+          <AssociationSet Name="FK__Registrat__Volun__59FA5E80" Association="Self.FK__Registrat__Volun__59FA5E80">
             <End Role="Volunteer" EntitySet="Volunteer" />
             <End Role="Registration" EntitySet="Registration" />
           </AssociationSet>
-          <AssociationSet Name="FK__ReviewLis__Revie__34C8D9D1" Association="Self.FK__ReviewLis__Revie__34C8D9D1">
+          <AssociationSet Name="FK__ReviewLis__Revie__5BE2A6F2" Association="Self.FK__ReviewLis__Revie__5BE2A6F2">
             <End Role="Volunteer" EntitySet="Volunteer" />
             <End Role="ReviewList" EntitySet="ReviewList" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Event__38996AB5" Association="Self.FK__Volunteer__Event__38996AB5">
+          <AssociationSet Name="FK__Volunteer__Event__5FB337D6" Association="Self.FK__Volunteer__Event__5FB337D6">
             <End Role="Event" EntitySet="Event" />
             <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvent" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Rewar__3A81B327" Association="Self.FK__Volunteer__Rewar__3A81B327">
+          <AssociationSet Name="FK__Volunteer__Rewar__619B8048" Association="Self.FK__Volunteer__Rewar__619B8048">
             <End Role="Reward" EntitySet="Reward" />
             <End Role="VolunteerReward" EntitySet="VolunteerReward" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Volun__398D8EEE" Association="Self.FK__Volunteer__Volun__398D8EEE">
+          <AssociationSet Name="FK__Volunteer__Volun__60A75C0F" Association="Self.FK__Volunteer__Volun__60A75C0F">
             <End Role="Volunteer" EntitySet="Volunteer" />
             <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvent" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Volun__3B75D760" Association="Self.FK__Volunteer__Volun__3B75D760">
+          <AssociationSet Name="FK__Volunteer__Volun__628FA481" Association="Self.FK__Volunteer__Volun__628FA481">
             <End Role="Volunteer" EntitySet="Volunteer" />
             <End Role="VolunteerReward" EntitySet="VolunteerReward" />
           </AssociationSet>
@@ -496,9 +497,10 @@
           <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EventImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="DetailAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="EventCategory" Relationship="Self.FK__Event__CategoryI__300424B4" FromRole="Event" ToRole="EventCategory" />
-          <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Event__31EC6D26" FromRole="Event" ToRole="Registration" />
-          <NavigationProperty Name="VolunteerLikeEvents" Relationship="Self.FK__Volunteer__Event__38996AB5" FromRole="Event" ToRole="VolunteerLikeEvent" />
+          <Property Name="OrganizationID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="EventCategory" Relationship="Self.FK__Event__CategoryI__571DF1D5" FromRole="Event" ToRole="EventCategory" />
+          <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Event__59063A47" FromRole="Event" ToRole="Registration" />
+          <NavigationProperty Name="VolunteerLikeEvents" Relationship="Self.FK__Volunteer__Event__5FB337D6" FromRole="Event" ToRole="VolunteerLikeEvent" />
         </EntityType>
         <EntityType Name="EventCategory">
           <Key>
@@ -508,14 +510,14 @@
           <Property Name="CategoryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="state" Type="Boolean" />
-          <NavigationProperty Name="Events" Relationship="Self.FK__Event__CategoryI__300424B4" FromRole="EventCategory" ToRole="Event" />
+          <NavigationProperty Name="Events" Relationship="Self.FK__Event__CategoryI__571DF1D5" FromRole="EventCategory" ToRole="Event" />
         </EntityType>
         <EntityType Name="Organization">
           <Key>
             <PropertyRef Name="OrganizationID" />
           </Key>
           <Property Name="OrganizationID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="OrganizationName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="OrganizationName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="state" Type="Boolean" />
           <Property Name="COCK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Accounts" Relationship="Self.FK_Organization_Account" FromRole="Organization" ToRole="Account" />
@@ -563,8 +565,8 @@
           <Property Name="CheckOutDate" Type="DateTime" Precision="7" />
           <Property Name="state" Type="Boolean" />
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Event" Relationship="Self.FK__Registrat__Event__31EC6D26" FromRole="Registration" ToRole="Event" />
-          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Registrat__Volun__32E0915F" FromRole="Registration" ToRole="Volunteer" />
+          <NavigationProperty Name="Event" Relationship="Self.FK__Registrat__Event__59063A47" FromRole="Registration" ToRole="Event" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Registrat__Volun__59FA5E80" FromRole="Registration" ToRole="Volunteer" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -585,7 +587,7 @@
           <Property Name="ReviewID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="ReviewerID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="State" Type="Boolean" />
-          <NavigationProperty Name="Volunteer" Relationship="Self.FK__ReviewLis__Revie__34C8D9D1" FromRole="ReviewList" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK__ReviewLis__Revie__5BE2A6F2" FromRole="ReviewList" ToRole="Volunteer" />
         </EntityType>
         <EntityType Name="Reward">
           <Key>
@@ -596,7 +598,7 @@
           <Property Name="RedeemPoint" Type="Int32" />
           <Property Name="state" Type="Boolean" />
           <Property Name="RewardImg" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="VolunteerRewards" Relationship="Self.FK__Volunteer__Rewar__3A81B327" FromRole="Reward" ToRole="VolunteerReward" />
+          <NavigationProperty Name="VolunteerRewards" Relationship="Self.FK__Volunteer__Rewar__619B8048" FromRole="Reward" ToRole="VolunteerReward" />
         </EntityType>
         <EntityType Name="SysIndex">
           <Key>
@@ -639,11 +641,11 @@
           <Property Name="RankId" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Account" Relationship="Self.FK_Volunteer_Account" FromRole="Volunteer" ToRole="Account" />
           <NavigationProperty Name="Ranking" Relationship="Self.FK_Rank_Volunteer" FromRole="Volunteer" ToRole="Ranking" />
-          <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Volun__32E0915F" FromRole="Volunteer" ToRole="Registration" />
+          <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Volun__59FA5E80" FromRole="Volunteer" ToRole="Registration" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_Volunteer" FromRole="Volunteer" ToRole="Review" />
-          <NavigationProperty Name="ReviewLists" Relationship="Self.FK__ReviewLis__Revie__34C8D9D1" FromRole="Volunteer" ToRole="ReviewList" />
-          <NavigationProperty Name="VolunteerLikeEvents" Relationship="Self.FK__Volunteer__Volun__398D8EEE" FromRole="Volunteer" ToRole="VolunteerLikeEvent" />
-          <NavigationProperty Name="VolunteerRewards" Relationship="Self.FK__Volunteer__Volun__3B75D760" FromRole="Volunteer" ToRole="VolunteerReward" />
+          <NavigationProperty Name="ReviewLists" Relationship="Self.FK__ReviewLis__Revie__5BE2A6F2" FromRole="Volunteer" ToRole="ReviewList" />
+          <NavigationProperty Name="VolunteerLikeEvents" Relationship="Self.FK__Volunteer__Volun__60A75C0F" FromRole="Volunteer" ToRole="VolunteerLikeEvent" />
+          <NavigationProperty Name="VolunteerRewards" Relationship="Self.FK__Volunteer__Volun__628FA481" FromRole="Volunteer" ToRole="VolunteerReward" />
         </EntityType>
         <EntityType Name="VolunteerLikeEvent">
           <Key>
@@ -654,8 +656,8 @@
           <Property Name="EventID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="LikeDate" Type="DateTime" Precision="0" />
           <Property Name="LikeState" Type="Boolean" />
-          <NavigationProperty Name="Event" Relationship="Self.FK__Volunteer__Event__38996AB5" FromRole="VolunteerLikeEvent" ToRole="Event" />
-          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Volunteer__Volun__398D8EEE" FromRole="VolunteerLikeEvent" ToRole="Volunteer" />
+          <NavigationProperty Name="Event" Relationship="Self.FK__Volunteer__Event__5FB337D6" FromRole="VolunteerLikeEvent" ToRole="Event" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Volunteer__Volun__60A75C0F" FromRole="VolunteerLikeEvent" ToRole="Volunteer" />
         </EntityType>
         <EntityType Name="VolunteerReward">
           <Key>
@@ -667,8 +669,8 @@
           <Property Name="RedeemDate" Type="DateTime" Precision="7" />
           <Property Name="RedeemCount" Type="Int32" />
           <Property Name="state" Type="Boolean" />
-          <NavigationProperty Name="Reward" Relationship="Self.FK__Volunteer__Rewar__3A81B327" FromRole="VolunteerReward" ToRole="Reward" />
-          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Volunteer__Volun__3B75D760" FromRole="VolunteerReward" ToRole="Volunteer" />
+          <NavigationProperty Name="Reward" Relationship="Self.FK__Volunteer__Rewar__619B8048" FromRole="VolunteerReward" ToRole="Reward" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK__Volunteer__Volun__628FA481" FromRole="VolunteerReward" ToRole="Volunteer" />
         </EntityType>
         <EntityType Name="XaPhuong">
           <Key>
@@ -703,7 +705,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Event__CategoryI__300424B4">
+        <Association Name="FK__Event__CategoryI__571DF1D5">
           <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="0..1" />
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
@@ -715,7 +717,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Registrat__Event__31EC6D26">
+        <Association Name="FK__Registrat__Event__59063A47">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -727,7 +729,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Event__38996AB5">
+        <Association Name="FK__Volunteer__Event__5FB337D6">
           <End Role="Event" Type="Self.Event" Multiplicity="1" />
           <End Role="VolunteerLikeEvent" Type="Self.VolunteerLikeEvent" Multiplicity="*" />
           <ReferentialConstraint>
@@ -793,7 +795,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Registrat__Volun__32E0915F">
+        <Association Name="FK__Registrat__Volun__59FA5E80">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
           <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -817,7 +819,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ReviewLis__Revie__34C8D9D1">
+        <Association Name="FK__ReviewLis__Revie__5BE2A6F2">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
           <End Role="ReviewList" Type="Self.ReviewList" Multiplicity="*" />
           <ReferentialConstraint>
@@ -829,7 +831,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Rewar__3A81B327">
+        <Association Name="FK__Volunteer__Rewar__619B8048">
           <End Role="Reward" Type="Self.Reward" Multiplicity="1" />
           <End Role="VolunteerReward" Type="Self.VolunteerReward" Multiplicity="*" />
           <ReferentialConstraint>
@@ -841,7 +843,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Volun__398D8EEE">
+        <Association Name="FK__Volunteer__Volun__60A75C0F">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
           <End Role="VolunteerLikeEvent" Type="Self.VolunteerLikeEvent" Multiplicity="*" />
           <ReferentialConstraint>
@@ -853,7 +855,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Volunteer__Volun__3B75D760">
+        <Association Name="FK__Volunteer__Volun__628FA481">
           <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
           <End Role="VolunteerReward" Type="Self.VolunteerReward" Multiplicity="*" />
           <ReferentialConstraint>
@@ -891,15 +893,15 @@
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Volunteer" EntitySet="Volunteers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Event__CategoryI__300424B4" Association="Self.FK__Event__CategoryI__300424B4">
+          <AssociationSet Name="FK__Event__CategoryI__571DF1D5" Association="Self.FK__Event__CategoryI__571DF1D5">
             <End Role="EventCategory" EntitySet="EventCategories" />
             <End Role="Event" EntitySet="Events" />
           </AssociationSet>
-          <AssociationSet Name="FK__Registrat__Event__31EC6D26" Association="Self.FK__Registrat__Event__31EC6D26">
+          <AssociationSet Name="FK__Registrat__Event__59063A47" Association="Self.FK__Registrat__Event__59063A47">
             <End Role="Event" EntitySet="Events" />
             <End Role="Registration" EntitySet="Registrations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Event__38996AB5" Association="Self.FK__Volunteer__Event__38996AB5">
+          <AssociationSet Name="FK__Volunteer__Event__5FB337D6" Association="Self.FK__Volunteer__Event__5FB337D6">
             <End Role="Event" EntitySet="Events" />
             <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvents" />
           </AssociationSet>
@@ -919,7 +921,7 @@
             <End Role="Ranking" EntitySet="Rankings" />
             <End Role="Volunteer" EntitySet="Volunteers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Registrat__Volun__32E0915F" Association="Self.FK__Registrat__Volun__32E0915F">
+          <AssociationSet Name="FK__Registrat__Volun__59FA5E80" Association="Self.FK__Registrat__Volun__59FA5E80">
             <End Role="Volunteer" EntitySet="Volunteers" />
             <End Role="Registration" EntitySet="Registrations" />
           </AssociationSet>
@@ -927,19 +929,19 @@
             <End Role="Volunteer" EntitySet="Volunteers" />
             <End Role="Review" EntitySet="Reviews" />
           </AssociationSet>
-          <AssociationSet Name="FK__ReviewLis__Revie__34C8D9D1" Association="Self.FK__ReviewLis__Revie__34C8D9D1">
+          <AssociationSet Name="FK__ReviewLis__Revie__5BE2A6F2" Association="Self.FK__ReviewLis__Revie__5BE2A6F2">
             <End Role="Volunteer" EntitySet="Volunteers" />
             <End Role="ReviewList" EntitySet="ReviewLists" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Rewar__3A81B327" Association="Self.FK__Volunteer__Rewar__3A81B327">
+          <AssociationSet Name="FK__Volunteer__Rewar__619B8048" Association="Self.FK__Volunteer__Rewar__619B8048">
             <End Role="Reward" EntitySet="Rewards" />
             <End Role="VolunteerReward" EntitySet="VolunteerRewards" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Volun__398D8EEE" Association="Self.FK__Volunteer__Volun__398D8EEE">
+          <AssociationSet Name="FK__Volunteer__Volun__60A75C0F" Association="Self.FK__Volunteer__Volun__60A75C0F">
             <End Role="Volunteer" EntitySet="Volunteers" />
             <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvents" />
           </AssociationSet>
-          <AssociationSet Name="FK__Volunteer__Volun__3B75D760" Association="Self.FK__Volunteer__Volun__3B75D760">
+          <AssociationSet Name="FK__Volunteer__Volun__628FA481" Association="Self.FK__Volunteer__Volun__628FA481">
             <End Role="Volunteer" EntitySet="Volunteers" />
             <End Role="VolunteerReward" EntitySet="VolunteerRewards" />
           </AssociationSet>
@@ -982,6 +984,7 @@
                 <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="EventImage" ColumnName="EventImage" />
                 <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+                <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

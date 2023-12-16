@@ -32,7 +32,7 @@ namespace VolunProject.UserInterface.Redeem
                 redeemButton.Enabled = false;
                 redeemButton.Text = "";
                 Image image1;
-                byte[] check = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\icons8-check-48 (1).png");
+                byte[] check = OtherFunction.PathImage2Byte("C:\\Users\\LENOVO\\Desktop\\Git\\VolunteerProject\\VolunProject\\Resources\\icons8-check-48 (1).png");
                 using (MemoryStream ms1 = new MemoryStream(check))
                 {
                     image1 = Image.FromStream(ms1);

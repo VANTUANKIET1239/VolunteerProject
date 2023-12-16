@@ -30,12 +30,10 @@ namespace VolunProject
             EventControl.DetailEvent += EventControl_DetailEvent;
             EventDetail_UC.BackToEvents += EventDetail_UC_BackToEvents;
         }
-            sub();
-        }
 
-        private void sub()
-        {
-            RedeemControl.loadEvent += RedeemControl_loadEvent;
+
+        
+           
         private void EventDetail_UC_BackToEvents(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Event.Event_UC(), sender);
@@ -169,9 +167,6 @@ namespace VolunProject
 
         }
 
-        private void historyButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
