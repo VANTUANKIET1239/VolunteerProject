@@ -21,12 +21,14 @@ namespace VolunProject.Data.EntityADO.NET
     
         public string AccountID { get; set; }
         public string AccountName { get; set; }
-        public string UserImage { get; set; }
         public string Password { get; set; }
         public string RoleName { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<bool> state { get; set; }
+        public byte[] ImageUS { get; set; }
+        public string OrganizationID { get; set; }
     
+        public virtual Organization Organization { get; set; }
         public virtual ICollection<Volunteer> Volunteers { get; set; }
     }
 }

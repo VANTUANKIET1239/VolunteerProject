@@ -12,12 +12,19 @@ namespace VolunProject.Data.EntityADO.NET
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Ranking
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Ranking()
+        {
+            this.Volunteers = new HashSet<Volunteer>();
+        }
+    
+        public string RankId { get; set; }
+        public string RankName { get; set; }
+        public byte[] RankImage { get; set; }
+        public Nullable<int> PointRequire { get; set; }
+        public Nullable<bool> state { get; set; }
+    
+        public virtual ICollection<Volunteer> Volunteers { get; set; }
     }
 }

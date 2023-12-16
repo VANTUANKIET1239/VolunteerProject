@@ -57,16 +57,16 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 181);
+            this.panel1.Location = new System.Drawing.Point(0, 157);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 696);
+            this.panel1.Size = new System.Drawing.Size(1473, 722);
             this.panel1.TabIndex = 3;
             // 
             // cityCB
             // 
             this.cityCB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityCB.FormattingEnabled = true;
-            this.cityCB.Location = new System.Drawing.Point(67, 102);
+            this.cityCB.Location = new System.Drawing.Point(66, 97);
             this.cityCB.Name = "cityCB";
             this.cityCB.Size = new System.Drawing.Size(225, 27);
             this.cityCB.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             this.districtCB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.districtCB.FormattingEnabled = true;
-            this.districtCB.Location = new System.Drawing.Point(327, 102);
+            this.districtCB.Location = new System.Drawing.Point(329, 97);
             this.districtCB.Name = "districtCB";
             this.districtCB.Size = new System.Drawing.Size(225, 27);
             this.districtCB.TabIndex = 5;
@@ -86,7 +86,7 @@
             // 
             this.categoryCB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryCB.FormattingEnabled = true;
-            this.categoryCB.Location = new System.Drawing.Point(589, 102);
+            this.categoryCB.Location = new System.Drawing.Point(607, 97);
             this.categoryCB.Name = "categoryCB";
             this.categoryCB.Size = new System.Drawing.Size(225, 27);
             this.categoryCB.TabIndex = 7;
@@ -103,7 +103,7 @@
             this.Controls.Add(this.Searchtxt);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "Event_UC";
-            this.Size = new System.Drawing.Size(1186, 877);
+            this.Size = new System.Drawing.Size(1473, 879);
             this.Load += new System.EventHandler(this.Event_UC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

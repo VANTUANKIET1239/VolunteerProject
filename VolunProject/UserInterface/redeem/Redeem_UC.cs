@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.BLL;
+using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.Redeem
 {
@@ -25,12 +27,21 @@ namespace VolunProject.UserInterface.Redeem
 
         public void createRedeem()
         {
-            List<string> strings = new List<string>() { "ưqdqd", "qưdwqdwq", "qưdwqdq", "qưdqwdwqd" , "ưqdqd", "qưdwqdwq", "qưdwqdq", "qưdqwdwqd" };
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
+            var allRewardDTOs = RewardBLL.getAllRewards();
+            var rewardByVolunteerID = RewardBLL.getRewardsByVolunteerID(curVol.VolunteerID);
+            var unredeemReward = allRewardDTOs.Except(rewardByVolunteerID, new OtherFunction.RewardComparer());
             listRedeemFlowlayoutpanel.AutoScroll = true;
             listRedeemFlowlayoutpanel.FlowDirection = FlowDirection.LeftToRight;
-            foreach (var item in strings)
+            foreach (var item in unredeemReward)
             {
-                RedeemControl redeemControl = new RedeemControl(item);
+                RedeemControl redeemControl = new RedeemControl(item,true);
+                listRedeemFlowlayoutpanel.Controls.Add(redeemControl);
+            }
+            foreach (var item in rewardByVolunteerID)
+            {
+                RedeemControl redeemControl = new RedeemControl(item,false);
                 listRedeemFlowlayoutpanel.Controls.Add(redeemControl);
             }
         }
@@ -48,18 +59,13 @@ namespace VolunProject.UserInterface.Redeem
         {
 
         }
-    }
-    /*public class RedeemControl : UserControl
-    {
-        public RedeemControl(string ten)
-        {
-            PictureBox pictureBox5 = new PictureBox();
-            pictureBox5.Location = new System.Drawing.Point(1353, 278);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new System.Drawing.Size(349, 300);
-            pictureBox5.TabIndex = 2;
-            pictureBox5.TabStop = false;
 
+        private void Redeem_UC_Load(object sender, EventArgs e)
+        {
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
+            lb1.Text = curVol.RewardPoint.ToString();
+            
         }
-    }*/
+    }
 }

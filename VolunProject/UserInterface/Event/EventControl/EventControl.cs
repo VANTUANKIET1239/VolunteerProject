@@ -3,31 +3,57 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.Event.EventControl
 {
     public partial class EventControl : UserControl
     {
-        public EventControl(string cardText)
+        public static event EventHandler DetailEvent;
+        public EventDTO EventModel;
+        public EventControl(EventDTO eventDTO)
         {
             InitializeComponent();
-            // Customize the appearance of the card control
-            Size = new System.Drawing.Size(1100, 100);
             BackColor = System.Drawing.Color.LightGray;
             Margin = new Padding(15);
-            // Add a label to display the card text
-            Label label = new Label();
-            label.Text = cardText;
-            label.Dock = DockStyle.Fill;
-            label.TextAlign = ContentAlignment.MiddleCenter;
+            LoadEvent(eventDTO);
+        }
+        private void LoadEvent(EventDTO eventDTO)
+        {
+            EventModel = eventDTO;
+            Like.Text = eventDTO.LikeCount.ToString();
+            eventTitle.Text = eventDTO.EventName.ToString();
+            addressLB.Text = $"{eventDTO.DetailAddress}, {eventDTO.wardName}, {eventDTO.districtName}, {eventDTO.cityName}";
+            DateTimeLB.Text = $"{eventDTO.StartDate.ToString("dd/MM/yyyy")} - {eventDTO.EndDate.ToString("dd/MM/yyyy")}";
+            TimeLB.Text = eventDTO.time;
+            Image image;
+            using (MemoryStream ms = new MemoryStream(eventDTO.EventImage))
+            {
+                image = Image.FromStream(ms);
+                EventImageBox.Image = image;
+            }
 
-            // Add the label to the card control
-            Controls.Add(label);
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DetailEventBtn_Click(object sender, EventArgs e)
+        {
+            DetailEvent(this, new EventArgs());
+        }
     }
 }

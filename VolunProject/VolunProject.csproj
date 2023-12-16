@@ -57,6 +57,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BLL\AccountBLL.cs" />
+    <Compile Include="Data\BLL\CategoryBLL.cs" />
+    <Compile Include="Data\BLL\CityBLL.cs" />
+    <Compile Include="Data\BLL\DistrictBLL.cs" />
+    <Compile Include="Data\BLL\OrganizationBLL.cs" />
+    <Compile Include="Data\BLL\RewardBLL.cs" />
+    <Compile Include="Data\BLL\EventBLL.cs" />
+    <Compile Include="Data\BLL\VolunteerBLL.cs" />
+    <Compile Include="Data\BLL\VolunteerRewardBLL.cs" />
+    <Compile Include="Data\BLL\WardBLL.cs" />
+    <Compile Include="Data\DAL\AccountDAL.cs" />
+    <Compile Include="Data\DAL\CategoryDAL.cs" />
+    <Compile Include="Data\DAL\CityDAL.cs" />
+    <Compile Include="Data\DAL\DistrictDAL.cs" />
+    <Compile Include="Data\DAL\OrganizationDAL.cs" />
+    <Compile Include="Data\DAL\RewardDAL.cs" />
+    <Compile Include="Data\DAL\EventDAL.cs" />
+    <Compile Include="Data\DAL\VolunteerDAL.cs" />
+    <Compile Include="Data\DAL\VolunteerRewardDAL.cs" />
+    <Compile Include="Data\DAL\WardDAL.cs" />
+    <Compile Include="Data\DTO\CategoryDTO.cs" />
+    <Compile Include="Data\DTO\CityDTO.cs" />
+    <Compile Include="Data\DTO\DistrictDTO.cs" />
+    <Compile Include="Data\DTO\OrganizationDTO.cs" />
+    <Compile Include="Data\DTO\RegisterVolunteerFormDTO.cs" />
+    <Compile Include="Data\DTO\RewardDTO.cs" />
+    <Compile Include="Data\DTO\EventDTO.cs" />
+    <Compile Include="Data\DTO\StatusDTO.cs" />
+    <Compile Include="Data\DTO\VolunteerDTO.cs" />
+    <Compile Include="Data\DTO\AccountDTO.cs" />
+    <Compile Include="Data\DTO\VolunteerRewardDTO.cs" />
+    <Compile Include="Data\DTO\WardDTO.cs" />
     <Compile Include="Data\EntityADO.NET\Account.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -81,10 +113,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\EntityADO.NET\Organization.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\EntityADO.NET\QuanHuyen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\QuocGia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Ranking.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\Registration.cs">
@@ -99,9 +137,6 @@
     <Compile Include="Data\EntityADO.NET\Reward.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\EntityADO.NET\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\EntityADO.NET\SysIndex.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -109,6 +144,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\Volunteer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\VolunteerLikeEvent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\VolunteerReward.cs">
@@ -129,6 +167,13 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrganizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizationForm.Designer.cs">
+      <DependentUpon>OrganizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIComponentTools\TextBoxRound.cs">
@@ -140,11 +185,35 @@
     <Compile Include="UserInterface\EventDetail\EventDetail_UC.Designer.cs">
       <DependentUpon>EventDetail_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\Event\AddNewEvent\AddNewEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\AddNewEvent\AddNewEvent.Designer.cs">
+      <DependentUpon>AddNewEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\Event\EventControl\EventControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserInterface\Event\EventControl\EventControl.Designer.cs">
       <DependentUpon>EventControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Event\EventHistoryControl\EventHistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\EventHistoryControl\EventHistoryControl.Designer.cs">
+      <DependentUpon>EventHistoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Event\EventHistory\EventHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\EventHistory\EventHistory.Designer.cs">
+      <DependentUpon>EventHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Event\EventRegistrationForm\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\EventRegistrationForm\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\Event\Event_UC.cs">
       <SubType>UserControl</SubType>
@@ -152,11 +221,41 @@
     <Compile Include="UserInterface\Event\Event_UC.Designer.cs">
       <DependentUpon>Event_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\Event\OrganizationEvent\OrganizationEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\OrganizationEvent\OrganizationEvent.Designer.cs">
+      <DependentUpon>OrganizationEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Event\OrganizationRegisterFormControl\OrganizationRegisterFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\OrganizationRegisterFormControl\OrganizationRegisterFormControl.Designer.cs">
+      <DependentUpon>OrganizationRegisterFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Event\OrganizationRegisterList\OrganizationRegisterList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\OrganizationRegisterList\OrganizationRegisterList.Designer.cs">
+      <DependentUpon>OrganizationRegisterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\History\History_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\History\History_UC.Designer.cs">
+      <DependentUpon>History_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\Login\Login_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserInterface\Login\Login_UC.Designer.cs">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\CreateReward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Redeem\CreateReward.Designer.cs">
+      <DependentUpon>CreateReward.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\Redeem\RedeemControl.cs">
       <SubType>UserControl</SubType>
@@ -170,11 +269,23 @@
     <Compile Include="UserInterface\Redeem\Redeem_UC.Designer.cs">
       <DependentUpon>Redeem_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\RegisterUser\AdminRegister_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\RegisterUser\AdminRegister_UC.Designer.cs">
+      <DependentUpon>AdminRegister_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\RegisterUser\Register_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserInterface\RegisterUser\Register_UC.Designer.cs">
       <DependentUpon>Register_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\UserInformation\UserInformation_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\UserInformation\UserInformation_UC.Designer.cs">
+      <DependentUpon>UserInformation_UC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="LoginForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -182,6 +293,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationForm.resx">
+      <DependentUpon>OrganizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -199,14 +313,42 @@
     <EmbeddedResource Include="UserInterface\EventDetail\EventDetail_UC.resx">
       <DependentUpon>EventDetail_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\AddNewEvent\AddNewEvent.resx">
+      <DependentUpon>AddNewEvent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Event\EventControl\EventControl.resx">
       <DependentUpon>EventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\EventHistoryControl\EventHistoryControl.resx">
+      <DependentUpon>EventHistoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\EventHistory\EventHistory.resx">
+      <DependentUpon>EventHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\EventRegistrationForm\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Event\Event_UC.resx">
       <DependentUpon>Event_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\OrganizationEvent\OrganizationEvent.resx">
+      <DependentUpon>OrganizationEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\OrganizationRegisterFormControl\OrganizationRegisterFormControl.resx">
+      <DependentUpon>OrganizationRegisterFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\OrganizationRegisterList\OrganizationRegisterList.resx">
+      <DependentUpon>OrganizationRegisterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\History\History_UC.resx">
+      <DependentUpon>History_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Login\Login_UC.resx">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Redeem\CreateReward.resx">
+      <DependentUpon>CreateReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Redeem\RedeemControl.resx">
       <DependentUpon>RedeemControl.cs</DependentUpon>
@@ -214,8 +356,14 @@
     <EmbeddedResource Include="UserInterface\Redeem\Redeem_UC.resx">
       <DependentUpon>Redeem_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\RegisterUser\AdminRegister_UC.resx">
+      <DependentUpon>AdminRegister_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\RegisterUser\Register_UC.resx">
       <DependentUpon>Register_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\UserInformation\UserInformation_UC.resx">
+      <DependentUpon>UserInformation_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\EntityADO.NET\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -263,12 +411,7 @@
     <None Include="Resources\icons8-list-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\BLL\" />
-    <Folder Include="Data\DAL\" />
-    <Folder Include="Data\DTO\" />
-    <Folder Include="UserInterface\History\" />
     <Folder Include="UserInterface\Home\" />
-    <Folder Include="UserInterface\UserInformation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\7bda1c7d233fe592c0fc7ea63f20ebc2.jpg" />
@@ -281,6 +424,22 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pexels-julie-aagaard-20971111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendar-50.png" />
+    <None Include="Resources\icons8-clock-50.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\icons8-add-event-48.png" />
+    <None Include="Resources\icons8-upload-100.png" />
+    <None Include="Resources\imagedd.jpg" />
+    <None Include="Resources\icons8-volunteering-64.png" />
+    <None Include="Resources\icons8-love-40.png" />
+    <None Include="Resources\icons8-love-401.png" />
+    <None Include="Resources\icons8-volunteer-64.png" />
+    <None Include="Resources\icons8-form-50.png" />
+    <None Include="Resources\icons8-shutdown-50.png" />
+    <None Include="Resources\icons8-create-100.png" />
     <Content Include="Data\EntityADO.NET\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -291,6 +450,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-back-50.png" />
+    <None Include="Resources\icons8-cancel-48.png" />
+    <None Include="Resources\kietvan.jpg" />
+    <None Include="Resources\icons8-search-64.png" />
+    <None Include="Resources\icons8-approve-64.png" />
+    <None Include="Resources\icons8-form-64.png" />
+    <Content Include="Resources\user-default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

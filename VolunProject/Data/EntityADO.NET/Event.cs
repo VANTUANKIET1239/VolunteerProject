@@ -17,6 +17,7 @@ namespace VolunProject.Data.EntityADO.NET
         public Event()
         {
             this.Registrations = new HashSet<Registration>();
+            this.VolunteerLikeEvents = new HashSet<VolunteerLikeEvent>();
         }
     
         public string EventID { get; set; }
@@ -32,8 +33,12 @@ namespace VolunProject.Data.EntityADO.NET
         public string description { get; set; }
         public string purpose { get; set; }
         public string time { get; set; }
+        public byte[] EventImage { get; set; }
+        public string DetailAddress { get; set; }
+        public string OrganizationID { get; set; }
     
         public virtual EventCategory EventCategory { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }
+        public virtual ICollection<VolunteerLikeEvent> VolunteerLikeEvents { get; set; }
     }
 }

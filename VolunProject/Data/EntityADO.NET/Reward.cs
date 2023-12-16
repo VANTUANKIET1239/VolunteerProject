@@ -20,10 +20,10 @@ namespace VolunProject.Data.EntityADO.NET
         }
     
         public string RewardID { get; set; }
-        public string RewardImage { get; set; }
         public string RewardName { get; set; }
         public Nullable<int> RedeemPoint { get; set; }
         public Nullable<bool> state { get; set; }
+        public byte[] RewardImg { get; set; }
     
         public virtual ICollection<VolunteerReward> VolunteerRewards { get; set; }
     }
