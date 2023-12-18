@@ -27,6 +27,7 @@ namespace VolunProject.UserInterface.RegisterUser
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
             string confirmPassword = confirmPasswordTextBox.Text;
+            string email = emailTextBox.Text;
             if(username == "")
             {
                 errorMessage.Text = "Vui lòng nhập tên đăng nhập !";
@@ -42,6 +43,11 @@ namespace VolunProject.UserInterface.RegisterUser
                 errorMessage.Text = "Vui lòng xác nhận mật khẩu !";
                 errorMessage.Visible = true;
             }
+            else if (emailTextBox.Text == "")
+            {
+                errorMessage.Text = "Vui lòng nhập email !";
+                errorMessage.Visible = true;
+            }
             else if(confirmPassword != password)
             {
                 errorMessage.Text = "Mật khẩu không trùng khớp !";
@@ -52,12 +58,17 @@ namespace VolunProject.UserInterface.RegisterUser
                 errorMessage.Text = "Tên đăng nhập đã tồn tại !";
                 errorMessage.Visible = true;
             }
+            else if (VolunteerBLL.checkEmail(email))
+            {
+                errorMessage.Text = "Email đã được sử dụng !";
+                errorMessage.Visible = true;
+            }
             else
             {
                 AccountDTO accountDTO = new AccountDTO();
                 accountDTO.AccountName  = usernameTextBox.Text;
                 accountDTO.Password = passwordTextBox.Text;
-                if (AccountBLL.SignUp(accountDTO))
+                if (AccountBLL.SignUp(accountDTO,email))
                 {
                     registerEvent(this, new EventArgs());
                     MessageBox.Show("Đăng kí tài khoản thành công !","Thông báo");

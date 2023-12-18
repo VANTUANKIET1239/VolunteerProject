@@ -81,5 +81,15 @@ namespace VolunProject
         {
             signOutEventOr(this, new EventArgs());
         }
+
+        private void ApproveVolunteerBTN_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.OrganizationRegisterList.OrganizationRegisterList(), sender);
+        }
+
+        private void notifyBTN_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.OrganizationRegisterList.OrganizationRegisterList(), sender);
+        }
     }
 }

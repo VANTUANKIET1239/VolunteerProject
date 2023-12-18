@@ -15,6 +15,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="VolunteersDBModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+          <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+          <ScalarProperty Name="CommentLike" ColumnName="CommentLike" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Events">
       <EntityTypeMapping TypeName="VolunteersDBModel.Event">
         <MappingFragment StoreEntitySet="Event">
@@ -47,6 +59,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="VolunteersDBModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="NotificationContent" ColumnName="NotificationContent" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="NotiImg" ColumnName="NotiImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Organizations">
       <EntityTypeMapping TypeName="VolunteersDBModel.Organization">
         <MappingFragment StoreEntitySet="Organization">
@@ -54,6 +78,19 @@
           <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
           <ScalarProperty Name="state" ColumnName="state" />
           <ScalarProperty Name="COCK" ColumnName="COCK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="VolunteersDBModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="PostLike" ColumnName="PostLike" />
+          <ScalarProperty Name="State" ColumnName="State" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -98,6 +135,8 @@
           <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
           <ScalarProperty Name="state" ColumnName="state" />
           <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="ApproveAccountID" ColumnName="ApproveAccountID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

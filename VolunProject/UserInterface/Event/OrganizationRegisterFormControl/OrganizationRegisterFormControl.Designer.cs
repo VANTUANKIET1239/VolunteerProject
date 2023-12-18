@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EventName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CancelBTN = new System.Windows.Forms.Button();
             this.DetailVolunteerBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -169,13 +170,27 @@
             this.panel1.Size = new System.Drawing.Size(754, 100);
             this.panel1.TabIndex = 55;
             // 
+            // CancelBTN
+            // 
+            this.CancelBTN.BackColor = System.Drawing.Color.MistyRose;
+            this.CancelBTN.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelBTN.Image = global::VolunProject.Properties.Resources.icons8_reject_48;
+            this.CancelBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CancelBTN.Location = new System.Drawing.Point(1154, 175);
+            this.CancelBTN.Name = "CancelBTN";
+            this.CancelBTN.Size = new System.Drawing.Size(210, 49);
+            this.CancelBTN.TabIndex = 56;
+            this.CancelBTN.Text = "  Từ chối";
+            this.CancelBTN.UseVisualStyleBackColor = false;
+            this.CancelBTN.Click += new System.EventHandler(this.CancelBTN_Click);
+            // 
             // DetailVolunteerBTN
             // 
             this.DetailVolunteerBTN.BackColor = System.Drawing.Color.CornflowerBlue;
             this.DetailVolunteerBTN.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailVolunteerBTN.Image = global::VolunProject.Properties.Resources.icons8_form_64;
             this.DetailVolunteerBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DetailVolunteerBTN.Location = new System.Drawing.Point(1156, 109);
+            this.DetailVolunteerBTN.Location = new System.Drawing.Point(1154, 112);
             this.DetailVolunteerBTN.Name = "DetailVolunteerBTN";
             this.DetailVolunteerBTN.Size = new System.Drawing.Size(210, 49);
             this.DetailVolunteerBTN.TabIndex = 44;
@@ -243,6 +258,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.CancelBTN);
             this.Controls.Add(this.EventName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.statusPanel);
@@ -259,7 +276,7 @@
             this.Controls.Add(this.ApproveBTN);
             this.Controls.Add(this.panel1);
             this.Name = "OrganizationRegisterFormControl";
-            this.Size = new System.Drawing.Size(1400, 184);
+            this.Size = new System.Drawing.Size(1400, 234);
             this.statusPanel.ResumeLayout(false);
             this.statusPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -290,5 +307,6 @@
         private System.Windows.Forms.Label EventName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button SearchEvent;
+        private System.Windows.Forms.Button CancelBTN;
     }
 }

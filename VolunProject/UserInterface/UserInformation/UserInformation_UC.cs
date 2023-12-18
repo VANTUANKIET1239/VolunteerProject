@@ -81,12 +81,19 @@ namespace VolunProject.UserInterface.UserInformation
             accountNameLB.Text = curUser.AccountName;
             descriptionTB.Text = curVol.Description;
             addressTB.Text = curVol.AddressDetail;
-            Image image;
-            using (MemoryStream ms = new MemoryStream(curUser.ImageUS))
+            RankingDTO rankingDTO = RankingBLL.getRankingByID(curVol.RankId);
+            Image image1,image2;
+            using (MemoryStream ms1 = new MemoryStream(curUser.ImageUS))
             {
-                image = Image.FromStream(ms);
-                userImg.Image = image;
+                image1 = Image.FromStream(ms1);
+                userImg.Image = image1;
             }
+            using (MemoryStream ms2 = new MemoryStream(rankingDTO.RankImage))
+            {
+                image2 = Image.FromStream(ms2);
+                rankingPB.Image = image2;
+            }
+            
             bool? genderNullable = curVol.Gender;
             string gender = genderNullable.HasValue ? (genderNullable.Value ? "Nam" : "Nữ") : "";
             int index = genderCB.FindStringExact(gender);

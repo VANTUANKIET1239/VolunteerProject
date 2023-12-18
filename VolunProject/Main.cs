@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.UserInterface.Event.EventControl;
 using VolunProject.UserInterface.EventDetail;
+using VolunProject.UserInterface.Redeem;
 //using VolunProject.Data.BLL;
 
 namespace VolunProject
@@ -30,11 +31,18 @@ namespace VolunProject
             EventDetail_UC.BackToEvents += EventDetail_UC_BackToEvents;
         }
 
+
+        
+           
         private void EventDetail_UC_BackToEvents(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Event.Event_UC(), sender);
         }
 
+        private void RedeemControl_loadEvent(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
+        }
         private void EventControl_DetailEvent(object sender, EventArgs e)
         {
             var eventControll = sender as EventControl;
@@ -107,7 +115,6 @@ namespace VolunProject
         private void rewardsButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Redeem.Redeem_UC(), sender);
-           // LoginForm.LoginForm.OpenChildForm(MainPanel, new UserInterface.Redeem.Redeem_UC(), sender);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -128,6 +135,11 @@ namespace VolunProject
         private void createReward_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Redeem.CreateReward(), sender);
+        }
+
+        private void historyButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.History.History_UC(), sender);
         }
 
         private void MainPanel_Paint_1(object sender, PaintEventArgs e)
@@ -155,9 +167,6 @@ namespace VolunProject
 
         }
 
-        private void historyButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

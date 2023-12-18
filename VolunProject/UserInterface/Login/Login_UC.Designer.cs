@@ -28,27 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.loginButton = new System.Windows.Forms.Button();
             this.userPassword = new System.Windows.Forms.TextBox();
             this.userLogin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.signupButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorMessage = new System.Windows.Forms.Label();
             this.registerAdminButton = new System.Windows.Forms.Button();
             this.login = new System.Windows.Forms.Button();
             this.signup = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // loginButton
-            // 
-            this.loginButton.Location = new System.Drawing.Point(0, 0);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 12;
             // 
             // userPassword
             // 
@@ -78,13 +70,6 @@
             this.label1.Size = new System.Drawing.Size(288, 62);
             this.label1.TabIndex = 5;
             this.label1.Text = "Đăng nhập";
-            // 
-            // signupButton
-            // 
-            this.signupButton.Location = new System.Drawing.Point(0, 0);
-            this.signupButton.Name = "signupButton";
-            this.signupButton.Size = new System.Drawing.Size(75, 23);
-            this.signupButton.TabIndex = 11;
             // 
             // pictureBox2
             // 
@@ -128,11 +113,11 @@
             this.registerAdminButton.FlatAppearance.BorderSize = 0;
             this.registerAdminButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerAdminButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.registerAdminButton.Location = new System.Drawing.Point(169, 448);
+            this.registerAdminButton.Location = new System.Drawing.Point(479, 390);
             this.registerAdminButton.Name = "registerAdminButton";
-            this.registerAdminButton.Size = new System.Drawing.Size(493, 43);
-            this.registerAdminButton.TabIndex = 3;
-            this.registerAdminButton.Text = "Đăng ký dưới quyền ban tổ chức";
+            this.registerAdminButton.Size = new System.Drawing.Size(131, 43);
+            this.registerAdminButton.TabIndex = 5;
+            this.registerAdminButton.Text = "Admin";
             this.registerAdminButton.UseVisualStyleBackColor = false;
             this.registerAdminButton.Click += new System.EventHandler(this.registerAdminButton_Click);
             // 
@@ -142,7 +127,7 @@
             this.login.FlatAppearance.BorderSize = 0;
             this.login.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.login.Location = new System.Drawing.Point(169, 390);
+            this.login.Location = new System.Drawing.Point(157, 390);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(138, 43);
             this.login.TabIndex = 3;
@@ -156,26 +141,38 @@
             this.signup.FlatAppearance.BorderSize = 0;
             this.signup.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signup.Location = new System.Drawing.Point(338, 390);
+            this.signup.Location = new System.Drawing.Point(323, 390);
             this.signup.Name = "signup";
             this.signup.Size = new System.Drawing.Size(138, 43);
-            this.signup.TabIndex = 3;
+            this.signup.TabIndex = 4;
             this.signup.Text = "Signup";
             this.signup.UseVisualStyleBackColor = false;
             this.signup.Click += new System.EventHandler(this.signup_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
+            this.button1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(157, 457);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 44);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Quên MK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.errorMessage);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.signupButton);
             this.Controls.Add(this.signup);
             this.Controls.Add(this.login);
             this.Controls.Add(this.registerAdminButton);
-            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.userPassword);
             this.Controls.Add(this.userLogin);
             this.Controls.Add(this.label1);
@@ -189,16 +186,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox userPassword;
         private System.Windows.Forms.TextBox userLogin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button signupButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label errorMessage;
         private System.Windows.Forms.Button registerAdminButton;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.Button signup;
+        private System.Windows.Forms.Button button1;
     }
 }

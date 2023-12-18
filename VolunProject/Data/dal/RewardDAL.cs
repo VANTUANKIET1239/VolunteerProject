@@ -53,5 +53,10 @@ namespace VolunProject.Data.DAL
             }
             return false;
         }
+        public static VolunteerReward getVolunteerRewardByID(string volunteerID, string rewardID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.VolunteerRewards.Where(x => x.VolunteerID == volunteerID && x.RewardID == rewardID).FirstOrDefault();
+        }
     }
 }

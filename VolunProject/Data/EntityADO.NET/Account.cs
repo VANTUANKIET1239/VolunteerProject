@@ -16,6 +16,7 @@ namespace VolunProject.Data.EntityADO.NET
     {
         public Account()
         {
+            this.Notifications = new HashSet<Notification>();
             this.Volunteers = new HashSet<Volunteer>();
         }
     
@@ -28,6 +29,7 @@ namespace VolunProject.Data.EntityADO.NET
         public byte[] ImageUS { get; set; }
         public string OrganizationID { get; set; }
     
+        public virtual ICollection<Notification> Notifications { get; set; }
         public virtual Organization Organization { get; set; }
         public virtual ICollection<Volunteer> Volunteers { get; set; }
     }

@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listRedeemFlowlayoutpanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lb1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,9 +59,21 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1470, 876);
+            this.panel1.Size = new System.Drawing.Size(1473, 876);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lb1
+            // 
+            this.lb1.AutoSize = true;
+            this.lb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
+            this.lb1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.ForeColor = System.Drawing.Color.Yellow;
+            this.lb1.Location = new System.Drawing.Point(232, 231);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(104, 32);
+            this.lb1.TabIndex = 2;
+            this.lb1.Text = "label3";
             // 
             // pictureBox1
             // 
@@ -94,18 +106,6 @@
             this.listRedeemFlowlayoutpanel.Size = new System.Drawing.Size(1473, 600);
             this.listRedeemFlowlayoutpanel.TabIndex = 2;
             this.listRedeemFlowlayoutpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.listRedeemFlowlayoutpanel_Paint);
-            // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.lb1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.ForeColor = System.Drawing.Color.Yellow;
-            this.lb1.Location = new System.Drawing.Point(232, 231);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(104, 32);
-            this.lb1.TabIndex = 2;
-            this.lb1.Text = "label3";
             // 
             // Redeem_UC
             // 

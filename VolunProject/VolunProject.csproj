@@ -61,7 +61,9 @@
     <Compile Include="Data\BLL\CategoryBLL.cs" />
     <Compile Include="Data\BLL\CityBLL.cs" />
     <Compile Include="Data\BLL\DistrictBLL.cs" />
+    <Compile Include="Data\BLL\NotificationBLL.cs" />
     <Compile Include="Data\BLL\OrganizationBLL.cs" />
+    <Compile Include="Data\BLL\RankingBLL.cs" />
     <Compile Include="Data\BLL\RewardBLL.cs" />
     <Compile Include="Data\BLL\EventBLL.cs" />
     <Compile Include="Data\BLL\VolunteerBLL.cs" />
@@ -71,7 +73,9 @@
     <Compile Include="Data\DAL\CategoryDAL.cs" />
     <Compile Include="Data\DAL\CityDAL.cs" />
     <Compile Include="Data\DAL\DistrictDAL.cs" />
+    <Compile Include="Data\DAL\NotificationDAL.cs" />
     <Compile Include="Data\DAL\OrganizationDAL.cs" />
+    <Compile Include="Data\DAL\RankingDAL.cs" />
     <Compile Include="Data\DAL\RewardDAL.cs" />
     <Compile Include="Data\DAL\EventDAL.cs" />
     <Compile Include="Data\DAL\VolunteerDAL.cs" />
@@ -80,7 +84,10 @@
     <Compile Include="Data\DTO\CategoryDTO.cs" />
     <Compile Include="Data\DTO\CityDTO.cs" />
     <Compile Include="Data\DTO\DistrictDTO.cs" />
+    <Compile Include="Data\DTO\NotificationDTO.cs" />
     <Compile Include="Data\DTO\OrganizationDTO.cs" />
+    <Compile Include="Data\DTO\RankingDTO.cs" />
+    <Compile Include="Data\DTO\RegisterFormSearchDTO.cs" />
     <Compile Include="Data\DTO\RegisterVolunteerFormDTO.cs" />
     <Compile Include="Data\DTO\RewardDTO.cs" />
     <Compile Include="Data\DTO\EventDTO.cs" />
@@ -90,6 +97,9 @@
     <Compile Include="Data\DTO\VolunteerRewardDTO.cs" />
     <Compile Include="Data\DTO\WardDTO.cs" />
     <Compile Include="Data\EntityADO.NET\Account.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Comment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\Event.cs">
@@ -113,7 +123,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\EntityADO.NET\Notification.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\EntityADO.NET\Organization.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Post.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\QuanHuyen.cs">
@@ -221,6 +237,24 @@
     <Compile Include="UserInterface\Event\Event_UC.Designer.cs">
       <DependentUpon>Event_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\Event\UserRegisterInformation\UserRegisterInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Event\UserRegisterInformation\UserRegisterInformation.Designer.cs">
+      <DependentUpon>UserRegisterInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmCode_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmCode_UC.Designer.cs">
+      <DependentUpon>ConfirmCode_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmEmail_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\ForgetPassword\ConfirmEmail_UC.Designer.cs">
+      <DependentUpon>ConfirmEmail_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\Event\OrganizationEvent\OrganizationEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -245,11 +279,29 @@
     <Compile Include="UserInterface\History\History_UC.Designer.cs">
       <DependentUpon>History_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\History\RewardHistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\History\RewardHistoryControl.Designer.cs">
+      <DependentUpon>RewardHistoryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\Login\Login_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserInterface\Login\Login_UC.Designer.cs">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\NotificationControl\NotificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\NotificationControl\NotificationControl.Designer.cs">
+      <DependentUpon>NotificationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\NotificationList\NotificationList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\NotificationList\NotificationList.Designer.cs">
+      <DependentUpon>NotificationList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\Redeem\CreateReward.cs">
       <SubType>UserControl</SubType>
@@ -332,6 +384,15 @@
     <EmbeddedResource Include="UserInterface\Event\Event_UC.resx">
       <DependentUpon>Event_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Event\UserRegisterInformation\UserRegisterInformation.resx">
+      <DependentUpon>UserRegisterInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\ForgetPassword\ConfirmCode_UC.resx">
+      <DependentUpon>ConfirmCode_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\ForgetPassword\ConfirmEmail_UC.resx">
+      <DependentUpon>ConfirmEmail_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Event\OrganizationEvent\OrganizationEvent.resx">
       <DependentUpon>OrganizationEvent.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,8 +405,17 @@
     <EmbeddedResource Include="UserInterface\History\History_UC.resx">
       <DependentUpon>History_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\History\RewardHistoryControl.resx">
+      <DependentUpon>RewardHistoryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Login\Login_UC.resx">
       <DependentUpon>Login_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\NotificationControl\NotificationControl.resx">
+      <DependentUpon>NotificationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\NotificationList\NotificationList.resx">
+      <DependentUpon>NotificationList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Redeem\CreateReward.resx">
       <DependentUpon>CreateReward.cs</DependentUpon>
@@ -450,6 +520,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\bronze-medal.png" />
+    <Content Include="Resources\diamond-medal.png" />
+    <Content Include="Resources\gold-medal.png" />
+    <Content Include="Resources\icons8-check-48 %281%29.png" />
+    <Content Include="Resources\icons8-check-48.png" />
+    <None Include="Resources\icons8-notification-50.png" />
+    <None Include="Resources\icons8-reject-48.png" />
+    <Content Include="Resources\silver-medal.png" />
     <None Include="Resources\icons8-back-50.png" />
     <None Include="Resources\icons8-cancel-48.png" />
     <None Include="Resources\kietvan.jpg" />

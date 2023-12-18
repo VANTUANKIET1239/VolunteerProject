@@ -20,6 +20,13 @@ namespace VolunProject.Data.DAL
                                                         .Where(x => x.AccountID == accountID).FirstOrDefault();
             return volunteer ?? new Volunteer();
         }
+        public static Volunteer GetVolunteer_ByVolunId(string volunteerId)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            Volunteer volunteer = volunteerDBEntities.Volunteers
+                                                        .Where(x => x.VolunteerID == volunteerId).FirstOrDefault();
+            return volunteer ?? new Volunteer();
+        }
         public static bool UpdateVolunteer(VolunteerDTO volunteerDTO, byte[] img)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
@@ -43,6 +50,11 @@ namespace VolunProject.Data.DAL
             curVol.state = volunteerDTO.state;
             curVol.AddressDetail = volunteerDTO.AddressDetail;
             return volunteerDBEntities.SaveChanges()>0;
+        }
+        public static bool checkEmail(string email)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Volunteers.Any(x => x.Email == email);
         }
     }
 }

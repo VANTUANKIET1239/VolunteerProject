@@ -92,6 +92,23 @@ namespace VolunProject.Data.BLL
         {
             return EventDAL.Event_CheckVolunteerRegister(eventId, volunteerId);
         }
+        public static ICollection<RegisterVolunteerFormDTO> Event_GetAllVolunteerRegistration_ByOranizationId(string organizationId, RegisterFormSearchDTO registerFormSearchDTO)
+        {
+            var items = EventDAL.Event_GetAllVolunteerRegistration_ByOranizationId(organizationId,registerFormSearchDTO).ToList();
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            items.ForEach(item =>
+            {
+                item.VolunteerImage = AccountBLL.GetAccountByID(item.accountID).ImageUS;
+                item.cityName = CityBLL.City_ById(item.CityId).tenTinhThanhPho;
+                item.districtName = DistrictBLL.District_ById(item.DistrictId).tenQuanHuyen;
+                item.wardName = WardBLL.Ward_ById(item.WardId).tenXaPhuong;
+            });
+            return items;
+        }
+        public static bool Event_Approve(string eventId, string volunteerId)
+        {
+            return EventDAL.Event_Approve(eventId, volunteerId);
+        }
     }
 
 }

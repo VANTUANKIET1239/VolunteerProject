@@ -26,6 +26,7 @@ namespace VolunProject.UserInterface.Event.EventControl
         }
         private void LoadEvent(EventDTO eventDTO)
         {
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
             EventModel = eventDTO;
             Like.Text = eventDTO.LikeCount.ToString();
             eventTitle.Text = eventDTO.EventName.ToString();
@@ -38,6 +39,12 @@ namespace VolunProject.UserInterface.Event.EventControl
                 image = Image.FromStream(ms);
                 EventImageBox.Image = image;
             }
+            if (curUser.RoleName == "ORGANIZATION")
+            {
+                DetailEventBtn.Visible = false;
+                JoinEventBtn.Visible = false;
+            }
+
 
         }
 

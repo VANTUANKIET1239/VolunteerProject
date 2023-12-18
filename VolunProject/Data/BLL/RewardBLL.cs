@@ -35,5 +35,9 @@ namespace VolunProject.Data.BLL
             List<RewardDTO> dto = mapper.Map<List<RewardDTO>>(RewardDAL.getAllRewards());
             return dto;
         }
+        public static VolunteerReward getVolunteerRewardByID(string volunteerID, string rewardID)
+        {
+            return RewardDAL.getVolunteerRewardByID(volunteerID, rewardID);
+        }
     }
 }
