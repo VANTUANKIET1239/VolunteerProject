@@ -32,12 +32,9 @@
             this.sidebarContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.createReward = new System.Windows.Forms.Button();
             this.signOutButoon = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
@@ -45,11 +42,14 @@
             this.rewardsButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebarContainer
@@ -90,14 +90,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
             this.pictureBox1.Location = new System.Drawing.Point(29, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 40);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // 
             // panel2
             // 
@@ -122,41 +120,6 @@
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // sidebarTimer
-            // 
-            this.sidebarTimer.Interval = 10;
-            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.MainPanel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(274, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1475, 870);
-            this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.MainPanel.Size = new System.Drawing.Size(1475, 870);
-            this.MainPanel.TabIndex = 0;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // createReward
             // 
             this.createReward.Dock = System.Windows.Forms.DockStyle.Top;
@@ -164,7 +127,6 @@
             this.createReward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createReward.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createReward.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.createReward.Image = global::VolunProject.Properties.Resources.icons8_love_40;
             this.createReward.Location = new System.Drawing.Point(0, 235);
             this.createReward.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.createReward.Name = "createReward";
@@ -183,7 +145,6 @@
             this.signOutButoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signOutButoon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signOutButoon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.signOutButoon.Image = global::VolunProject.Properties.Resources.icons8_shutdown_50;
             this.signOutButoon.Location = new System.Drawing.Point(0, 723);
             this.signOutButoon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.signOutButoon.Name = "signOutButoon";
@@ -202,7 +163,6 @@
             this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.infoButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.infoButton.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.infoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.infoButton.Location = new System.Drawing.Point(0, 188);
             this.infoButton.Name = "infoButton";
@@ -221,7 +181,6 @@
             this.historyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.historyButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historyButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.historyButton.Image = global::VolunProject.Properties.Resources.icons8_list_50;
             this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.historyButton.Location = new System.Drawing.Point(0, 141);
             this.historyButton.Name = "historyButton";
@@ -240,7 +199,6 @@
             this.rewardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rewardsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rewardsButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.rewardsButton.Image = global::VolunProject.Properties.Resources.icons8_gift_50;
             this.rewardsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rewardsButton.Location = new System.Drawing.Point(0, 94);
             this.rewardsButton.Name = "rewardsButton";
@@ -259,7 +217,6 @@
             this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_50;
             this.eventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButton.Location = new System.Drawing.Point(0, 47);
             this.eventButton.Name = "eventButton";
@@ -278,7 +235,6 @@
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.homeButton.Image = global::VolunProject.Properties.Resources.icons8_home_30;
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.Location = new System.Drawing.Point(0, 0);
             this.homeButton.Margin = new System.Windows.Forms.Padding(0);
@@ -290,6 +246,7 @@
             this.homeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
             // sidebarTimer
             // 
             this.sidebarTimer.Interval = 10;
@@ -301,23 +258,22 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(274, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1474, 873);
+            this.panel4.Size = new System.Drawing.Size(1522, 879);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // MainPanel
             // 
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Location = new System.Drawing.Point(3, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1473, 873);
+            this.MainPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.MainPanel.Size = new System.Drawing.Size(1519, 879);
             this.MainPanel.TabIndex = 1;
-            // 
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint_1);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1749, 870);
-            this.ClientSize = new System.Drawing.Size(1095, 736);
+            this.ClientSize = new System.Drawing.Size(1796, 879);
             this.ControlBox = false;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.sidebarContainer);
@@ -329,9 +285,9 @@
             this.sidebarContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

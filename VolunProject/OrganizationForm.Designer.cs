@@ -119,7 +119,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
+//            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
             this.pictureBox1.Location = new System.Drawing.Point(29, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 40);
@@ -133,7 +133,7 @@
             this.notifyBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.notifyBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifyBTN.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.notifyBTN.Image = global::VolunProject.Properties.Resources.icons8_notification_50;
+//            this.notifyBTN.Image = global::VolunProject.Properties.Resources.icons8_notification_50;
             this.notifyBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.notifyBTN.Location = new System.Drawing.Point(0, 350);
             this.notifyBTN.Name = "notifyBTN";
@@ -152,7 +152,7 @@
             this.SignOutBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignOutBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOutBTN.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SignOutBTN.Image = global::VolunProject.Properties.Resources.icons8_shutdown_50;
+//            this.SignOutBTN.Image = global::VolunProject.Properties.Resources.icons8_shutdown_50;
             this.SignOutBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SignOutBTN.Location = new System.Drawing.Point(0, 700);
             this.SignOutBTN.Name = "SignOutBTN";
@@ -171,7 +171,7 @@
             this.CreateEventButoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateEventButoon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateEventButoon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CreateEventButoon.Image = global::VolunProject.Properties.Resources.icons8_create_100;
+//            this.CreateEventButoon.Image = global::VolunProject.Properties.Resources.icons8_create_100;
             this.CreateEventButoon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateEventButoon.Location = new System.Drawing.Point(0, 280);
             this.CreateEventButoon.Name = "CreateEventButoon";
@@ -189,7 +189,7 @@
             this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.infoButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.infoButton.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+//            this.infoButton.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.infoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.infoButton.Location = new System.Drawing.Point(0, 210);
             this.infoButton.Name = "infoButton";
@@ -207,7 +207,7 @@
             this.historyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.historyButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historyButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.historyButton.Image = global::VolunProject.Properties.Resources.icons8_list_50;
+//            this.historyButton.Image = global::VolunProject.Properties.Resources.icons8_list_50;
             this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.historyButton.Location = new System.Drawing.Point(0, 140);
             this.historyButton.Name = "historyButton";
@@ -225,7 +225,7 @@
             this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_50;
+//            this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_50;
             this.eventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButton.Location = new System.Drawing.Point(0, 70);
             this.eventButton.Name = "eventButton";
@@ -244,7 +244,7 @@
             this.ApproveVolunteerBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ApproveVolunteerBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApproveVolunteerBTN.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ApproveVolunteerBTN.Image = global::VolunProject.Properties.Resources.icons8_form_50;
+//            this.ApproveVolunteerBTN.Image = global::VolunProject.Properties.Resources.icons8_form_50;
             this.ApproveVolunteerBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ApproveVolunteerBTN.Location = new System.Drawing.Point(0, 0);
             this.ApproveVolunteerBTN.Margin = new System.Windows.Forms.Padding(0);

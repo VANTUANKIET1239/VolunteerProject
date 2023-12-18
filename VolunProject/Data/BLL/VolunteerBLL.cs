@@ -40,7 +40,7 @@ namespace VolunProject.Data.BLL
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Volunteer, VolunteerDTO>());
             var mapper = new Mapper(config);
-            VolunteerDTO dto = mapper.Map<VolunteerDTO>(VolunteerDAL.GetVolunteer_ByVolunId(volunteerId));
+            VolunteerDTO dto = mapper.Map<VolunteerDTO>(VolunteerDAL.GetVolunteerByVolunteerID(volunteerId));
             return dto;
         }
     }
