@@ -16,6 +16,10 @@ namespace VolunProject.Data.BLL
         {
             return VolunteerDAL.GetVolunteer(accountID);
         }
+        public static Volunteer GetVolunteerByVolunteerID(string volunteerID)
+        {
+            return VolunteerDAL.GetVolunteerByVolunteerID(volunteerID);
+        }
         public static bool UpdateVolunteer(VolunteerDTO volunteerDTO, byte[] img)
         {
             var accountSession = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");

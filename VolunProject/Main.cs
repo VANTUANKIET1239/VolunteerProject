@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.LoginForm;
 using VolunProject.UserInterface.Event.EventControl;
 using VolunProject.UserInterface.EventDetail;
+using VolunProject.UserInterface.Home;
 using VolunProject.UserInterface.Redeem;
 //using VolunProject.Data.BLL;
 
@@ -29,11 +31,21 @@ namespace VolunProject
         {
             EventControl.DetailEvent += EventControl_DetailEvent;
             EventDetail_UC.BackToEvents += EventDetail_UC_BackToEvents;
+            RedeemControl.loadEvent += RedeemControl_loadEvent;
+            LoginForm.LoginForm.loginEvent += Main_Load;
+            CreatePost_Form.LoadEvent += Main_Load;
         }
 
+        private void CreatePost_Form_LoadEvent(object sender, EventArgs e)
+        {
+            
+        }
 
-        
-           
+        private void LoginForm_loginEvent(object sender, EventArgs e)
+        {
+            
+        }
+
         private void EventDetail_UC_BackToEvents(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Event.Event_UC(), sender);
@@ -99,7 +111,7 @@ namespace VolunProject
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new UserInterface.Home.Home_UC(), sender);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -167,6 +179,9 @@ namespace VolunProject
 
         }
 
-        
+        private void Main_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Home.Home_UC(), sender);
+        }
     }
 }

@@ -20,6 +20,13 @@ namespace VolunProject.Data.DAL
                                                         .Where(x => x.AccountID == accountID).FirstOrDefault();
             return volunteer ?? new Volunteer();
         }
+        public static Volunteer GetVolunteerByVolunteerID(string volunteerID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            Volunteer volunteer = volunteerDBEntities.Volunteers
+                                                        .Where(x => x.VolunteerID == volunteerID).FirstOrDefault();
+            return volunteer ?? new Volunteer();
+        }
         public static bool UpdateVolunteer(VolunteerDTO volunteerDTO, byte[] img)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();

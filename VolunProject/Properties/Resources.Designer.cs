@@ -133,6 +133,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_comment_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-comment-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_create_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-create-100", resourceCulture);
@@ -176,6 +186,26 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_gift_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-gift-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_heart_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-heart-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_heart_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-heart-50 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +366,16 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap logo_starbucks {
             get {
                 object obj = ResourceManager.GetObject("logo-starbucks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

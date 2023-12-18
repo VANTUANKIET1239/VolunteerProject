@@ -178,6 +178,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Login_UC";
             this.Size = new System.Drawing.Size(836, 709);
+            this.Load += new System.EventHandler(this.Login_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

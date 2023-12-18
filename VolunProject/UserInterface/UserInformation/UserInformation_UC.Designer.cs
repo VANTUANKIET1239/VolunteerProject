@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.lb1 = new System.Windows.Forms.Label();
-            this.userImg = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.changePassword = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -80,9 +77,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.userNameTB = new System.Windows.Forms.TextBox();
             this.rankingPB = new System.Windows.Forms.PictureBox();
+            this.userImg = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -98,14 +95,15 @@
             this.panel15.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lb1);
             this.panel1.Controls.Add(this.rankingPB);
-            this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.userImg);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.saveButton);
@@ -128,55 +126,23 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panel1.Size = new System.Drawing.Size(1473, 870);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(1473, 868);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.lb1);
-            this.panel16.Location = new System.Drawing.Point(510, 744);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(634, 26);
-            this.panel16.TabIndex = 7;
             // 
             // lb1
             // 
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb1.ForeColor = System.Drawing.Color.Red;
-            this.lb1.Location = new System.Drawing.Point(3, 0);
+            this.lb1.Location = new System.Drawing.Point(515, 740);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(80, 22);
             this.lb1.TabIndex = 7;
             this.lb1.Text = "label16";
             this.lb1.Visible = false;
             this.lb1.Click += new System.EventHandler(this.lb1_Click);
-            // 
-            // userImg
-            // 
-            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.userImg.Location = new System.Drawing.Point(265, 34);
-            this.userImg.Name = "userImg";
-            this.userImg.Size = new System.Drawing.Size(179, 180);
-            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userImg.TabIndex = 6;
-            this.userImg.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_upload_100;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(266, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 33);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // saveButton
             // 
@@ -647,6 +613,30 @@
             this.rankingPB.TabIndex = 8;
             this.rankingPB.TabStop = false;
             // 
+            // userImg
+            // 
+            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            this.userImg.Location = new System.Drawing.Point(265, 34);
+            this.userImg.Name = "userImg";
+            this.userImg.Size = new System.Drawing.Size(179, 180);
+            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userImg.TabIndex = 6;
+            this.userImg.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_upload_100;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(266, 220);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 33);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UserInformation_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -654,13 +644,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.panel1);
             this.Name = "UserInformation_UC";
-            this.Size = new System.Drawing.Size(1473, 871);
+            this.Size = new System.Drawing.Size(1475, 870);
             this.Load += new System.EventHandler(this.UserInformation_UC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -690,6 +677,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,7 +734,6 @@
         private System.Windows.Forms.Label accountNameLB;
         private System.Windows.Forms.Label scoresLB;
         private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.PictureBox rankingPB;
     }
 }

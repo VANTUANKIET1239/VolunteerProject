@@ -18,23 +18,24 @@ namespace VolunProject
         public static string guiMailLayMK(string randomnumber)
 
         {
-            string htmlBody = $@"<h2>Xác nhận Email đổi mật khẩu</h2>
+            string htmlBody = $@"<h2>Mã xác thực lấy lại mật khẩu</h2>
             <p>Xin chào,</p>
-            <p>Cảm ơn bạn đã sử dụng dịch vụ. Dưới đây là mã xác nhận đổi mật khẩu:</p>
+            <p>Cảm ơn bạn đã sử dụng dịch vụ. Dưới đây là mã xác nhận lấy lại mật khẩu:</p>
             <hr/>
             <h3>{randomnumber}</h3>
             <hr/>
             <p>Cảm ơn bạn rất nhiều!</p>";
             return htmlBody;
         }
-        public static string templateLayMK(string password)
+        public static string templateLayMK(string account, string password)
 
         {
-            string htmlBody = $@"<h2>Mật khẩu của bạn</h2>
+            string htmlBody = $@"<h2>Thông tin tài khoản</h2>
             <p>Xin chào,</p>
-            <p>Cảm ơn bạn đã sử dụng dịch vụ. Dưới đây là mật khẩu của bạn:</p>
+            <p>Cảm ơn bạn đã sử dụng dịch vụ. Dưới đây là thông tin tài khoản của bạn:</p>
             <hr/>
-            <h3> {password}</h3>
+            <h3> Tài khoản: {account}</h3>
+            <h3> Mật khẩu: {password}</h3>
             <hr/>
             <p>Cảm ơn bạn rất nhiều!</p>";
             return htmlBody;

@@ -16,6 +16,8 @@ namespace VolunProject.Data.EntityADO.NET
     {
         public Volunteer()
         {
+            this.Comments = new HashSet<Comment>();
+            this.Posts = new HashSet<Post>();
             this.Registrations = new HashSet<Registration>();
             this.Reviews = new HashSet<Review>();
             this.ReviewLists = new HashSet<ReviewList>();
@@ -41,6 +43,8 @@ namespace VolunProject.Data.EntityADO.NET
         public string RankId { get; set; }
     
         public virtual Account Account { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
         public virtual Ranking Ranking { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }

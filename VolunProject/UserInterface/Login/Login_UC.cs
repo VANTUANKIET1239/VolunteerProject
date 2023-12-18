@@ -78,5 +78,10 @@ namespace VolunProject.UserInterface.Login
         {
             ForgetPasswordEvent(this, new EventArgs());
         }
+
+        private void Login_UC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

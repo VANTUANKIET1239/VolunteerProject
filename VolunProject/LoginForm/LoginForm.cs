@@ -23,6 +23,7 @@ namespace VolunProject.LoginForm
         private object lblTitle;
         private Main main;
         private OrganizationForm OrganizationForm;
+        public static event EventHandler loginEvent;
 
         public LoginForm()
         {
@@ -98,6 +99,7 @@ namespace VolunProject.LoginForm
             this.Show();
             OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
             main.Hide();
+
         }
 
         private void Register_UC_registerEvent(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace VolunProject.LoginForm
             this.Hide();
             main.Closed += (s, args) => this.Close();
             main.Show();
-            //main.OpenChildForm(new UserInterface.UserInformation.UserInformation_UC(),sender);
+            loginEvent(this, new EventArgs());
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -122,10 +124,8 @@ namespace VolunProject.LoginForm
             if (activeForm != null)
                 activeForm.Hide();
             activeForm = a;
-            //ActivateButton(btnSender);
             panel.Controls.Add(a);
             panel.Tag = a;
-            //lblTitle.Text = (btnSender as Button).Text;
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -137,8 +137,5 @@ namespace VolunProject.LoginForm
         {
 
         }
-
-
-
     }
 }

@@ -13,6 +13,17 @@
     <Property Name="ImageUS" Type="varbinary(max)" />
     <Property Name="OrganizationID" Type="nchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="PostID" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="VolunteerID" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="CommentContent" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CommentLike" Type="int" />
+    <Property Name="State" Type="bit" />
+  </EntityType>
   <EntityType Name="Event">
     <Key>
       <PropertyRef Name="EventID" />
@@ -51,6 +62,18 @@
     <Property Name="OrganizationName" Type="nvarchar" MaxLength="100" />
     <Property Name="state" Type="bit" />
     <Property Name="COCK" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="VolunteerID" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Caption" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="PostLike" Type="int" />
+    <Property Name="State" Type="bit" />
   </EntityType>
   <EntityType Name="QuanHuyen">
     <Key>
@@ -188,7 +211,7 @@
     <Property Name="tenXaPhuong" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="quanHuyenId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Event__CategoryI__571DF1D5">
+  <Association Name="FK__Event__CategoryI__35BCFE0A">
     <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="0..1" />
     <End Role="Event" Type="Self.Event" Multiplicity="*" />
     <ReferentialConstraint>
@@ -200,7 +223,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Registrat__Event__59063A47">
+  <Association Name="FK__Registrat__Event__38996AB5">
     <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
     <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
     <ReferentialConstraint>
@@ -212,7 +235,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Registrat__Volun__59FA5E80">
+  <Association Name="FK__Registrat__Volun__398D8EEE">
     <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
     <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
     <ReferentialConstraint>
@@ -224,7 +247,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ReviewLis__Revie__5BE2A6F2">
+  <Association Name="FK__ReviewLis__Revie__3B75D760">
     <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
     <End Role="ReviewList" Type="Self.ReviewList" Multiplicity="*" />
     <ReferentialConstraint>
@@ -236,7 +259,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Volunteer__Event__5FB337D6">
+  <Association Name="FK__Volunteer__Event__3F466844">
     <End Role="Event" Type="Self.Event" Multiplicity="1" />
     <End Role="VolunteerLikeEvent" Type="Self.VolunteerLikeEvent" Multiplicity="*" />
     <ReferentialConstraint>
@@ -248,7 +271,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Volunteer__Rewar__619B8048">
+  <Association Name="FK__Volunteer__Rewar__412EB0B6">
     <End Role="Reward" Type="Self.Reward" Multiplicity="1" />
     <End Role="VolunteerReward" Type="Self.VolunteerReward" Multiplicity="*" />
     <ReferentialConstraint>
@@ -260,7 +283,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Volunteer__Volun__60A75C0F">
+  <Association Name="FK__Volunteer__Volun__403A8C7D">
     <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
     <End Role="VolunteerLikeEvent" Type="Self.VolunteerLikeEvent" Multiplicity="*" />
     <ReferentialConstraint>
@@ -272,7 +295,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Volunteer__Volun__628FA481">
+  <Association Name="FK__Volunteer__Volun__4222D4EF">
     <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
     <End Role="VolunteerReward" Type="Self.VolunteerReward" Multiplicity="*" />
     <ReferentialConstraint>
@@ -280,6 +303,30 @@
         <PropertyRef Name="VolunteerID" />
       </Principal>
       <Dependent Role="VolunteerReward">
+        <PropertyRef Name="VolunteerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Volunteer">
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Volunteer">
+        <PropertyRef Name="VolunteerID" />
+      </Principal>
+      <Dependent Role="Comment">
         <PropertyRef Name="VolunteerID" />
       </Dependent>
     </ReferentialConstraint>
@@ -293,6 +340,18 @@
       </Principal>
       <Dependent Role="Account">
         <PropertyRef Name="OrganizationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_Volunteer">
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
+    <End Role="Post" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Volunteer">
+        <PropertyRef Name="VolunteerID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="VolunteerID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -376,9 +435,11 @@
   </Association>
   <EntityContainer Name="VolunteersDBModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EventCategory" EntityType="Self.EventCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuanHuyen" EntityType="Self.QuanHuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuocGia" EntityType="Self.QuocGia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ranking" EntityType="Self.Ranking" Schema="dbo" store:Type="Tables" />
@@ -392,41 +453,53 @@
     <EntitySet Name="VolunteerLikeEvent" EntityType="Self.VolunteerLikeEvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VolunteerReward" EntityType="Self.VolunteerReward" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="XaPhuong" EntityType="Self.XaPhuong" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Event__CategoryI__571DF1D5" Association="Self.FK__Event__CategoryI__571DF1D5">
+    <AssociationSet Name="FK__Event__CategoryI__35BCFE0A" Association="Self.FK__Event__CategoryI__35BCFE0A">
       <End Role="EventCategory" EntitySet="EventCategory" />
       <End Role="Event" EntitySet="Event" />
     </AssociationSet>
-    <AssociationSet Name="FK__Registrat__Event__59063A47" Association="Self.FK__Registrat__Event__59063A47">
+    <AssociationSet Name="FK__Registrat__Event__38996AB5" Association="Self.FK__Registrat__Event__38996AB5">
       <End Role="Event" EntitySet="Event" />
       <End Role="Registration" EntitySet="Registration" />
     </AssociationSet>
-    <AssociationSet Name="FK__Registrat__Volun__59FA5E80" Association="Self.FK__Registrat__Volun__59FA5E80">
+    <AssociationSet Name="FK__Registrat__Volun__398D8EEE" Association="Self.FK__Registrat__Volun__398D8EEE">
       <End Role="Volunteer" EntitySet="Volunteer" />
       <End Role="Registration" EntitySet="Registration" />
     </AssociationSet>
-    <AssociationSet Name="FK__ReviewLis__Revie__5BE2A6F2" Association="Self.FK__ReviewLis__Revie__5BE2A6F2">
+    <AssociationSet Name="FK__ReviewLis__Revie__3B75D760" Association="Self.FK__ReviewLis__Revie__3B75D760">
       <End Role="Volunteer" EntitySet="Volunteer" />
       <End Role="ReviewList" EntitySet="ReviewList" />
     </AssociationSet>
-    <AssociationSet Name="FK__Volunteer__Event__5FB337D6" Association="Self.FK__Volunteer__Event__5FB337D6">
+    <AssociationSet Name="FK__Volunteer__Event__3F466844" Association="Self.FK__Volunteer__Event__3F466844">
       <End Role="Event" EntitySet="Event" />
       <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvent" />
     </AssociationSet>
-    <AssociationSet Name="FK__Volunteer__Rewar__619B8048" Association="Self.FK__Volunteer__Rewar__619B8048">
+    <AssociationSet Name="FK__Volunteer__Rewar__412EB0B6" Association="Self.FK__Volunteer__Rewar__412EB0B6">
       <End Role="Reward" EntitySet="Reward" />
       <End Role="VolunteerReward" EntitySet="VolunteerReward" />
     </AssociationSet>
-    <AssociationSet Name="FK__Volunteer__Volun__60A75C0F" Association="Self.FK__Volunteer__Volun__60A75C0F">
+    <AssociationSet Name="FK__Volunteer__Volun__403A8C7D" Association="Self.FK__Volunteer__Volun__403A8C7D">
       <End Role="Volunteer" EntitySet="Volunteer" />
       <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvent" />
     </AssociationSet>
-    <AssociationSet Name="FK__Volunteer__Volun__628FA481" Association="Self.FK__Volunteer__Volun__628FA481">
+    <AssociationSet Name="FK__Volunteer__Volun__4222D4EF" Association="Self.FK__Volunteer__Volun__4222D4EF">
       <End Role="Volunteer" EntitySet="Volunteer" />
       <End Role="VolunteerReward" EntitySet="VolunteerReward" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Post" Association="Self.FK_Comment_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Volunteer" Association="Self.FK_Comment_Volunteer">
+      <End Role="Volunteer" EntitySet="Volunteer" />
+      <End Role="Comment" EntitySet="Comment" />
     </AssociationSet>
     <AssociationSet Name="FK_Organization_Account" Association="Self.FK_Organization_Account">
       <End Role="Organization" EntitySet="Organization" />
       <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_Volunteer" Association="Self.FK_Post_Volunteer">
+      <End Role="Volunteer" EntitySet="Volunteer" />
+      <End Role="Post" EntitySet="Post" />
     </AssociationSet>
     <AssociationSet Name="FK_QuanHuyen_TinhThanhPho_tinhThanhPhoId" Association="Self.FK_QuanHuyen_TinhThanhPho_tinhThanhPhoId">
       <End Role="TinhThanhPho" EntitySet="TinhThanhPho" />
