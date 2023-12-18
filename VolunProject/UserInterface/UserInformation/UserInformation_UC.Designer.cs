@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.lb1 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.changePassword = new System.Windows.Forms.Button();
@@ -81,7 +80,6 @@
             this.userImg = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -104,8 +102,8 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lb1);
             this.panel1.Controls.Add(this.rankingPB);
-            this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.userImg);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.saveButton);
@@ -129,24 +127,16 @@
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1473, 870);
+            this.panel1.Size = new System.Drawing.Size(1473, 868);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.lb1);
-            this.panel16.Location = new System.Drawing.Point(510, 744);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(634, 26);
-            this.panel16.TabIndex = 7;
             // 
             // lb1
             // 
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb1.ForeColor = System.Drawing.Color.Red;
-            this.lb1.Location = new System.Drawing.Point(3, 0);
+            this.lb1.Location = new System.Drawing.Point(515, 740);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(80, 22);
             this.lb1.TabIndex = 7;
@@ -654,12 +644,13 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.panel1);
             this.Name = "UserInformation_UC";
-            this.Size = new System.Drawing.Size(1473, 871);
+            this.Size = new System.Drawing.Size(1475, 870);
             this.Load += new System.EventHandler(this.UserInformation_UC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -746,7 +737,6 @@
         private System.Windows.Forms.Label accountNameLB;
         private System.Windows.Forms.Label scoresLB;
         private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.PictureBox rankingPB;
     }
 }

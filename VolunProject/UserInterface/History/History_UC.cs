@@ -14,6 +14,7 @@ namespace VolunProject.UserInterface.History
 {
     public partial class History_UC : UserControl
     {
+        private int isClick;
         public History_UC()
         {
             InitializeComponent();
@@ -29,16 +30,20 @@ namespace VolunProject.UserInterface.History
 
         private void rewardButton_Click(object sender, EventArgs e)
         {
-            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
-            var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
-            var listRedeemedRewards = RewardBLL.getRewardsByVolunteerID(curVol.VolunteerID);
-            foreach( var item in listRedeemedRewards)
+            ++isClick;
+            if (isClick == 1)
             {
-                item.RedeemDate = RewardBLL.getVolunteerRewardByID(curVol.VolunteerID, item.RewardID).RedeemDate;
-                RewardHistoryControl rewardHistoryControl = new RewardHistoryControl(item);
-                flowLayoutPanel1.Controls.Add(rewardHistoryControl);
+                var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+                var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
+                var listRedeemedRewards = RewardBLL.getRewardsByVolunteerID(curVol.VolunteerID);
+                foreach (var item in listRedeemedRewards)
+                {
+                    item.RedeemDate = RewardBLL.getVolunteerRewardByID(curVol.VolunteerID, item.RewardID).RedeemDate;
+                    RewardHistoryControl rewardHistoryControl = new RewardHistoryControl(item);
+                    flowLayoutPanel1.Controls.Add(rewardHistoryControl);
+                }
+                label1.Text = "Lịch sử quà tặng";
             }
-            label1.Text = "Lịch sử quà tặng";
         }
     }
 }

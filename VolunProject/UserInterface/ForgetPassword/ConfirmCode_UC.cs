@@ -71,7 +71,7 @@ namespace VolunProject.UserInterface.ForgetPassword
             if(pin == codeTB.Text)
             {
                 
-                OtherFunction.SendEmail(email, "Mật khẩu", OtherFunction.templateLayMK(password));
+                OtherFunction.SendEmail(email, "Mật khẩu", OtherFunction.templateLayMK(accountName,password));
                 MessageBox.Show("Vui lòng kiểm tra mail để lấy lại mật khẩu", "Thông báo", MessageBoxButtons.OK);
                 GetPasswordEvent(this, new EventArgs());
             }
