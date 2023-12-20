@@ -24,6 +24,8 @@ namespace VolunProject.Data.EntityADO.NET
         public Nullable<System.DateTime> CheckOutDate { get; set; }
         public Nullable<bool> state { get; set; }
         public string status { get; set; }
+        public Nullable<System.DateTime> ApproveDate { get; set; }
+        public string ApproveAccountID { get; set; }
     
         public virtual Event Event { get; set; }
         public virtual Volunteer Volunteer { get; set; }

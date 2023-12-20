@@ -15,20 +15,46 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterList
 {
     public partial class OrganizationRegisterList : UserControl
     {
-        public OrganizationRegisterList()
+        private RegisterFormSearchDTO RegisterFormSearchDTO;
+       // private List<RegisterVolunteerFormDTO> registerVolunteerFormDTOs;
+        private AccountDTO curUser;
+        public OrganizationRegisterList() 
         {
             InitializeComponent();
+            sub();
+        }
+        private void sub()
+        {
+            OrganizationRegisterFormControl.OrganizationRegisterFormControl.LoadEvent += OrganizationRegisterFormControl_LoadEvent;
+        }
+
+        private void OrganizationRegisterFormControl_LoadEvent(object sender, EventArgs e)
+        {
+            Loaddata();
         }
 
         private void OrganizationRegisterList_Load(object sender, EventArgs e)
         {
-            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
-            var eventlist = EventBLL.Event_ByOrganizationId(curUser.OrganizationID);   
+            RegisterFormSearchDTO = new RegisterFormSearchDTO()
+            {
+                eventID = "",
+                status = ""
+            };
+            curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            Loaddata();
+            var events = EventBLL.Event_ByOrganizationId(curUser.OrganizationID);
             EventListCB.DisplayMember = "EventName";
             EventListCB.ValueMember = "EventID";
-            EventListCB.DataSource = eventlist;
+            EventListCB.DataSource = events;
             StatusDefault();
+            
 
+        }
+        private void Loaddata() {
+            registerformlist.Controls.Clear();
+            var eventlist = EventBLL.Event_GetAllVolunteerRegistration_ByOranizationId(curUser.OrganizationID, RegisterFormSearchDTO);
+            RegisterCountLB.Text = eventlist.Count.ToString();
+            //  registerVolunteerFormDTOs = eventlist.ToList();
             FlowLayoutPanel EventflowLayoutPanel = new FlowLayoutPanel();
             EventflowLayoutPanel.Dock = DockStyle.Fill;
             EventflowLayoutPanel.WrapContents = false;
@@ -37,32 +63,34 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterList
             EventflowLayoutPanel.FlowDirection = FlowDirection.TopDown;
 
             // Create and add cards to the flowLayoutPanel
-           /* foreach (EventDTO cardText in events)
+            foreach (RegisterVolunteerFormDTO cardText in eventlist)
             {
-                EventControl.EventControl cardControl = new EventControl.EventControl(cardText);
+                OrganizationRegisterFormControl.OrganizationRegisterFormControl cardControl = new OrganizationRegisterFormControl.OrganizationRegisterFormControl(cardText);
                 EventflowLayoutPanel.Controls.Add(cardControl);
             }
-            panel1.Controls.Add(EventflowLayoutPanel);*/
-
+            registerformlist.Controls.Add(EventflowLayoutPanel);
         }
         public void StatusDefault()
         {
             StatusDTO status = new StatusDTO("A", "Đã duyệt");
             StatusDTO status2 = new StatusDTO("C", "Chờ duyệt");
             StatusDTO status3 = new StatusDTO("R", "Từ chối");
+            StatusDTO status4 = new StatusDTO("", "Tất cả");
             StatusCB.ValueMember = "status";
-            StatusCB.DisplayMember = "statusName";
-            StatusCB.Items.AddRange(new List<StatusDTO>() { status, status2, status3 }.ToArray());
+            StatusCB.DisplayMember = "statusName"; 
+            StatusCB.DataSource = (new List<StatusDTO>() { status, status2, status3,status4 }.ToArray());
         }
 
         private void StatusCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            RegisterFormSearchDTO.status = (string)StatusCB.SelectedValue;
+            Loaddata();
         }
 
         private void EventListCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            RegisterFormSearchDTO.eventID = (string)EventListCB.SelectedValue;
+            Loaddata();
         }
     }
 }

@@ -33,6 +33,8 @@
             this.EventListCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.RegisterCountLB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StatusCB
@@ -49,6 +51,7 @@
             // 
             this.registerformlist.Location = new System.Drawing.Point(0, 149);
             this.registerformlist.Name = "registerformlist";
+            this.registerformlist.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.registerformlist.Size = new System.Drawing.Size(1473, 730);
             this.registerformlist.TabIndex = 4;
             // 
@@ -84,10 +87,34 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Danh sách sự kiện";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(59, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 19);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Số lượng: ";
+            // 
+            // RegisterCountLB
+            // 
+            this.RegisterCountLB.AutoSize = true;
+            this.RegisterCountLB.BackColor = System.Drawing.SystemColors.Control;
+            this.RegisterCountLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterCountLB.Location = new System.Drawing.Point(153, 115);
+            this.RegisterCountLB.Name = "RegisterCountLB";
+            this.RegisterCountLB.Size = new System.Drawing.Size(18, 19);
+            this.RegisterCountLB.TabIndex = 58;
+            this.RegisterCountLB.Text = "0";
+            // 
             // OrganizationRegisterList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.RegisterCountLB);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.EventListCB);
@@ -108,5 +135,7 @@
         private System.Windows.Forms.ComboBox EventListCB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label RegisterCountLB;
     }
 }

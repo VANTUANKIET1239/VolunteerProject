@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
 
@@ -134,8 +135,8 @@ namespace VolunProject.Data.DAL
             return volunteerDBEntities.SaveChanges() > 0;
 
         }
-
-        public static RegisterVolunteerFormDTO Event_GetAllVolunteerRegistration_ByOranizationId(string organizationId)
+        
+        public static ICollection<RegisterVolunteerFormDTO> Event_GetAllVolunteerRegistration_ByOranizationId(string organizationId, RegisterFormSearchDTO registerFormSearchDTO)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             var allRegis = volunteerDBEntities.Registrations
@@ -144,9 +145,39 @@ namespace VolunProject.Data.DAL
                 .Where(x => x.Event.OrganizationID == organizationId)
                 .Select(x => new RegisterVolunteerFormDTO()
                 {
-                    
-                });
-            return new RegisterVolunteerFormDTO();
+                    EventID = x.EventID,
+                    EventName = x.Event.EventName,
+                    DistrictId = x.Event.DistrictId ?? 0,
+                    CityId = x.Event.CityId ?? 0,
+                    WardId = x.Event.WardId ?? 0,
+                    StartDate = x.Event.StartDate ?? DateTime.Now,
+                    EndDate = x.Event.EndDate ?? DateTime.Now,
+                    Status = x.status,
+                    state = x.state ?? false,
+                    time  = x.Event.time,
+                    DetailAddress = x.Event.DetailAddress,
+                    VolunteerID = x.VolunteerID,
+                    VolunteerName  = x.Volunteer.Name,
+                    accountID = x.Volunteer.AccountID,
+                  //  VolunteerImage = AccountBLL.GetAccountByID(x.Volunteer.AccountID).ImageUS,
+                    registerDate = x.RegistrationDate ?? DateTime.Now
+
+                })
+                .Where(x => x.EventID == registerFormSearchDTO.eventID.Trim() || registerFormSearchDTO.eventID.Trim() == "" || registerFormSearchDTO.eventID == null)
+                 .Where(x => x.Status == registerFormSearchDTO.status.Trim() || registerFormSearchDTO.status.Trim() == "" || registerFormSearchDTO.status == null)
+                .ToList();
+            return allRegis;
+        }
+        public static bool Event_Approve(string eventId, string volunteerId)
+        {
+
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var registration = volunteerDBEntities.Registrations.Where(x => x.VolunteerID == volunteerId && x.EventID == eventId).FirstOrDefault();
+            registration.status = "A";
+            registration.ApproveDate = DateTime.Now;
+            registration.ApproveAccountID = curUser.AccountID;
+            return volunteerDBEntities.SaveChanges() > 0;
         }
 
     }

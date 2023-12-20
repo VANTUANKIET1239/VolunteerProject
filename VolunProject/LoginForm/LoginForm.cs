@@ -45,6 +45,8 @@ namespace VolunProject.LoginForm
             ConfirmEmail_UC.BackEvent += ConfirmEmail_UC_BackEvent;
             ConfirmEmail_UC.GetPasswordEvent += ConfirmEmail_UC_GetPasswordEvent;
             ConfirmCode_UC.GetPasswordEvent += ConfirmCode_UC_GetPasswordEvent;
+            Login_UC.LoginToOrganizationMainEvent += Login_UC_LoginToOrganizationMainEvent;
+            OrganizationForm.signOutEventOr += OrganizationForm_signOutEventOr;
         }
 
         private void ConfirmCode_UC_GetPasswordEvent(object sender, EventArgs e)
@@ -65,7 +67,16 @@ namespace VolunProject.LoginForm
         private void Login_UC_ForgetPasswordEvent(object sender, EventArgs e)
         {
             OpenChildForm(this.panel1, new UserInterface.ForgetPassword.ConfirmEmail_UC(), sender);
+          
         }
+
+        private void OrganizationForm_signOutEventOr(object sender, EventArgs e)
+        {
+            this.Show();
+            OpenChildForm(this.panel1, new UserInterface.Login.Login_UC(), sender);
+            OrganizationForm.Hide();
+        }
+
         private void Login_UC_LoginToOrganizationMainEvent(object sender, EventArgs e)
         {
 

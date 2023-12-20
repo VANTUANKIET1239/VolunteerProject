@@ -18,6 +18,7 @@ namespace VolunProject
     {
         bool sidebarExpand = false;
         private UserControl activeForm;
+        public static event EventHandler signOutEventOr;
         public OrganizationForm()
         {
             InitializeComponent();
@@ -74,6 +75,21 @@ namespace VolunProject
         private void eventButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInterface.Event.OrganizationEvent.OrganizationEvent(), sender);
+        }
+
+        private void SignOutBTN_Click(object sender, EventArgs e)
+        {
+            signOutEventOr(this, new EventArgs());
+        }
+
+        private void ApproveVolunteerBTN_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.OrganizationRegisterList.OrganizationRegisterList(), sender);
+        }
+
+        private void notifyBTN_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.OrganizationRegisterList.OrganizationRegisterList(), sender);
         }
     }
 }

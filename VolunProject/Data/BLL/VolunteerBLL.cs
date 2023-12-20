@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using VolunProject.Data.DAL;
@@ -34,6 +35,13 @@ namespace VolunProject.Data.BLL
         public static bool checkEmail(string email)
         {
             return VolunteerDAL.checkEmail(email);
+        }
+        public static VolunteerDTO GetVolunteer_ByVolunId(string volunteerId)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Volunteer, VolunteerDTO>());
+            var mapper = new Mapper(config);
+            VolunteerDTO dto = mapper.Map<VolunteerDTO>(VolunteerDAL.GetVolunteerByVolunteerID(volunteerId));
+            return dto;
         }
     }
 }

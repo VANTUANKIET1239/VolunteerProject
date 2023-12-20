@@ -26,6 +26,8 @@ namespace VolunProject.Data.DTO
         public string wardName { get; set; }
 
         public string VolunteerID { get; set; }
+
+        public string accountID { get; set; }
         public string VolunteerName { get; set; }
         public byte[] VolunteerImage { get; set; }
 

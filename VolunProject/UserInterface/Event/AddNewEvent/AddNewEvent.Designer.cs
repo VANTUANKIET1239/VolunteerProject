@@ -281,9 +281,9 @@
             // 
             this.EventTypeCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EventTypeCB.FormattingEnabled = true;
-            this.EventTypeCB.Location = new System.Drawing.Point(372, 278);
+            this.EventTypeCB.Location = new System.Drawing.Point(303, 278);
             this.EventTypeCB.Name = "EventTypeCB";
-            this.EventTypeCB.Size = new System.Drawing.Size(298, 28);
+            this.EventTypeCB.Size = new System.Drawing.Size(367, 28);
             this.EventTypeCB.TabIndex = 28;
             // 
             // label11

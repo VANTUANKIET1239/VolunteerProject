@@ -78,6 +78,7 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
 
         private void AddEventBTN_Click(object sender, EventArgs e)
         {
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
             EventDTO eventDTO = new EventDTO();
             eventDTO.EventName = EventNameTB.Text;
             eventDTO.DetailAddress = DetailAddressTB.Text;
@@ -93,7 +94,14 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
             eventDTO.time = timeTXT.Text;
             if (EventBLL.Event_Add(eventDTO))
             {
-                MessageBox.Show("Thêm sự kiện thành công", "Thông báo", MessageBoxButtons.OK);
+                NotificationDTO notificationDTO = new NotificationDTO();
+                notificationDTO.NotificationContent = $"Sự kiện {eventDTO.EventName} vừa được thêm vào lúc {DateTime.Now}.";
+                notificationDTO.AccountID = curUser.AccountID;
+                notificationDTO.NotiImg = OtherFunction.ImageToByteArray(EventImageBox.Image);
+                if (NotificationBLL.Notification_Add(notificationDTO))
+                {
+                    MessageBox.Show("Thêm sự kiện thành công", "Thông báo", MessageBoxButtons.OK);
+                }
             }
         }
     }
