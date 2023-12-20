@@ -60,6 +60,7 @@
     <Compile Include="Data\BLL\AccountBLL.cs" />
     <Compile Include="Data\BLL\CategoryBLL.cs" />
     <Compile Include="Data\BLL\CityBLL.cs" />
+    <Compile Include="Data\BLL\CommentBLL.cs" />
     <Compile Include="Data\BLL\DistrictBLL.cs" />
     <Compile Include="Data\BLL\OrganizationBLL.cs" />
     <Compile Include="Data\BLL\PostBLL.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Data\DAL\AccountDAL.cs" />
     <Compile Include="Data\DAL\CategoryDAL.cs" />
     <Compile Include="Data\DAL\CityDAL.cs" />
+    <Compile Include="Data\DAL\CommentDAL.cs" />
     <Compile Include="Data\DAL\DistrictDAL.cs" />
     <Compile Include="Data\DAL\OrganizationDAL.cs" />
     <Compile Include="Data\DAL\PostDAL.cs" />
@@ -127,6 +129,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\Post.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\PostLike.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\EntityADO.NET\QuanHuyen.cs">

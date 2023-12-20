@@ -82,6 +82,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PostLikes">
+      <EntityTypeMapping TypeName="VolunteersDBModel.PostLike">
+        <MappingFragment StoreEntitySet="PostLike">
+          <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="QuanHuyens">
       <EntityTypeMapping TypeName="VolunteersDBModel.QuanHuyen">
         <MappingFragment StoreEntitySet="QuanHuyen">

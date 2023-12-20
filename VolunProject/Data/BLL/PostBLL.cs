@@ -23,5 +23,13 @@ namespace VolunProject.Data.BLL
             List<PostDTO> dto = mapper.Map<List<PostDTO>>(PostDAL.getAllPost());
             return dto;
         }
+        public static bool? Event_LikePost(string postID)
+        {
+            return PostDAL.Event_LikePost(postID);
+        }
+        public static int countLike(string postID)
+        {
+            return PostDAL.countLike(postID);
+        }
     }
 }

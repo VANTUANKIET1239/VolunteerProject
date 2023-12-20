@@ -79,12 +79,24 @@
     <Property Name="PostID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="VolunteerID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Caption" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Precision="7" />
     <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="PostLike" Type="Int32" />
     <Property Name="State" Type="Boolean" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Post" FromRole="Post" ToRole="Comment" />
+    <NavigationProperty Name="PostLikes" Relationship="Self.FK__PostLike__PostID__47DBAE45" FromRole="Post" ToRole="PostLike" />
     <NavigationProperty Name="Volunteer" Relationship="Self.FK_Post_Volunteer" FromRole="Post" ToRole="Volunteer" />
+  </EntityType>
+  <EntityType Name="PostLike">
+    <Key>
+      <PropertyRef Name="VolunteerID" />
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="VolunteerID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PostID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="state" Type="Boolean" />
+    <NavigationProperty Name="Post" Relationship="Self.FK__PostLike__PostID__47DBAE45" FromRole="PostLike" ToRole="Post" />
+    <NavigationProperty Name="Volunteer" Relationship="Self.FK__PostLike__Volunt__46E78A0C" FromRole="PostLike" ToRole="Volunteer" />
   </EntityType>
   <EntityType Name="QuanHuyen">
     <Key>
@@ -206,6 +218,7 @@
     <NavigationProperty Name="Account" Relationship="Self.FK_Volunteer_Account" FromRole="Volunteer" ToRole="Account" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Volunteer" FromRole="Volunteer" ToRole="Comment" />
     <NavigationProperty Name="Posts" Relationship="Self.FK_Post_Volunteer" FromRole="Volunteer" ToRole="Post" />
+    <NavigationProperty Name="PostLikes" Relationship="Self.FK__PostLike__Volunt__46E78A0C" FromRole="Volunteer" ToRole="PostLike" />
     <NavigationProperty Name="Ranking" Relationship="Self.FK_Rank_Volunteer" FromRole="Volunteer" ToRole="Ranking" />
     <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrat__Volun__398D8EEE" FromRole="Volunteer" ToRole="Registration" />
     <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_Volunteer" FromRole="Volunteer" ToRole="Review" />
@@ -331,6 +344,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__PostLike__PostID__47DBAE45">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="PostLike" Type="Self.PostLike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="PostLike">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Post_Volunteer">
     <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
     <End Role="Post" Type="Self.Post" Multiplicity="*" />
@@ -339,6 +364,18 @@
         <PropertyRef Name="VolunteerID" />
       </Principal>
       <Dependent Role="Post">
+        <PropertyRef Name="VolunteerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostLike__Volunt__46E78A0C">
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="1" />
+    <End Role="PostLike" Type="Self.PostLike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Volunteer">
+        <PropertyRef Name="VolunteerID" />
+      </Principal>
+      <Dependent Role="PostLike">
         <PropertyRef Name="VolunteerID" />
       </Dependent>
     </ReferentialConstraint>
@@ -476,6 +513,7 @@
     <EntitySet Name="EventCategories" EntityType="Self.EventCategory" />
     <EntitySet Name="Organizations" EntityType="Self.Organization" />
     <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="PostLikes" EntityType="Self.PostLike" />
     <EntitySet Name="QuanHuyens" EntityType="Self.QuanHuyen" />
     <EntitySet Name="QuocGias" EntityType="Self.QuocGia" />
     <EntitySet Name="Rankings" EntityType="Self.Ranking" />
@@ -517,9 +555,17 @@
       <End Role="Event" EntitySet="Events" />
       <End Role="VolunteerLikeEvent" EntitySet="VolunteerLikeEvents" />
     </AssociationSet>
+    <AssociationSet Name="FK__PostLike__PostID__47DBAE45" Association="Self.FK__PostLike__PostID__47DBAE45">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="PostLike" EntitySet="PostLikes" />
+    </AssociationSet>
     <AssociationSet Name="FK_Post_Volunteer" Association="Self.FK_Post_Volunteer">
       <End Role="Volunteer" EntitySet="Volunteers" />
       <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostLike__Volunt__46E78A0C" Association="Self.FK__PostLike__Volunt__46E78A0C">
+      <End Role="Volunteer" EntitySet="Volunteers" />
+      <End Role="PostLike" EntitySet="PostLikes" />
     </AssociationSet>
     <AssociationSet Name="FK_QuanHuyen_TinhThanhPho_tinhThanhPhoId" Association="Self.FK_QuanHuyen_TinhThanhPho_tinhThanhPhoId">
       <End Role="TinhThanhPho" EntitySet="TinhThanhPhoes" />

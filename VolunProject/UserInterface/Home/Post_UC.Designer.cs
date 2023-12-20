@@ -32,28 +32,29 @@
             this.postID = new System.Windows.Forms.Label();
             this.captionTextbox = new System.Windows.Forms.TextBox();
             this.time = new System.Windows.Forms.Label();
+            this.volImg = new System.Windows.Forms.PictureBox();
             this.volName = new System.Windows.Forms.Label();
             this.cmtLabel = new System.Windows.Forms.Label();
             this.likeLabel = new System.Windows.Forms.Label();
             this.commentTextbox = new System.Windows.Forms.TextBox();
             this.cmtFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.imgPanel = new System.Windows.Forms.Panel();
-            this.likePanel = new System.Windows.Forms.Panel();
-            this.cmtPanel = new System.Windows.Forms.Panel();
-            this.postImg = new System.Windows.Forms.PictureBox();
-            this.likeButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmtImg = new System.Windows.Forms.PictureBox();
-            this.volImg = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.imgPanel = new System.Windows.Forms.Panel();
+            this.postImg = new System.Windows.Forms.PictureBox();
+            this.likePanel = new System.Windows.Forms.Panel();
+            this.likeButton = new System.Windows.Forms.Button();
+            this.cmtPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.volImg)).BeginInit();
             this.cmtFlowLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmtImg)).BeginInit();
             this.imgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postImg)).BeginInit();
             this.likePanel.SuspendLayout();
             this.cmtPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmtImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.volImg)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -103,6 +104,16 @@
             this.time.TabIndex = 2;
             this.time.Text = "Time";
             // 
+            // volImg
+            // 
+            this.volImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            this.volImg.Location = new System.Drawing.Point(3, 14);
+            this.volImg.Name = "volImg";
+            this.volImg.Size = new System.Drawing.Size(71, 64);
+            this.volImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.volImg.TabIndex = 1;
+            this.volImg.TabStop = false;
+            // 
             // volName
             // 
             this.volName.AutoSize = true;
@@ -144,17 +155,36 @@
             this.commentTextbox.Size = new System.Drawing.Size(657, 26);
             this.commentTextbox.TabIndex = 7;
             this.commentTextbox.TextChanged += new System.EventHandler(this.commentTextbox_TextChanged);
+            this.commentTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.commentTextbox_KeyDown);
             // 
             // cmtFlowLayout
             // 
-            this.cmtFlowLayout.AutoScroll = true;
             this.cmtFlowLayout.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cmtFlowLayout.Controls.Add(this.cmtImg);
             this.cmtFlowLayout.Controls.Add(this.commentTextbox);
+            this.cmtFlowLayout.Controls.Add(this.flowLayoutPanel1);
             this.cmtFlowLayout.Location = new System.Drawing.Point(5, 238);
             this.cmtFlowLayout.Name = "cmtFlowLayout";
-            this.cmtFlowLayout.Size = new System.Drawing.Size(704, 175);
+            this.cmtFlowLayout.Size = new System.Drawing.Size(706, 239);
             this.cmtFlowLayout.TabIndex = 1;
+            // 
+            // cmtImg
+            // 
+            this.cmtImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            this.cmtImg.Location = new System.Drawing.Point(3, 3);
+            this.cmtImg.Name = "cmtImg";
+            this.cmtImg.Size = new System.Drawing.Size(34, 26);
+            this.cmtImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cmtImg.TabIndex = 8;
+            this.cmtImg.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 35);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(697, 204);
+            this.flowLayoutPanel1.TabIndex = 9;
             // 
             // imgPanel
             // 
@@ -166,26 +196,8 @@
             this.imgPanel.Location = new System.Drawing.Point(6, 132);
             this.imgPanel.MinimumSize = new System.Drawing.Size(703, 100);
             this.imgPanel.Name = "imgPanel";
-            this.imgPanel.Size = new System.Drawing.Size(703, 100);
+            this.imgPanel.Size = new System.Drawing.Size(705, 100);
             this.imgPanel.TabIndex = 11;
-            // 
-            // likePanel
-            // 
-            this.likePanel.Controls.Add(this.likeButton);
-            this.likePanel.Controls.Add(this.likeLabel);
-            this.likePanel.Location = new System.Drawing.Point(3, 33);
-            this.likePanel.Name = "likePanel";
-            this.likePanel.Size = new System.Drawing.Size(129, 50);
-            this.likePanel.TabIndex = 9;
-            // 
-            // cmtPanel
-            // 
-            this.cmtPanel.Controls.Add(this.cmtLabel);
-            this.cmtPanel.Controls.Add(this.pictureBox1);
-            this.cmtPanel.Location = new System.Drawing.Point(307, 32);
-            this.cmtPanel.Name = "cmtPanel";
-            this.cmtPanel.Size = new System.Drawing.Size(116, 48);
-            this.cmtPanel.TabIndex = 9;
             // 
             // postImg
             // 
@@ -199,6 +211,15 @@
             this.postImg.TabStop = false;
             this.postImg.Visible = false;
             // 
+            // likePanel
+            // 
+            this.likePanel.Controls.Add(this.likeButton);
+            this.likePanel.Controls.Add(this.likeLabel);
+            this.likePanel.Location = new System.Drawing.Point(3, 33);
+            this.likePanel.Name = "likePanel";
+            this.likePanel.Size = new System.Drawing.Size(129, 50);
+            this.likePanel.TabIndex = 9;
+            // 
             // likeButton
             // 
             this.likeButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -209,6 +230,16 @@
             this.likeButton.Size = new System.Drawing.Size(28, 30);
             this.likeButton.TabIndex = 5;
             this.likeButton.UseVisualStyleBackColor = false;
+            this.likeButton.Click += new System.EventHandler(this.likeButton_Click);
+            // 
+            // cmtPanel
+            // 
+            this.cmtPanel.Controls.Add(this.cmtLabel);
+            this.cmtPanel.Controls.Add(this.pictureBox1);
+            this.cmtPanel.Location = new System.Drawing.Point(307, 32);
+            this.cmtPanel.Name = "cmtPanel";
+            this.cmtPanel.Size = new System.Drawing.Size(116, 48);
+            this.cmtPanel.TabIndex = 9;
             // 
             // pictureBox1
             // 
@@ -220,26 +251,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // cmtImg
-            // 
-            this.cmtImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.cmtImg.Location = new System.Drawing.Point(3, 3);
-            this.cmtImg.Name = "cmtImg";
-            this.cmtImg.Size = new System.Drawing.Size(34, 26);
-            this.cmtImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cmtImg.TabIndex = 8;
-            this.cmtImg.TabStop = false;
-            // 
-            // volImg
-            // 
-            this.volImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.volImg.Location = new System.Drawing.Point(3, 14);
-            this.volImg.Name = "volImg";
-            this.volImg.Size = new System.Drawing.Size(71, 64);
-            this.volImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.volImg.TabIndex = 1;
-            this.volImg.TabStop = false;
-            // 
             // Post_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,20 +261,20 @@
             this.Controls.Add(this.contentPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
             this.Name = "Post_UC";
-            this.Size = new System.Drawing.Size(720, 416);
+            this.Size = new System.Drawing.Size(720, 482);
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.volImg)).EndInit();
             this.cmtFlowLayout.ResumeLayout(false);
             this.cmtFlowLayout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmtImg)).EndInit();
             this.imgPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.postImg)).EndInit();
             this.likePanel.ResumeLayout(false);
             this.likePanel.PerformLayout();
             this.cmtPanel.ResumeLayout(false);
             this.cmtPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmtImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.volImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +298,6 @@
         private System.Windows.Forms.Label postID;
         private System.Windows.Forms.Panel likePanel;
         private System.Windows.Forms.Panel cmtPanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

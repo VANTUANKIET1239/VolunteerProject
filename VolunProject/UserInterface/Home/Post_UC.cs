@@ -24,29 +24,36 @@ namespace VolunProject.UserInterface.Home
         {
             InitializeComponent();
             uploadInfo(postDTO);
+            loadComment();
         }
 
         private void uploadInfo(PostDTO postDTO)
         {
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
             var vol = VolunteerBLL.GetVolunteerByVolunteerID(postDTO.VolunteerID);
             var account = AccountBLL.GetAccountByID(vol.AccountID);
             captionTextbox.Text = postDTO.Caption;
-            Image image, image2;
+            Image image;
             using (MemoryStream ms = new MemoryStream(account.ImageUS))
             {
                 image = Image.FromStream(ms);
                 volImg.Image = image;
             }
-            if (vol.Name == null) volName.Text = account.AccountName;
+            using (MemoryStream ms = new MemoryStream(curUser.ImageUS))
+            {
+                image = Image.FromStream(ms);
+                cmtImg.Image = image;
+            }
+            if (vol.Name == "") volName.Text = account.AccountName;
             else volName.Text = vol.Name;
             time.Text = postDTO.CreateDate.ToString();
             postID.Text = postDTO.PostID;
             if (postDTO.State == true)
             {
-                using (MemoryStream ms2 = new MemoryStream(postDTO.Image))
+                using (MemoryStream ms = new MemoryStream(postDTO.Image))
                 {
-                    image2 = Image.FromStream(ms2);
-                    postImg.Image = image2;
+                    image = Image.FromStream(ms);
+                    postImg.Image = image;
                     postImg.Visible = true;
                 }
                 ResizePictureBox();
@@ -104,6 +111,59 @@ namespace VolunProject.UserInterface.Home
         private void likeLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadComment()
+        {
+            var list = CommentBLL.GetAllCommentByID(postID.Text);
+            foreach(var item in list)
+            {
+                var volunteer = VolunteerBLL.GetVolunteerByVolunteerID(item.VolunteerID);
+                var account = AccountBLL.GetAccountByID(volunteer.AccountID);
+                string name;
+                if (volunteer.Name != "") name = volunteer.Name;
+                else name = account.AccountName;
+                Comment_UC comment_UC = new Comment_UC(account.ImageUS,item,name);
+                flowLayoutPanel1.Controls.Add(comment_UC);
+            }
+            cmtLabel.Text = list.Count().ToString();
+        }
+        private void commentTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && commentTextbox.Text.Length > 0)
+            {
+                var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+                var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
+                CommentDTO commentDTO = new CommentDTO();
+                string enteredText = commentTextbox.Text;
+
+                commentDTO.CommentContent = enteredText;
+                commentDTO.PostID = postID.Text;
+                commentDTO.VolunteerID = curVol.VolunteerID;
+                commentDTO.State = true;
+                if (CommentBLL.CreateComment(commentDTO))
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                    loadComment();
+                }             
+                commentTextbox.Clear();              
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void likeButton_Click(object sender, EventArgs e)
+        {
+            
+            if (PostBLL.Event_LikePost(postID.Text) == true)
+            {
+                likeLabel.Text = PostBLL.countLike(postID.Text).ToString();
+                likeButton.BackColor = Color.Pink;
+            }
+            else
+            {
+                likeLabel.Text = PostBLL.countLike(postID.Text).ToString();
+                likeButton.BackColor = Color.White;
+            }
         }
     }
 }
