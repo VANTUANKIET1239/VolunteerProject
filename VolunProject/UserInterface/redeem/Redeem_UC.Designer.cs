@@ -91,11 +91,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(646, 166);
+            this.label2.Location = new System.Drawing.Point(599, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 47);
+            this.label2.Size = new System.Drawing.Size(240, 47);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Store";
+            this.label2.Text = "ĐỔI THƯỞNG";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // listRedeemFlowlayoutpanel

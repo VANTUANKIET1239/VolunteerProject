@@ -75,7 +75,7 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
                 }
             }
         }
-
+        
         private void AddEventBTN_Click(object sender, EventArgs e)
         {
             var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
@@ -104,5 +104,6 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
                 }
             }
         }
+        
     }
 }

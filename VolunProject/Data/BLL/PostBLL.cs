@@ -31,5 +31,9 @@ namespace VolunProject.Data.BLL
         {
             return PostDAL.countLike(postID);
         }
+        public static bool? checkPostLike(string volunteerID, string postID)
+        {
+            return PostDAL.checkPostLike(volunteerID, postID);
+        }
     }
 }

@@ -83,5 +83,23 @@ namespace VolunProject.UserInterface.Login
         {
 
         }
+
+        private void closeImg_Click(object sender, EventArgs e)
+        {
+            if(userPassword.PasswordChar ==  '*')
+            {
+                showImg.BringToFront();
+                userPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void showImg_Click(object sender, EventArgs e)
+        {
+            if (userPassword.PasswordChar == '\0')
+            {
+                closeImg.BringToFront();
+                userPassword.PasswordChar = '*';
+            }
+        }
     }
 }

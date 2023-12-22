@@ -63,7 +63,12 @@ namespace VolunProject.UserInterface.Home
                 postImg.Height = 0;
                 postImg.Width = 0;
             }
-            likeLabel.Text = postDTO.PostLike.ToString();
+            if(PostBLL.checkPostLike(vol.VolunteerID, postDTO.PostID) == true)
+            {
+                likeButton.BackColor = Color.Pink;
+            }
+            likeLabel.Text = PostBLL.countLike(postDTO.PostID).ToString();
+
         }
         private void commentTextbox_TextChanged(object sender, EventArgs e)
         {
@@ -78,11 +83,9 @@ namespace VolunProject.UserInterface.Home
         private void ResizePictureBox()
         {
             if (postImg.Image != null)
-            {
-                //newWidth = postImg.Image.Width;
+            {             
                 newWidth = 696;
-                newHeight = postImg.Image.Height;
-                //if (newWidth > 706) newWidth = 706;
+                newHeight = postImg.Image.Height;               
                 if (newHeight > 600) newHeight = 600;
                 postImg.Width = newWidth;
                 postImg.Height = newHeight;
@@ -151,6 +154,10 @@ namespace VolunProject.UserInterface.Home
             }
         }
 
+        private void loadPostLike()
+        {
+
+        }
         private void likeButton_Click(object sender, EventArgs e)
         {
             

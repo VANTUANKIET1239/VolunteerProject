@@ -52,7 +52,7 @@
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(183, 58);
             this.backButton.TabIndex = 7;
-            this.backButton.Text = "Back";
+            this.backButton.Text = "Quay lại";
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
@@ -78,42 +78,42 @@
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(216, 58);
             this.signupButton.TabIndex = 6;
-            this.signupButton.Text = "Sign-up";
+            this.signupButton.Text = "Đăng ký";
             this.signupButton.UseVisualStyleBackColor = false;
             this.signupButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label4.Location = new System.Drawing.Point(31, 493);
+            this.label4.Location = new System.Drawing.Point(16, 493);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 28);
+            this.label4.Size = new System.Drawing.Size(269, 32);
             this.label4.TabIndex = 10;
-            this.label4.Text = "confirm password";
+            this.label4.Text = "Xác nhận mật khẩu";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label3.Location = new System.Drawing.Point(32, 407);
+            this.label3.Location = new System.Drawing.Point(16, 407);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 32);
             this.label3.TabIndex = 11;
-            this.label3.Text = "password";
+            this.label3.Text = "Mật khẩu";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label2.Location = new System.Drawing.Point(32, 327);
+            this.label2.Location = new System.Drawing.Point(16, 327);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 32);
+            this.label2.Size = new System.Drawing.Size(209, 32);
             this.label2.TabIndex = 12;
-            this.label2.Text = "username";
+            this.label2.Text = "Tên đăng nhập";
             // 
             // confirmPasswordTextBox
             // 
@@ -145,18 +145,18 @@
             // 
             this.label1.Font = new System.Drawing.Font("Consolas", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label1.Location = new System.Drawing.Point(25, 18);
+            this.label1.Location = new System.Drawing.Point(85, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(798, 77);
+            this.label1.Size = new System.Drawing.Size(677, 77);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Thành viên tổ chức Sign-up";
+            this.label1.Text = "Đăng ký cho các đơn vị";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label6.Location = new System.Drawing.Point(32, 166);
+            this.label6.Location = new System.Drawing.Point(16, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(224, 32);
             this.label6.TabIndex = 12;
@@ -167,7 +167,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label7.Location = new System.Drawing.Point(32, 242);
+            this.label7.Location = new System.Drawing.Point(16, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 32);
             this.label7.TabIndex = 12;

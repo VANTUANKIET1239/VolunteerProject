@@ -10,6 +10,7 @@ using VolunProject.Data.EntityADO.NET;
 
 namespace VolunProject.Data.BLL
 {
+    
     public class EventBLL
     {
         public static bool Event_Add(EventDTO eventDTO)
@@ -110,5 +111,5 @@ namespace VolunProject.Data.BLL
             return EventDAL.Event_Approve(eventId, volunteerId);
         }
     }
-
+    
 }

@@ -42,7 +42,7 @@ namespace VolunProject.UserInterface.History
                     RewardHistoryControl rewardHistoryControl = new RewardHistoryControl(item);
                     flowLayoutPanel1.Controls.Add(rewardHistoryControl);
                 }
-                label1.Text = "Lịch sử quà tặng";
+                label1.Text = "Lịch sử đổi thưởng";
             }
         }
     }

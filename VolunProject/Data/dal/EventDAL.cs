@@ -11,6 +11,7 @@ using VolunProject.Data.EntityADO.NET;
 
 namespace VolunProject.Data.DAL
 {
+    
     public class EventDAL
     {
         public static bool Event_Add(EventDTO eventDTO)
@@ -181,4 +182,5 @@ namespace VolunProject.Data.DAL
         }
 
     }
+    
 }

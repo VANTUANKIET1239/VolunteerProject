@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.Data.BLL;
@@ -33,6 +34,11 @@ namespace VolunProject.UserInterface.RegisterUser
         private void backButton_Click(object sender, EventArgs e)
         {
             BackEvent(this, new EventArgs());
+        }
+        private bool ContainsSpecialCharacters(string input)
+        {
+            Regex regex = new Regex(@"[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]");
+            return regex.IsMatch(input);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,9 +69,24 @@ namespace VolunProject.UserInterface.RegisterUser
                 errorMessage.Text = "Vui lòng xác nhận mật khẩu !";
                 errorMessage.Visible = true;
             }
+            else if (username.Length < 8 || username.Length > 15)
+            {
+                errorMessage.Text = "Tên đăng nhập phải có từ 8 đến 15 ký tự !";
+                errorMessage.Visible = true;
+            }
+            else if (ContainsSpecialCharacters(username))
+            {
+                errorMessage.Text = "Tên đăng nhập không được chứa ký tự đặc biệt !";
+                errorMessage.Visible = true;
+            }
             else if (confirmPassword != password)
             {
                 errorMessage.Text = "Mật khẩu không trùng khớp !";
+                errorMessage.Visible = true;
+            }
+            else if (password.Length < 8)
+            {
+                errorMessage.Text = "Mật khẩu phải có ít nhất 8 ký tự";
                 errorMessage.Visible = true;
             }
             else if (AccountBLL.checkAccountName(username))

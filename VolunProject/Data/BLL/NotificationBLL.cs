@@ -10,6 +10,7 @@ using VolunProject.Data.EntityADO.NET;
 
 namespace VolunProject.Data.BLL
 {
+    
     public class NotificationBLL
     {
         public static bool Notification_Add(NotificationDTO notificationDTO)
@@ -24,4 +25,5 @@ namespace VolunProject.Data.BLL
             return dto;
         }
     }
+    
 }

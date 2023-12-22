@@ -30,6 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb1 = new System.Windows.Forms.Label();
+            this.rankingPB = new System.Windows.Forms.PictureBox();
+            this.userImg = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.changePassword = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,10 +79,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.userNameTB = new System.Windows.Forms.TextBox();
-            this.rankingPB = new System.Windows.Forms.PictureBox();
-            this.userImg = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -94,14 +97,13 @@
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.lb1);
             this.panel1.Controls.Add(this.rankingPB);
             this.panel1.Controls.Add(this.userImg);
@@ -143,6 +145,40 @@
             this.lb1.Text = "label16";
             this.lb1.Visible = false;
             this.lb1.Click += new System.EventHandler(this.lb1_Click);
+            // 
+            // rankingPB
+            // 
+            this.rankingPB.Image = global::VolunProject.Properties.Resources.logo_starbucks;
+            this.rankingPB.Location = new System.Drawing.Point(1037, 67);
+            this.rankingPB.Name = "rankingPB";
+            this.rankingPB.Size = new System.Drawing.Size(133, 122);
+            this.rankingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rankingPB.TabIndex = 8;
+            this.rankingPB.TabStop = false;
+            // 
+            // userImg
+            // 
+            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            this.userImg.Location = new System.Drawing.Point(265, 34);
+            this.userImg.Name = "userImg";
+            this.userImg.Size = new System.Drawing.Size(179, 180);
+            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userImg.TabIndex = 6;
+            this.userImg.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_upload_100;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(266, 220);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 33);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // saveButton
             // 
@@ -603,39 +639,17 @@
             this.userNameTB.Size = new System.Drawing.Size(727, 32);
             this.userNameTB.TabIndex = 1;
             // 
-            // rankingPB
+            // label16
             // 
-            this.rankingPB.Image = global::VolunProject.Properties.Resources.logo_starbucks;
-            this.rankingPB.Location = new System.Drawing.Point(1037, 67);
-            this.rankingPB.Name = "rankingPB";
-            this.rankingPB.Size = new System.Drawing.Size(133, 122);
-            this.rankingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rankingPB.TabIndex = 8;
-            this.rankingPB.TabStop = false;
-            // 
-            // userImg
-            // 
-            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.userImg.Location = new System.Drawing.Point(265, 34);
-            this.userImg.Name = "userImg";
-            this.userImg.Size = new System.Drawing.Size(179, 180);
-            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userImg.TabIndex = 6;
-            this.userImg.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_upload_100;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(266, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 33);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(503, 227);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(80, 22);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "label16";
+            this.label16.Visible = false;
             // 
             // UserInformation_UC
             // 
@@ -648,8 +662,7 @@
             this.Load += new System.EventHandler(this.UserInformation_UC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            /*this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();*/
+            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -679,8 +692,6 @@
             this.panel15.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -738,5 +749,6 @@
         private System.Windows.Forms.Label scoresLB;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.PictureBox rankingPB;
+        private System.Windows.Forms.Label label16;
     }
 }

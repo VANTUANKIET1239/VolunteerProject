@@ -37,6 +37,13 @@ namespace VolunProject.Data.DAL
             allPost.Reverse();
             return allPost;
         }
+        public static bool? checkPostLike(string volunteerID, string postID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var result = volunteerDBEntities.PostLikes.Where(x => x.VolunteerID == volunteerID && x.PostID == postID).FirstOrDefault();
+            if (result != null) return result.state;
+            return false;
+        }
         public static bool? Event_LikePost(string postID)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
@@ -64,7 +71,7 @@ namespace VolunProject.Data.DAL
         }
         public static int countLike(string postID)
         {
-            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities(); 
             return volunteerDBEntities.PostLikes.Where(x => x.PostID == postID && x.state == true).Count();
         }
     }
