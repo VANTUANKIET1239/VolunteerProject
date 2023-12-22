@@ -59,6 +59,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="VolunteersDBModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="NotificationContent" ColumnName="NotificationContent" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="NotiImg" ColumnName="NotiImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Organizations">
       <EntityTypeMapping TypeName="VolunteersDBModel.Organization">
         <MappingFragment StoreEntitySet="Organization">
@@ -79,6 +91,7 @@
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="PostLike" ColumnName="PostLike" />
           <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -132,6 +145,8 @@
           <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
           <ScalarProperty Name="state" ColumnName="state" />
           <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="ApproveAccountID" ColumnName="ApproveAccountID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -35,5 +35,13 @@ namespace VolunProject.Data.BLL
         {
             return PostDAL.checkPostLike(volunteerID, postID);
         }
+        public static bool deletePost(string postID)
+        {
+            return PostDAL.deletePost(postID);
+        }
+        public static bool updatePost(string id, string content)
+        {
+            return PostDAL.updatePost(id, content);
+        }
     }
 }

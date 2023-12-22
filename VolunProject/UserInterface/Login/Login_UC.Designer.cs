@@ -49,29 +49,34 @@
             // userPassword
             // 
             this.userPassword.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userPassword.Location = new System.Drawing.Point(42, 319);
+            this.userPassword.Location = new System.Drawing.Point(84, 613);
+            this.userPassword.Margin = new System.Windows.Forms.Padding(6);
             this.userPassword.Name = "userPassword";
-            this.userPassword.Size = new System.Drawing.Size(739, 39);
+            this.userPassword.PasswordChar = '●';
+            this.userPassword.Size = new System.Drawing.Size(1474, 71);
             this.userPassword.TabIndex = 2;
-            this.userPassword.UseSystemPasswordChar = true;
             this.userPassword.TextChanged += new System.EventHandler(this.userPassword_TextChanged);
+            this.userPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userPassword_KeyDown);
             // 
             // userLogin
             // 
             this.userLogin.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLogin.Location = new System.Drawing.Point(42, 260);
+            this.userLogin.Location = new System.Drawing.Point(84, 500);
+            this.userLogin.Margin = new System.Windows.Forms.Padding(6);
             this.userLogin.Name = "userLogin";
-            this.userLogin.Size = new System.Drawing.Size(739, 39);
+            this.userLogin.Size = new System.Drawing.Size(1474, 71);
             this.userLogin.TabIndex = 1;
+            this.userLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userLogin_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label1.Location = new System.Drawing.Point(288, 122);
+            this.label1.Location = new System.Drawing.Point(576, 235);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 62);
+            this.label1.Size = new System.Drawing.Size(575, 125);
             this.label1.TabIndex = 5;
             this.label1.Text = "Đăng nhập";
             // 
@@ -80,10 +85,10 @@
             this.errorMessage.AutoSize = true;
             this.errorMessage.Font = new System.Drawing.Font("Consolas", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorMessage.ForeColor = System.Drawing.Color.Red;
-            this.errorMessage.Location = new System.Drawing.Point(46, 216);
-            this.errorMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.errorMessage.Location = new System.Drawing.Point(92, 415);
+            this.errorMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorMessage.Name = "errorMessage";
-            this.errorMessage.Size = new System.Drawing.Size(70, 22);
+            this.errorMessage.Size = new System.Drawing.Size(139, 43);
             this.errorMessage.TabIndex = 10;
             this.errorMessage.Text = "label2";
             this.errorMessage.Visible = false;
@@ -94,9 +99,10 @@
             this.registerAdminButton.FlatAppearance.BorderSize = 0;
             this.registerAdminButton.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerAdminButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.registerAdminButton.Location = new System.Drawing.Point(405, 390);
+            this.registerAdminButton.Location = new System.Drawing.Point(810, 750);
+            this.registerAdminButton.Margin = new System.Windows.Forms.Padding(6);
             this.registerAdminButton.Name = "registerAdminButton";
-            this.registerAdminButton.Size = new System.Drawing.Size(131, 43);
+            this.registerAdminButton.Size = new System.Drawing.Size(262, 83);
             this.registerAdminButton.TabIndex = 5;
             this.registerAdminButton.Text = "Admin";
             this.registerAdminButton.UseVisualStyleBackColor = false;
@@ -108,9 +114,10 @@
             this.login.FlatAppearance.BorderSize = 0;
             this.login.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.login.Location = new System.Drawing.Point(65, 390);
+            this.login.Location = new System.Drawing.Point(130, 750);
+            this.login.Margin = new System.Windows.Forms.Padding(6);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(160, 43);
+            this.login.Size = new System.Drawing.Size(320, 83);
             this.login.TabIndex = 3;
             this.login.Text = "Đăng nhập";
             this.login.UseVisualStyleBackColor = false;
@@ -122,9 +129,10 @@
             this.signup.FlatAppearance.BorderSize = 0;
             this.signup.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signup.Location = new System.Drawing.Point(245, 390);
+            this.signup.Location = new System.Drawing.Point(490, 750);
+            this.signup.Margin = new System.Windows.Forms.Padding(6);
             this.signup.Name = "signup";
-            this.signup.Size = new System.Drawing.Size(138, 43);
+            this.signup.Size = new System.Drawing.Size(276, 83);
             this.signup.TabIndex = 4;
             this.signup.Text = "Đăng ký";
             this.signup.UseVisualStyleBackColor = false;
@@ -135,9 +143,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
             this.button1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(566, 390);
+            this.button1.Location = new System.Drawing.Point(1132, 750);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 44);
+            this.button1.Size = new System.Drawing.Size(276, 85);
             this.button1.TabIndex = 6;
             this.button1.Text = "Quên MK";
             this.button1.UseVisualStyleBackColor = false;
@@ -148,9 +157,10 @@
             this.showImg.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.showImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.showImg.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
-            this.showImg.Location = new System.Drawing.Point(779, 319);
+            this.showImg.Location = new System.Drawing.Point(1558, 613);
+            this.showImg.Margin = new System.Windows.Forms.Padding(6);
             this.showImg.Name = "showImg";
-            this.showImg.Size = new System.Drawing.Size(37, 39);
+            this.showImg.Size = new System.Drawing.Size(70, 71);
             this.showImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.showImg.TabIndex = 12;
             this.showImg.TabStop = false;
@@ -161,9 +171,10 @@
             this.closeImg.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.closeImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.closeImg.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
-            this.closeImg.Location = new System.Drawing.Point(779, 319);
+            this.closeImg.Location = new System.Drawing.Point(1558, 613);
+            this.closeImg.Margin = new System.Windows.Forms.Padding(6);
             this.closeImg.Name = "closeImg";
-            this.closeImg.Size = new System.Drawing.Size(37, 39);
+            this.closeImg.Size = new System.Drawing.Size(70, 71);
             this.closeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeImg.TabIndex = 11;
             this.closeImg.TabStop = false;
@@ -175,10 +186,10 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Image = global::VolunProject.Properties.Resources.icons8_password_24;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 319);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 613);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(82, 71);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
@@ -189,17 +200,17 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_user_24;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 260);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 500);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // Login_UC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.showImg);
             this.Controls.Add(this.closeImg);
@@ -213,9 +224,11 @@
             this.Controls.Add(this.userPassword);
             this.Controls.Add(this.userLogin);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Login_UC";
-            this.Size = new System.Drawing.Size(836, 718);
+            this.Size = new System.Drawing.Size(1672, 1381);
             this.Load += new System.EventHandler(this.Login_UC_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_UC_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.showImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

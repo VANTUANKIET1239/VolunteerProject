@@ -107,5 +107,29 @@ namespace VolunProject.UserInterface.RegisterUser
                 }
             }
         }
+
+        private void showImg_Click(object sender, EventArgs e)
+        {
+            closeImg.BringToFront();
+            passwordTextBox.PasswordChar = '\0';
+        }
+
+        private void closeImg_Click(object sender, EventArgs e)
+        {
+            showImg.BringToFront();
+            passwordTextBox.PasswordChar = '●';
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            show.BringToFront();
+            confirmPasswordTextBox.PasswordChar = '●';     
+        }
+
+        private void show_Click(object sender, EventArgs e)
+        {
+            close.BringToFront();
+            confirmPasswordTextBox.PasswordChar = '\0';
+        }
     }
 }

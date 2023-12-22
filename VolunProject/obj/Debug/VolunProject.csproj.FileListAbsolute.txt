@@ -149,3 +149,11 @@ D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.H
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.Post_UC.resources
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.NotificationControl.NotificationControl.resources
 D:\git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.NotificationList.NotificationList.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Event.UserRegisterInformation.UserRegisterInformation.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.Comment_UC.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.CreatePost_Form.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.CreatePost_UC.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.Home_UC.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.Home.Post_UC.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.NotificationControl.NotificationControl.resources
+C:\Users\LENOVO\Desktop\Git\VolunteerProject\VolunProject\obj\Debug\VolunProject.UserInterface.NotificationList.NotificationList.resources

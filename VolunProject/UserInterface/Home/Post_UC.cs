@@ -18,6 +18,8 @@ namespace VolunProject.UserInterface.Home
 {
     public partial class Post_UC : UserControl
     {
+        public static event EventHandler deleteEvent;
+        public static event EventHandler updateEvent;
         int newWidth;
         int newHeight;
         public Post_UC(PostDTO postDTO)
@@ -25,11 +27,31 @@ namespace VolunProject.UserInterface.Home
             InitializeComponent();
             uploadInfo(postDTO);
             loadComment();
+            sub();
+        }
+
+        private void sub()
+        {
+            Comment_UC.deleteEvent += Comment_UC_deleteEvent;
+            Comment_UC.updateEvent += Comment_UC_updateEvent;
+        }
+
+        private void Comment_UC_updateEvent(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            loadComment();
+        }
+
+        private void Comment_UC_deleteEvent(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            loadComment();
         }
 
         private void uploadInfo(PostDTO postDTO)
         {
             var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
             var vol = VolunteerBLL.GetVolunteerByVolunteerID(postDTO.VolunteerID);
             var account = AccountBLL.GetAccountByID(vol.AccountID);
             captionTextbox.Text = postDTO.Caption;
@@ -44,6 +66,7 @@ namespace VolunProject.UserInterface.Home
                 image = Image.FromStream(ms);
                 cmtImg.Image = image;
             }
+            if (curVol.VolunteerID == postDTO.VolunteerID) pictureBox2.Visible = true;
             if (vol.Name == "") volName.Text = account.AccountName;
             else volName.Text = vol.Name;
             time.Text = postDTO.CreateDate.ToString();
@@ -63,9 +86,13 @@ namespace VolunProject.UserInterface.Home
                 postImg.Height = 0;
                 postImg.Width = 0;
             }
-            if(PostBLL.checkPostLike(vol.VolunteerID, postDTO.PostID) == true)
+            if(PostBLL.checkPostLike(curVol.VolunteerID, postDTO.PostID) == true)
             {
                 likeButton.BackColor = Color.Pink;
+            }
+            else
+            {
+                likeButton.BackColor = Color.White;
             }
             likeLabel.Text = PostBLL.countLike(postDTO.PostID).ToString();
 
@@ -118,6 +145,7 @@ namespace VolunProject.UserInterface.Home
 
         private void loadComment()
         {
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
             var list = CommentBLL.GetAllCommentByID(postID.Text);
             foreach(var item in list)
             {
@@ -126,7 +154,8 @@ namespace VolunProject.UserInterface.Home
                 string name;
                 if (volunteer.Name != "") name = volunteer.Name;
                 else name = account.AccountName;
-                Comment_UC comment_UC = new Comment_UC(account.ImageUS,item,name);
+                Comment_UC comment_UC = new Comment_UC(account.ImageUS,item,name, volunteer.AccountID);
+                if (curUser.AccountID == volunteer.AccountID) comment_UC.pictureBox1.Visible = true;
                 flowLayoutPanel1.Controls.Add(comment_UC);
             }
             cmtLabel.Text = list.Count().ToString();
@@ -150,14 +179,9 @@ namespace VolunProject.UserInterface.Home
                     loadComment();
                 }             
                 commentTextbox.Clear();              
-                e.SuppressKeyPress = true;
             }
         }
 
-        private void loadPostLike()
-        {
-
-        }
         private void likeButton_Click(object sender, EventArgs e)
         {
             
@@ -170,6 +194,52 @@ namespace VolunProject.UserInterface.Home
             {
                 likeLabel.Text = PostBLL.countLike(postID.Text).ToString();
                 likeButton.BackColor = Color.White;
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(MousePosition);
+        }
+
+        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (PostBLL.deletePost(postID.Text))
+            {
+                deleteEvent(this, new EventArgs());
+            }
+        }
+
+        private void chỉnhSửaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            captionTextbox.BorderStyle = BorderStyle.FixedSingle;
+            captionTextbox.ReadOnly = false;
+            captionTextbox.Focus();
+        }
+
+        private void captionTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && captionTextbox.Text.Length >= 0)
+            {
+                string enteredText = captionTextbox.Text;
+
+                if (PostBLL.updatePost(postID.Text, enteredText))
+                {
+                    captionTextbox.BorderStyle = BorderStyle.None;
+                    captionTextbox.ReadOnly = true;
+
+                    updateEvent(this, new EventArgs());
+                }
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                captionTextbox.BorderStyle = BorderStyle.None;
+                captionTextbox.ReadOnly = true;
             }
         }
     }

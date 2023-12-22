@@ -40,7 +40,7 @@ namespace VolunProject.Data.DAL
                 account.Password = accountDTO.Password;
                 account.CreateDate = DateTime.Now;
                 account.state = true;
-                account.ImageUS = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\user-default.png");
+                account.ImageUS = OtherFunction.PathImage2Byte("C:\\Users\\LENOVO\\Desktop\\Git\\VolunteerProject\\VolunProject\\Resources\\icons8-user-50.png");
                 account.RoleName = "VOLUNTEER";
 
                 volunteerDBEntities.Accounts.Add(account);
@@ -59,7 +59,7 @@ namespace VolunProject.Data.DAL
                     volunteer.Description = "";
                     volunteer.AddressDetail = "";
                     volunteer.PrestigeScore = 0;
-                    volunteer.RewardPoint = 0;
+                    volunteer.RewardPoint = 2000;
                     volunteerDBEntities.Volunteers.Add(volunteer);
                     volunteer.RankId = "BRONZE";
 
@@ -103,6 +103,12 @@ namespace VolunProject.Data.DAL
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).FirstOrDefault().Password;
+        }
+        public static bool checkPassword(string password)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            if (volunteerDBEntities.Accounts.Where(x => x.Password == password).Any()) return true;
+            return false;
         }
     }
 }

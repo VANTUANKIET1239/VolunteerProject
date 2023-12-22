@@ -32,7 +32,7 @@ namespace VolunProject.UserInterface.Redeem
                 redeemButton.Enabled = false;
                 redeemButton.Text = "";
                 Image image1;
-                byte[] check = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\icons8-check-48 (1).png");
+                byte[] check = OtherFunction.PathImage2Byte("C:\\Users\\LENOVO\\Desktop\\Git\\VolunteerProject\\VolunProject\\Resources\\icons8-check-48 (1).png");
                 using (MemoryStream ms1 = new MemoryStream(check))
                 {
                     image1 = Image.FromStream(ms1);
@@ -68,6 +68,10 @@ namespace VolunProject.UserInterface.Redeem
                     VolunteerRewardBLL.AddVolunteerReward(volunteerRewardDTO, curVol.VolunteerID, point);
                     MessageBox.Show("Đổi quà thành công", "Thông báo", MessageBoxButtons.OK);
                     loadEvent(this, new EventArgs());
+                }
+                else
+                {
+                    MessageBox.Show("Điểm không đủ để đổi quà", "Thông báo", MessageBoxButtons.OK);
                 }
             }
         }

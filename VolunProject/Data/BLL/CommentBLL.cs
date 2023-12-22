@@ -23,5 +23,13 @@ namespace VolunProject.Data.BLL
             List<CommentDTO> dto = mapper.Map<List<CommentDTO>>(CommentDAL.GetAllCommentByID(postID));
             return dto;
         }
+        public static bool deleteComment(string commentID)
+        {
+            return CommentDAL.deleteComment(commentID);
+        }
+        public static bool updateComment(string id, string content)
+        {
+            return CommentDAL.updateComment(id, content);
+        }
     }
 }

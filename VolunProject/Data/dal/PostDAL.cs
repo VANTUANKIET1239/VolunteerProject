@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data.Metadata.Edm;
 using System.Linq;
 using System.Text;
@@ -27,13 +28,14 @@ namespace VolunProject.Data.DAL
             post.CreateDate = DateTime.Now;
             post.PostLike = 0;
             post.State = state;
+            post.status = true;
             volunteerDBEntities.Posts.Add(post);
             return volunteerDBEntities.SaveChanges() > 0;
         }
         public static ICollection<Post> getAllPost()
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-            var allPost = volunteerDBEntities.Posts.ToList();
+            var allPost = volunteerDBEntities.Posts.Where(x => x.status == true).ToList();
             allPost.Reverse();
             return allPost;
         }
@@ -53,8 +55,9 @@ namespace VolunProject.Data.DAL
             if (volunteerDBEntities.PostLikes.Any(x => x.VolunteerID == volunteer.VolunteerID && x.PostID == postID))
             {
                 var currentLikeEvent = volunteerDBEntities.PostLikes.Where(x => x.VolunteerID == volunteer.VolunteerID && x.PostID == postID).FirstOrDefault();
-                if (currentLikeEvent.state == null) currentLikeEvent.state = false;
-                else currentLikeEvent.state = !currentLikeEvent.state;
+                //if (currentLikeEvent.state == null) currentLikeEvent.state = true;
+                //else 
+                currentLikeEvent.state = !currentLikeEvent.state;
                 result = volunteerDBEntities.SaveChanges() > 0;
                 return currentLikeEvent.state;
             }
@@ -73,6 +76,27 @@ namespace VolunProject.Data.DAL
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities(); 
             return volunteerDBEntities.PostLikes.Where(x => x.PostID == postID && x.state == true).Count();
+        }
+        public static bool deletePost(string postID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var post = volunteerDBEntities.Posts.Where(x => x.PostID == postID && x.status == true).FirstOrDefault();
+            if (post != null)
+            {
+                post.status = false;
+            }
+            return volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static bool updatePost(string id, string content)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var post = volunteerDBEntities.Posts.Where(x => x.PostID == id && x.status == true).FirstOrDefault();
+            if (post != null)
+            {
+                post.Caption = content;
+                return volunteerDBEntities.SaveChanges() > 0;
+            }
+            return false;
         }
     }
 }

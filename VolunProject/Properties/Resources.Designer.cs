@@ -193,6 +193,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ellipsis_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ellipsis-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_event_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-event-24", resourceCulture);

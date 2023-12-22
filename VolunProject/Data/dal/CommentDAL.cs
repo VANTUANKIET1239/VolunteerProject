@@ -30,9 +30,30 @@ namespace VolunProject.Data.DAL
         public static ICollection<Comment> GetAllCommentByID(string postID)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-            var allComment = volunteerDBEntities.Comments.Where(x => x.PostID == postID).ToList();
+            var allComment = volunteerDBEntities.Comments.Where(x => x.PostID == postID && x.State == true).ToList();
             allComment.Reverse();
             return allComment;
+        }
+        public static bool deleteComment(string commentID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var comment = volunteerDBEntities.Comments.Where(x => x.CommentID == commentID && x.State == true).FirstOrDefault();
+            if (comment != null)
+            {
+                comment.State = false;
+            }
+            return volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static bool updateComment(string id, string content)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var comment = volunteerDBEntities.Comments.Where(x => x.CommentID == id && x.State == true).FirstOrDefault();
+            if (comment != null)
+            {
+                comment.CommentContent = content;
+                return volunteerDBEntities.SaveChanges() > 0;
+            }
+            return false;
         }
     }
 }

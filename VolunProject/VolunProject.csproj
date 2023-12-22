@@ -102,6 +102,84 @@
     <Compile Include="Data\DTO\AccountDTO.cs" />
     <Compile Include="Data\DTO\VolunteerRewardDTO.cs" />
     <Compile Include="Data\DTO\WardDTO.cs" />
+    <Compile Include="Data\EntityADO.NET\Account.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Comment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Event.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\EventCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Notification.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Organization.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Post.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\PostLike.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\QuanHuyen.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\QuocGia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Ranking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Registration.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Review.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\ReviewList.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Reward.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\SysIndex.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\TinhThanhPho.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\Volunteer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\VolunteerLikeEvent.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\VolunteerReward.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntityADO.NET\XaPhuong.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +489,13 @@
     <EmbeddedResource Include="UserInterface\UserInformation\UserInformation_UC.resx">
       <DependentUpon>UserInformation_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Data\EntityADO.NET\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\EntityADO.NET\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -449,9 +534,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-list-50.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\EntityADO.NET\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\7bda1c7d233fe592c0fc7ea63f20ebc2.jpg" />
     <None Include="Resources\logo-social.png" />
@@ -480,6 +563,16 @@
     <None Include="Resources\icons8-shutdown-50.png" />
     <None Include="Resources\icons8-create-100.png" />
     <None Include="Resources\1.png" />
+    <Content Include="Data\EntityADO.NET\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\EntityADO.NET\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\5k-spider-man-far-from-home-h0-2560x1440.jpg" />
     <None Include="Resources\a.png" />
     <None Include="Resources\b.png" />
@@ -493,6 +586,7 @@
     <None Include="Resources\icons8-comment-24.png" />
     <None Include="Resources\icons8-event-48.png" />
     <None Include="Resources\icons8-event-24.png" />
+    <None Include="Resources\icons8-ellipsis-30.png" />
     <Content Include="Resources\icons8-heart-50 %281%29.png" />
     <None Include="Resources\icons8-heart-50 %281%291.png" />
     <None Include="Resources\icons8-notification-50.png" />

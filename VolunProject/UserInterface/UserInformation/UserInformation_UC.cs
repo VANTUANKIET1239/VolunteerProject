@@ -298,5 +298,41 @@ namespace VolunProject.UserInterface.UserInformation
         {
 
         }
+
+        private void show1_Click(object sender, EventArgs e)
+        {
+            close1.BringToFront();
+            curPasswordTB.PasswordChar = '\0';
+        }
+
+        private void close1_Click(object sender, EventArgs e)
+        {
+            show1.BringToFront();
+            curPasswordTB.PasswordChar = '●';
+        }
+
+        private void show2_Click(object sender, EventArgs e)
+        {
+            close2.BringToFront();
+            newPasswordTB.PasswordChar = '\0';
+        }
+
+        private void close2_Click(object sender, EventArgs e)
+        {
+            show2.BringToFront();
+            newPasswordTB.PasswordChar = '●';
+        }
+
+        private void close3_Click(object sender, EventArgs e)
+        {
+            show3.BringToFront();
+            confirmPasswordTB.PasswordChar = '●';
+        }
+
+        private void show3_Click(object sender, EventArgs e)
+        {
+            close3.BringToFront();
+            confirmPasswordTB.PasswordChar = '\0';
+        }
     }
 }

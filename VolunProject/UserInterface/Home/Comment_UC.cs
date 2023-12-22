@@ -9,13 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
+using VolunProject.Data.EntityADO.NET;
 
 namespace VolunProject.UserInterface.Home
 {
     public partial class Comment_UC : UserControl
     {
-        public Comment_UC(byte[] img, CommentDTO commentDTO, string name)
+        public static event EventHandler deleteEvent;
+        public static event EventHandler updateEvent;
+        public Comment_UC(byte[] img, CommentDTO commentDTO, string name, string ID)
         {
             InitializeComponent();
             Image image;
@@ -27,6 +31,7 @@ namespace VolunProject.UserInterface.Home
             cmtTextbox.Text = commentDTO.CommentContent;
             cmtID.Text = commentDTO.CommentID;
             cmtName.Text = name;
+            accountID.Text = ID;
         }
 
         private void cmtTextbox_TextChanged(object sender, EventArgs e)
@@ -46,6 +51,55 @@ namespace VolunProject.UserInterface.Home
                 this.Height = 70 + 22 * line;
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(MousePosition);
+        }
+
+        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(CommentBLL.deleteComment(cmtID.Text))
+            {
+                deleteEvent(this, new EventArgs());
+            }
+        }
+
+        private void chỉnhSửaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.cmtTextbox.BorderStyle = BorderStyle.FixedSingle;
+            this.cmtTextbox.ReadOnly = false;
+            this.cmtTextbox.Focus();
+        }
+
+        private void cmtTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && cmtTextbox.Text.Length > 0)
+            {
+                string enteredText = cmtTextbox.Text;
+                
+                if (CommentBLL.updateComment(cmtID.Text,enteredText))
+                {
+                    this.cmtTextbox.BorderStyle = BorderStyle.None;
+                    this.cmtTextbox.ReadOnly = true;
+                    
+                    updateEvent(this, new EventArgs());
+                }              
+            }
+            if(e.KeyCode == Keys.Enter && cmtTextbox.Text.Length == 0)
+            {
+                if (CommentBLL.deleteComment(cmtID.Text))
+                {
+                    deleteEvent(this, new EventArgs());                
+                }
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.cmtTextbox.BorderStyle = BorderStyle.None;
+                this.cmtTextbox.ReadOnly = true;
+            }
+            //e.SuppressKeyPress = true;
         }
     }
 }
