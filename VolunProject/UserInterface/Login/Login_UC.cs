@@ -42,25 +42,41 @@ namespace VolunProject.UserInterface.Login
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (AccountBLL.LogIn(userLogin.Text, userPassword.Text))
+            string userName = userLogin.Text;
+            string password = userPassword.Text;
+            if (userName == "")
             {
-                var account = AccountBLL.Account_ByLoginName(userLogin.Text);
-                if (account.RoleName == "ORGANIZATION")
-                {
-                    LoginToOrganizationMainEvent(this, new EventArgs());
-                }
-                else
-                {
-                    LoginEvent(this, new EventArgs());
-                }
-               
-            }
-            else
-            {
-                userLogin.Text = "";
-                userPassword.Text = "";
-                errorMessage.Text = "Sai tên đăng nhập hoặc mật khẩu !";
+                errorMessage.Text = "Vui lòng nhập tài khoản!";
                 errorMessage.Visible = true;
+            }
+            else if (password == "")
+            {
+                errorMessage.Text = "Vui lòng nhập mật khẩu !";
+                errorMessage.Visible = true;
+            }
+            else if (AccountBLL.checkAccountName(userName) == false)
+            {
+                errorMessage.Text = "Tài khoản không đúng !";
+                errorMessage.Visible = true;
+            }
+            else if (AccountBLL.checkPassword(password) == false)
+            {
+                errorMessage.Text = "Mật khẩu không đúng !";
+                errorMessage.Visible = true;
+            }
+            else {
+                if (AccountBLL.LogIn(userLogin.Text, userPassword.Text))
+                {
+                    var account = AccountBLL.Account_ByLoginName(userLogin.Text);
+                    if (account.RoleName == "ORGANIZATION")
+                    {
+                        LoginToOrganizationMainEvent(this, new EventArgs());
+                    }
+                    else
+                    {
+                        LoginEvent(this, new EventArgs());
+                    }
+                }
             }
         }
 
@@ -82,6 +98,42 @@ namespace VolunProject.UserInterface.Login
         private void Login_UC_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void closeImg_Click(object sender, EventArgs e)
+        {
+            showImg.BringToFront();
+            userPassword.PasswordChar = '●';
+            
+        }
+
+        private void showImg_Click(object sender, EventArgs e)
+        {
+
+            closeImg.BringToFront();
+            userPassword.PasswordChar = '\0';
+            
+        }
+
+        private void Login_UC_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void userPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton_Click(this, new EventArgs());
+            }
+        }
+
+        private void userLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton_Click(this, new EventArgs());
+            }
         }
     }
 }

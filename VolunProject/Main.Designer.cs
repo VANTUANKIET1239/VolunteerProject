@@ -84,6 +84,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(98, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 21);
@@ -93,9 +94,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 31);
+            this.pictureBox1.Image = global::VolunProject.Properties.Resources.a;
+            this.pictureBox1.Location = new System.Drawing.Point(51, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -166,7 +169,9 @@
             this.signOutButoon.FlatAppearance.BorderSize = 0;
             this.signOutButoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signOutButoon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signOutButoon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.signOutButoon.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.signOutButoon.Image = global::VolunProject.Properties.Resources.icons8_log_out_24;
+            this.signOutButoon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.signOutButoon.Location = new System.Drawing.Point(0, 723);
             this.signOutButoon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.signOutButoon.Name = "signOutButoon";
@@ -184,7 +189,8 @@
             this.infoButton.FlatAppearance.BorderSize = 0;
             this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.infoButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.infoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.infoButton.Image = global::VolunProject.Properties.Resources.icons8_user_24__1_;
             this.infoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.infoButton.Location = new System.Drawing.Point(0, 188);
             this.infoButton.Name = "infoButton";
@@ -202,7 +208,8 @@
             this.historyButton.FlatAppearance.BorderSize = 0;
             this.historyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.historyButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historyButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.historyButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.historyButton.Image = global::VolunProject.Properties.Resources.icons8_history_24;
             this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.historyButton.Location = new System.Drawing.Point(0, 141);
             this.historyButton.Name = "historyButton";
@@ -220,7 +227,8 @@
             this.rewardsButton.FlatAppearance.BorderSize = 0;
             this.rewardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rewardsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rewardsButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rewardsButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rewardsButton.Image = global::VolunProject.Properties.Resources.icons8_reward_24;
             this.rewardsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rewardsButton.Location = new System.Drawing.Point(0, 94);
             this.rewardsButton.Name = "rewardsButton";
@@ -238,7 +246,8 @@
             this.eventButton.FlatAppearance.BorderSize = 0;
             this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.eventButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_24;
             this.eventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButton.Location = new System.Drawing.Point(0, 47);
             this.eventButton.Name = "eventButton";
@@ -256,8 +265,8 @@
             this.homeButton.FlatAppearance.BorderSize = 0;
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.homeButton.Image = global::VolunProject.Properties.Resources.icons8_home_30;
+            this.homeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.homeButton.Image = global::VolunProject.Properties.Resources.icons8_home_24;
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.Location = new System.Drawing.Point(0, 0);
             this.homeButton.Margin = new System.Windows.Forms.Padding(0);

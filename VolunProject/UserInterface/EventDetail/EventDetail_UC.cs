@@ -14,6 +14,7 @@ using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.EventDetail
 {
+    
     public partial class EventDetail_UC : UserControl
     {
         public static event EventHandler BackToEvents;
@@ -78,5 +79,7 @@ namespace VolunProject.UserInterface.EventDetail
             Event.EventRegistrationForm.RegistrationForm registrationForm = new Event.EventRegistrationForm.RegistrationForm(eventModel);
             registrationForm.Show();
         }
+    
     }
+    
 }

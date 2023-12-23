@@ -32,6 +32,7 @@ namespace VolunProject.Data.EntityADO.NET
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<PostLike> PostLikes { get; set; }
         public DbSet<QuanHuyen> QuanHuyens { get; set; }
         public DbSet<QuocGia> QuocGias { get; set; }
         public DbSet<Ranking> Rankings { get; set; }

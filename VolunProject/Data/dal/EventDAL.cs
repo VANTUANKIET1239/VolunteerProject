@@ -12,6 +12,7 @@ using VolunProject.Data.EntityADO.NET;
 
 namespace VolunProject.Data.DAL
 {
+    
     public class EventDAL
     {
         public static bool Event_Add(EventDTO eventDTO)
@@ -77,7 +78,6 @@ namespace VolunProject.Data.DAL
                 currentLikeEvent.LikeDate = DateTime.Now; 
                 currentLikeEvent.LikeState = true;
                 result = volunteerDBEntities.SaveChanges() > 0;
-
             }
             else
             {
@@ -90,8 +90,6 @@ namespace VolunProject.Data.DAL
                 result = volunteerDBEntities.SaveChanges() > 0;
             }
             return result;
-
-
         }
         public static bool Event_UnlikeEvent(string eventId)
         {
@@ -241,4 +239,5 @@ namespace VolunProject.Data.DAL
         }
 
     }
+    
 }

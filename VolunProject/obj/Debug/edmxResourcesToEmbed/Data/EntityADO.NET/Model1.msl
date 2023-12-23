@@ -91,6 +91,16 @@
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="PostLike" ColumnName="PostLike" />
           <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostLikes">
+      <EntityTypeMapping TypeName="VolunteersDBModel.PostLike">
+        <MappingFragment StoreEntitySet="PostLike">
+          <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="state" ColumnName="state" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

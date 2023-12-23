@@ -43,7 +43,8 @@ namespace VolunProject.UserInterface.ForgetPassword
         {
             int minute = countdown / 60;
             int second = countdown % 60;
-            timeLB.Text = $"{minute}:{second}";
+            if(second>10) timeLB.Text = $"{minute}:{second}";
+            else timeLB.Text = $"{minute}:{0:second}";
         }
 
         private void ConfirmCode_UC_Load(object sender, EventArgs e)

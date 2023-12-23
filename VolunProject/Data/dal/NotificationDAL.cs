@@ -7,7 +7,8 @@ using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
 
 namespace VolunProject.Data.DAL
-{
+{   
+    
     public class NotificationDAL
     {
         public static bool Notification_Add(NotificationDTO notificationDTO)
@@ -36,4 +37,5 @@ namespace VolunProject.Data.DAL
                 .ToList();
         }
     }
+    
 }

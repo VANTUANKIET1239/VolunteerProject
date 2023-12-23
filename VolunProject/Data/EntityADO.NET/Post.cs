@@ -17,17 +17,20 @@ namespace VolunProject.Data.EntityADO.NET
         public Post()
         {
             this.Comments = new HashSet<Comment>();
+            this.PostLikes = new HashSet<PostLike>();
         }
     
         public string PostID { get; set; }
         public string VolunteerID { get; set; }
         public string Caption { get; set; }
-        public System.DateTime CreateDate { get; set; }
+        public Nullable<System.DateTime> CreateDate { get; set; }
         public byte[] Image { get; set; }
         public Nullable<int> PostLike { get; set; }
         public Nullable<bool> State { get; set; }
+        public bool status { get; set; }
     
         public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<PostLike> PostLikes { get; set; }
         public virtual Volunteer Volunteer { get; set; }
     }
 }

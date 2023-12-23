@@ -23,7 +23,25 @@ namespace VolunProject.UserInterface.Home
         public Home_UC()
         {
             InitializeComponent();
+            sub();
         }
+
+        private void sub()
+        {
+            Post_UC.deleteEvent += Post_UC_deleteEvent;
+            Post_UC.updateEvent += Post_UC_updateEvent;
+        }
+
+        private void Post_UC_updateEvent(object sender, EventArgs e)
+        {
+            loadPost();
+        }
+
+        private void Post_UC_deleteEvent(object sender, EventArgs e)
+        {
+            loadPost();
+        }
+
         public void loadPost()
         {
             postPanel.Controls.Clear();

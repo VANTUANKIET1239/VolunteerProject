@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -133,25 +134,91 @@ namespace VolunProject.UserInterface.UserInformation
         {
 
         }
-
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email && email.EndsWith("@gmail.com");
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Sử dụng biểu thức chính quy để kiểm tra định dạng số điện thoại
+            // Yêu cầu ít nhất 8 chữ số
+            Regex regex = new Regex(@"^\d{8,}$");
+            return regex.IsMatch(phoneNumber);
+        }
+        private bool ContainsNumbersOrSpecialCharacters(string name)
+        {
+            // Kiểm tra xem chuỗi có chứa số hoặc ký tự đặc biệt không
+            foreach (char c in name)
+            {
+                if (char.IsDigit(c) || char.IsSymbol(c) || char.IsPunctuation(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool ContainsSpecialCharacters(string input)
+        {
+            foreach (char c in input)
+            {
+                if (char.IsSymbol(c) || char.IsPunctuation(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         private void saveButton_Click(object sender, EventArgs e)
         {
+            string email = emailTB.Text;
+            string phone = phoneTB.Text;
+            string name = userNameTB.Text;
+            string address = addressTB.Text;
             DialogResult result = MessageBox.Show("Bạn có muốn lưu thông tin ?", "Thông báo", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
                 var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
                 VolunteerDTO vol = new VolunteerDTO();
-                //byte[] img = OtherFunction.ImageToByteArray(userImg.Image);
                 byte[] img = OtherFunction.ImageToByteArray(userImg.Image);
-                vol.Name = userNameTB.Text;
-                vol.Email = emailTB.Text;
-                vol.PhoneNumber = phoneTB.Text;
+                if (ContainsNumbersOrSpecialCharacters(name))
+                {
+                    label16.Text = "Họ và tên không được chứa số hoặc ký tự đặc biệt";
+                    label16.Visible = true;
+                    return;
+                }
+                vol.Name = name;
+                if (!IsValidEmail(email)) {
+                    label16.Text = "Địa chỉ email không hợp lệ. Vui lòng nhập đúng định dạng @gmail.com";
+                    label16.Visible = true;
+                    return;
+                }
+                vol.Email = email;
+                if (!IsValidPhoneNumber(phone)) {
+                    label16.Text = "Số điện thoại không hợp lệ";
+                    label16.Visible = true;
+                    return;
+                }
+                vol.PhoneNumber = phone;
                 vol.Gender = gender;
                 vol.Description = descriptionTB.Text;
                 vol.CityId = (int)cityCB.SelectedValue;
                 vol.WardId = (int)wardCB.SelectedValue;
                 vol.DistrictId = (int)districtCB.SelectedValue;
-                vol.AddressDetail = addressTB.Text;
+                if (ContainsSpecialCharacters(address))
+                {
+                    label16.Text = "Địa chỉ không được chứa ký tự đặc biệt";
+                    label16.Visible = true;
+                    return;
+                }
+                vol.AddressDetail = address;
                 vol.BirthDate = DateTime.Now;
                 if(VolunteerBLL.UpdateVolunteer(vol, img))
                 {
@@ -176,18 +243,21 @@ namespace VolunProject.UserInterface.UserInformation
             DialogResult result = MessageBox.Show("Bạn có muốn đổi mật khẩu ?", "Thông báo", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
+                string curPassword = curPasswordTB.Text;
+                string confirmPassword = confirmPasswordTB.Text;
+                string newPassword = newPasswordTB.Text;
                 var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
-                if (curPasswordTB.Text == "")
+                if (curPassword == "")
                 {
                     lb1.Text = "Vui lòng nhập mật khẩu hiện tại";
                     lb1.Visible = true;
                 }
-                else if (newPasswordTB.Text == "")
+                else if (newPassword == "")
                 {
                     lb1.Text = "Vui lòng nhập mật khẩu mới";
                     lb1.Visible = true;
                 }
-                else if (confirmPasswordTB.Text == "")
+                else if (confirmPassword == "")
                 {
                     lb1.Text = "Vui lòng xác nhận mật khẩu";
                     lb1.Visible = true;
@@ -197,14 +267,19 @@ namespace VolunProject.UserInterface.UserInformation
                     lb1.Text = "Mật khẩu không đúng";
                     lb1.Visible = true;
                 }
-                else if (newPasswordTB.Text != confirmPasswordTB.Text)
+                else if (newPassword != confirmPassword)
                 {
                     lb1.Text = "Mật khẩu xác nhận không trùng khớp";
                     lb1.Visible = true;
                 }
-                else if (newPasswordTB.Text == curUser.Password)
+                else if (newPassword == curUser.Password)
                 {
                     lb1.Text = "Mật khẩu mới trùng với mật khẩu cũ";
+                    lb1.Visible = true;
+                }
+                else if (newPassword.Length < 8)
+                {
+                    lb1.Text = "Mật khẩu phải có ít nhất 8 ký tự";
                     lb1.Visible = true;
                 }
                 else
@@ -222,6 +297,42 @@ namespace VolunProject.UserInterface.UserInformation
         private void lb1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void show1_Click(object sender, EventArgs e)
+        {
+            close1.BringToFront();
+            curPasswordTB.PasswordChar = '\0';
+        }
+
+        private void close1_Click(object sender, EventArgs e)
+        {
+            show1.BringToFront();
+            curPasswordTB.PasswordChar = '●';
+        }
+
+        private void show2_Click(object sender, EventArgs e)
+        {
+            close2.BringToFront();
+            newPasswordTB.PasswordChar = '\0';
+        }
+
+        private void close2_Click(object sender, EventArgs e)
+        {
+            show2.BringToFront();
+            newPasswordTB.PasswordChar = '●';
+        }
+
+        private void close3_Click(object sender, EventArgs e)
+        {
+            show3.BringToFront();
+            confirmPasswordTB.PasswordChar = '●';
+        }
+
+        private void show3_Click(object sender, EventArgs e)
+        {
+            close3.BringToFront();
+            confirmPasswordTB.PasswordChar = '\0';
         }
     }
 }
