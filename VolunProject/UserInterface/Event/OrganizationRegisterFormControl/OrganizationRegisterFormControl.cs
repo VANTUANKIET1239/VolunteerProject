@@ -69,12 +69,21 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterFormControl
                     DialogResult result1 = MessageBox.Show("Duyệt ứng viên thành công", "Thông báo", MessageBoxButtons.OK);
                     if (result1 == DialogResult.OK)
                     {
+
+                        // them thông báo vào bên đơn vị
                         var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser"); 
                         NotificationDTO notificationDTO = new NotificationDTO();
                         notificationDTO.NotificationContent = $"Ứng viên {registerVolunteerFormDTO1.VolunteerName} được duyệt tham gia sự kiện {registerVolunteerFormDTO1.EventName} vào lúc {DateTime.Now}.";
                         notificationDTO.AccountID = curUser.AccountID;
                         notificationDTO.NotiImg = registerVolunteerFormDTO1.VolunteerImage;
-                        if (NotificationBLL.Notification_Add(notificationDTO))
+
+                        NotificationDTO notificationDTO2 = new NotificationDTO();
+                        notificationDTO2.NotificationContent = $"Bạn vừa được duyệt tham gia sự kiện {registerVolunteerFormDTO1.EventName} vào lúc {DateTime.Now}.";
+                        notificationDTO2.AccountID = VolunteerBLL.GetVolunteerByVolunteerID(registerVolunteerFormDTO1.VolunteerID).AccountID;
+                        notificationDTO2.NotiImg = registerVolunteerFormDTO1.VolunteerImage;
+                        // them thông báo vào bên người dùng
+
+                        if (NotificationBLL.Notification_Add(notificationDTO) && NotificationBLL.Notification_Add(notificationDTO2))
                         {
                             LoadEvent(this, new EventArgs());
                         }
@@ -93,20 +102,28 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterFormControl
 
         private void CancelBTN_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận duyệt ứng viên này ?", "Thông báo", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Xác nhận từ chối duyệt ứng viên này ?", "Thông báo", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
 
-                if (EventBLL.Event_Approve(registerVolunteerFormDTO1.EventID, registerVolunteerFormDTO1.VolunteerID))
+                if (EventBLL.Event_Reject(registerVolunteerFormDTO1.EventID, registerVolunteerFormDTO1.VolunteerID))
                 {
-
-                    DialogResult result1 = MessageBox.Show("Duyệt ứng viên thành công", "Thông báo", MessageBoxButtons.OK);
-                    if (result1 == DialogResult.OK)
+                    var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+                    NotificationDTO notificationDTO = new NotificationDTO();
+                    notificationDTO.NotificationContent = $"Ứng viên {registerVolunteerFormDTO1.VolunteerName} đã bị từ chối duyệt tham gia sự kiện {registerVolunteerFormDTO1.EventName} vào lúc {DateTime.Now}.";
+                    notificationDTO.AccountID = curUser.AccountID;
+                    notificationDTO.NotiImg = registerVolunteerFormDTO1.VolunteerImage;
+                    if (NotificationBLL.Notification_Add(notificationDTO))
                     {
                         LoadEvent(this, new EventArgs());
                     }
                 };
             }
+        }
+
+        private void SearchEvent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

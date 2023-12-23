@@ -153,6 +153,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_email_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-email-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_event_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-event-50", resourceCulture);
@@ -176,6 +186,16 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_form_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-form-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_gender_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gender-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +313,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_phone_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-phone-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_reject_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reject-48", resourceCulture);
@@ -306,6 +336,16 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_search_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-641", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

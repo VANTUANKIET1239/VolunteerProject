@@ -36,6 +36,7 @@
             // 
             this.notiPanel.Location = new System.Drawing.Point(0, 82);
             this.notiPanel.Name = "notiPanel";
+            this.notiPanel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.notiPanel.Size = new System.Drawing.Size(1473, 797);
             this.notiPanel.TabIndex = 4;
             // 

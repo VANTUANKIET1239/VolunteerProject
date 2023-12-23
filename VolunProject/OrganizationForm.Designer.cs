@@ -34,16 +34,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.notifyBTN = new System.Windows.Forms.Button();
             this.SignOutBTN = new System.Windows.Forms.Button();
             this.CreateEventButoon = new System.Windows.Forms.Button();
-            this.infoButton = new System.Windows.Forms.Button();
-            this.historyButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.ApproveVolunteerBTN = new System.Windows.Forms.Button();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.DiemDanhBTN = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,39 +91,16 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.DiemDanhBTN);
             this.panel3.Controls.Add(this.notifyBTN);
             this.panel3.Controls.Add(this.SignOutBTN);
             this.panel3.Controls.Add(this.CreateEventButoon);
-            this.panel3.Controls.Add(this.infoButton);
-            this.panel3.Controls.Add(this.historyButton);
             this.panel3.Controls.Add(this.eventButton);
             this.panel3.Controls.Add(this.ApproveVolunteerBTN);
             this.panel3.Location = new System.Drawing.Point(3, 109);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(271, 770);
             this.panel3.TabIndex = 2;
-            // 
-            // sidebarTimer
-            // 
-            this.sidebarTimer.Interval = 10;
-            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(274, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1473, 879);
-            this.MainPanel.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-//            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_40;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // notifyBTN
             // 
@@ -133,9 +109,8 @@
             this.notifyBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.notifyBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifyBTN.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.notifyBTN.Image = global::VolunProject.Properties.Resources.icons8_notification_50;
             this.notifyBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.notifyBTN.Location = new System.Drawing.Point(0, 350);
+            this.notifyBTN.Location = new System.Drawing.Point(0, 210);
             this.notifyBTN.Name = "notifyBTN";
             this.notifyBTN.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.notifyBTN.Size = new System.Drawing.Size(271, 70);
@@ -152,7 +127,6 @@
             this.SignOutBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignOutBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOutBTN.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.SignOutBTN.Image = global::VolunProject.Properties.Resources.icons8_shutdown_50;
             this.SignOutBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SignOutBTN.Location = new System.Drawing.Point(0, 700);
             this.SignOutBTN.Name = "SignOutBTN";
@@ -171,9 +145,8 @@
             this.CreateEventButoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateEventButoon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateEventButoon.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.CreateEventButoon.Image = global::VolunProject.Properties.Resources.icons8_create_100;
             this.CreateEventButoon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CreateEventButoon.Location = new System.Drawing.Point(0, 280);
+            this.CreateEventButoon.Location = new System.Drawing.Point(0, 140);
             this.CreateEventButoon.Name = "CreateEventButoon";
             this.CreateEventButoon.Size = new System.Drawing.Size(271, 70);
             this.CreateEventButoon.TabIndex = 5;
@@ -182,42 +155,6 @@
             this.CreateEventButoon.UseVisualStyleBackColor = true;
             this.CreateEventButoon.Click += new System.EventHandler(this.CreateEventButoon_Click);
             // 
-            // infoButton
-            // 
-            this.infoButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.infoButton.FlatAppearance.BorderSize = 0;
-            this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.infoButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoButton.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.infoButton.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.infoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.infoButton.Location = new System.Drawing.Point(0, 210);
-            this.infoButton.Name = "infoButton";
-            this.infoButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.infoButton.Size = new System.Drawing.Size(271, 70);
-            this.infoButton.TabIndex = 4;
-            this.infoButton.Text = "                  Thông tin";
-            this.infoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.infoButton.UseVisualStyleBackColor = true;
-            // 
-            // historyButton
-            // 
-            this.historyButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.historyButton.FlatAppearance.BorderSize = 0;
-            this.historyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historyButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historyButton.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.historyButton.Image = global::VolunProject.Properties.Resources.icons8_list_50;
-            this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.historyButton.Location = new System.Drawing.Point(0, 140);
-            this.historyButton.Name = "historyButton";
-            this.historyButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.historyButton.Size = new System.Drawing.Size(271, 70);
-            this.historyButton.TabIndex = 3;
-            this.historyButton.Text = "                  Lịch sử";
-            this.historyButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.historyButton.UseVisualStyleBackColor = true;
-            // 
             // eventButton
             // 
             this.eventButton.Dock = System.Windows.Forms.DockStyle.Top;
@@ -225,7 +162,6 @@
             this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventButton.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_50;
             this.eventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButton.Location = new System.Drawing.Point(0, 70);
             this.eventButton.Name = "eventButton";
@@ -244,7 +180,6 @@
             this.ApproveVolunteerBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ApproveVolunteerBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApproveVolunteerBTN.ForeColor = System.Drawing.SystemColors.ControlText;
-//            this.ApproveVolunteerBTN.Image = global::VolunProject.Properties.Resources.icons8_form_50;
             this.ApproveVolunteerBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ApproveVolunteerBTN.Location = new System.Drawing.Point(0, 0);
             this.ApproveVolunteerBTN.Margin = new System.Windows.Forms.Padding(0);
@@ -256,6 +191,45 @@
             this.ApproveVolunteerBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ApproveVolunteerBTN.UseVisualStyleBackColor = true;
             this.ApproveVolunteerBTN.Click += new System.EventHandler(this.ApproveVolunteerBTN_Click);
+            // 
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(274, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1473, 879);
+            this.MainPanel.TabIndex = 3;
+            // 
+            // DiemDanhBTN
+            // 
+            this.DiemDanhBTN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DiemDanhBTN.FlatAppearance.BorderSize = 0;
+            this.DiemDanhBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DiemDanhBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiemDanhBTN.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DiemDanhBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DiemDanhBTN.Location = new System.Drawing.Point(0, 280);
+            this.DiemDanhBTN.Name = "DiemDanhBTN";
+            this.DiemDanhBTN.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DiemDanhBTN.Size = new System.Drawing.Size(271, 70);
+            this.DiemDanhBTN.TabIndex = 8;
+            this.DiemDanhBTN.Text = "                Điểm danh ";
+            this.DiemDanhBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DiemDanhBTN.UseVisualStyleBackColor = true;
+            this.DiemDanhBTN.Click += new System.EventHandler(this.DiemDanhBTN_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(29, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // OrganizationForm
             // 
@@ -284,13 +258,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button CreateEventButoon;
-        private System.Windows.Forms.Button infoButton;
-        private System.Windows.Forms.Button historyButton;
         private System.Windows.Forms.Button eventButton;
         private System.Windows.Forms.Button ApproveVolunteerBTN;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.Button SignOutBTN;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button notifyBTN;
+        private System.Windows.Forms.Button DiemDanhBTN;
     }
 }

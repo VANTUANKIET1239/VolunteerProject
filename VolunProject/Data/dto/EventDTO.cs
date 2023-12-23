@@ -10,11 +10,11 @@ namespace VolunProject.Data.DTO
     {
         public string EventID { get; set; }
         public string EventName { get; set; }
-        public int DistrictId { get; set; }
-        public int CityId { get; set; }
-        public int WardId { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public int? DistrictId { get; set; }
+        public int? CityId { get; set; }
+        public int? WardId { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public string Status { get; set; }
         public string CategoryId { get; set; }
         public bool state { get; set; }
@@ -38,5 +38,7 @@ namespace VolunProject.Data.DTO
         public string OrganizationName { get; set; }
 
         public string OrganizationID { get; set; }
+
+        public DateTime? RegistrationDate { get; set; }
     }
 }

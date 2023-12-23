@@ -10,11 +10,23 @@ using System.Text;
 using System.Threading.Tasks;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
+using System.Windows.Forms;
 
 namespace VolunProject
 {
     public class OtherFunction
     {
+        public static void autocomplete(TextBox a, List<string> b)
+        {
+            AutoCompleteStringCollection allowedTypes = new AutoCompleteStringCollection();
+            foreach (string s in b)
+            {
+                allowedTypes.Add(s);
+            }
+            a.AutoCompleteMode = AutoCompleteMode.Suggest;
+            a.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            a.AutoCompleteCustomSource = allowedTypes;
+        }
         public static string guiMailLayMK(string randomnumber)
 
         {

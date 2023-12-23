@@ -183,5 +183,10 @@ namespace VolunProject
         {
             OpenChildForm(new UserInterface.Home.Home_UC(), sender);
         }
+
+        private void NotificationBTN_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.NotificationList.NotificationList(), sender);
+        }
     }
 }

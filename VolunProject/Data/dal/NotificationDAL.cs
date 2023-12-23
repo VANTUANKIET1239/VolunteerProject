@@ -16,7 +16,7 @@ namespace VolunProject.Data.DAL
             int allUserCount = volunteerDBEntities.Notifications.Count();
             string newAccountID = "NOF" + (allUserCount + 1).ToString("0000000");
             Notification notification = new Notification();
-            notification.AccountID = newAccountID;
+            notification.AccountID = notificationDTO.AccountID;
             notification.NotificationID = newAccountID;
             notification.NotificationContent = notificationDTO.NotificationContent;
             notification.createDate = DateTime.Now;
@@ -28,7 +28,12 @@ namespace VolunProject.Data.DAL
         public static ICollection<Notification> Notification_ByAccountID(string accountID)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-            return volunteerDBEntities.Notifications.Where(x => x.AccountID == accountID).ToList();
+            return volunteerDBEntities.Notifications.Where(x => x.AccountID == accountID)
+                .OrderByDescending(x => x.createDate)
+                .ThenBy(x => x.createDate.HasValue ? x.createDate.Value.Hour : 0)
+                 .ThenBy(x => x.createDate.HasValue ? x.createDate.Value.Minute : 0)
+                  .ThenBy(x => x.createDate.HasValue ? x.createDate.Value.Second : 0)
+                .ToList();
         }
     }
 }

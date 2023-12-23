@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.NotificationBTN = new System.Windows.Forms.Button();
             this.createReward = new System.Windows.Forms.Button();
             this.signOutButoon = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +70,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
@@ -107,6 +110,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.NotificationBTN);
             this.panel3.Controls.Add(this.createReward);
             this.panel3.Controls.Add(this.signOutButoon);
             this.panel3.Controls.Add(this.infoButton);
@@ -119,6 +123,24 @@
             this.panel3.Size = new System.Drawing.Size(271, 770);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // NotificationBTN
+            // 
+            this.NotificationBTN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NotificationBTN.FlatAppearance.BorderSize = 0;
+            this.NotificationBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NotificationBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotificationBTN.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.NotificationBTN.Location = new System.Drawing.Point(0, 282);
+            this.NotificationBTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.NotificationBTN.Name = "NotificationBTN";
+            this.NotificationBTN.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.NotificationBTN.Size = new System.Drawing.Size(271, 47);
+            this.NotificationBTN.TabIndex = 7;
+            this.NotificationBTN.Text = "                  Thông báo";
+            this.NotificationBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotificationBTN.UseVisualStyleBackColor = true;
+            this.NotificationBTN.Click += new System.EventHandler(this.NotificationBTN_Click);
             // 
             // createReward
             // 
@@ -235,6 +257,7 @@
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.homeButton.Image = global::VolunProject.Properties.Resources.icons8_home_30;
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.Location = new System.Drawing.Point(0, 0);
             this.homeButton.Margin = new System.Windows.Forms.Padding(0);
@@ -270,6 +293,13 @@
             this.MainPanel.Size = new System.Drawing.Size(1519, 879);
             this.MainPanel.TabIndex = 1;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint_1);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(236, 102);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 776);
+            this.flowLayoutPanel1.TabIndex = 2;
             // 
             // Main
             // 
@@ -310,6 +340,8 @@
         private System.Windows.Forms.Button signOutButoon;
         private System.Windows.Forms.Button createReward;
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button NotificationBTN;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -44,10 +45,17 @@ namespace VolunProject.Data.DAL
             var events = volunteerDBEntities.Events.Where(x => x.state == true && x.OrganizationID == curUser.OrganizationID).ToList();
             return events;
         }
-        public static ICollection<Event> Event_List()
+        public static ICollection<Event> Event_List(EventDTO eventDTO)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-            var events = volunteerDBEntities.Events.Where(x => x.state == true).ToList();
+            var events = volunteerDBEntities.Events.Where(x => x.state == true)
+                .Where(x => x.EventName.ToLower().Contains(eventDTO.EventName.ToLower()) || eventDTO.EventName == "" || eventDTO.EventName == null)
+                 .Where(x => x.StartDate >= eventDTO.StartDate|| eventDTO.StartDate == null)
+                   .Where(x => x.EndDate <= eventDTO.EndDate || eventDTO.EndDate == null)
+                 .Where(x => x.CityId == eventDTO.CityId || eventDTO.CityId == null)
+                   .Where(x => x.DistrictId == eventDTO.DistrictId || eventDTO.DistrictId == null)
+                  .Where(x => x.CategoryId == eventDTO.CategoryId || eventDTO.CategoryId == "" || eventDTO.CategoryId == null)
+                .ToList();
             return events;
         }
         public static int Event_GetLikeCount(string eventId)
@@ -180,6 +188,55 @@ namespace VolunProject.Data.DAL
             registration.status = "A";
             registration.ApproveDate = DateTime.Now;
             registration.ApproveAccountID = curUser.AccountID;
+            return volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static bool Event_ParticipateChecking(string eventId, string volunteerId, string type)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var registration = volunteerDBEntities.Registrations.Where(x => x.EventID == eventId && x.VolunteerID == volunteerId).FirstOrDefault();
+            if (type == "I")
+            {
+                registration.CheckIn = true;
+                registration.CheckInDate = DateTime.Now;
+
+            }
+            else
+            {
+                registration.CheckOut = true;
+                registration.CheckOutDate = DateTime.Now;
+            }
+           return  volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static bool Event_Reject(string eventId, string volunteerId)
+        {
+
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var registration = volunteerDBEntities.Registrations.Where(x => x.VolunteerID == volunteerId && x.EventID == eventId).FirstOrDefault();
+            registration.status = "R";
+            registration.ApproveDate = DateTime.Now;
+            registration.ApproveAccountID = curUser.AccountID;
+            return volunteerDBEntities.SaveChanges() > 0;
+        }
+        public static ICollection<Event> SendApproveEventRegistration_ByVolunteerID(string volunteerID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Registrations.Include(x => x.Event).
+                Where(x => x.VolunteerID == volunteerID && x.status == "C" && x.state == true).
+                Select(x => x.Event).
+                ToList();
+        }
+        public static Registration Registration_ByEventVolunID(string eventID, string volunteerID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Registrations.Where(x => x.EventID == eventID && x.VolunteerID == volunteerID).FirstOrDefault();
+        }
+
+        public static bool Registration_Cancel(string eventID, string volunteerID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var registration = volunteerDBEntities.Registrations.Where(x => x.VolunteerID == volunteerID && x.EventID == eventID).FirstOrDefault();
+            registration.state = false;
             return volunteerDBEntities.SaveChanges() > 0;
         }
 

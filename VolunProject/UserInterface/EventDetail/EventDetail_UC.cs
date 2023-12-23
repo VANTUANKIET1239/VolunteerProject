@@ -33,7 +33,7 @@ namespace VolunProject.UserInterface.EventDetail
             Like.Text = eventDTO.LikeCount.ToString();
             EventName.Text = eventDTO.EventName.ToString();
             AddressLB.Text = $"{eventDTO.DetailAddress}, {eventDTO.wardName}, {eventDTO.districtName}, {eventDTO.cityName}";
-            DateTimeLB.Text = $"{eventDTO.StartDate.ToString("dd/MM/yyyy")} - {eventDTO.EndDate.ToString("dd/MM/yyyy")}";
+            DateTimeLB.Text = $"{eventDTO.StartDate?.ToString("dd/MM/yyyy")} - {eventDTO.EndDate?.ToString("dd/MM/yyyy")}";
             TimeLB.Text = eventDTO.time;
             Image image;
             using (MemoryStream ms = new MemoryStream(eventDTO.EventImage))

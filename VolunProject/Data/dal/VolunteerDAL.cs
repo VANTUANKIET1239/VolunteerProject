@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Principal;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
+using VolunProject.UserInterface.CheckIn_CheckOut;
 
 namespace VolunProject.Data.DAL
 {
@@ -55,6 +57,37 @@ namespace VolunProject.Data.DAL
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.Volunteers.Any(x => x.Email == email);
+        }
+        public static ICollection<RegistrationVolunteerDTO> Volunteer_ByEventID(string eventID, VolunteerSearchDTO volunteerSearchDTO )
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Registrations
+                .Include(x => x.Volunteer)
+                .Where(x => x.EventID == eventID && x.state == true && x.status == "A")
+                .Select(x => new RegistrationVolunteerDTO()
+                {
+                    VolunteerID = x.VolunteerID,
+                    Name = x.Volunteer.Name,
+                    
+                    Email = x.Volunteer.Email,
+                    PhoneNumber = x.Volunteer.PhoneNumber,
+                    DistrictId = x.Volunteer.DistrictId ?? 0,
+                    CityId = x.Volunteer.CityId ?? 0,
+                    WardId = x.Volunteer.WardId ?? 0,
+                    AccountID = x.Volunteer.AccountID,
+                    Gender = x.Volunteer.Gender ?? true,
+                    status = x.status,
+                    CheckIn = x.CheckIn,
+                    CheckOut = x.CheckOut,
+                    CheckInDate = x.CheckInDate,
+                    CheckOutDate = x.CheckOutDate,
+                    AddressDetail = x.Volunteer.AddressDetail,
+                    EventID = x.EventID
+                })
+                .Where(x => x.CheckIn == volunteerSearchDTO.CheckIn || volunteerSearchDTO.CheckIn == null)
+                 .Where(x => x.CheckOut == volunteerSearchDTO.CheckOut || volunteerSearchDTO.CheckOut == null)
+                   .Where(x => x.Name == volunteerSearchDTO.Name.Trim() || volunteerSearchDTO.Name.Trim() == "" || volunteerSearchDTO.Name == null)
+                .ToList();
         }
     }
 }

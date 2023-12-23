@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.Event.EventControl
@@ -27,11 +28,12 @@ namespace VolunProject.UserInterface.Event.EventControl
         private void LoadEvent(EventDTO eventDTO)
         {
             var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+             var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
             EventModel = eventDTO;
             Like.Text = eventDTO.LikeCount.ToString();
             eventTitle.Text = eventDTO.EventName.ToString();
             addressLB.Text = $"{eventDTO.DetailAddress}, {eventDTO.wardName}, {eventDTO.districtName}, {eventDTO.cityName}";
-            DateTimeLB.Text = $"{eventDTO.StartDate.ToString("dd/MM/yyyy")} - {eventDTO.EndDate.ToString("dd/MM/yyyy")}";
+            DateTimeLB.Text = $"{eventDTO.StartDate?.ToString("dd/MM/yyyy")} - {eventDTO.EndDate?.ToString("dd/MM/yyyy")}";
             TimeLB.Text = eventDTO.time;
             Image image;
             using (MemoryStream ms = new MemoryStream(eventDTO.EventImage))
@@ -44,7 +46,11 @@ namespace VolunProject.UserInterface.Event.EventControl
                 DetailEventBtn.Visible = false;
                 JoinEventBtn.Visible = false;
             }
-
+            if (EventBLL.Event_CheckVolunteerRegister(eventDTO.EventID, curVol.VolunteerID))
+            {
+                JoinEventBtn.Enabled = false;
+                JoinEventBtn.Text = "Đã tham gia";
+            }
 
         }
 
@@ -61,6 +67,12 @@ namespace VolunProject.UserInterface.Event.EventControl
         private void DetailEventBtn_Click(object sender, EventArgs e)
         {
             DetailEvent(this, new EventArgs());
+        }
+
+        private void JoinEventBtn_Click(object sender, EventArgs e)
+        {
+            Event.EventRegistrationForm.RegistrationForm registrationForm = new Event.EventRegistrationForm.RegistrationForm(EventModel);
+            registrationForm.Show();
         }
     }
 }

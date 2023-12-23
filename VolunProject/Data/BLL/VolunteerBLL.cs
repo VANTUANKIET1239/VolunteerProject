@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using VolunProject.Data.DAL;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
+using VolunProject.UserInterface.CheckIn_CheckOut;
 
 namespace VolunProject.Data.BLL
 {
@@ -42,6 +43,19 @@ namespace VolunProject.Data.BLL
             var mapper = new Mapper(config);
             VolunteerDTO dto = mapper.Map<VolunteerDTO>(VolunteerDAL.GetVolunteerByVolunteerID(volunteerId));
             return dto;
+        }
+
+        public static ICollection<RegistrationVolunteerDTO> Volunteer_ByEventID(string eventID, VolunteerSearchDTO volunteerSearchDTO)
+        {
+          var re =  VolunteerDAL.Volunteer_ByEventID(eventID, volunteerSearchDTO).ToList();
+            re.ForEach(item =>
+            {
+                item.cityName = CityBLL.City_ById(item.CityId).tenTinhThanhPho;
+                item.districtName = DistrictBLL.District_ById(item.DistrictId).tenQuanHuyen;
+                item.wardName = WardBLL.Ward_ById(item.WardId).tenXaPhuong;
+                item.VolunteerImg = AccountBLL.GetAccountByID(item.AccountID).ImageUS;
+            });
+            return re;
         }
     }
 }

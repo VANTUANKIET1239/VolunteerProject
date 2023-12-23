@@ -93,6 +93,7 @@
     <Compile Include="Data\DTO\RankingDTO.cs" />
     <Compile Include="Data\DTO\RegisterFormSearchDTO.cs" />
     <Compile Include="Data\DTO\RegisterVolunteerFormDTO.cs" />
+    <Compile Include="Data\DTO\RegistrationVolunteerDTO.cs" />
     <Compile Include="Data\DTO\RewardDTO.cs" />
     <Compile Include="Data\DTO\EventDTO.cs" />
     <Compile Include="Data\DTO\StatusDTO.cs" />
@@ -199,6 +200,31 @@
     <Compile Include="UIComponentTools\TextBoxRound.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\EventList\ProcessingEventList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\EventList\ProcessingEventList.Designer.cs">
+      <DependentUpon>ProcessingEventList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\ProcessingEventControl\ProcessingEventControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\ProcessingEventControl\ProcessingEventControl.Designer.cs">
+      <DependentUpon>ProcessingEventControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\RegistrationApproveControl\RegistrationApproveControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\RegistrationApproveControl\RegistrationApproveControl.Designer.cs">
+      <DependentUpon>RegistrationApproveControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\RegistrationApproveList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\RegistrationApproveList.Designer.cs">
+      <DependentUpon>RegistrationApproveList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\CheckIn-CheckOut\VolunteerSearchDTO.cs" />
     <Compile Include="UserInterface\EventDetail\EventDetail_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -396,6 +422,18 @@
     <EmbeddedResource Include="UIComponentTools\TextBoxRound.resx">
       <DependentUpon>TextBoxRound.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CheckIn-CheckOut\EventList\ProcessingEventList.resx">
+      <DependentUpon>ProcessingEventList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CheckIn-CheckOut\ProcessingEventControl\ProcessingEventControl.resx">
+      <DependentUpon>ProcessingEventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CheckIn-CheckOut\RegistrationApproveControl\RegistrationApproveControl.resx">
+      <DependentUpon>RegistrationApproveControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CheckIn-CheckOut\RegistrationApproveList.resx">
+      <DependentUpon>RegistrationApproveList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\EventDetail\EventDetail_UC.resx">
       <DependentUpon>EventDetail_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -575,10 +613,14 @@
     <Content Include="Resources\icons8-check-48.png" />
     <None Include="Resources\icons8-heart-24.png" />
     <None Include="Resources\icons8-comment-24.png" />
+    <None Include="Resources\icons8-gender-64.png" />
+    <None Include="Resources\icons8-email-64.png" />
     <Content Include="Resources\icons8-heart-50 %281%29.png" />
     <None Include="Resources\icons8-heart-50 %281%291.png" />
     <None Include="Resources\icons8-notification-50.png" />
     <None Include="Resources\icons8-reject-48.png" />
+    <None Include="Resources\icons8-phone-64 %281%29.png" />
+    <None Include="Resources\icons8-search-641.png" />
     <Content Include="Resources\silver-medal.png" />
     <None Include="Resources\icons8-back-50.png" />
     <None Include="Resources\icons8-cancel-48.png" />

@@ -33,18 +33,15 @@
             this.DetailEventBtn = new System.Windows.Forms.Button();
             this.addressLB = new System.Windows.Forms.Label();
             this.eventTitle = new System.Windows.Forms.Label();
+            this.RegisterDate = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.EventImageBox = new System.Windows.Forms.PictureBox();
             this.CancelEventBTN = new System.Windows.Forms.Button();
-            this.RegisterDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.statusPanel = new System.Windows.Forms.Panel();
-            this.statusLB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventImageBox)).BeginInit();
-            this.statusPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TimeLB
@@ -94,11 +91,31 @@
             // 
             this.eventTitle.AutoSize = true;
             this.eventTitle.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventTitle.Location = new System.Drawing.Point(341, 15);
+            this.eventTitle.Location = new System.Drawing.Point(244, 16);
             this.eventTitle.Name = "eventTitle";
             this.eventTitle.Size = new System.Drawing.Size(166, 24);
             this.eventTitle.TabIndex = 28;
             this.eventTitle.Text = "Sự kiện gì đó";
+            // 
+            // RegisterDate
+            // 
+            this.RegisterDate.AutoSize = true;
+            this.RegisterDate.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterDate.Location = new System.Drawing.Point(1184, 21);
+            this.RegisterDate.Name = "RegisterDate";
+            this.RegisterDate.Size = new System.Drawing.Size(99, 19);
+            this.RegisterDate.TabIndex = 38;
+            this.RegisterDate.Text = "22/07/2002";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1052, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 19);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Ngày đăng ký:";
             // 
             // pictureBox1
             // 
@@ -144,50 +161,10 @@
             this.CancelEventBTN.UseVisualStyleBackColor = false;
             this.CancelEventBTN.Click += new System.EventHandler(this.JoinEventBtn_Click);
             // 
-            // RegisterDate
-            // 
-            this.RegisterDate.AutoSize = true;
-            this.RegisterDate.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterDate.Location = new System.Drawing.Point(1184, 21);
-            this.RegisterDate.Name = "RegisterDate";
-            this.RegisterDate.Size = new System.Drawing.Size(99, 19);
-            this.RegisterDate.TabIndex = 38;
-            this.RegisterDate.Text = "22/07/2002";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1052, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 19);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Ngày đăng ký:";
-            // 
-            // statusPanel
-            // 
-            this.statusPanel.BackColor = System.Drawing.Color.DarkGray;
-            this.statusPanel.Controls.Add(this.statusLB);
-            this.statusPanel.Location = new System.Drawing.Point(248, 15);
-            this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(84, 30);
-            this.statusPanel.TabIndex = 40;
-            // 
-            // statusLB
-            // 
-            this.statusLB.AutoSize = true;
-            this.statusLB.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLB.Location = new System.Drawing.Point(6, 8);
-            this.statusLB.Name = "statusLB";
-            this.statusLB.Size = new System.Drawing.Size(70, 15);
-            this.statusLB.TabIndex = 0;
-            this.statusLB.Text = "Chờ duyệt";
-            // 
             // EventHistoryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RegisterDate);
             this.Controls.Add(this.pictureBox1);
@@ -204,8 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventImageBox)).EndInit();
-            this.statusPanel.ResumeLayout(false);
-            this.statusPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +198,5 @@
         private System.Windows.Forms.Label eventTitle;
         private System.Windows.Forms.Label RegisterDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel statusPanel;
-        private System.Windows.Forms.Label statusLB;
     }
 }

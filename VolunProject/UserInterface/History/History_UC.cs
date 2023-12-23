@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
+using VolunProject.UserInterface.Event.EventHistoryControl;
 
 namespace VolunProject.UserInterface.History
 {
@@ -18,21 +19,33 @@ namespace VolunProject.UserInterface.History
         public History_UC()
         {
             InitializeComponent();
+            sub();
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
         }
+        private void sub()
+        {
+            EventHistoryControl.LoadHistoryEvent += button1_Click;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+            var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
+            var listRedeemedRewards = EventBLL.SendApproveEventRegistration_ByVolunteerID(curVol.VolunteerID);
+            foreach (var item in listRedeemedRewards)
+            {
+                EventHistoryControl rewardHistoryControl = new EventHistoryControl(item);
+                flowLayoutPanel1.Controls.Add(rewardHistoryControl);
+            }
+            label1.Text = "Lịch sử tham gia";
 
         }
 
         private void rewardButton_Click(object sender, EventArgs e)
         {
-            ++isClick;
-            if (isClick == 1)
-            {
+            
                 var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
                 var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
                 var listRedeemedRewards = RewardBLL.getRewardsByVolunteerID(curVol.VolunteerID);
@@ -43,7 +56,7 @@ namespace VolunProject.UserInterface.History
                     flowLayoutPanel1.Controls.Add(rewardHistoryControl);
                 }
                 label1.Text = "Lịch sử quà tặng";
-            }
+     
         }
     }
 }

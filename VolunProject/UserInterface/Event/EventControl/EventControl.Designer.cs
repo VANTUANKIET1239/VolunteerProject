@@ -34,10 +34,10 @@
             this.DetailEventBtn = new System.Windows.Forms.Button();
             this.DateTimeLB = new System.Windows.Forms.Label();
             this.TimeLB = new System.Windows.Forms.Label();
+            this.Like = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.EventImageBox = new System.Windows.Forms.PictureBox();
-            this.Like = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventImageBox)).BeginInit();
@@ -67,12 +67,13 @@
             // 
             this.JoinEventBtn.BackColor = System.Drawing.Color.Bisque;
             this.JoinEventBtn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JoinEventBtn.Location = new System.Drawing.Point(1197, 84);
+            this.JoinEventBtn.Location = new System.Drawing.Point(1168, 84);
             this.JoinEventBtn.Name = "JoinEventBtn";
-            this.JoinEventBtn.Size = new System.Drawing.Size(112, 32);
+            this.JoinEventBtn.Size = new System.Drawing.Size(141, 32);
             this.JoinEventBtn.TabIndex = 3;
             this.JoinEventBtn.Text = "Tham gia";
             this.JoinEventBtn.UseVisualStyleBackColor = false;
+            this.JoinEventBtn.Click += new System.EventHandler(this.JoinEventBtn_Click);
             // 
             // DetailEventBtn
             // 
@@ -109,6 +110,19 @@
             this.TimeLB.TabIndex = 11;
             this.TimeLB.Text = "15:00 - 16:00";
             // 
+            // Like
+            // 
+            this.Like.FlatAppearance.BorderSize = 0;
+            this.Like.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Like.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Like.Image = global::VolunProject.Properties.Resources.icons8_love_401;
+            this.Like.Location = new System.Drawing.Point(260, 19);
+            this.Like.Name = "Like";
+            this.Like.Size = new System.Drawing.Size(45, 35);
+            this.Like.TabIndex = 27;
+            this.Like.Text = "12";
+            this.Like.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_clock_50;
@@ -138,19 +152,6 @@
             this.EventImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.EventImageBox.TabIndex = 6;
             this.EventImageBox.TabStop = false;
-            // 
-            // Like
-            // 
-            this.Like.FlatAppearance.BorderSize = 0;
-            this.Like.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Like.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Like.Image = global::VolunProject.Properties.Resources.icons8_love_401;
-            this.Like.Location = new System.Drawing.Point(260, 19);
-            this.Like.Name = "Like";
-            this.Like.Size = new System.Drawing.Size(45, 35);
-            this.Like.TabIndex = 27;
-            this.Like.Text = "12";
-            this.Like.UseVisualStyleBackColor = true;
             // 
             // EventControl
             // 

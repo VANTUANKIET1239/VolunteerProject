@@ -14,19 +14,39 @@ namespace VolunProject.UserInterface.Event
 {
     public partial class Event_UC : UserControl
     {
+        private List<EventDTO> eventDTOs;
         public Event_UC()
         {
             InitializeComponent();
-            PopulateCardList();
+             EventDTO eventDTO = new EventDTO();
+            PopulateCardList(eventDTO);
+           
+            var kiet = eventDTOs.Select(x => x.EventName).ToList();
+            OtherFunction.autocomplete(Searchtxt, kiet);
+
+
+            var citylist = CityBLL.City_List();
+            cityCB.DisplayMember = "tenTinhThanhPho";
+            cityCB.ValueMember = "ID";
+            cityCB.DataSource = citylist;
+
+            var category = CategoryBLL.EventCategory_List();
+            categoryCB.DisplayMember = "CategoryName";
+            categoryCB.ValueMember = "CategoryID";
+            categoryCB.DataSource = category;
         }
 
-        private void PopulateCardList()
+        private void PopulateCardList(EventDTO eventDTO)
         {
             // Assuming you have a list of data representing your cards
             // For demonstration purposes, I'm using a simple string array
             //var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
-            var events = EventBLL.Event_List();
 
+           
+
+            panel1.Controls.Clear();
+            var events = EventBLL.Event_List(eventDTO);
+            eventDTOs = events.ToList();
             // Set up a FlowLayoutPanel to host the cards
             FlowLayoutPanel EventflowLayoutPanel = new FlowLayoutPanel();
             EventflowLayoutPanel.Dock = DockStyle.Fill;
@@ -57,6 +77,38 @@ namespace VolunProject.UserInterface.Event
         private void scrollablePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Searchtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cityCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var city = (int)cityCB.SelectedValue;
+            var districtlist = DistrictBLL.District_ByCityId(city);
+            districtCB.DisplayMember = "tenQuanHuyen";
+            districtCB.ValueMember = "ID";
+            districtCB.DataSource = districtlist;
+        }
+
+        private void SearchBTN_Click(object sender, EventArgs e)
+        {
+            EventDTO eventDTO = new EventDTO();
+            eventDTO.StartDate = startdate.Value;
+            eventDTO.EndDate = enddate.Value; 
+            eventDTO.CategoryId = (string) categoryCB.SelectedValue;
+            eventDTO.CityId = (int) cityCB.SelectedValue;
+            eventDTO.state = true;
+            eventDTO.DistrictId = (int) districtCB.SelectedValue;
+            PopulateCardList(eventDTO);
+        }
+
+        private void AllEventBTN_Click(object sender, EventArgs e)
+        {
+            EventDTO eventDTO = new EventDTO();
+            PopulateCardList(eventDTO);
         }
     }
    /* public class CardControl : UserControl

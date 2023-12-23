@@ -93,7 +93,7 @@
             // 
             // NotiContentTXT
             // 
-            this.NotiContentTXT.BackColor = System.Drawing.SystemColors.Control;
+            this.NotiContentTXT.BackColor = System.Drawing.Color.White;
             this.NotiContentTXT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NotiContentTXT.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NotiContentTXT.Location = new System.Drawing.Point(161, 17);
@@ -107,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.NotiContentTXT);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TimeLB);
