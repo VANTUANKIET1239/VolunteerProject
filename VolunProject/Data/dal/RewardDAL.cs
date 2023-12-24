@@ -33,6 +33,7 @@ namespace VolunProject.Data.DAL
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             var listReward = volunteerDBEntities.VolunteerRewards.Include(x => x.Reward).Where(x => x.VolunteerID == volunteerID).Select(x => x.Reward).ToList();
+            listReward.Reverse();
             return listReward;
         }
         public static ICollection<Reward> getAllRewards()

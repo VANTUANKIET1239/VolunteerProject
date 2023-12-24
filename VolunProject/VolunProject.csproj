@@ -640,6 +640,7 @@
     <None Include="Resources\icons8-log-out-24.png" />
     <None Include="Resources\icons8-invisible-48.png" />
     <None Include="Resources\icons8-invisible-50.png" />
+    <None Include="Resources\icons8-notification-24 %281%29.png" />
     <Content Include="Resources\silver-medal.png" />
     <None Include="Resources\icons8-back-50.png" />
     <None Include="Resources\icons8-cancel-48.png" />

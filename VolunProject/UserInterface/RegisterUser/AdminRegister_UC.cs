@@ -49,9 +49,9 @@ namespace VolunProject.UserInterface.RegisterUser
             string pin = pinCodeTextBox.Text;
             string orgID = (string) organizeComboBox.SelectedValue;
             var organization = OrganizationBLL.getOrganizationByID(orgID);
-            if (organization.COCK != pin)
+            if(pin == "")
             {
-                errorMessage.Text = "Mã pin không đúng !";
+                errorMessage.Text = "Vui lòng nhập mã PIN !";
                 errorMessage.Visible = true;
             }
             else if (username == "")
@@ -67,6 +67,11 @@ namespace VolunProject.UserInterface.RegisterUser
             else if (confirmPassword == "")
             {
                 errorMessage.Text = "Vui lòng xác nhận mật khẩu !";
+                errorMessage.Visible = true;
+            }
+            else if (organization.COCK != pin)
+            {
+                errorMessage.Text = "Mã pin không đúng !";
                 errorMessage.Visible = true;
             }
             else if (username.Length < 8 || username.Length > 15)
@@ -130,6 +135,38 @@ namespace VolunProject.UserInterface.RegisterUser
         {
             close.BringToFront();
             confirmPasswordTextBox.PasswordChar = '\0';
+        }
+
+        private void pinCodeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void confirmPasswordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
     }
 }

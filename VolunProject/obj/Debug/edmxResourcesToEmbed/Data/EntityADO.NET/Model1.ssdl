@@ -204,6 +204,7 @@
     <Property Name="state" Type="bit" />
     <Property Name="AddressDetail" Type="nvarchar" MaxLength="200" />
     <Property Name="RankId" Type="nchar" MaxLength="100" />
+    <Property Name="status" Type="bit" />
   </EntityType>
   <EntityType Name="VolunteerLikeEvent">
     <Key>

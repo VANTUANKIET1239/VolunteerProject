@@ -44,9 +44,9 @@ namespace VolunProject.Data.BLL
             return AccountDAL.GetPassword(accountName);
         }
 
-        public static bool checkPassword(string password)
+        public static bool checkPassword(string account, string password)
         {
-            return AccountDAL.checkPassword(password);
+            return AccountDAL.checkPassword(account, password);
         }
     }
 }

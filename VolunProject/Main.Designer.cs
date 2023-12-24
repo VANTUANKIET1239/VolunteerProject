@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.sidebarContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,7 +47,6 @@
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,13 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(236, 102);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 776);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -87,7 +94,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(98, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 21);
+            this.label1.Size = new System.Drawing.Size(80, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Menu";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -133,13 +140,14 @@
             this.NotificationBTN.FlatAppearance.BorderSize = 0;
             this.NotificationBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NotificationBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotificationBTN.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.NotificationBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NotificationBTN.Image = global::VolunProject.Properties.Resources.icons8_notification_24__1_;
+            this.NotificationBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NotificationBTN.Location = new System.Drawing.Point(0, 282);
-            this.NotificationBTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NotificationBTN.Name = "NotificationBTN";
             this.NotificationBTN.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.NotificationBTN.Size = new System.Drawing.Size(271, 47);
-            this.NotificationBTN.TabIndex = 7;
+            this.NotificationBTN.TabIndex = 6;
             this.NotificationBTN.Text = "                  Thông báo";
             this.NotificationBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NotificationBTN.UseVisualStyleBackColor = true;
@@ -196,7 +204,7 @@
             this.infoButton.Name = "infoButton";
             this.infoButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.infoButton.Size = new System.Drawing.Size(271, 47);
-            this.infoButton.TabIndex = 4;
+            this.infoButton.TabIndex = 5;
             this.infoButton.Text = "                  Thông tin";
             this.infoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.infoButton.UseVisualStyleBackColor = true;
@@ -215,7 +223,7 @@
             this.historyButton.Name = "historyButton";
             this.historyButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.historyButton.Size = new System.Drawing.Size(271, 47);
-            this.historyButton.TabIndex = 3;
+            this.historyButton.TabIndex = 4;
             this.historyButton.Text = "                  Lịch sử";
             this.historyButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.historyButton.UseVisualStyleBackColor = true;
@@ -234,7 +242,7 @@
             this.rewardsButton.Name = "rewardsButton";
             this.rewardsButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.rewardsButton.Size = new System.Drawing.Size(271, 47);
-            this.rewardsButton.TabIndex = 2;
+            this.rewardsButton.TabIndex = 3;
             this.rewardsButton.Text = "                  Đổi thưởng";
             this.rewardsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rewardsButton.UseVisualStyleBackColor = true;
@@ -253,7 +261,7 @@
             this.eventButton.Name = "eventButton";
             this.eventButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.eventButton.Size = new System.Drawing.Size(271, 47);
-            this.eventButton.TabIndex = 1;
+            this.eventButton.TabIndex = 2;
             this.eventButton.Text = "                  Sự kiện";
             this.eventButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButton.UseVisualStyleBackColor = true;
@@ -271,10 +279,10 @@
             this.homeButton.Location = new System.Drawing.Point(0, 0);
             this.homeButton.Margin = new System.Windows.Forms.Padding(0);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.homeButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.homeButton.Size = new System.Drawing.Size(271, 47);
             this.homeButton.TabIndex = 1;
-            this.homeButton.Text = "                Home";
+            this.homeButton.Text = "                  Home";
             this.homeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
@@ -302,13 +310,6 @@
             this.MainPanel.Size = new System.Drawing.Size(1519, 879);
             this.MainPanel.TabIndex = 1;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint_1);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(236, 102);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 776);
-            this.flowLayoutPanel1.TabIndex = 2;
             // 
             // Main
             // 

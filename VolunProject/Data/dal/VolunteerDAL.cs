@@ -50,6 +50,7 @@ namespace VolunProject.Data.DAL
             curVol.PrestigeScore = volunteerDTO.PrestigeScore;
             curVol.RewardPoint = volunteerDTO.RewardPoint;
             curVol.state = volunteerDTO.state;
+            curVol.status = true;
             curVol.AddressDetail = volunteerDTO.AddressDetail;
             return volunteerDBEntities.SaveChanges()>0;
         }
@@ -57,6 +58,11 @@ namespace VolunProject.Data.DAL
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.Volunteers.Any(x => x.Email == email);
+        }
+        public static bool checkEmail_Information(string volunteerID, string email)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            return volunteerDBEntities.Volunteers.Any(x =>  x.VolunteerID != volunteerID && x.Email == email );
         }
         public static ICollection<RegistrationVolunteerDTO> Volunteer_ByEventID(string eventID, VolunteerSearchDTO volunteerSearchDTO )
         {
@@ -88,6 +94,35 @@ namespace VolunProject.Data.DAL
                  .Where(x => x.CheckOut == volunteerSearchDTO.CheckOut || volunteerSearchDTO.CheckOut == null)
                    .Where(x => x.Name == volunteerSearchDTO.Name.Trim() || volunteerSearchDTO.Name.Trim() == "" || volunteerSearchDTO.Name == null)
                 .ToList();
+        }
+        public static bool updatePoint(string volunteerID)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            var volunteer = volunteerDBEntities.Volunteers.Where(x => x.VolunteerID == volunteerID).FirstOrDefault();
+            if (volunteer.RankId == "Silver")
+            {
+                volunteer.RewardPoint += 550;
+                volunteer.PrestigeScore += 550;
+            }
+            else if (volunteer.RankId == "Gold")
+            {
+                volunteer.RewardPoint += 600;
+                volunteer.PrestigeScore += 600;
+            }
+            else if (volunteer.RankId == "Diamond")
+            {
+                volunteer.RewardPoint += 800;
+                volunteer.PrestigeScore += 800;
+            }
+            else
+            {
+                volunteer.RewardPoint += 500;
+                volunteer.PrestigeScore += 500;
+            }
+            if(volunteer.PrestigeScore >= 2000) volunteer.RankId = "Diamond";
+            else if(volunteer.PrestigeScore >= 1000) volunteer.RankId = "Gold";
+            else if(volunteer.PrestigeScore >= 500) volunteer.RankId = "Silver";
+            return volunteerDBEntities.SaveChanges() > 0;
         }
     }
 }

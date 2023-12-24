@@ -56,6 +56,7 @@ namespace VolunProject.Data.DAL
                     volunteer.Name = "";
                     volunteer.Account = accountUser;
                     volunteer.state = true;
+                    volunteer.status = false;
                     volunteer.Description = "";
                     volunteer.AddressDetail = "";
                     volunteer.PrestigeScore = 0;
@@ -104,10 +105,10 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.Accounts.Where(x => x.AccountName == accountName).FirstOrDefault().Password;
         }
-        public static bool checkPassword(string password)
+        public static bool checkPassword(string account, string password)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-            if (volunteerDBEntities.Accounts.Where(x => x.Password == password).Any()) return true;
+            if (volunteerDBEntities.Accounts.Where(x => x.AccountName == account && x.Password == password).Any()) return true;
             return false;
         }
     }

@@ -231,6 +231,7 @@
     <Property Name="state" Type="Boolean" />
     <Property Name="AddressDetail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="RankId" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
     <NavigationProperty Name="Account" Relationship="Self.FK_Volunteer_Account" FromRole="Volunteer" ToRole="Account" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Volunteer" FromRole="Volunteer" ToRole="Comment" />
     <NavigationProperty Name="Posts" Relationship="Self.FK_Post_Volunteer" FromRole="Volunteer" ToRole="Post" />

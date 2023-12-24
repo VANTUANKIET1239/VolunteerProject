@@ -59,7 +59,7 @@ namespace VolunProject.UserInterface.Login
                 errorMessage.Text = "Tài khoản không đúng !";
                 errorMessage.Visible = true;
             }
-            else if (AccountBLL.checkPassword(password) == false)
+            else if (AccountBLL.checkPassword(userName, password) == false)
             {
                 errorMessage.Text = "Mật khẩu không đúng !";
                 errorMessage.Visible = true;
@@ -76,6 +76,7 @@ namespace VolunProject.UserInterface.Login
                     {
                         LoginEvent(this, new EventArgs());
                     }
+                    errorMessage.Visible = false;
                 }
             }
         }

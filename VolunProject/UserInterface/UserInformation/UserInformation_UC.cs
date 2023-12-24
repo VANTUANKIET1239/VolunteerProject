@@ -102,6 +102,10 @@ namespace VolunProject.UserInterface.UserInformation
             {
                 genderCB.SelectedIndex = index;
             }
+            else
+            {
+                genderCB.SelectedIndex = 0;
+            }
             emailTB.Text = curVol.Email;
             phoneTB.Text = curVol.PhoneNumber;
         }
@@ -186,8 +190,33 @@ namespace VolunProject.UserInterface.UserInformation
             if (result == DialogResult.OK)
             {
                 var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
+                var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
                 VolunteerDTO vol = new VolunteerDTO();
                 byte[] img = OtherFunction.ImageToByteArray(userImg.Image);
+                if(name == "")
+                {
+                    label16.Text = "Họ và tên không được trống";
+                    label16.Visible = true;
+                    return;
+                }
+                if (email == "")
+                {
+                    label16.Text = "Số điện thoại không được để trống";
+                    label16.Visible = true;
+                    return;
+                }
+                if (phone == "")
+                {
+                    label16.Text = "Số điện thoại không được để trống";
+                    label16.Visible = true;
+                    return;
+                }
+                if (address == "")
+                {
+                    label16.Text = "Địa chỉ không được để trống";
+                    label16.Visible = true;
+                    return;
+                }
                 if (ContainsNumbersOrSpecialCharacters(name))
                 {
                     label16.Text = "Họ và tên không được chứa số hoặc ký tự đặc biệt";
@@ -197,6 +226,12 @@ namespace VolunProject.UserInterface.UserInformation
                 vol.Name = name;
                 if (!IsValidEmail(email)) {
                     label16.Text = "Địa chỉ email không hợp lệ. Vui lòng nhập đúng định dạng @gmail.com";
+                    label16.Visible = true;
+                    return;
+                }
+                if (VolunteerBLL.checkEmail_Information(curVol.VolunteerID,email))
+                {
+                    label16.Text = "Địa chỉ email đã được sử dụng";
                     label16.Visible = true;
                     return;
                 }
@@ -223,6 +258,7 @@ namespace VolunProject.UserInterface.UserInformation
                 if(VolunteerBLL.UpdateVolunteer(vol, img))
                 {
                     MessageBox.Show("Lưu thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+                    label16.Visible = false;
                 }
             }
         }
