@@ -123,9 +123,49 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_list_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-list-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_approve_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-approve-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_approve_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-approve-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_approve_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-approve-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_attendance_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-attendance-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,16 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_event_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-event-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_event_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-event-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,6 +423,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_log_out_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-log-out-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_love_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-love-40", resourceCulture);
@@ -423,6 +483,16 @@ namespace VolunProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_menu_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-menu-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_notification_24__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-notification-24 (1)", resourceCulture);
@@ -436,6 +506,16 @@ namespace VolunProject.Properties {
         internal static System.Drawing.Bitmap icons8_notification_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-notification-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_notification_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-notification-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
