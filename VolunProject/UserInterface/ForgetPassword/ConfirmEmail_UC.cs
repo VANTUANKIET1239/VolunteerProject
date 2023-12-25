@@ -34,7 +34,7 @@ namespace VolunProject.UserInterface.ForgetPassword
                 error.Text = "Tên đăng nhập không chính xác";
                 error.Visible = true;
             }
-            else if (VolunteerBLL.checkEmail(email) == false)
+            else if (VolunteerBLL.confirmEmail(account, email) == false)
             {
                 error.Text = "Email không chính xác";
                 error.Visible = true;

@@ -46,6 +46,8 @@
             this.closeImg = new System.Windows.Forms.PictureBox();
             this.show = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.emailTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.showImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.show)).BeginInit();
@@ -56,7 +58,7 @@
             // 
             this.backButton.BackColor = System.Drawing.Color.White;
             this.backButton.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(723, 900);
+            this.backButton.Location = new System.Drawing.Point(762, 952);
             this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(274, 90);
@@ -82,7 +84,7 @@
             this.signupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
             this.signupButton.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.Color.White;
-            this.signupButton.Location = new System.Drawing.Point(298, 900);
+            this.signupButton.Location = new System.Drawing.Point(306, 952);
             this.signupButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(324, 90);
@@ -96,7 +98,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label4.Location = new System.Drawing.Point(24, 758);
+            this.label4.Location = new System.Drawing.Point(24, 834);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(411, 48);
@@ -108,7 +110,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label3.Location = new System.Drawing.Point(24, 626);
+            this.label3.Location = new System.Drawing.Point(24, 723);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 48);
@@ -120,7 +122,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
-            this.label2.Location = new System.Drawing.Point(24, 503);
+            this.label2.Location = new System.Drawing.Point(24, 602);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(319, 48);
@@ -130,7 +132,7 @@
             // confirmPasswordTextBox
             // 
             this.confirmPasswordTextBox.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordTextBox.Location = new System.Drawing.Point(436, 754);
+            this.confirmPasswordTextBox.Location = new System.Drawing.Point(436, 830);
             this.confirmPasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
             this.confirmPasswordTextBox.PasswordChar = '●';
@@ -141,7 +143,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(436, 622);
+            this.passwordTextBox.Location = new System.Drawing.Point(436, 719);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
@@ -152,7 +154,7 @@
             // usernameTextBox
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(436, 492);
+            this.usernameTextBox.Location = new System.Drawing.Point(436, 591);
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(704, 55);
@@ -219,7 +221,7 @@
             this.showImg.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.showImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.showImg.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
-            this.showImg.Location = new System.Drawing.Point(1138, 622);
+            this.showImg.Location = new System.Drawing.Point(1138, 719);
             this.showImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.showImg.Name = "showImg";
             this.showImg.Size = new System.Drawing.Size(54, 58);
@@ -233,7 +235,7 @@
             this.closeImg.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.closeImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.closeImg.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
-            this.closeImg.Location = new System.Drawing.Point(1138, 621);
+            this.closeImg.Location = new System.Drawing.Point(1138, 718);
             this.closeImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.closeImg.Name = "closeImg";
             this.closeImg.Size = new System.Drawing.Size(54, 58);
@@ -247,7 +249,7 @@
             this.show.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.show.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.show.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
-            this.show.Location = new System.Drawing.Point(1138, 753);
+            this.show.Location = new System.Drawing.Point(1138, 829);
             this.show.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.show.Name = "show";
             this.show.Size = new System.Drawing.Size(54, 58);
@@ -261,7 +263,7 @@
             this.close.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.close.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.close.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
-            this.close.Location = new System.Drawing.Point(1138, 753);
+            this.close.Location = new System.Drawing.Point(1138, 829);
             this.close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(54, 58);
@@ -270,10 +272,33 @@
             this.close.TabStop = false;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
+            this.label5.Location = new System.Drawing.Point(24, 491);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 48);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Email";
+            // 
+            // emailTB
+            // 
+            this.emailTB.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTB.Location = new System.Drawing.Point(436, 480);
+            this.emailTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.emailTB.Name = "emailTB";
+            this.emailTB.Size = new System.Drawing.Size(704, 55);
+            this.emailTB.TabIndex = 20;
+            // 
             // AdminRegister_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.emailTB);
             this.Controls.Add(this.show);
             this.Controls.Add(this.showImg);
             this.Controls.Add(this.organizeComboBox);
@@ -325,5 +350,7 @@
         private System.Windows.Forms.PictureBox closeImg;
         private System.Windows.Forms.PictureBox show;
         private System.Windows.Forms.PictureBox close;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox emailTB;
     }
 }

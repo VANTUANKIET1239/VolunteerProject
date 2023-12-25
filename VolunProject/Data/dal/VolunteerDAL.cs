@@ -59,6 +59,14 @@ namespace VolunProject.Data.DAL
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             return volunteerDBEntities.Volunteers.Any(x => x.Email == email);
         }
+        public static bool confirmEmail(string account, string email)
+        {
+            VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
+            bool result = volunteerDBEntities.Accounts.Where(x => x.AccountName == account && x.Email == email).Any();
+            if (result == true) return true;
+            var cur = volunteerDBEntities.Accounts.Where(x => x.AccountName == account).FirstOrDefault();
+            return volunteerDBEntities.Volunteers.Where(x => x.AccountID == cur.AccountID && x.Email == email).Any();
+        }
         public static bool checkEmail_Information(string volunteerID, string email)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();

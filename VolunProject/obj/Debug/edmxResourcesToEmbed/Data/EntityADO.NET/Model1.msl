@@ -12,6 +12,7 @@
           <ScalarProperty Name="state" ColumnName="state" />
           <ScalarProperty Name="ImageUS" ColumnName="ImageUS" />
           <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

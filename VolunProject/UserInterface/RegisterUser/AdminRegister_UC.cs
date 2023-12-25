@@ -40,9 +40,22 @@ namespace VolunProject.UserInterface.RegisterUser
             Regex regex = new Regex(@"[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]");
             return regex.IsMatch(input);
         }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email && email.EndsWith("@gmail.com");
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string email = emailTB.Text;
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
             string confirmPassword = confirmPasswordTextBox.Text;
@@ -52,6 +65,11 @@ namespace VolunProject.UserInterface.RegisterUser
             if(pin == "")
             {
                 errorMessage.Text = "Vui lòng nhập mã PIN !";
+                errorMessage.Visible = true;
+            }
+            else if (email == "")
+            {
+                errorMessage.Text = "Vui lòng nhập email !";
                 errorMessage.Visible = true;
             }
             else if (username == "")
@@ -72,6 +90,16 @@ namespace VolunProject.UserInterface.RegisterUser
             else if (organization.COCK != pin)
             {
                 errorMessage.Text = "Mã pin không đúng !";
+                errorMessage.Visible = true;
+            }
+            else if (VolunteerBLL.checkEmail(email))
+            {
+                errorMessage.Text = "Email đã được sử dụng !";
+                errorMessage.Visible = true;
+            }
+            else if (!IsValidEmail(email))
+            {
+                errorMessage.Text = "Địa chỉ email không hợp lệ. Vui lòng nhập đúng định dạng @gmail.com";
                 errorMessage.Visible = true;
             }
             else if (username.Length < 8 || username.Length > 15)
@@ -103,8 +131,9 @@ namespace VolunProject.UserInterface.RegisterUser
             {
                 AccountDTO accountDTO = new AccountDTO();
                 accountDTO.OrganizationID = (string)organizeComboBox.SelectedValue;
-                accountDTO.AccountName = usernameTextBox.Text;
-                accountDTO.Password = passwordTextBox.Text;
+                accountDTO.AccountName = username;
+                accountDTO.Password = password;
+                accountDTO.Email = email;
                 if (OrganizationBLL.SignUp(accountDTO))
                 {
                     MessageBox.Show("Đăng kí thành công", "Thông báo", MessageBoxButtons.OK);

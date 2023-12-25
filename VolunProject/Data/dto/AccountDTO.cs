@@ -10,6 +10,7 @@ namespace VolunProject.Data.DTO
     {
         public string AccountID { get; set; }
         public string AccountName { get; set; }
+        public string Email { get; set; }
         public byte[] ImageUS { get; set; }
         public string Password { get; set; }
         public string confirmPassword { get; set; }

@@ -30,6 +30,7 @@ namespace VolunProject.Data.DAL
                 account.Password = accountDTO.Password;
                 account.CreateDate = DateTime.Now;
                 account.state = true;
+                account.Email = accountDTO.Email;
                 account.ImageUS = OtherFunction.PathImage2Byte("D:\\git\\VolunteerProject\\VolunProject\\Resources\\user-default.png");
                 account.RoleName = "ORGANIZATION";
                 account.OrganizationID = accountDTO.OrganizationID;

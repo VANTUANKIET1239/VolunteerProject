@@ -32,21 +32,21 @@
             this.sidebarContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DiemDanhBTN = new System.Windows.Forms.Button();
             this.notifyBTN = new System.Windows.Forms.Button();
             this.SignOutBTN = new System.Windows.Forms.Button();
             this.CreateEventButoon = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.ApproveVolunteerBTN = new System.Windows.Forms.Button();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.sidebarContainer.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarContainer
@@ -56,11 +56,11 @@
             this.sidebarContainer.Controls.Add(this.panel3);
             this.sidebarContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebarContainer.Location = new System.Drawing.Point(0, 0);
-            this.sidebarContainer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.sidebarContainer.MaximumSize = new System.Drawing.Size(548, 1690);
-            this.sidebarContainer.MinimumSize = new System.Drawing.Size(202, 1690);
+            this.sidebarContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.sidebarContainer.MaximumSize = new System.Drawing.Size(411, 1352);
+            this.sidebarContainer.MinimumSize = new System.Drawing.Size(152, 1352);
             this.sidebarContainer.Name = "sidebarContainer";
-            this.sidebarContainer.Size = new System.Drawing.Size(548, 1690);
+            this.sidebarContainer.Size = new System.Drawing.Size(411, 1352);
             this.sidebarContainer.TabIndex = 2;
             // 
             // panel1
@@ -68,10 +68,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Location = new System.Drawing.Point(4, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(542, 192);
+            this.panel1.Size = new System.Drawing.Size(406, 154);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -79,19 +79,30 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(196, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(147, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 38);
             this.label1.TabIndex = 3;
             this.label1.Text = "Menu";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_501;
+            this.pictureBox1.Location = new System.Drawing.Point(44, 48);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(6, 204);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Location = new System.Drawing.Point(4, 163);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 133);
+            this.panel2.Size = new System.Drawing.Size(390, 106);
             this.panel2.TabIndex = 2;
             // 
             // panel3
@@ -102,37 +113,11 @@
             this.panel3.Controls.Add(this.CreateEventButoon);
             this.panel3.Controls.Add(this.eventButton);
             this.panel3.Controls.Add(this.ApproveVolunteerBTN);
-            this.panel3.Location = new System.Drawing.Point(6, 210);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel3.Location = new System.Drawing.Point(4, 169);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(542, 1481);
+            this.panel3.Size = new System.Drawing.Size(406, 1185);
             this.panel3.TabIndex = 2;
-            // 
-            // sidebarTimer
-            // 
-            this.sidebarTimer.Interval = 10;
-            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MainPanel.Location = new System.Drawing.Point(548, 0);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(2358, 1690);
-            this.MainPanel.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VolunProject.Properties.Resources.icons8_menu_501;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 77);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // DiemDanhBTN
             // 
@@ -143,11 +128,11 @@
             this.DiemDanhBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DiemDanhBTN.Image = global::VolunProject.Properties.Resources.icons8_attendance_48;
             this.DiemDanhBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DiemDanhBTN.Location = new System.Drawing.Point(0, 540);
-            this.DiemDanhBTN.Margin = new System.Windows.Forms.Padding(6);
+            this.DiemDanhBTN.Location = new System.Drawing.Point(0, 432);
+            this.DiemDanhBTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DiemDanhBTN.Name = "DiemDanhBTN";
-            this.DiemDanhBTN.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.DiemDanhBTN.Size = new System.Drawing.Size(542, 135);
+            this.DiemDanhBTN.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DiemDanhBTN.Size = new System.Drawing.Size(406, 108);
             this.DiemDanhBTN.TabIndex = 8;
             this.DiemDanhBTN.Text = "                   Điểm danh ";
             this.DiemDanhBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,11 +148,11 @@
             this.notifyBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.notifyBTN.Image = global::VolunProject.Properties.Resources.icons8_notification_501;
             this.notifyBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.notifyBTN.Location = new System.Drawing.Point(0, 405);
-            this.notifyBTN.Margin = new System.Windows.Forms.Padding(6);
+            this.notifyBTN.Location = new System.Drawing.Point(0, 324);
+            this.notifyBTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.notifyBTN.Name = "notifyBTN";
-            this.notifyBTN.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.notifyBTN.Size = new System.Drawing.Size(542, 135);
+            this.notifyBTN.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.notifyBTN.Size = new System.Drawing.Size(406, 108);
             this.notifyBTN.TabIndex = 7;
             this.notifyBTN.Text = "                  Thông báo";
             this.notifyBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,11 +168,11 @@
             this.SignOutBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.SignOutBTN.Image = global::VolunProject.Properties.Resources.icons8_log_out_50;
             this.SignOutBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SignOutBTN.Location = new System.Drawing.Point(0, 1346);
-            this.SignOutBTN.Margin = new System.Windows.Forms.Padding(6);
+            this.SignOutBTN.Location = new System.Drawing.Point(0, 1077);
+            this.SignOutBTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SignOutBTN.Name = "SignOutBTN";
-            this.SignOutBTN.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.SignOutBTN.Size = new System.Drawing.Size(542, 135);
+            this.SignOutBTN.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.SignOutBTN.Size = new System.Drawing.Size(406, 108);
             this.SignOutBTN.TabIndex = 6;
             this.SignOutBTN.Text = "                  Đăng xuất";
             this.SignOutBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,11 +188,11 @@
             this.CreateEventButoon.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CreateEventButoon.Image = global::VolunProject.Properties.Resources.icons8_add_list_50;
             this.CreateEventButoon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CreateEventButoon.Location = new System.Drawing.Point(0, 270);
-            this.CreateEventButoon.Margin = new System.Windows.Forms.Padding(6);
+            this.CreateEventButoon.Location = new System.Drawing.Point(0, 216);
+            this.CreateEventButoon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CreateEventButoon.Name = "CreateEventButoon";
-            this.CreateEventButoon.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.CreateEventButoon.Size = new System.Drawing.Size(542, 135);
+            this.CreateEventButoon.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.CreateEventButoon.Size = new System.Drawing.Size(406, 108);
             this.CreateEventButoon.TabIndex = 5;
             this.CreateEventButoon.Text = "                  Tạo sự kiện";
             this.CreateEventButoon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,11 +208,11 @@
             this.eventButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.eventButton.Image = global::VolunProject.Properties.Resources.icons8_event_501;
             this.eventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eventButton.Location = new System.Drawing.Point(0, 135);
-            this.eventButton.Margin = new System.Windows.Forms.Padding(6);
+            this.eventButton.Location = new System.Drawing.Point(0, 108);
+            this.eventButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.eventButton.Name = "eventButton";
-            this.eventButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.eventButton.Size = new System.Drawing.Size(542, 135);
+            this.eventButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.eventButton.Size = new System.Drawing.Size(406, 108);
             this.eventButton.TabIndex = 1;
             this.eventButton.Text = "                  Sự kiện";
             this.eventButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,30 +231,45 @@
             this.ApproveVolunteerBTN.Location = new System.Drawing.Point(0, 0);
             this.ApproveVolunteerBTN.Margin = new System.Windows.Forms.Padding(0);
             this.ApproveVolunteerBTN.Name = "ApproveVolunteerBTN";
-            this.ApproveVolunteerBTN.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.ApproveVolunteerBTN.Size = new System.Drawing.Size(542, 135);
+            this.ApproveVolunteerBTN.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.ApproveVolunteerBTN.Size = new System.Drawing.Size(406, 108);
             this.ApproveVolunteerBTN.TabIndex = 1;
             this.ApproveVolunteerBTN.Text = "                 Duyệt ứng viên ";
             this.ApproveVolunteerBTN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ApproveVolunteerBTN.UseVisualStyleBackColor = true;
             this.ApproveVolunteerBTN.Click += new System.EventHandler(this.ApproveVolunteerBTN_Click);
             // 
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MainPanel.Location = new System.Drawing.Point(411, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1769, 1352);
+            this.MainPanel.TabIndex = 3;
+            // 
             // OrganizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2906, 1690);
+            this.ClientSize = new System.Drawing.Size(2180, 1352);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.sidebarContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "OrganizationForm";
             this.Text = "OrganizationForm";
             this.sidebarContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

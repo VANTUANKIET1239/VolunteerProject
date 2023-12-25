@@ -65,5 +65,9 @@ namespace VolunProject.Data.BLL
         {
             return VolunteerDAL.checkEmail_Information(volunteerID, email);
         }
+        public static bool confirmEmail(string account, string email)
+        {
+            return VolunteerDAL.confirmEmail(account, email);
+        }
     }
 }

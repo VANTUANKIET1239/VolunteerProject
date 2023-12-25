@@ -17,6 +17,7 @@
           <Property Name="state" Type="bit" />
           <Property Name="ImageUS" Type="varbinary(max)" />
           <Property Name="OrganizationID" Type="nchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Comment">
           <Key>
@@ -622,6 +623,7 @@
           <Property Name="state" Type="Boolean" />
           <Property Name="ImageUS" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="OrganizationID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Notifications" Relationship="Self.FK__Notificat__Accou__71D1E811" FromRole="Account" ToRole="Notification" />
           <NavigationProperty Name="Organization" Relationship="Self.FK_Organization_Account" FromRole="Account" ToRole="Organization" />
           <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteer_Account" FromRole="Account" ToRole="Volunteer" />
@@ -1269,6 +1271,7 @@
                 <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="ImageUS" ColumnName="ImageUS" />
                 <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

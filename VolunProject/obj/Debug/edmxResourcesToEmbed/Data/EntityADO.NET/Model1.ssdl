@@ -12,6 +12,7 @@
     <Property Name="state" Type="bit" />
     <Property Name="ImageUS" Type="varbinary(max)" />
     <Property Name="OrganizationID" Type="nchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Comment">
     <Key>

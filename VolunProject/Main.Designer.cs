@@ -94,7 +94,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(98, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 32);
+            this.label1.Size = new System.Drawing.Size(106, 45);
             this.label1.TabIndex = 3;
             this.label1.Text = "Menu";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -282,7 +282,7 @@
             this.homeButton.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.homeButton.Size = new System.Drawing.Size(271, 47);
             this.homeButton.TabIndex = 1;
-            this.homeButton.Text = "                  Home";
+            this.homeButton.Text = "                  Trang chính";
             this.homeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
