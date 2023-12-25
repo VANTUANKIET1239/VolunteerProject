@@ -16,12 +16,14 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterList
     public partial class OrganizationRegisterList : UserControl
     {
         private RegisterFormSearchDTO RegisterFormSearchDTO;
+        private bool condition = false;
        // private List<RegisterVolunteerFormDTO> registerVolunteerFormDTOs;
         private AccountDTO curUser;
         public OrganizationRegisterList() 
         {
             InitializeComponent();
             sub();
+            condition = false;
         }
         private void sub()
         {
@@ -47,10 +49,12 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterList
             EventListCB.ValueMember = "EventID";
             EventListCB.DataSource = events;
             StatusDefault();
-            
+            condition = true;
+
 
         }
         private void Loaddata() {
+
             registerformlist.Controls.Clear();
             var eventlist = EventBLL.Event_GetAllVolunteerRegistration_ByOranizationId(curUser.OrganizationID, RegisterFormSearchDTO);
             RegisterCountLB.Text = eventlist.Count.ToString();
@@ -72,25 +76,33 @@ namespace VolunProject.UserInterface.Event.OrganizationRegisterList
         }
         public void StatusDefault()
         {
-            StatusDTO status = new StatusDTO("A", "Đã duyệt");
+            
             StatusDTO status2 = new StatusDTO("C", "Chờ duyệt");
+            StatusDTO status = new StatusDTO("A", "Đã duyệt");
             StatusDTO status3 = new StatusDTO("R", "Từ chối");
             StatusDTO status4 = new StatusDTO("", "Tất cả");
             StatusCB.ValueMember = "status";
-            StatusCB.DisplayMember = "statusName"; 
-            StatusCB.DataSource = (new List<StatusDTO>() { status, status2, status3,status4 }.ToArray());
+            StatusCB.DisplayMember = "statusName";
+      //      StatusCB.SelectedValue = "C";
+            StatusCB.DataSource = (new List<StatusDTO>() {  status4, status2, status, status3 }.ToArray());
         }
 
         private void StatusCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RegisterFormSearchDTO.status = (string)StatusCB.SelectedValue;
-            Loaddata();
+            if (condition)
+            {
+                RegisterFormSearchDTO.status = (string)StatusCB.SelectedValue;
+                Loaddata();
+            }
         }
 
         private void EventListCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RegisterFormSearchDTO.eventID = (string)EventListCB.SelectedValue;
-            Loaddata();
+            if (condition)
+            {
+                RegisterFormSearchDTO.eventID = (string)EventListCB.SelectedValue;
+                 Loaddata();
+            }
         }
     }
 }

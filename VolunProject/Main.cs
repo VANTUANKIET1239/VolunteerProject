@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VolunProject.Data.DTO;
 using VolunProject.LoginForm;
 using VolunProject.UserInterface.Event.EventControl;
+using VolunProject.UserInterface.Event.EventHistoryControl;
 using VolunProject.UserInterface.EventDetail;
 using VolunProject.UserInterface.Home;
 using VolunProject.UserInterface.Redeem;
@@ -34,6 +36,14 @@ namespace VolunProject
             RedeemControl.loadEvent += RedeemControl_loadEvent;
             LoginForm.LoginForm.loginEvent += Main_Load;
             CreatePost_Form.LoadEvent += Main_Load;
+            EventHistoryControl.DetailEvent2 += EventControl_DetailEvent;
+            EventDetail_UC.BackToEventsMain += EventDetail_UC_BackToEventsMain; ;
+
+        }
+
+        private void EventDetail_UC_BackToEventsMain(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInterface.Event.Event_UC(), sender);
         }
 
         private void CreatePost_Form_LoadEvent(object sender, EventArgs e)
@@ -48,7 +58,7 @@ namespace VolunProject
 
         private void EventDetail_UC_BackToEvents(object sender, EventArgs e)
         {
-            OpenChildForm(new UserInterface.Event.Event_UC(), sender);
+            OpenChildForm(new UserInterface.History.History_UC("EVENT"), sender);
         }
 
         private void RedeemControl_loadEvent(object sender, EventArgs e)
@@ -57,8 +67,8 @@ namespace VolunProject
         }
         private void EventControl_DetailEvent(object sender, EventArgs e)
         {
-            var eventControll = sender as EventControl;
-            OpenChildForm(new UserInterface.EventDetail.EventDetail_UC(eventControll.EventModel), sender);
+            var eventControll = sender as EventDTO;
+            OpenChildForm(new UserInterface.EventDetail.EventDetail_UC(eventControll), sender);
         }
 
 
@@ -151,7 +161,7 @@ namespace VolunProject
 
         private void historyButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new UserInterface.History.History_UC(), sender);
+            OpenChildForm(new UserInterface.History.History_UC("REWARD"), sender);
         }
 
         private void MainPanel_Paint_1(object sender, PaintEventArgs e)

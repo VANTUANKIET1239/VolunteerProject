@@ -42,6 +42,7 @@ namespace VolunProject.Data.EntityADO.NET
         public Nullable<bool> state { get; set; }
         public string AddressDetail { get; set; }
         public string RankId { get; set; }
+        public Nullable<bool> status { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }

@@ -55,6 +55,7 @@
             // 
             this.CheckInBTN.BackColor = System.Drawing.Color.PowderBlue;
             this.CheckInBTN.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckInBTN.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CheckInBTN.Location = new System.Drawing.Point(1062, 58);
             this.CheckInBTN.Name = "CheckInBTN";
             this.CheckInBTN.Size = new System.Drawing.Size(164, 51);
@@ -67,6 +68,7 @@
             // 
             this.addressLB.AutoSize = true;
             this.addressLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.addressLB.Location = new System.Drawing.Point(260, 52);
             this.addressLB.Name = "addressLB";
             this.addressLB.Size = new System.Drawing.Size(531, 19);
@@ -77,6 +79,7 @@
             // 
             this.VolunteerName.AutoSize = true;
             this.VolunteerName.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolunteerName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VolunteerName.Location = new System.Drawing.Point(398, 16);
             this.VolunteerName.Name = "VolunteerName";
             this.VolunteerName.Size = new System.Drawing.Size(82, 24);
@@ -87,6 +90,7 @@
             // 
             this.CheckOutBTN.BackColor = System.Drawing.Color.SlateGray;
             this.CheckOutBTN.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckOutBTN.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CheckOutBTN.Location = new System.Drawing.Point(1062, 119);
             this.CheckOutBTN.Name = "CheckOutBTN";
             this.CheckOutBTN.Size = new System.Drawing.Size(164, 50);
@@ -99,6 +103,7 @@
             // 
             this.CheckInDate.AutoSize = true;
             this.CheckInDate.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckInDate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CheckInDate.Location = new System.Drawing.Point(1232, 74);
             this.CheckInDate.Name = "CheckInDate";
             this.CheckInDate.Size = new System.Drawing.Size(99, 19);
@@ -109,6 +114,7 @@
             // 
             this.CheckOutDate.AutoSize = true;
             this.CheckOutDate.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckOutDate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CheckOutDate.Location = new System.Drawing.Point(1232, 135);
             this.CheckOutDate.Name = "CheckOutDate";
             this.CheckOutDate.Size = new System.Drawing.Size(99, 19);
@@ -128,6 +134,7 @@
             // 
             this.statusLB.AutoSize = true;
             this.statusLB.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.statusLB.Location = new System.Drawing.Point(5, 8);
             this.statusLB.Name = "statusLB";
             this.statusLB.Size = new System.Drawing.Size(70, 15);
@@ -138,6 +145,7 @@
             // 
             this.GenderLB.AutoSize = true;
             this.GenderLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderLB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.GenderLB.Location = new System.Drawing.Point(289, 85);
             this.GenderLB.Name = "GenderLB";
             this.GenderLB.Size = new System.Drawing.Size(531, 19);
@@ -148,6 +156,7 @@
             // 
             this.PhoneLB.AutoSize = true;
             this.PhoneLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneLB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PhoneLB.Location = new System.Drawing.Point(289, 122);
             this.PhoneLB.Name = "PhoneLB";
             this.PhoneLB.Size = new System.Drawing.Size(531, 19);
@@ -158,6 +167,7 @@
             // 
             this.EmailLB.AutoSize = true;
             this.EmailLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmailLB.Location = new System.Drawing.Point(289, 161);
             this.EmailLB.Name = "EmailLB";
             this.EmailLB.Size = new System.Drawing.Size(531, 19);

@@ -617,7 +617,13 @@
     <Content Include="Resources\bronze-medal.png" />
     <None Include="Resources\Capture.PNG" />
     <Content Include="Resources\diamond-medal.png" />
+    <None Include="Resources\eventa.png" />
+    <None Include="Resources\event2.png" />
     <Content Include="Resources\gold-medal.png" />
+    <None Include="Resources\icons8-approve-24.png" />
+    <None Include="Resources\icons8-approve-50.png" />
+    <None Include="Resources\icons8-add-list-50.png" />
+    <None Include="Resources\icons8-attendance-48.png" />
     <Content Include="Resources\icons8-check-48 %281%29.png" />
     <Content Include="Resources\icons8-check-48.png" />
     <None Include="Resources\icons8-heart-24.png" />
@@ -625,6 +631,7 @@
     <None Include="Resources\icons8-event-48.png" />
     <None Include="Resources\icons8-event-24.png" />
     <None Include="Resources\icons8-ellipsis-30.png" />
+    <None Include="Resources\icons8-event-501.png" />
     <Content Include="Resources\icons8-heart-50 %281%29.png" />
     <None Include="Resources\icons8-heart-50 %281%291.png" />
     <None Include="Resources\icons8-notification-50.png" />
@@ -640,6 +647,12 @@
     <None Include="Resources\icons8-log-out-24.png" />
     <None Include="Resources\icons8-invisible-48.png" />
     <None Include="Resources\icons8-invisible-50.png" />
+    <None Include="Resources\icons8-notification-24 %281%29.png" />
+    <None Include="Resources\icons8-notification-501.png" />
+    <None Include="Resources\icons8-log-out-50.png" />
+    <None Include="Resources\icons8-menu-501.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="Resources\silver-medal.png" />
     <None Include="Resources\icons8-back-50.png" />
     <None Include="Resources\icons8-cancel-48.png" />

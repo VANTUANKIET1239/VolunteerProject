@@ -15,7 +15,7 @@ namespace VolunProject.UserInterface.Event.EventRegistrationForm
     public partial class RegistrationForm : Form
     {
         private EventDTO eventDTO1;
-        public static event EventHandler LoadDetailEvent;
+        public static event EventHandler LoadAlllEvent;
         public RegistrationForm(EventDTO eventDTO)
         {
             InitializeComponent();
@@ -38,23 +38,35 @@ namespace VolunProject.UserInterface.Event.EventRegistrationForm
         {
             var curUser = OtherFunction.SessionManager.GetSessionValue<AccountDTO>("curUser");
             var curVol = VolunteerBLL.GetVolunteer(curUser.AccountID);
-            if (EventBLL.Event_Register(eventDTO1.EventID, curVol.VolunteerID))
+            if (curVol.status == true)
             {
-                DialogResult result = MessageBox.Show("Đăng ký tham gia thành công, hãy đợi đơn vị tổ chức duyệt", "Thông báo", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
+                if (EventBLL.Event_Register(eventDTO1.EventID, curVol.VolunteerID))
                 {
-                   // var eventq = EventBLL.Event_ById(RegistrationVolunteerDTOss.EventID);
-                    NotificationDTO notificationDTO = new NotificationDTO();
-                    notificationDTO.NotificationContent = $"Bạn vừa đăng ký tham gia sự kiện {eventDTO1.EventName} vào lúc {DateTime.Now}.";
-                    notificationDTO.AccountID = curUser.AccountID;
-                    notificationDTO.NotiImg = eventDTO1.EventImage;
-                    if (NotificationBLL.Notification_Add(notificationDTO))
+                    DialogResult result = MessageBox.Show("Đăng ký tham gia thành công, hãy đợi đơn vị tổ chức duyệt", "Thông báo", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
                     {
-                        this.Close();
+                        // var eventq = EventBLL.Event_ById(RegistrationVolunteerDTOss.EventID);
+                        NotificationDTO notificationDTO = new NotificationDTO();
+                        notificationDTO.NotificationContent = $"Bạn vừa đăng ký tham gia sự kiện {eventDTO1.EventName} vào lúc {DateTime.Now}.";
+                        notificationDTO.AccountID = curUser.AccountID;
+                        notificationDTO.NotiImg = eventDTO1.EventImage;
+                        var result2 = NotificationBLL.Notification_Add(notificationDTO);
+                        if (result2)
+                        {
+                            LoadAlllEvent(this, new EventArgs());
+                            if (result2)
+                            {
+                                this.Close();
+                            }
+                        }
+
                     }
-                    
                 }
-            };
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng cập nhật đầy đủ thông tin trước khi đăng ký tham gia", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void CancelBTN_Click(object sender, EventArgs e)

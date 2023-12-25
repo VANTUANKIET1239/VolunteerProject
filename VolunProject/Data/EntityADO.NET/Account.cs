@@ -28,6 +28,7 @@ namespace VolunProject.Data.EntityADO.NET
         public Nullable<bool> state { get; set; }
         public byte[] ImageUS { get; set; }
         public string OrganizationID { get; set; }
+        public string Email { get; set; }
     
         public virtual ICollection<Notification> Notifications { get; set; }
         public virtual Organization Organization { get; set; }

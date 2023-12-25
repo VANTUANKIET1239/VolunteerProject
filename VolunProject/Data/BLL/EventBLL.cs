@@ -130,6 +130,7 @@ namespace VolunProject.Data.BLL
                 x.districtName = DistrictBLL.District_ById(x.DistrictId ?? 0).tenQuanHuyen;
                 x.wardName = WardBLL.Ward_ById(x.WardId ?? 0).tenXaPhuong;
                 x.RegistrationDate = EventDAL.Registration_ByEventVolunID(x.EventID, volunteerID).RegistrationDate;
+                x.status = EventDAL.Registration_ByEventVolunID(x.EventID, volunteerID).status;
             });
             return dto;
         }

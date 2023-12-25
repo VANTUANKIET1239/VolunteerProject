@@ -66,7 +66,8 @@ namespace VolunProject.UserInterface.Event.EventControl
 
         private void DetailEventBtn_Click(object sender, EventArgs e)
         {
-            DetailEvent(this, new EventArgs());
+            EventModel.isBackTo = "MAINEVENT";
+            DetailEvent(EventModel, new EventArgs());
         }
 
         private void JoinEventBtn_Click(object sender, EventArgs e)

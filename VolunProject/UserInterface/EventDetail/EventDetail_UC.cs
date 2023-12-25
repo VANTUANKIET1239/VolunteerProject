@@ -18,6 +18,7 @@ namespace VolunProject.UserInterface.EventDetail
     public partial class EventDetail_UC : UserControl
     {
         public static event EventHandler BackToEvents;
+        public static event EventHandler BackToEventsMain;
 
         private EventDTO eventModel;
         public EventDetail_UC(EventDTO eventDTO)
@@ -58,7 +59,14 @@ namespace VolunProject.UserInterface.EventDetail
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            BackToEvents(this, new EventArgs());
+            if (eventModel.isBackTo == "HISTORYEVENT")
+            {
+                BackToEvents(this, new EventArgs());
+            }
+            else
+            {
+                BackToEventsMain(this, new EventArgs());
+            }
         }
 
         private void LikeBTN_Click(object sender, EventArgs e)

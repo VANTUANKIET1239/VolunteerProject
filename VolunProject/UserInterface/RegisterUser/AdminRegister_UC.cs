@@ -40,18 +40,36 @@ namespace VolunProject.UserInterface.RegisterUser
             Regex regex = new Regex(@"[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]");
             return regex.IsMatch(input);
         }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email && email.EndsWith("@gmail.com");
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string email = emailTB.Text;
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
             string confirmPassword = confirmPasswordTextBox.Text;
             string pin = pinCodeTextBox.Text;
             string orgID = (string) organizeComboBox.SelectedValue;
             var organization = OrganizationBLL.getOrganizationByID(orgID);
-            if (organization.COCK != pin)
+            if(pin == "")
             {
-                errorMessage.Text = "Mã pin không đúng !";
+                errorMessage.Text = "Vui lòng nhập mã PIN !";
+                errorMessage.Visible = true;
+            }
+            else if (email == "")
+            {
+                errorMessage.Text = "Vui lòng nhập email !";
                 errorMessage.Visible = true;
             }
             else if (username == "")
@@ -67,6 +85,21 @@ namespace VolunProject.UserInterface.RegisterUser
             else if (confirmPassword == "")
             {
                 errorMessage.Text = "Vui lòng xác nhận mật khẩu !";
+                errorMessage.Visible = true;
+            }
+            else if (organization.COCK != pin)
+            {
+                errorMessage.Text = "Mã pin không đúng !";
+                errorMessage.Visible = true;
+            }
+            else if (VolunteerBLL.checkEmail(email))
+            {
+                errorMessage.Text = "Email đã được sử dụng !";
+                errorMessage.Visible = true;
+            }
+            else if (!IsValidEmail(email))
+            {
+                errorMessage.Text = "Địa chỉ email không hợp lệ. Vui lòng nhập đúng định dạng @gmail.com";
                 errorMessage.Visible = true;
             }
             else if (username.Length < 8 || username.Length > 15)
@@ -98,8 +131,9 @@ namespace VolunProject.UserInterface.RegisterUser
             {
                 AccountDTO accountDTO = new AccountDTO();
                 accountDTO.OrganizationID = (string)organizeComboBox.SelectedValue;
-                accountDTO.AccountName = usernameTextBox.Text;
-                accountDTO.Password = passwordTextBox.Text;
+                accountDTO.AccountName = username;
+                accountDTO.Password = password;
+                accountDTO.Email = email;
                 if (OrganizationBLL.SignUp(accountDTO))
                 {
                     MessageBox.Show("Đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
@@ -130,6 +164,38 @@ namespace VolunProject.UserInterface.RegisterUser
         {
             close.BringToFront();
             confirmPasswordTextBox.PasswordChar = '\0';
+        }
+
+        private void pinCodeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void confirmPasswordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
     }
 }

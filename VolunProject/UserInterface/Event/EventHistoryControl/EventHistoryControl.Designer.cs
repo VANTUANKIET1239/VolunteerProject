@@ -76,6 +76,7 @@
             this.DetailEventBtn.TabIndex = 31;
             this.DetailEventBtn.Text = "Chi tiết";
             this.DetailEventBtn.UseVisualStyleBackColor = false;
+            this.DetailEventBtn.Click += new System.EventHandler(this.DetailEventBtn_Click);
             // 
             // addressLB
             // 

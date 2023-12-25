@@ -40,7 +40,7 @@ namespace VolunProject.UserInterface.Event.UserRegisterInformation
             addressTB.Text = volunteerDTO.AddressDetail;
             RankingDTO rankingDTO = RankingBLL.getRankingByID(volunteerDTO.RankId);
             Image image1, image2;
-            using (MemoryStream ms1 = new MemoryStream(curUser.ImageUS))
+            using (MemoryStream ms1 = new MemoryStream(AccountBLL.GetAccountByID(volunteerDTO.AccountID).ImageUS))
             {
                 image1 = Image.FromStream(ms1);
                 userImg.Image = image1;

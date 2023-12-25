@@ -88,7 +88,14 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
             eventDTO.WardId = (int)WardCB.SelectedValue;
             eventDTO.StartDate = StartDate.Value;
             eventDTO.EndDate = EndDate.Value;
-            eventDTO.EventImage = OtherFunction.ImageToByteArray(EventImageBox.Image);
+            if (EventImageBox.Image != null)
+            {
+                eventDTO.EventImage = OtherFunction.ImageToByteArray(EventImageBox.Image);
+            }
+            else
+            {
+                eventDTO.EventImage = OtherFunction.PathImage2Byte("C:\\Users\\PC\\Desktop\\Propro\\VolunProject\\VolunProject\\Resources\\imagedd.jpg");
+            }
             eventDTO.purpose = PurposeTB.Text;
             eventDTO.description = DescriptionTB.Text;
             eventDTO.time = timeTXT.Text;
@@ -97,7 +104,14 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
                 NotificationDTO notificationDTO = new NotificationDTO();
                 notificationDTO.NotificationContent = $"Sự kiện {eventDTO.EventName} vừa được thêm vào lúc {DateTime.Now}.";
                 notificationDTO.AccountID = curUser.AccountID;
-                notificationDTO.NotiImg = OtherFunction.ImageToByteArray(EventImageBox.Image);
+                if (EventImageBox.Image != null)
+                {
+                    notificationDTO.NotiImg = OtherFunction.ImageToByteArray(EventImageBox.Image);
+                }
+                else
+                {
+                    notificationDTO.NotiImg = OtherFunction.PathImage2Byte("C:\\Users\\PC\\Desktop\\Propro\\VolunProject\\VolunProject\\Resources\\imagedd.jpg");
+                }
                 if (NotificationBLL.Notification_Add(notificationDTO))
                 {
                     MessageBox.Show("Thêm sự kiện thành công", "Thông báo", MessageBoxButtons.OK);

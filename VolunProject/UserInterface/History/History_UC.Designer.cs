@@ -39,9 +39,10 @@
             // eventHistoryBTN
             // 
             this.eventHistoryBTN.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventHistoryBTN.Location = new System.Drawing.Point(1333, 173);
+            this.eventHistoryBTN.Location = new System.Drawing.Point(1939, 160);
+            this.eventHistoryBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.eventHistoryBTN.Name = "eventHistoryBTN";
-            this.eventHistoryBTN.Size = new System.Drawing.Size(137, 39);
+            this.eventHistoryBTN.Size = new System.Drawing.Size(206, 60);
             this.eventHistoryBTN.TabIndex = 1;
             this.eventHistoryBTN.Text = "Sự kiện";
             this.eventHistoryBTN.UseVisualStyleBackColor = true;
@@ -50,10 +51,10 @@
             // rewardButton
             // 
             this.rewardButton.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rewardButton.Location = new System.Drawing.Point(2303, 200);
-            this.rewardButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rewardButton.Location = new System.Drawing.Point(1727, 160);
+            this.rewardButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rewardButton.Name = "rewardButton";
-            this.rewardButton.Size = new System.Drawing.Size(274, 75);
+            this.rewardButton.Size = new System.Drawing.Size(206, 60);
             this.rewardButton.TabIndex = 1;
             this.rewardButton.Text = "Đổi quà";
             this.rewardButton.UseVisualStyleBackColor = true;
@@ -66,9 +67,9 @@
             this.panel1.Controls.Add(this.rewardButton);
             this.panel1.Controls.Add(this.eventHistoryBTN);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2946, 292);
+            this.panel1.Size = new System.Drawing.Size(2210, 234);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -76,33 +77,33 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(960, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(720, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1001, 112);
+            this.label1.Size = new System.Drawing.Size(755, 84);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lịch sử đổi thưởng";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 287);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 230);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 19, 20, 19);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(2938, 1380);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(2204, 1104);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // History_UC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "History_UC";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Size = new System.Drawing.Size(2946, 1673);
+            this.Size = new System.Drawing.Size(2210, 1338);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

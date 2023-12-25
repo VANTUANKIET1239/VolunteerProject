@@ -219,8 +219,9 @@ namespace VolunProject.Data.DAL
         public static ICollection<Event> SendApproveEventRegistration_ByVolunteerID(string volunteerID)
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
-            return volunteerDBEntities.Registrations.Include(x => x.Event).
-                Where(x => x.VolunteerID == volunteerID && x.status == "C" && x.state == true).
+            return volunteerDBEntities.Registrations
+                .Include(x => x.Event).
+                Where(x => x.VolunteerID == volunteerID && x.state == true).
                 Select(x => x.Event).
                 ToList();
         }

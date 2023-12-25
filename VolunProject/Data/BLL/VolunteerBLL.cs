@@ -57,5 +57,17 @@ namespace VolunProject.Data.BLL
             });
             return re;
         }
+        public static bool updatePoint(string volunteerID)
+        {
+            return VolunteerDAL.updatePoint(volunteerID);
+        }
+        public static bool checkEmail_Information(string volunteerID, string email)
+        {
+            return VolunteerDAL.checkEmail_Information(volunteerID, email);
+        }
+        public static bool confirmEmail(string account, string email)
+        {
+            return VolunteerDAL.confirmEmail(account, email);
+        }
     }
 }

@@ -13,6 +13,7 @@ using VolunProject.UserInterface.CheckIn_CheckOut.EventList;
 using VolunProject.UserInterface.CheckIn_CheckOut.ProcessingEventControl;
 using VolunProject.UserInterface.Event;
 using VolunProject.UserInterface.Event.EventControl;
+using VolunProject.UserInterface.Event.EventHistoryControl;
 using VolunProject.UserInterface.Login;
 
 namespace VolunProject
@@ -25,6 +26,7 @@ namespace VolunProject
         public OrganizationForm()
         {
             InitializeComponent();
+            ApproveVolunteerBTN_Click(this, new EventArgs());
             sub();
         }
 
@@ -33,6 +35,7 @@ namespace VolunProject
             EventControl.DetailEvent += EventControl_DetailEvent;
             ProcessingEventControl.OpenRegistrationAprroveListEvent += ProcessingEventControl_OpenRegistrationAprroveListEvent;
             RegistrationApproveList.OnBackEvent += DiemDanhBTN_Click;
+          
         }
 
 
@@ -75,10 +78,8 @@ namespace VolunProject
             if (activeForm != null)
                 activeForm.Hide();
             activeForm = a;
-            //ActivateButton(btnSender);
             this.MainPanel.Controls.Add(a);
             this.MainPanel.Tag = a;
-            //lblTitle.Text = (btnSender as Button).Text;
         }
         private void CreateEventButoon_Click(object sender, EventArgs e)
         {

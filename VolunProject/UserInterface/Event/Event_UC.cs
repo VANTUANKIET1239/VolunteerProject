@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
+using VolunProject.UserInterface.Event.EventRegistrationForm;
 
 namespace VolunProject.UserInterface.Event
 {
@@ -18,6 +19,7 @@ namespace VolunProject.UserInterface.Event
         public Event_UC()
         {
             InitializeComponent();
+            sub();
              EventDTO eventDTO = new EventDTO();
             PopulateCardList(eventDTO);
            
@@ -34,6 +36,17 @@ namespace VolunProject.UserInterface.Event
             categoryCB.DisplayMember = "CategoryName";
             categoryCB.ValueMember = "CategoryID";
             categoryCB.DataSource = category;
+        }
+
+        private void sub()
+        {
+            RegistrationForm.LoadAlllEvent += RegistrationForm_LoadAlllEvent;
+        }
+
+        private void RegistrationForm_LoadAlllEvent(object sender, EventArgs e)
+        {
+            EventDTO eventDTO = new EventDTO();
+            PopulateCardList(eventDTO);
         }
 
         private void PopulateCardList(EventDTO eventDTO)
@@ -97,7 +110,8 @@ namespace VolunProject.UserInterface.Event
         {
             EventDTO eventDTO = new EventDTO();
             eventDTO.StartDate = startdate.Value;
-            eventDTO.EndDate = enddate.Value; 
+            eventDTO.EndDate = enddate.Value;
+            eventDTO.EventName = Searchtxt.Text;
             eventDTO.CategoryId = (string) categoryCB.SelectedValue;
             eventDTO.CityId = (int) cityCB.SelectedValue;
             eventDTO.state = true;

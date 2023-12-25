@@ -16,7 +16,8 @@ namespace VolunProject.UserInterface.Event.EventHistoryControl
     public partial class EventHistoryControl : UserControl
     {
         private EventDTO EventModel;
-        public static event EventHandler LoadHistoryEvent; 
+        public static event EventHandler LoadHistoryEvent;
+        public static event EventHandler DetailEvent2;
         public EventHistoryControl(EventDTO eventDTO)
         {
 
@@ -44,7 +45,12 @@ namespace VolunProject.UserInterface.Event.EventHistoryControl
         private void LoadEvent(EventDTO eventDTO)
         {
          
+            
             EventModel = eventDTO;
+            if (eventDTO.status == "A" || eventDTO.status == "R")
+            {
+                CancelEventBTN.Enabled = false;
+            }
             eventTitle.Text = eventDTO.EventName.ToString();
             addressLB.Text = $"{eventDTO.DetailAddress}, {eventDTO.wardName}, {eventDTO.districtName}, {eventDTO.cityName}";
             DateTimeLB.Text = $"{eventDTO.StartDate?.ToString("dd/MM/yyyy")} - {eventDTO.EndDate?.ToString("dd/MM/yyyy")}";
@@ -56,6 +62,12 @@ namespace VolunProject.UserInterface.Event.EventHistoryControl
                 EventImageBox.Image = image;
             }
 
+        }
+
+        private void DetailEventBtn_Click(object sender, EventArgs e)
+        {
+            EventModel.isBackTo = "HISTORYEVENT";
+            DetailEvent2(EventModel, new EventArgs());
         }
     }
 }

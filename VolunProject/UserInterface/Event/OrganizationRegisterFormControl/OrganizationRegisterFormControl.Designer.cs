@@ -39,13 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EventName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SearchEvent = new System.Windows.Forms.Button();
             this.CancelBTN = new System.Windows.Forms.Button();
             this.DetailVolunteerBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.UserImageBox = new System.Windows.Forms.PictureBox();
             this.ApproveBTN = new System.Windows.Forms.Button();
+            this.SearchEvent = new System.Windows.Forms.Button();
             this.statusPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,6 +121,7 @@
             this.addressLB.AutoSize = true;
             this.addressLB.BackColor = System.Drawing.Color.NavajoWhite;
             this.addressLB.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLB.ForeColor = System.Drawing.SystemColors.ControlText;
             this.addressLB.Location = new System.Drawing.Point(243, 86);
             this.addressLB.Name = "addressLB";
             this.addressLB.Size = new System.Drawing.Size(531, 19);
@@ -132,6 +133,7 @@
             // 
             this.VolunteerName.AutoSize = true;
             this.VolunteerName.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolunteerName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VolunteerName.Location = new System.Drawing.Point(319, 16);
             this.VolunteerName.Name = "VolunteerName";
             this.VolunteerName.Size = new System.Drawing.Size(46, 24);
@@ -155,6 +157,7 @@
             this.EventName.BackColor = System.Drawing.Color.NavajoWhite;
             this.EventName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EventName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.EventName.Location = new System.Drawing.Point(411, 61);
             this.EventName.Name = "EventName";
             this.EventName.Size = new System.Drawing.Size(531, 19);
@@ -169,18 +172,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(754, 100);
             this.panel1.TabIndex = 55;
-            // 
-            // SearchEvent
-            // 
-            this.SearchEvent.BackColor = System.Drawing.Color.LightBlue;
-            this.SearchEvent.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchEvent.Image = global::VolunProject.Properties.Resources.icons8_search_64;
-            this.SearchEvent.Location = new System.Drawing.Point(677, 28);
-            this.SearchEvent.Name = "SearchEvent";
-            this.SearchEvent.Size = new System.Drawing.Size(64, 61);
-            this.SearchEvent.TabIndex = 56;
-            this.SearchEvent.UseVisualStyleBackColor = false;
-            this.SearchEvent.Click += new System.EventHandler(this.SearchEvent_Click);
             // 
             // CancelBTN
             // 
@@ -255,6 +246,18 @@
             this.ApproveBTN.UseVisualStyleBackColor = false;
             this.ApproveBTN.Click += new System.EventHandler(this.ApproveBTN_Click);
             // 
+            // SearchEvent
+            // 
+            this.SearchEvent.BackColor = System.Drawing.Color.LightBlue;
+            this.SearchEvent.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchEvent.Image = global::VolunProject.Properties.Resources.icons8_search_64;
+            this.SearchEvent.Location = new System.Drawing.Point(677, 28);
+            this.SearchEvent.Name = "SearchEvent";
+            this.SearchEvent.Size = new System.Drawing.Size(64, 61);
+            this.SearchEvent.TabIndex = 56;
+            this.SearchEvent.UseVisualStyleBackColor = false;
+            this.SearchEvent.Click += new System.EventHandler(this.SearchEvent_Click);
+            // 
             // OrganizationRegisterFormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +279,7 @@
             this.Controls.Add(this.UserImageBox);
             this.Controls.Add(this.ApproveBTN);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "OrganizationRegisterFormControl";
             this.Size = new System.Drawing.Size(1400, 234);
             this.statusPanel.ResumeLayout(false);

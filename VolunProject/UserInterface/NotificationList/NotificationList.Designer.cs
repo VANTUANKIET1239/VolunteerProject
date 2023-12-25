@@ -34,30 +34,33 @@
             // 
             // notiPanel
             // 
-            this.notiPanel.Location = new System.Drawing.Point(0, 82);
+            this.notiPanel.Location = new System.Drawing.Point(0, 158);
+            this.notiPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.notiPanel.Name = "notiPanel";
-            this.notiPanel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.notiPanel.Size = new System.Drawing.Size(1473, 797);
+            this.notiPanel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.notiPanel.Size = new System.Drawing.Size(2946, 1533);
             this.notiPanel.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(686, 30);
+            this.label1.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1343, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 24);
+            this.label1.Size = new System.Drawing.Size(218, 47);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thông báo";
             // 
             // NotificationList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.notiPanel);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "NotificationList";
-            this.Size = new System.Drawing.Size(1473, 879);
+            this.Size = new System.Drawing.Size(2946, 1690);
             this.Load += new System.EventHandler(this.NotificationList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

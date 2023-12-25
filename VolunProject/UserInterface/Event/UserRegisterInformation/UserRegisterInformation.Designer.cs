@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rankingPB = new System.Windows.Forms.PictureBox();
-            this.userImg = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserRegisterInformation));
             this.label3 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -41,12 +40,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.phoneTB = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.WardNameTXT = new System.Windows.Forms.TextBox();
             this.textward = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.DistrictNameTXT = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.CityTXT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.genderTXT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
@@ -59,14 +62,10 @@
             this.emailTB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.CancelBTN = new System.Windows.Forms.Button();
             this.userNameTB = new System.Windows.Forms.TextBox();
-            this.genderTXT = new System.Windows.Forms.TextBox();
-            this.WardNameTXT = new System.Windows.Forms.TextBox();
-            this.DistrictNameTXT = new System.Windows.Forms.TextBox();
-            this.CityTXT = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
+            this.CancelBTN = new System.Windows.Forms.Button();
+            this.rankingPB = new System.Windows.Forms.PictureBox();
+            this.userImg = new System.Windows.Forms.PictureBox();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -78,27 +77,9 @@
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rankingPB
-            // 
-            this.rankingPB.Image = global::VolunProject.Properties.Resources.logo_starbucks;
-            this.rankingPB.Location = new System.Drawing.Point(795, 77);
-            this.rankingPB.Name = "rankingPB";
-            this.rankingPB.Size = new System.Drawing.Size(133, 122);
-            this.rankingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rankingPB.TabIndex = 23;
-            this.rankingPB.TabStop = false;
-            // 
-            // userImg
-            // 
-            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.userImg.Location = new System.Drawing.Point(23, 44);
-            this.userImg.Name = "userImg";
-            this.userImg.Size = new System.Drawing.Size(179, 180);
-            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userImg.TabIndex = 22;
-            this.userImg.TabStop = false;
             // 
             // label3
             // 
@@ -207,6 +188,15 @@
             this.panel10.Size = new System.Drawing.Size(454, 39);
             this.panel10.TabIndex = 12;
             // 
+            // WardNameTXT
+            // 
+            this.WardNameTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WardNameTXT.Location = new System.Drawing.Point(175, 6);
+            this.WardNameTXT.Name = "WardNameTXT";
+            this.WardNameTXT.ReadOnly = true;
+            this.WardNameTXT.Size = new System.Drawing.Size(276, 32);
+            this.WardNameTXT.TabIndex = 3;
+            // 
             // textward
             // 
             this.textward.AutoSize = true;
@@ -226,6 +216,15 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(435, 39);
             this.panel9.TabIndex = 13;
+            // 
+            // DistrictNameTXT
+            // 
+            this.DistrictNameTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistrictNameTXT.Location = new System.Drawing.Point(103, 3);
+            this.DistrictNameTXT.Name = "DistrictNameTXT";
+            this.DistrictNameTXT.ReadOnly = true;
+            this.DistrictNameTXT.Size = new System.Drawing.Size(329, 32);
+            this.DistrictNameTXT.TabIndex = 3;
             // 
             // label9
             // 
@@ -247,6 +246,15 @@
             this.panel8.Size = new System.Drawing.Size(454, 39);
             this.panel8.TabIndex = 14;
             // 
+            // CityTXT
+            // 
+            this.CityTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityTXT.Location = new System.Drawing.Point(175, 3);
+            this.CityTXT.Name = "CityTXT";
+            this.CityTXT.ReadOnly = true;
+            this.CityTXT.Size = new System.Drawing.Size(276, 32);
+            this.CityTXT.TabIndex = 5;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -266,6 +274,15 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(306, 39);
             this.panel6.TabIndex = 15;
+            // 
+            // genderTXT
+            // 
+            this.genderTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderTXT.Location = new System.Drawing.Point(175, 3);
+            this.genderTXT.Name = "genderTXT";
+            this.genderTXT.ReadOnly = true;
+            this.genderTXT.Size = new System.Drawing.Size(125, 32);
+            this.genderTXT.TabIndex = 2;
             // 
             // label5
             // 
@@ -386,6 +403,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và tên";
             // 
+            // userNameTB
+            // 
+            this.userNameTB.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTB.Location = new System.Drawing.Point(175, 3);
+            this.userNameTB.Name = "userNameTB";
+            this.userNameTB.ReadOnly = true;
+            this.userNameTB.Size = new System.Drawing.Size(727, 32);
+            this.userNameTB.TabIndex = 1;
+            // 
             // CancelBTN
             // 
             this.CancelBTN.BackColor = System.Drawing.Color.Gray;
@@ -399,50 +425,25 @@
             this.CancelBTN.UseVisualStyleBackColor = false;
             this.CancelBTN.Click += new System.EventHandler(this.CancelBTN_Click);
             // 
-            // userNameTB
+            // rankingPB
             // 
-            this.userNameTB.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTB.Location = new System.Drawing.Point(175, 3);
-            this.userNameTB.Name = "userNameTB";
-            this.userNameTB.ReadOnly = true;
-            this.userNameTB.Size = new System.Drawing.Size(727, 32);
-            this.userNameTB.TabIndex = 1;
+            this.rankingPB.Image = global::VolunProject.Properties.Resources.logo_starbucks;
+            this.rankingPB.Location = new System.Drawing.Point(795, 77);
+            this.rankingPB.Name = "rankingPB";
+            this.rankingPB.Size = new System.Drawing.Size(133, 122);
+            this.rankingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rankingPB.TabIndex = 23;
+            this.rankingPB.TabStop = false;
             // 
-            // genderTXT
+            // userImg
             // 
-            this.genderTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderTXT.Location = new System.Drawing.Point(175, 3);
-            this.genderTXT.Name = "genderTXT";
-            this.genderTXT.ReadOnly = true;
-            this.genderTXT.Size = new System.Drawing.Size(125, 32);
-            this.genderTXT.TabIndex = 2;
-            // 
-            // WardNameTXT
-            // 
-            this.WardNameTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WardNameTXT.Location = new System.Drawing.Point(175, 6);
-            this.WardNameTXT.Name = "WardNameTXT";
-            this.WardNameTXT.ReadOnly = true;
-            this.WardNameTXT.Size = new System.Drawing.Size(276, 32);
-            this.WardNameTXT.TabIndex = 3;
-            // 
-            // DistrictNameTXT
-            // 
-            this.DistrictNameTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DistrictNameTXT.Location = new System.Drawing.Point(103, 3);
-            this.DistrictNameTXT.Name = "DistrictNameTXT";
-            this.DistrictNameTXT.ReadOnly = true;
-            this.DistrictNameTXT.Size = new System.Drawing.Size(329, 32);
-            this.DistrictNameTXT.TabIndex = 3;
-            // 
-            // CityTXT
-            // 
-            this.CityTXT.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CityTXT.Location = new System.Drawing.Point(175, 3);
-            this.CityTXT.Name = "CityTXT";
-            this.CityTXT.ReadOnly = true;
-            this.CityTXT.Size = new System.Drawing.Size(276, 32);
-            this.CityTXT.TabIndex = 5;
+            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            this.userImg.Location = new System.Drawing.Point(23, 44);
+            this.userImg.Name = "userImg";
+            this.userImg.Size = new System.Drawing.Size(179, 180);
+            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userImg.TabIndex = 22;
+            this.userImg.TabStop = false;
             // 
             // UserRegisterInformation
             // 
@@ -464,11 +465,11 @@
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserRegisterInformation";
-            this.Text = "UserRegisterInformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thông tin cơ bản";
             this.Load += new System.EventHandler(this.UserRegisterInformation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -491,6 +492,8 @@
             this.panel15.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

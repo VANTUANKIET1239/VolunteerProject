@@ -89,6 +89,7 @@
             // 
             this.eventTitle.AutoSize = true;
             this.eventTitle.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventTitle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.eventTitle.Location = new System.Drawing.Point(256, 18);
             this.eventTitle.Name = "eventTitle";
             this.eventTitle.Size = new System.Drawing.Size(166, 24);

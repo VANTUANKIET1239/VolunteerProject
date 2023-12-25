@@ -40,5 +40,9 @@ namespace VolunProject.Data.DTO
         public string OrganizationID { get; set; }
 
         public DateTime? RegistrationDate { get; set; }
+
+        public string status { get; set; }
+
+        public string isBackTo { get; set; }
     }
 }
