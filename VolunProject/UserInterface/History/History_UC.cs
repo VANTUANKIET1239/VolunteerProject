@@ -56,7 +56,8 @@ namespace VolunProject.UserInterface.History
                     flowLayoutPanel1.Controls.Add(rewardHistoryControl);
                 }
                 label1.Text = "Lịch sử đổi thưởng";
-            }
         }
+        
     }
-}
+ }
+
