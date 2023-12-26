@@ -102,10 +102,6 @@ namespace VolunProject.UserInterface.CheckIn_CheckOut.RegistrationApproveControl
                 if (EventBLL.Event_ParticipateChecking(RegistrationVolunteerDTOss.EventID, RegistrationVolunteerDTOss.VolunteerID, "O"))
                 {
                     DialogResult re = MessageBox.Show("Check-Out thành công", "Thông báo", MessageBoxButtons.OK);
-                    if (VolunteerBLL.updatePoint(RegistrationVolunteerDTOss.VolunteerID))
-                    {
-                        MessageBox.Show("Thêm điểm thành công !");
-                    }
                     if (re == DialogResult.OK)
                     {
                         var eventq = EventBLL.Event_ById(RegistrationVolunteerDTOss.EventID);
@@ -117,6 +113,10 @@ namespace VolunProject.UserInterface.CheckIn_CheckOut.RegistrationApproveControl
                         {
                             ResetDataEvent(this, new EventArgs());
                         }
+                    }
+                    if (VolunteerBLL.updatePoint(RegistrationVolunteerDTOss.VolunteerID))
+                    {
+
                     }
                 }
             }

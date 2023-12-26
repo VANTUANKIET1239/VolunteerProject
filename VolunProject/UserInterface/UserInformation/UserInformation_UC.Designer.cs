@@ -35,9 +35,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
-            this.rankingPB = new System.Windows.Forms.PictureBox();
-            this.userImg = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.changePassword = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,19 +43,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.addressTB = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.show3 = new System.Windows.Forms.PictureBox();
-            this.close3 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.confirmPasswordTB = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.newPasswordTB = new System.Windows.Forms.TextBox();
-            this.show2 = new System.Windows.Forms.PictureBox();
-            this.close2 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.show1 = new System.Windows.Forms.PictureBox();
-            this.close1 = new System.Windows.Forms.PictureBox();
             this.curPasswordTB = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.accountNameLB = new System.Windows.Forms.Label();
@@ -90,19 +81,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.userNameTB = new System.Windows.Forms.TextBox();
+            this.rankingPB = new System.Windows.Forms.PictureBox();
+            this.userImg = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.show3 = new System.Windows.Forms.PictureBox();
+            this.close3 = new System.Windows.Forms.PictureBox();
+            this.show2 = new System.Windows.Forms.PictureBox();
+            this.close2 = new System.Windows.Forms.PictureBox();
+            this.show1 = new System.Windows.Forms.PictureBox();
+            this.close1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.show3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close3)).BeginInit();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.show2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close2)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.show1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -113,6 +105,14 @@
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -225,43 +225,6 @@
             this.lb1.Visible = false;
             this.lb1.Click += new System.EventHandler(this.lb1_Click);
             // 
-            // rankingPB
-            // 
-            this.rankingPB.Image = global::VolunProject.Properties.Resources.logo_starbucks;
-            this.rankingPB.Location = new System.Drawing.Point(1556, 103);
-            this.rankingPB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rankingPB.Name = "rankingPB";
-            this.rankingPB.Size = new System.Drawing.Size(200, 188);
-            this.rankingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rankingPB.TabIndex = 8;
-            this.rankingPB.TabStop = false;
-            // 
-            // userImg
-            // 
-            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
-            this.userImg.Location = new System.Drawing.Point(398, 52);
-            this.userImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userImg.Name = "userImg";
-            this.userImg.Size = new System.Drawing.Size(268, 277);
-            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userImg.TabIndex = 6;
-            this.userImg.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_upload_100;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(399, 338);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 50);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(194)))), ((int)(((byte)(247)))));
@@ -357,34 +320,6 @@
             this.panel14.Size = new System.Drawing.Size(1421, 60);
             this.panel14.TabIndex = 3;
             // 
-            // show3
-            // 
-            this.show3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.show3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.show3.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
-            this.show3.Location = new System.Drawing.Point(1348, 5);
-            this.show3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.show3.Name = "show3";
-            this.show3.Size = new System.Drawing.Size(42, 46);
-            this.show3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.show3.TabIndex = 21;
-            this.show3.TabStop = false;
-            this.show3.Click += new System.EventHandler(this.show3_Click);
-            // 
-            // close3
-            // 
-            this.close3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.close3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.close3.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
-            this.close3.Location = new System.Drawing.Point(1348, 6);
-            this.close3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.close3.Name = "close3";
-            this.close3.Size = new System.Drawing.Size(42, 45);
-            this.close3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.close3.TabIndex = 24;
-            this.close3.TabStop = false;
-            this.close3.Click += new System.EventHandler(this.close3_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -443,34 +378,6 @@
             this.newPasswordTB.TabIndex = 18;
             this.newPasswordTB.TextChanged += new System.EventHandler(this.curPasswordTB_TextChanged);
             // 
-            // show2
-            // 
-            this.show2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.show2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.show2.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
-            this.show2.Location = new System.Drawing.Point(1348, 6);
-            this.show2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.show2.Name = "show2";
-            this.show2.Size = new System.Drawing.Size(42, 46);
-            this.show2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.show2.TabIndex = 17;
-            this.show2.TabStop = false;
-            this.show2.Click += new System.EventHandler(this.show2_Click);
-            // 
-            // close2
-            // 
-            this.close2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.close2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.close2.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
-            this.close2.Location = new System.Drawing.Point(1348, 6);
-            this.close2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.close2.Name = "close2";
-            this.close2.Size = new System.Drawing.Size(42, 45);
-            this.close2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.close2.TabIndex = 20;
-            this.close2.TabStop = false;
-            this.close2.Click += new System.EventHandler(this.close2_Click);
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label6);
@@ -494,34 +401,6 @@
             this.label6.Size = new System.Drawing.Size(323, 37);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mật khẩu hiện tại";
-            // 
-            // show1
-            // 
-            this.show1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.show1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.show1.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
-            this.show1.Location = new System.Drawing.Point(1348, 6);
-            this.show1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.show1.Name = "show1";
-            this.show1.Size = new System.Drawing.Size(42, 46);
-            this.show1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.show1.TabIndex = 22;
-            this.show1.TabStop = false;
-            this.show1.Click += new System.EventHandler(this.show1_Click);
-            // 
-            // close1
-            // 
-            this.close1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.close1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.close1.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
-            this.close1.Location = new System.Drawing.Point(1348, 8);
-            this.close1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.close1.Name = "close1";
-            this.close1.Size = new System.Drawing.Size(42, 45);
-            this.close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.close1.TabIndex = 23;
-            this.close1.TabStop = false;
-            this.close1.Click += new System.EventHandler(this.close1_Click);
             // 
             // curPasswordTB
             // 
@@ -857,6 +736,128 @@
             this.userNameTB.Size = new System.Drawing.Size(1088, 44);
             this.userNameTB.TabIndex = 7;
             // 
+            // rankingPB
+            // 
+            this.rankingPB.Image = global::VolunProject.Properties.Resources.logo_starbucks;
+            this.rankingPB.Location = new System.Drawing.Point(1556, 103);
+            this.rankingPB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rankingPB.Name = "rankingPB";
+            this.rankingPB.Size = new System.Drawing.Size(200, 188);
+            this.rankingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rankingPB.TabIndex = 8;
+            this.rankingPB.TabStop = false;
+            // 
+            // userImg
+            // 
+            this.userImg.Image = global::VolunProject.Properties.Resources.user;
+            this.userImg.Location = new System.Drawing.Point(398, 52);
+            this.userImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userImg.Name = "userImg";
+            this.userImg.Size = new System.Drawing.Size(268, 277);
+            this.userImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userImg.TabIndex = 6;
+            this.userImg.TabStop = false;
+            this.userImg.Click += new System.EventHandler(this.userImg_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::VolunProject.Properties.Resources.icons8_upload_100;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(399, 338);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 50);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // show3
+            // 
+            this.show3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.show3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.show3.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
+            this.show3.Location = new System.Drawing.Point(1348, 5);
+            this.show3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.show3.Name = "show3";
+            this.show3.Size = new System.Drawing.Size(42, 46);
+            this.show3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.show3.TabIndex = 21;
+            this.show3.TabStop = false;
+            this.show3.Click += new System.EventHandler(this.show3_Click);
+            // 
+            // close3
+            // 
+            this.close3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.close3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.close3.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
+            this.close3.Location = new System.Drawing.Point(1348, 6);
+            this.close3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.close3.Name = "close3";
+            this.close3.Size = new System.Drawing.Size(42, 45);
+            this.close3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close3.TabIndex = 24;
+            this.close3.TabStop = false;
+            this.close3.Click += new System.EventHandler(this.close3_Click);
+            // 
+            // show2
+            // 
+            this.show2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.show2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.show2.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
+            this.show2.Location = new System.Drawing.Point(1348, 6);
+            this.show2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.show2.Name = "show2";
+            this.show2.Size = new System.Drawing.Size(42, 46);
+            this.show2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.show2.TabIndex = 17;
+            this.show2.TabStop = false;
+            this.show2.Click += new System.EventHandler(this.show2_Click);
+            // 
+            // close2
+            // 
+            this.close2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.close2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.close2.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
+            this.close2.Location = new System.Drawing.Point(1348, 6);
+            this.close2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.close2.Name = "close2";
+            this.close2.Size = new System.Drawing.Size(42, 45);
+            this.close2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close2.TabIndex = 20;
+            this.close2.TabStop = false;
+            this.close2.Click += new System.EventHandler(this.close2_Click);
+            // 
+            // show1
+            // 
+            this.show1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.show1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.show1.Image = global::VolunProject.Properties.Resources.icons8_invisible_50;
+            this.show1.Location = new System.Drawing.Point(1348, 6);
+            this.show1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.show1.Name = "show1";
+            this.show1.Size = new System.Drawing.Size(42, 46);
+            this.show1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.show1.TabIndex = 22;
+            this.show1.TabStop = false;
+            this.show1.Click += new System.EventHandler(this.show1_Click);
+            // 
+            // close1
+            // 
+            this.close1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.close1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.close1.Image = global::VolunProject.Properties.Resources.icons8_invisible_48;
+            this.close1.Location = new System.Drawing.Point(1348, 8);
+            this.close1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.close1.Name = "close1";
+            this.close1.Size = new System.Drawing.Size(42, 45);
+            this.close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close1.TabIndex = 23;
+            this.close1.TabStop = false;
+            this.close1.Click += new System.EventHandler(this.close1_Click);
+            // 
             // UserInformation_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -869,22 +870,14 @@
             this.Load += new System.EventHandler(this.UserInformation_UC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.show3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close3)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.show2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.show1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.close1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -905,6 +898,14 @@
             this.panel15.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankingPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -120,7 +120,7 @@
             // 
             // commentImg
             // 
-            this.commentImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            //this.commentImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.commentImg.Location = new System.Drawing.Point(6, 25);
             this.commentImg.Margin = new System.Windows.Forms.Padding(6);
             this.commentImg.Name = "commentImg";

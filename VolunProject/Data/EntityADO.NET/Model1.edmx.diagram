@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cd04f8da62224158a6e67f57db745965" Name="Diagram1" ZoomLevel="93">
+      <Diagram DiagramId="d2c44a624c3d4226a0bf8c934960690a" Name="Diagram1">
         <EntityTypeShape EntityType="VolunteersDBModel.Account" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="VolunteersDBModel.Comment" Width="1.5" PointX="12.75" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="VolunteersDBModel.Event" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
@@ -26,27 +26,27 @@
         <EntityTypeShape EntityType="VolunteersDBModel.VolunteerLikeEvent" Width="1.5" PointX="10.5" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="VolunteersDBModel.VolunteerReward" Width="1.5" PointX="13.5" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VolunteersDBModel.XaPhuong" Width="1.5" PointX="17.5" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Notificat__Accou__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Notificat__Accou__71D1E811" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Organization_Account" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Volunteer_Account" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Comment_Post" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Comment_Volunteer" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Event__CategoryI__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Registrat__Event__66603565" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Event__6D0D32F4" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__PostLike__PostID__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Event__CategoryI__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Registrat__Event__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Event__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__PostLike__PostID__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Post_Volunteer" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__PostLike__Volunt__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__PostLike__Volunt__619B8048" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_QuanHuyen_TinhThanhPho_tinhThanhPhoId" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_XaPhuong_QuanHuyen_quanHuyenId" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_TinhThanhPho_QuocGia_quocGiaId" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Rank_Volunteer" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Registrat__Volun__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Registrat__Volun__6477ECF3" ManuallyRouted="false" />
         <AssociationConnector Association="VolunteersDBModel.FK_Review_Volunteer" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__ReviewLis__Revie__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Rewar__6EF57B66" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Volun__6E01572D" ManuallyRouted="false" />
-        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Volun__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__ReviewLis__Revie__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Rewar__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Volun__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteersDBModel.FK__Volunteer__Volun__6D0D32F4" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -31,13 +31,7 @@ namespace VolunProject.UserInterface.Redeem
             {
                 redeemButton.Enabled = false;
                 redeemButton.Text = "";
-                Image image1;
-                byte[] check = OtherFunction.PathImage2Byte("C:\\Users\\PC\\Desktop\\Propro\\VolunProject\\VolunProject\\Resources\\icons8-check-48 (1).png");
-                using (MemoryStream ms1 = new MemoryStream(check))
-                {
-                    image1 = Image.FromStream(ms1);
-                    redeemButton.Image = image1;
-                }
+                redeemButton.Image = VolunProject.Properties.Resources.icons8_check_48__1_;
             }
             Image image;
             using (MemoryStream ms = new MemoryStream(rewardDTO.RewardImg))

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VolunProject.Data.BLL;
+using VolunProject.Data.DAL;
 using VolunProject.Data.DTO;
 
 namespace VolunProject.UserInterface.Event.AddNewEvent
@@ -94,7 +96,12 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
             }
             else
             {
-                eventDTO.EventImage = OtherFunction.PathImage2Byte("C:\\Users\\PC\\Desktop\\Propro\\VolunProject\\VolunProject\\Resources\\imagedd.jpg");
+                Image image = VolunProject.Properties.Resources.imagedd;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    eventDTO.EventImage = ms.ToArray();
+                }
             }
             eventDTO.purpose = PurposeTB.Text;
             eventDTO.description = DescriptionTB.Text;
@@ -110,7 +117,12 @@ namespace VolunProject.UserInterface.Event.AddNewEvent
                 }
                 else
                 {
-                    notificationDTO.NotiImg = OtherFunction.PathImage2Byte("C:\\Users\\PC\\Desktop\\Propro\\VolunProject\\VolunProject\\Resources\\imagedd.jpg");
+                    Image image = VolunProject.Properties.Resources.imagedd;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        notificationDTO.NotiImg = ms.ToArray();
+                    }
                 }
                 if (NotificationBLL.Notification_Add(notificationDTO))
                 {

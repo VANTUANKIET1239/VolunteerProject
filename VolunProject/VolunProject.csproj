@@ -561,9 +561,6 @@
     <None Include="Resources\icons8-menu-40.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-user-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-event-50.png" />
   </ItemGroup>
   <ItemGroup>
@@ -575,7 +572,6 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\7bda1c7d233fe592c0fc7ea63f20ebc2.jpg" />
-    <None Include="Resources\logo-social.png" />
     <None Include="Resources\logo-starbucks.jpg" />
     <None Include="Resources\pexels-julie-aagaard-2097111.jpg" />
     <None Include="Resources\1.jpg" />
@@ -587,6 +583,7 @@
     <None Include="Resources\pexels-julie-aagaard-20971111.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user.png" />
     <None Include="Resources\icons8-calendar-50.png" />
     <None Include="Resources\icons8-clock-50.png" />
     <None Include="Resources\download.jpg" />
@@ -632,6 +629,7 @@
     <None Include="Resources\icons8-event-24.png" />
     <None Include="Resources\icons8-ellipsis-30.png" />
     <None Include="Resources\icons8-event-501.png" />
+    <None Include="Resources\icons8-done-48.png" />
     <Content Include="Resources\icons8-heart-50 %281%29.png" />
     <None Include="Resources\icons8-heart-50 %281%291.png" />
     <None Include="Resources\icons8-notification-50.png" />

@@ -131,7 +131,7 @@
             // 
             // volImg
             // 
-            this.volImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            //this.volImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.volImg.Location = new System.Drawing.Point(6, 27);
             this.volImg.Margin = new System.Windows.Forms.Padding(6);
             this.volImg.Name = "volImg";
@@ -201,7 +201,7 @@
             // 
             // cmtImg
             // 
-            this.cmtImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            //this.cmtImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.cmtImg.Location = new System.Drawing.Point(6, 6);
             this.cmtImg.Margin = new System.Windows.Forms.Padding(6);
             this.cmtImg.Name = "cmtImg";

@@ -437,7 +437,7 @@
             // 
             // userImg
             // 
-            this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            //this.userImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.userImg.Location = new System.Drawing.Point(23, 44);
             this.userImg.Name = "userImg";
             this.userImg.Size = new System.Drawing.Size(179, 180);

@@ -137,7 +137,7 @@
             this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
             this.confirmPasswordTextBox.PasswordChar = '●';
             this.confirmPasswordTextBox.Size = new System.Drawing.Size(704, 55);
-            this.confirmPasswordTextBox.TabIndex = 4;
+            this.confirmPasswordTextBox.TabIndex = 5;
             this.confirmPasswordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.confirmPasswordTextBox_KeyDown);
             // 
             // passwordTextBox
@@ -148,7 +148,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(704, 55);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // usernameTextBox
@@ -158,7 +158,7 @@
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(704, 55);
-            this.usernameTextBox.TabIndex = 2;
+            this.usernameTextBox.TabIndex = 3;
             this.usernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameTextBox_KeyDown);
             // 
             // label1
@@ -291,7 +291,7 @@
             this.emailTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(704, 55);
-            this.emailTB.TabIndex = 20;
+            this.emailTB.TabIndex = 2;
             // 
             // AdminRegister_UC
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using VolunProject.Data.BLL;
 using VolunProject.Data.DTO;
 using VolunProject.Data.EntityADO.NET;
 using VolunProject.UserInterface.CheckIn_CheckOut;
@@ -107,30 +108,57 @@ namespace VolunProject.Data.DAL
         {
             VolunteerDBEntities volunteerDBEntities = new VolunteerDBEntities();
             var volunteer = volunteerDBEntities.Volunteers.Where(x => x.VolunteerID == volunteerID).FirstOrDefault();
-            if (volunteer.RankId == "Silver")
+            int? point = volunteer.PrestigeScore;
+            volunteer.RewardPoint += 500;
+            volunteer.PrestigeScore += 500;    
+            if (volunteer.PrestigeScore >= 2000 && point < 2000)
             {
-                volunteer.RewardPoint += 550;
-                volunteer.PrestigeScore += 550;
+                volunteer.RankId = "Diamond";
+                NotificationDTO notificationDTO = new NotificationDTO();
+                notificationDTO.NotificationContent = "Bạn vừa nhận được 500 điểm và lên hạng Kim cương.";
+                notificationDTO.AccountID = VolunteerBLL.GetVolunteerByVolunteerID(volunteerID).AccountID;
+                notificationDTO.NotiImg = RankingBLL.getRankingByID("Diamond").RankImage;
+                if (NotificationBLL.Notification_Add(notificationDTO))
+                {
+                    return volunteerDBEntities.SaveChanges() > 0;
+                }
             }
-            else if (volunteer.RankId == "Gold")
+            else if (volunteer.PrestigeScore >= 1000 & point < 1000)
             {
-                volunteer.RewardPoint += 600;
-                volunteer.PrestigeScore += 600;
+                volunteer.RankId = "Gold";
+                NotificationDTO notificationDTO = new NotificationDTO();
+                notificationDTO.NotificationContent = "Bạn vừa nhận được 500 điểm và lên hạng Vàng.";
+                notificationDTO.AccountID = VolunteerBLL.GetVolunteerByVolunteerID(volunteerID).AccountID;
+                notificationDTO.NotiImg = RankingBLL.getRankingByID("Gold").RankImage;
+                if (NotificationBLL.Notification_Add(notificationDTO))
+                {
+                    return volunteerDBEntities.SaveChanges() > 0;
+                }
             }
-            else if (volunteer.RankId == "Diamond")
+            else if (volunteer.PrestigeScore >= 500 && point < 500)
             {
-                volunteer.RewardPoint += 800;
-                volunteer.PrestigeScore += 800;
+                volunteer.RankId = "Silver";
+                NotificationDTO notificationDTO = new NotificationDTO();
+                notificationDTO.NotificationContent = "Bạn vừa nhận được 500 điểm và lên hạng Bạc.";
+                notificationDTO.AccountID = VolunteerBLL.GetVolunteerByVolunteerID(volunteerID).AccountID;
+                notificationDTO.NotiImg = RankingBLL.getRankingByID("Silver").RankImage;
+                if (NotificationBLL.Notification_Add(notificationDTO))
+                {
+                    return volunteerDBEntities.SaveChanges() > 0;
+                }
             }
             else
             {
-                volunteer.RewardPoint += 500;
-                volunteer.PrestigeScore += 500;
+                NotificationDTO notificationDTO = new NotificationDTO();
+                notificationDTO.NotificationContent = "Bạn vừa được 500 điểm.";
+                notificationDTO.AccountID = VolunteerBLL.GetVolunteerByVolunteerID(volunteerID).AccountID;
+                notificationDTO.NotiImg = AccountBLL.GetAccountByID(VolunteerBLL.GetVolunteerByVolunteerID(volunteerID).AccountID).ImageUS;
+                if (NotificationBLL.Notification_Add(notificationDTO))
+                {
+                    return volunteerDBEntities.SaveChanges() > 0;
+                }
             }
-            if(volunteer.PrestigeScore >= 2000) volunteer.RankId = "Diamond";
-            else if(volunteer.PrestigeScore >= 1000) volunteer.RankId = "Gold";
-            else if(volunteer.PrestigeScore >= 500) volunteer.RankId = "Silver";
-            return volunteerDBEntities.SaveChanges() > 0;
+            return false;
         }
     }
 }

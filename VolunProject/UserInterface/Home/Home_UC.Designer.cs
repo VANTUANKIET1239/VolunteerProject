@@ -137,7 +137,7 @@
             // 
             // curVolImg
             // 
-            this.curVolImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
+            //this.curVolImg.Image = global::VolunProject.Properties.Resources.icons8_user_50;
             this.curVolImg.Location = new System.Drawing.Point(16, 15);
             this.curVolImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.curVolImg.Name = "curVolImg";

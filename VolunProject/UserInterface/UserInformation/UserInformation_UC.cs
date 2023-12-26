@@ -370,5 +370,10 @@ namespace VolunProject.UserInterface.UserInformation
             close3.BringToFront();
             confirmPasswordTB.PasswordChar = '\0';
         }
+
+        private void userImg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

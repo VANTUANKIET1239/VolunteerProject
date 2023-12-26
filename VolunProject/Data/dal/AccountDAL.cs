@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,9 +42,13 @@ namespace VolunProject.Data.DAL
                 account.Password = accountDTO.Password;
                 account.CreateDate = DateTime.Now;
                 account.state = true;
-                account.ImageUS = OtherFunction.PathImage2Byte("C:\\Users\\LENOVO\\Desktop\\Git\\VolunteerProject\\VolunProject\\Resources\\icons8-user-50.png");
+                Image image = Properties.Resources.user;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    account.ImageUS = ms.ToArray();
+                }
                 account.RoleName = "VOLUNTEER";
-
                 volunteerDBEntities.Accounts.Add(account);
                 if (volunteerDBEntities.SaveChanges() > 0)
                 {
